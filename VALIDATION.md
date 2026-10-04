@@ -6,7 +6,7 @@ This report verifies backup/distribution preparation and isolated restore logic.
 
 ## Results
 
-- 47 executed checks passed.
+- 52 executed checks passed.
 - 14/14 personal skill entries restored and hash-verified in isolated destinations.
 - 16 managed entries snapshot/hash-verified; zero managed skill copies installed in the default user root.
 - 24 complete snapshot roots (14 personal + 10 plugins) compared with source selected-file trees; all 541 included source/support files identical.
@@ -66,6 +66,11 @@ This report verifies backup/distribution preparation and isolated restore logic.
 | rollback retains verified backup | PASS |
 | rollback cleans staging and owned lock | PASS |
 | stale runtime catalog refused | PASS |
+| final inventory physical file audit | PASS |
+| inventory all 14 hashes and physical file records match | PASS |
+| inventory cannot overwrite package payload | PASS |
+| inventory cannot overwrite skill payload | PASS |
+| inventory protection preserves payload bytes | PASS |
 
 Managed-catalog success in synthetic fixtures tests the verifier logic only. It is not second-account evidence. Default Phase A verification intentionally reports unavailable managed dependencies without declaring full environment restoration complete; -RequireManaged fails until all required catalog and capability evidence is provided. Runtime evidence must be observed within the last 24 hours and refreshed when the environment changes.
 

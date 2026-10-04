@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-04T11:03:39.912589+00:00",
+  "observed_utc": "2026-10-04T11:13:57.660963+00:00",
   "user_global_expected": 14,
   "user_global_verified_in_isolated_restore": 14,
   "plugin_managed_expected": 16,
@@ -255,6 +255,31 @@
       "test": "stale runtime catalog refused",
       "pass": true,
       "exit_code": 1
+    },
+    {
+      "test": "final inventory physical file audit",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "inventory all 14 hashes and physical file records match",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "inventory cannot overwrite package payload",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "inventory cannot overwrite skill payload",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "inventory protection preserves payload bytes",
+      "pass": true,
+      "exit_code": null
     }
   ],
   "portability_counts": {

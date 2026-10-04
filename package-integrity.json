@@ -5,7 +5,7 @@
     "package-integrity.json (self)"
   ],
   "algorithm": "SHA256(UTF8(concat ordinal-sorted path + NUL + lowercase file SHA256 + LF))",
-  "package_tree_hash_sha256": "cc14813fbce043f9fd4810d30917627ee52456fb1c9de401ec4b069c9e75294a",
+  "package_tree_hash_sha256": "f8e8d82eede601859a34549afcfa16471ab1f1821ac56d2d9c7f2cf5c6112cb3",
   "files": [
     {
       "path": ".gitattributes",
@@ -39,8 +39,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "84614fb13c5983d4dcbc7c017b34bbd2efff1e5aa4097cc6b3eb84c44f618ff5",
-      "bytes": 6476
+      "sha256": "9e52c3c79a8d2395e9cc76ed5fab8c6fd73bd9844c29607b1178da4fdfc9ef51",
+      "bytes": 6757
     },
     {
       "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/.codex-plugin/plugin.json",
@@ -2194,8 +2194,8 @@
     },
     {
       "path": "scripts/inventory.ps1",
-      "sha256": "1bf7f7824d5e82eef03093c3e1b8901f9941d0338e7aa7eeb86bb36490ae123f",
-      "bytes": 2290
+      "sha256": "d2c4f4740891e20195bc155aea72d8cdcd5ad35e5792e08146df19a253cf09d5",
+      "bytes": 3774
     },
     {
       "path": "scripts/verify.ps1",
@@ -2779,8 +2779,8 @@
     },
     {
       "path": "validation-results.json",
-      "sha256": "30b1515efddb8c8197017976f9a9858b7ed7a919467d28c2f5536d2ae7d658f1",
-      "bytes": 6971
+      "sha256": "8ef78787f602cf99f02c131d3a11c55c5adc7d94a7af2c086a02da1d93e2b4c9",
+      "bytes": 7578
     }
   ]
 }
