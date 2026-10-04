@@ -1,0 +1,6 @@
+interface:
+  display_name: "Devil"
+  short_description: "Stress-test consequential technical decisions"
+  default_prompt: "Use $devil to challenge this plan before we commit."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,41 @@
+# skill-package
+
+Private, verifiable snapshot of the current Codex skill environment. The source skills are preserved without behavioral rewrites. This is a file backup and restore bundle, not an account clone.
+
+## Contents
+
+- **14 personal/user-global skills** in `skills/user-global/`: installable, content-preserving copies.
+- **16 active plugin-managed skill entries** in `managed/plugin-skills/<provider>/<plugin>/<version>/`: audit/reference snapshots only. Full plugin-relative supporting resources are preserved, including resources outside the individual skill folder.
+- **5 system skills excluded**: imagegen, openai-docs, review-agent, skill-creator, skill-installer. The destination Codex runtime supplies system skills.
+- `skills-manifest.json`: per-file hashes, deterministic skill tree hashes, metadata, dependencies, original physical sources and documented exclusions.
+- `package-integrity.json`: hashes for every distribution file except itself. `.git/` is excluded. Hashes detect accidental changes; they are not signatures or independent proof of authenticity.
+- `AUDIT.md`, `PORTABILITY.md`, `RESTORE.md`, `VALIDATION.md`: findings, dependencies, practical restore steps and test evidence.
+
+The previous 22-skill baseline is superseded by the current active catalog: 14 personal + 16 managed = 30. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
+
+## Quick start (Windows)
+
+PowerShell 5.1+ is required. These scripts do not require Python, Git or a GitHub account when using a ZIP. Close any other restore process first. Review the package and choose a trusted snapshot before running code.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -PackageOnly
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Install
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
+```
+
+Destination resolves to `$env:CODEX_HOME\skills` when CODEX_HOME is set, otherwise `$env:USERPROFILE\.codex\skills`. `-DestinationRoot` supports an isolated restore test or a deliberately selected user skill root. Source provenance paths are informational only.
+
+The installer validates the entire bundle and scans for common secret patterns before any install. It defaults to a mutation-free dry-run. Existing different versions are copied to a timestamped sibling `skills-backup/` and verified before replacement. Only manifest-listed personal skill directories can be replaced. Unknown directories, duplicate names, reparse points and system/plugin destinations cause a refusal. Unrelated skills, `.system`, account config and AGENTS.md are untouched. A failed install attempts rollback from verified local backups; backups remain available for manual recovery. An exclusive installation lock prevents concurrent bundle installers.
+
+Managed snapshots are **never** installed into user skills or plugin cache. Runtime and plugin activation use their proper destination mechanisms. Folder existence is not proof of plugin activation or tool availability. `verify.ps1` reports Phase A and Phase B separately; default success covers Phase A only. `-RequireManaged` requires all managed catalog entries and capabilities to be confirmed using fresh external evidence.
+
+## What is excluded
+
+System skills; full-plan's internal `.git` history; generated caches; credentials; auth state; account config; chat/session histories; machine runtime binaries; subscription entitlements. All actual source exclusions are itemized in the manifest. Skill files, relative structure, agents, references, scripts, templates and assets are copied byte for byte. No installer fetches dependencies or enables plugins automatically.
+
+The source `natural-persian-writing` has a pre-existing strict YAML frontmatter defect; its discovered name/description and bytes are preserved. `ui-ux-pro-max` has an existing CLAUDE_PLUGIN_ROOT assumption. See AUDIT.md before expecting identical operation on a new runtime.
+
+For another account or Windows user, use the same Phase A installer followed by Phase B plugin/runtime restoration. Authentication, account permissions, tools and entitlement must be supplied separately. GitHub access is needed only to clone the private repository; an authorized ZIP copy works offline for Phase A.
+
+Sources for the runtime/skill distinction: [OpenAI plugin architecture](https://developers.openai.com/plugins/concepts/plugins), [Build skills](https://learn.chatgpt.com/docs/build-skills).

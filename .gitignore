@@ -1,0 +1,17 @@
+.git/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+node_modules/
+.venv/
+.env
+.env.*
+auth.json
+credentials*
+cookies*
+*.pfx
+*.p12
+*.log
+*.lock
+*.zip

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "observed_utc": "REPLACE_WITH_FRESH_UTC_TIMESTAMP",
+  "evidence_source": "REPLACE_WITH_LIVE_DESTINATION_CODEX_CATALOG_AND_TOOL_INSPECTION",
+  "entries": [
+    {
+      "catalog_name": "computer-use:computer-use",
+      "plugin_name": "computer-use",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "visualize:visualize",
+      "plugin_name": "visualize",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "documents:documents",
+      "plugin_name": "documents",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "pdf:pdf",
+      "plugin_name": "pdf",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "presentations:Presentations",
+      "plugin_name": "presentations",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "spreadsheets:excel-live-control",
+      "plugin_name": "spreadsheets",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "spreadsheets:Spreadsheets",
+      "plugin_name": "spreadsheets",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "template-creator:template-creator",
+      "plugin_name": "template-creator",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "plugin-management:plugin-management",
+      "plugin_name": "plugin-management",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "sites:sites-building",
+      "plugin_name": "sites",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "sites:sites-hosting",
+      "plugin_name": "sites",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "sites:sites-mcp",
+      "plugin_name": "sites",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "sites:sites-preview-troubleshooting",
+      "plugin_name": "sites",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "work-pets:create-pet",
+      "plugin_name": "work-pets",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "work-pets:pets",
+      "plugin_name": "work-pets",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    },
+    {
+      "catalog_name": "work-pets:update-pet",
+      "plugin_name": "work-pets",
+      "physical_path": "REPLACE_WITH_ACTUAL_DESTINATION_PLUGIN_SKILL_DIRECTORY",
+      "enabled": false,
+      "capabilities_confirmed": false
+    }
+  ]
+}

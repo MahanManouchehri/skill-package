@@ -1,0 +1,3 @@
+interface:
+  display_name: "Architecture Review"
+  short_description: "Review concrete technical designs before implementation"

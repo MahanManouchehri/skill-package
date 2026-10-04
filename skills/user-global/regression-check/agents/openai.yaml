@@ -1,0 +1,3 @@
+interface:
+  display_name: "Regression Check"
+  short_description: "Verify existing behavior after a change"

@@ -1,0 +1,277 @@
+{
+  "observed_utc": "2026-10-04T11:03:39.912589+00:00",
+  "user_global_expected": 14,
+  "user_global_verified_in_isolated_restore": 14,
+  "plugin_managed_expected": 16,
+  "plugin_managed_available_in_isolated_default_restore": 0,
+  "plugin_managed_available_on_actual_second_account": "NOT_TESTED - no second account provided",
+  "system_skills_excluded": 5,
+  "full_plan_discoverable_entries": 1,
+  "source_skill_files": 480,
+  "included_source_support_files": 541,
+  "snapshot_roots_source_equal": 24,
+  "secret_pattern_candidates_in_included_source": 0,
+  "broken_relative_links": 0,
+  "agent_yaml_issues": [],
+  "strict_frontmatter_yaml_issues": [
+    "natural-persian-writing"
+  ],
+  "original_payload_hardcoded_user_path_issues": 0,
+  "package_generated_provenance_paths": "Present intentionally in manifest/report; never used by installer",
+  "unexpected_duplicates_in_clean_restore": 0,
+  "restore_test_root": "C:\\Users\\Mahan\\Documents\\Codex\\2026-10-04\\new-chat\\work\\restore-test-4oxbb7yc",
+  "tests": [
+    {
+      "test": "package validation PowerShell 5.1",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "dry run new user",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "dry run has zero filesystem mutations",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "isolated restore",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "personal restore verification",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "managed snapshots not installed",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "strict managed verification without evidence fails",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "repeat install is idempotent",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "tampered destination fails hash verification",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "replacement dry run",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "replacement dry run zero mutation",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "replacement with backup",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "original destination bytes backed up",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "unrelated and system content preserved",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "inventory source and extras",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "inventory extra detection",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "full-plan duplicate verifier refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "duplicate dry run refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "managed manual copy refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "protected system destination refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "protected package destination refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "path traversal refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "reparse point refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "concurrent installer lock refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "other installer lock preserved",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "managed cache alone never means available",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "synthetic managed catalog evidence success",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "managed user-root evidence refused",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "tampered distribution refused",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "tampered package zero destination writes",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "secret scanner negative fixture",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "final scripts package validation",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "final scripts clean restore",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "final scripts dry run",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "final scripts clean verification",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "nested excluded git reparse refusal",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "installer refuses nested git junction",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "nested junction rejection preserves external data",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "create backup junction fixture",
+      "pass": true,
+      "exit_code": 0
+    },
+    {
+      "test": "backup junction refused in dry run",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "backup junction refused in install",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "backup junction rejection no writes",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "forced post-install failure",
+      "pass": true,
+      "exit_code": 1
+    },
+    {
+      "test": "rollback restores original exact bytes",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "rollback retains verified backup",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "rollback cleans staging and owned lock",
+      "pass": true,
+      "exit_code": null
+    },
+    {
+      "test": "stale runtime catalog refused",
+      "pass": true,
+      "exit_code": 1
+    }
+  ],
+  "portability_counts": {
+    "PORTABLE": 12,
+    "PORTABLE_WITH_DEPENDENCIES": 1,
+    "PARTIALLY_PORTABLE": 1,
+    "RUNTIME_MANAGED": 16
+  },
+  "second_account_runtime_validation": "Required at destination using proper plugins and fresh runtime evidence; synthetic tests are not account verification",
+  "source_environment_read_only_verification": {
+    "user_global_expected": 14,
+    "user_global_verified": 14,
+    "plugin_managed_expected": 16,
+    "plugin_managed_available": 16,
+    "system_skills": 5,
+    "unexpected_duplicates": 0
+  },
+  "source_runtime_capabilities": "Not independently exercised; active catalog presence verified from source session evidence and disk.",
+  "manifest_intentional_source_provenance_path_mentions": 108
+}

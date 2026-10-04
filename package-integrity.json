@@ -1,0 +1,2786 @@
+{
+  "schema_version": 1,
+  "excluded": [
+    ".git/",
+    "package-integrity.json (self)"
+  ],
+  "algorithm": "SHA256(UTF8(concat ordinal-sorted path + NUL + lowercase file SHA256 + LF))",
+  "package_tree_hash_sha256": "cc14813fbce043f9fd4810d30917627ee52456fb1c9de401ec4b069c9e75294a",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992",
+      "bytes": 9
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "14a5d4beb3ca3d6725a1cf566317803d8fe449f9daf22bb4c02f6bc71d6697e0",
+      "bytes": 159
+    },
+    {
+      "path": "AUDIT.md",
+      "sha256": "7168e43beb88fb39e69e4131a970dda0c77520262294ff2c381ef8065661e24c",
+      "bytes": 3239
+    },
+    {
+      "path": "PORTABILITY.md",
+      "sha256": "255d875aac9ac30d71a42a664c28b1f9cea86e480d4ffffd65dc2086d4341ab7",
+      "bytes": 9599
+    },
+    {
+      "path": "README.md",
+      "sha256": "2530ef1728aec356fb1e97ba8bce3469984361acf51e3886df04c64e359fd6e6",
+      "bytes": 4766
+    },
+    {
+      "path": "RESTORE.md",
+      "sha256": "d2b45d729a3d601d16bf337c039c853ebb84da4fb9b3a528f7cd19821afed5c2",
+      "bytes": 5642
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "84614fb13c5983d4dcbc7c017b34bbd2efff1e5aa4097cc6b3eb84c44f618ff5",
+      "bytes": 6476
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/.codex-plugin/plugin.json",
+      "sha256": "5f9d3acbe9b46308b498e68fb0326be991cece28af0340e27e7b4b3affdaf095",
+      "bytes": 2960
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/assets/app-icon.png",
+      "sha256": "2aadb5dbf99405ee536a6bdc40808ba476fd15d718c269d7be1e949f2e8ce53e",
+      "bytes": 923463
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/docs/api.md",
+      "sha256": "c36d005fb98ed79837a1a5d4605ebad036cec95864e5646f451425163d5c16af",
+      "bytes": 8028
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/docs/confirmations.md",
+      "sha256": "9c45b3eb20e4a7fb14860e50f635e200b321a52fef6d26f39f7b936bd44be11a",
+      "bytes": 4635
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/docs/guidance.md",
+      "sha256": "b171b26bc19f49226bb594bf3ed3f36666e5dd063a996c297986b2b461ac8efd",
+      "bytes": 13907
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/skills/computer-use/SKILL.md",
+      "sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951",
+      "bytes": 1497
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/.codex-plugin/plugin.json",
+      "sha256": "e07c15208e75a076033f9ec7489d804219137ac40f5a522da68ae3bc251e7c34",
+      "bytes": 1720
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/assets/tweak.js",
+      "sha256": "2c5a78aaffb4a2b5e7c05782e953533669fe8485178c5124c87b4f7909ae4934",
+      "bytes": 15548
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/assets/visualize-dark.svg",
+      "sha256": "bc5df4e624286c774d6c3ca76858576ae145b914399e4a6af01c8230a54d5530",
+      "bytes": 1737
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/assets/visualize.svg",
+      "sha256": "6469ab16469cbed15a76821416a70c16da86e411f8e4af19f5272b5c5ea65114",
+      "bytes": 1735
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/SKILL.md",
+      "sha256": "eb1ba019b51014a68d8bd6a11320a30f26dd224df3629c445c34f9128ce0580d",
+      "bytes": 33560
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/agents/openai.yaml",
+      "sha256": "6882440afd1978a5324ea7adc5c3c62ed1efa11caabd1b97f58e8be721e89c2f",
+      "bytes": 311
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/assets/calendar.js",
+      "sha256": "f6517bf5584f34b36ae024188b2c93715e8e4e86869afdbe0fe7a8265b0fa74e",
+      "bytes": 13770
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/assets/standalone-host-bridge.js",
+      "sha256": "0b19685a4a762846461f42ee0f7af67b86a35df7d93eee0c057ebf6e8d291bed",
+      "bytes": 9970
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/assets/standalone-shell.js",
+      "sha256": "5c3ae7035fcd3df868b9f41ffd0a5f23d6e24c1da581e772b783bef0aec08b80",
+      "bytes": 6012
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/assets/visualize.css",
+      "sha256": "04a7d255aa07d2fbeac9e469dc8749091b931fa6f49b2331d041206085f3a6b5",
+      "bytes": 28963
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/assets/visualize.html",
+      "sha256": "3b25c0d80c2880eab8b69e52ed7361aa4f6a6acfba27b1d29758326458429234",
+      "bytes": 20663
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/examples/calendar.html",
+      "sha256": "6c5bed2bb9a94b915a8fb7f14642540ce9a1096eed74b57c01fda353d8a9b8a3",
+      "bytes": 576
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/scripts/render.py",
+      "sha256": "9aa8793721125ceeacd0e0ff723698783646d7b98b1707d9414f36f27aa530a6",
+      "bytes": 8982
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/tweak.md",
+      "sha256": "197aae99fc9d4d263fece0eacc81117be12a7f1ae18b75afe916aae015dd177c",
+      "bytes": 5355
+    },
+    {
+      "path": "managed/plugin-skills/openai-bundled/visualize/1.0.45/skills/visualize/widgets/calendar.md",
+      "sha256": "28543248b92c1f4916f81ba2ff232178f9d2e8915fe78b6c05cf24f97885db9f",
+      "bytes": 6480
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/plugin-management/0.1.0/.app.json",
+      "sha256": "8392e042417a3de2db3a9f2e2385f4bd80f462c98ed2d8a6ef60dff002e2f06c",
+      "bytes": 126
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/plugin-management/0.1.0/.codex-plugin/plugin.json",
+      "sha256": "5deb3b2f943fff03a928e1faed2b040bad7dabcf71c11f183fc67dcc0793e3c3",
+      "bytes": 1538
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/plugin-management/0.1.0/assets/plugin-management.svg",
+      "sha256": "6776a53774519dab5c8e338a6e9fa058932e0ef4dfcc053735f10683081d30ef",
+      "bytes": 455
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/plugin-management/0.1.0/skills/plugin-management/SKILL.md",
+      "sha256": "653841cc21205269f08b0ce135891e1518dac616a766bcfb0b57d788d3f68b10",
+      "bytes": 2983
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/.app.json",
+      "sha256": "425123d445ae9f373a9a45a2774e253f7890b7f0da88ee90ec25fd8baf68f25a",
+      "bytes": 122
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/.codex-plugin/plugin.json",
+      "sha256": "27bed3436c6b7152a3a853cd17b5b1bc1acaa620b5e2c659a5bead25069821f8",
+      "bytes": 1880
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/OWNERS",
+      "sha256": "78e88f2201239b5e82d421b2192efa820af325483e2ebc7e9db84e634a4ab2d4",
+      "bytes": 32
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/README.md",
+      "sha256": "1c86f6fecd0928d6c9f28083dac187f1a033d06f0cfdb50f25ca406aefdcc73d",
+      "bytes": 1016
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/analytics.yaml",
+      "sha256": "540e3f5b7cfeb9ef3bcdae41951c380a7e8c790b960064da1b64e89f047b3eca",
+      "bytes": 2754
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/icon.svg",
+      "sha256": "31b17163cf931c8bec6f89cc4b8f2e0bd9714e2876f1207816b54bf7f7119947",
+      "bytes": 742
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/logo.svg",
+      "sha256": "31b17163cf931c8bec6f89cc4b8f2e0bd9714e2876f1207816b54bf7f7119947",
+      "bytes": 742
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/pnpm/README.md",
+      "sha256": "2b704526a6f44d96095baab9729976b5231290385bab07df038ab6908b4e7b33",
+      "bytes": 7045
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/pnpm/vinext/bootstrap.json",
+      "sha256": "d9d776e4d3a8af7ef9f32b54c2496a11b845ae8450df1e14ebf25c5a7b75d115",
+      "bytes": 514
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/pnpm/vinext/pnpm-lock.yaml",
+      "sha256": "095ba6f301ba3997da2c251dfc4b805c220624bdf0921d905eaceee0d1fb29c9",
+      "bytes": 345021
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/assets/pnpm/vinext/pnpm-workspace.yaml",
+      "sha256": "0d97e98adfc0ff79222d15602031ed6581e44becf49474a8e138f79a392e7df4",
+      "bytes": 680
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/integrity.json",
+      "sha256": "52f43d80b4790f0da0b5ad389e865a3a8d8a07bec0eb5448b89183a118047b16",
+      "bytes": 25015
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/build-site.mjs",
+      "sha256": "051765bcef22b331b394ff71ea464c9f8bebaafce877855fad6cbee31c56cb1b",
+      "bytes": 817
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/configure-execution-profile.mjs",
+      "sha256": "c4cb280899b966a7df0ad64b050d2b5f24c1ca4b2f39fd9606a984d7f96ec5bb",
+      "bytes": 2335
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/install-dependencies.mjs",
+      "sha256": "7c2634d14a6db9fabd63ef79885722e9567b88e805589860ad29704c39a04765",
+      "bytes": 3629
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/install-report.mjs",
+      "sha256": "237093a759fc0860253492f6c1d962b78bb54735e5f3ca9187a236e06c71a304",
+      "bytes": 5961
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/package-manager.mjs",
+      "sha256": "dab8d51745054944afc4b1685f9a4ff180f87c9722c7aa4ab2364006693c0c1d",
+      "bytes": 5877
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/package-site.mjs",
+      "sha256": "c478f3060d464edf075afb1f0cdb699979bfc7913a1e64114bfbd653a1352bcd",
+      "bytes": 338
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/pnpm-bootstrap.mjs",
+      "sha256": "d59b815f9c4c7623cf766f612a1affb6cf29c571850762bc10e1a00f869d7575",
+      "bytes": 17207
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/project-setup.mjs",
+      "sha256": "abb2db7b4c31e2920d29eaa4972554ff53b40c8bc072b37d296a534217d1c5c7",
+      "bytes": 5487
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/set-project-id.mjs",
+      "sha256": "6348bb3547e25bb050f25aba9ce8021892eeeb93223766f9e6915eb246bd02a2",
+      "bytes": 2101
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/site-workflow.mjs",
+      "sha256": "34c3408f93a12684c993adf0256d7fe138f2baa43ead46a63921c87e36935acd",
+      "bytes": 17583
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/validate-pnpm.mjs",
+      "sha256": "cde7d4a4ebbf489bd2f247a457303d87462c53c54ddb25d1508f46740ffff3df",
+      "bytes": 5610
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/scripts/workflow-metrics.mjs",
+      "sha256": "33ddaf60a96ab73c9c9673b5acf7015b2e84025454544d5869554b2b3e94ee17",
+      "bytes": 5553
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/SKILL.md",
+      "sha256": "a74849932e62784144ee72ebe3952ba2ab2a095581459f99eac1611a380bea2c",
+      "bytes": 38113
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/authentication.md",
+      "sha256": "e3ff59aa5c6935bd026718927f87682c351c768838f082793106a599194997f1",
+      "bytes": 6764
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/connector-preview.md",
+      "sha256": "3de3cde469599cf59d66318ceabe18cc0ecd185d55b206bdefcb7e3597e7286e",
+      "bytes": 7645
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/library-selection.md",
+      "sha256": "0f002eb766e479d2184a012b6a18574e3364bd3d5c091597fb3c9592c93b7498",
+      "bytes": 5159
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/persistence-and-storage.md",
+      "sha256": "64ee58edbc690f4ea63ca58655ff82e0c3910264708cd23b184056d68b0fbf94",
+      "bytes": 4562
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/plugin-tools.md",
+      "sha256": "d5917ad77c8b106e06e5ac868bc3b0d846f5dd88fba4af0ca88631028af2952e",
+      "bytes": 9607
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/presentation-site-expansion.md",
+      "sha256": "01ed3027a1751926e97e131bcd0c2fddbff2c18402fb8faa168f6555b59d20a8",
+      "bytes": 1937
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/preview/managed-linux.md",
+      "sha256": "f0eb0019148665917603ba0afea511e5e8133be996038a48bd3ff5e0ba12c929",
+      "bytes": 2045
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/preview/portable.md",
+      "sha256": "5398b276424aaa66d05b7d0cfa6d0d155de3dc30077b341ef0da391d1f4e92ef",
+      "bytes": 1613
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/project-setup/managed-linux.md",
+      "sha256": "0d73367ed072a7c394650466b4ea3baaec44f95923b8507720437397da255e18",
+      "bytes": 2353
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/project-setup/portable.md",
+      "sha256": "b65e6c80c941a30d723eed2c0d093be55a7a037157fb65a96485d3a14580036b",
+      "bytes": 1770
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/recurring-updates.md",
+      "sha256": "e3d58ac05a92ce56a133367e1b79d8befabe637afbae3830b15b38fcb2d4b1a8",
+      "bytes": 3737
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/registration.md",
+      "sha256": "1181f7b2cd6403f1278d746a7cb25216d4c35eeac8e706e691c215050db39c13",
+      "bytes": 1638
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/sqlite.md",
+      "sha256": "c40381cd84f77d6ba7c0480200e99a8d199384350dc2ed636a1b05361b96a147",
+      "bytes": 2001
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/starter-capabilities.md",
+      "sha256": "63b96e690590c7f807a89061c8047761ec510d7e330724d34c65d21d52a21ef1",
+      "bytes": 768
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/references/webmcp.md",
+      "sha256": "7c30c0366b9abf308d24eff24909aa3d91406444afefd9e8ec259771ef902452",
+      "bytes": 3837
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/.gitignore",
+      "sha256": "55d0a3e1f8e2e31b6fda7293305b96d676e6fcd51a9680d6903dd7240fa0e192",
+      "bytes": 598
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/.npmrc",
+      "sha256": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
+      "bytes": 45
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/.openai/hosting.json",
+      "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947",
+      "bytes": 31
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/README.md",
+      "sha256": "b670ba0eff3b6b1598f619278ca1f61eb609bebc1f80f68c56829905d715dac7",
+      "bytes": 10120
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/app/chatgpt-auth.ts",
+      "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+      "bytes": 2550
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/app/globals.css",
+      "sha256": "8546d9b115f0addd582f7ceaaa6b1c069310bcc77c43ee7b8acfe0020be3afd7",
+      "bytes": 3928
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/app/layout.tsx",
+      "sha256": "fb20da0ae67bb49128afe28c32dba4ff1588e70d6c913a64ef8a0b95f94d63da",
+      "bytes": 523
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/app/page.tsx",
+      "sha256": "c2293d77b0cff0d149cc153eae96eb6f807f0967b12a177b387f8d9b695f6d7f",
+      "bytes": 4466
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/build/connector-preview-plugin.mjs",
+      "sha256": "a6a9fe2086e302f94a3f91e3c1a68a45bb3aa07d4a79faf01b14732191eb4e80",
+      "bytes": 7211
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/build/connector-preview-worker.mjs",
+      "sha256": "c1b6b2c420cb67d9e28f8f4ae440f578c0dfd4cb840a12cfe4b58076629a17ba",
+      "bytes": 594
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/build/sites-vite-plugin.LICENSE",
+      "sha256": "7de1e115d165f176e68f962acdb809b5ab8d8ae78d3981e0701392b2ac50c713",
+      "bytes": 1063
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/build/sites-vite-plugin.ts",
+      "sha256": "07af20e7097d9ed1d76f7c446d02997550b8fc5ca89668b249e25eabd62c6834",
+      "bytes": 7185
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/build/sites-worker.ts",
+      "sha256": "28a75f74adfc226a773d1c00d5779c26412eea40a104da5c77f7d0f0fc30f0e8",
+      "bytes": 1279
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/cloudflare-env.d.ts",
+      "sha256": "8b0eca84aa3364cc7ccc43cc3af6beb88dd34ebd410de08690bf094ce39fbcb0",
+      "bytes": 99
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components.json",
+      "sha256": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd",
+      "bytes": 420
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/connector-error.tsx",
+      "sha256": "2d0d04559952ce9c9a327cca499f4b99f35d885cccfce375230e116695d3f155",
+      "bytes": 1082
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/accordion.tsx",
+      "sha256": "a4f153089ba886dfcf73fac26b5c01ca933fa12fbe88df6fb723912bfffdfbb0",
+      "bytes": 2048
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/alert-dialog.tsx",
+      "sha256": "9a8d950f2b9b4352d5ebb762fb44d5c28c2d353aa29712071973656a8736e311",
+      "bytes": 5439
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/alert.tsx",
+      "sha256": "2cc59b5f7bda91c1670884b1bf46bfc8a2a6f226cef184f5762acc037188885b",
+      "bytes": 1614
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/aspect-ratio.tsx",
+      "sha256": "b1c157886236782cb92d8fbcd4749532aaf6d8aabefd6e157ca40358f902f407",
+      "bytes": 274
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/attachment.tsx",
+      "sha256": "ae8a25dd1a896d3964e3ef54d97e51221b418cde287dfd794428b89951c5c790",
+      "bytes": 6002
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/avatar.tsx",
+      "sha256": "58a846bf1617b94b9681921db9b8461d0145f311424663d11678a06b6153cb34",
+      "bytes": 2916
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/badge.tsx",
+      "sha256": "46a0de5224f6a5d5d63d45246534288518dce888f031064bff925bbc7fe6ad97",
+      "bytes": 1776
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/breadcrumb.tsx",
+      "sha256": "d4c0831bba2212e778248f54a6ace6ef378df8bba4616d1abf27787a31eabae5",
+      "bytes": 2350
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/bubble.tsx",
+      "sha256": "870cc0c5cfc8a515053f7e41e706a6bd017a909b45f1305fd3b164a52cc4483b",
+      "bytes": 4699
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/button-group.tsx",
+      "sha256": "784c89d8ee683e1bc972ae69e6ea8225a7f63abe22aa1b5fc3423ae8a2a399c0",
+      "bytes": 2202
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/button.tsx",
+      "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+      "bytes": 2392
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/calendar.tsx",
+      "sha256": "3855fbe0d3f8ad3a4b93071f98b76a9f6782d46ec8b05f5d2ddbee1e4e39bc84",
+      "bytes": 7832
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/card.tsx",
+      "sha256": "c48dd3b96be90a7066f1aebf294f0af9d00ebcdc367d5d4aca55429ade570c1c",
+      "bytes": 1987
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/carousel.tsx",
+      "sha256": "b7ea0dda3903d972c186f739e23da61f547bc83b5a0bf13b16856577846d5fc3",
+      "bytes": 5556
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/chart.tsx",
+      "sha256": "45aa5ea4a386f4fb5b8869ff4bab3a08cf89255190ee322043baf84c3e950b6a",
+      "bytes": 10614
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/checkbox.tsx",
+      "sha256": "b23ab9d4deeedf2ac8f512c368361ede681aa383437ef48563a6f9b7dbe95f27",
+      "bytes": 1214
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/collapsible.tsx",
+      "sha256": "c6598e5584f4258b5d9fefadbc5ad6a66888ad58729f4b634a0bb2d9c513188b",
+      "bytes": 795
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/combobox.tsx",
+      "sha256": "2d68e78b2dc7e38a085f222dede60a80b4f8229a6e91732c484605e204d46735",
+      "bytes": 9158
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/command.tsx",
+      "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+      "bytes": 4818
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/context-menu.tsx",
+      "sha256": "2cf1fcf59df0649a3e2a126d1df2f639145f6b6bf5689ee54af1f40ab1245017",
+      "bytes": 8268
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/dialog.tsx",
+      "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+      "bytes": 4303
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/direction.tsx",
+      "sha256": "84ae2ad658207f0e0f367978e5508cd8027cd00c29c41d3d13db21a708c3d1e6",
+      "bytes": 506
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/drawer.tsx",
+      "sha256": "cb6eaf58eb0757ca91af284e5d925b89a42ad7eb19cb3f44c575a3487aa9350f",
+      "bytes": 4255
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/dropdown-menu.tsx",
+      "sha256": "98f0dcdae38225b73734aceeb9213dd751fea2c72ea520df31003cd133deac8a",
+      "bytes": 8418
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/empty.tsx",
+      "sha256": "ae95bdcf367a076ae02e7925f14522a148798f72d9651749c6d55497dba584c0",
+      "bytes": 2396
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/field.tsx",
+      "sha256": "ba67d76f017ac059fc86cf8c344e0b2991c4322d3619e125498c19b87f6eefbd",
+      "bytes": 6159
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/form.tsx",
+      "sha256": "315b46bb75ab7d1c6061b5d750aa4bedf6e7a455e15e2d7f9182f053d5972b1e",
+      "bytes": 3757
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/hover-card.tsx",
+      "sha256": "f5d8df42c59370ec14d61bcc54f7d68e9bb7dfa0d6a872b2f7cffc2aafbf23b8",
+      "bytes": 1526
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/input-group.tsx",
+      "sha256": "6afbd58fea4c438e6252dc4568bddc122e84ababead4ad5cee50ace01100c9a0",
+      "bytes": 5065
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/input-otp.tsx",
+      "sha256": "161946daa89f0eda2575b9271c0494e35807c4ffb55598a49f67160c17fec299",
+      "bytes": 2254
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/input.tsx",
+      "sha256": "8c4612a7c41319ac5049daa3b34b080f9784b6245c17780eb87c127e58e473db",
+      "bytes": 962
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/item.tsx",
+      "sha256": "6e2144d6d87142dbbe56d568810bf546318c8aa661447ebb0d76ebbf382cb45f",
+      "bytes": 4486
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/kbd.tsx",
+      "sha256": "6088c3a5432338b1719c17e9b5d0e1fa74fd1f66060f248fc88909d33a82cd13",
+      "bytes": 862
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/label.tsx",
+      "sha256": "a476e41f08b9de5bd447de66a33d8bc2ad18f2fa6b96c064778bab4b6f439f4c",
+      "bytes": 606
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/marker.tsx",
+      "sha256": "3d798763f094b2bb5e7ade2d5cd1b9bab498bc8ca7fd4cfaf4e5835bdedc34a0",
+      "bytes": 1864
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/menubar.tsx",
+      "sha256": "9243af8afcea03703398ccd1c2a8c0a87ad6cbaf2bd272fb609f5b79fe46aebb",
+      "bytes": 8389
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/message-scroller.tsx",
+      "sha256": "bb7660a248e4e9589c3816c7c1c199ea1381a70d2c8476ae895b567a7a4d86cf",
+      "bytes": 3992
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/message.tsx",
+      "sha256": "9d2952bf3b641081f09aa2739535e6bbd1be0a4946789752a2c20d8aaef43185",
+      "bytes": 2232
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/native-select.tsx",
+      "sha256": "007516b111fca8c98a6c40c94ab91bb68cc5b52afce1ed1f5e510c3d86e7347c",
+      "bytes": 1995
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/navigation-menu.tsx",
+      "sha256": "889d358a77de88e9cb6f39ea4895ea4c76eaf01d731b74e44f1c41e97a78a044",
+      "bytes": 6658
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/pagination.tsx",
+      "sha256": "374ad135c3d4ff3ec080a0009cd9745cdd0e12faa89d2b0e86074f11e5127fd1",
+      "bytes": 2717
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/popover.tsx",
+      "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+      "bytes": 2357
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/progress.tsx",
+      "sha256": "c8c26e8f5f041c3cdf4915347dc1d9c022f9448f149990fadcaf303e952fa57d",
+      "bytes": 755
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/radio-group.tsx",
+      "sha256": "fe5ce39636d0818c2bf9c4eebddff893d1225fa2c81b5fa4bb8cbb39a8c913ce",
+      "bytes": 1460
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/resizable.tsx",
+      "sha256": "bc63958467aa00557c551bb0d96a5ae4c965c1e1ba2380e595949d933b132f7c",
+      "bytes": 1815
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/scroll-area.tsx",
+      "sha256": "8bd9d986b2844c9a87de825c6de4787b6739b36c3dc9a05ccf3eb107160e4043",
+      "bytes": 1639
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/select.tsx",
+      "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+      "bytes": 6353
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/separator.tsx",
+      "sha256": "6da346505c8629a4668420d2a5ca48891383bbe0b0ceb14163537c671879427e",
+      "bytes": 694
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/sheet.tsx",
+      "sha256": "63863cf2df8f8973e52b3459ac9bdbf81be1262dbc70eb53d5271ffb03488e16",
+      "bytes": 4188
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/sidebar.tsx",
+      "sha256": "4a8d73e7730a2b1fcecfca31299ed26db65c2307b84197a59c6ec7c01c7ad28e",
+      "bytes": 21526
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/skeleton.tsx",
+      "sha256": "ba48dd5be5a6a1378bd4e011028654b5bf419f1e7d20ee4b9f8330c1264e7239",
+      "bytes": 276
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/slider.tsx",
+      "sha256": "0e37484f4b416e79ac18c655cac961aefacf6e67085cfc2b320ea8af545635a3",
+      "bytes": 1991
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/sonner.tsx",
+      "sha256": "13ccc9b0fe4248e622f83a1d3b2f0566b72b5e04162d7d0c8db8945ecc71b55f",
+      "bytes": 1034
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/spinner.tsx",
+      "sha256": "3e6e6e8d37fb4069f8e43e55318f8db06fbc36e6c8be0096da3c9337c1c798b9",
+      "bytes": 331
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/switch.tsx",
+      "sha256": "386d4d4deb39f34126f9700fe9bf5393d238485dd94018bba9d154dda84c62ae",
+      "bytes": 1408
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/table.tsx",
+      "sha256": "20e5a7f224959c6b75802995706a97e9da171f693d4b6b1b436388fcd9df96f3",
+      "bytes": 2478
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/tabs.tsx",
+      "sha256": "865d0194331b9b2be36723fa79d3575dc83078b4cb941cafee87cb72fc2cff46",
+      "bytes": 3782
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/textarea.tsx",
+      "sha256": "253cdeb487c73beaaccdf47fc163e36e7d5b7ae6ddf09a4f64998a109a112979",
+      "bytes": 759
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/toggle-group.tsx",
+      "sha256": "69f643e889e933f05c1439084480d8646f66a161c7d1cf0730ee926382ade35e",
+      "bytes": 2308
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/toggle.tsx",
+      "sha256": "ba4d0b0a2b2fee75dc36dfc19e32082e721024b919050c97fd5dc70faa924e16",
+      "bytes": 1565
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/components/ui/tooltip.tsx",
+      "sha256": "a0784eb77831a799fad7991df4f1b666f876201565a80175e1aa68733574a2e4",
+      "bytes": 1830
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/db/index.ts",
+      "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+      "bytes": 423
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/db/schema.ts",
+      "sha256": "13ddacbf0be50e054d450a6c642b7fdc1aa943fd6b99084711e07e58b600390d",
+      "bytes": 169
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/drizzle.config.ts",
+      "sha256": "af081f7384aaeb0082cf422e29f139d137ca2f6a57c69b2c37b9fb1f8479867b",
+      "bytes": 148
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/drizzle/meta/_journal.json",
+      "sha256": "90cb374e093894d0efce6f1830d873a42aadd8ba49d2f024495e5cb2e1c8c303",
+      "bytes": 61
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/eslint.config.mjs",
+      "sha256": "f22a254df7d934bbf9be499d3c969a13abb7f7f64c03f5967d0095cad81dfe06",
+      "bytes": 846
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/examples/d1/app/api/notes/route.ts",
+      "sha256": "a3d4a74fd53b7bf53e2df41f169d9d9d44a8b22aeb6d92f4e754956079af8909",
+      "bytes": 1700
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/examples/d1/db/schema.ts",
+      "sha256": "d89eabd95716ce404f5f7ca2a254220435be8ddce7c899d7ef461ff22ec80454",
+      "bytes": 370
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/hooks/use-mobile.ts",
+      "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+      "bytes": 565
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/connector-context.ts",
+      "sha256": "bbddff68689cb0f6926fecd4b8b96f12f2054277c296e97b0df07d4ad5ece24e",
+      "bytes": 612
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/connector-contract.mts",
+      "sha256": "e1a7b24a8793af34b595690d9b1300c897c7321c14f215cedf58ad95799d7c3e",
+      "bytes": 5362
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/connector-errors.mts",
+      "sha256": "a22edf13d6873ae832c4a2a0d579fc666c73ec996ef0722d39172649d38f0871",
+      "bytes": 2717
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/connector-preview.d.ts",
+      "sha256": "abd69a94f7f61f1359063bb557574faae35e8ff5a028cc4c04b9ee248ef52642",
+      "bytes": 433
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/connectors.ts",
+      "sha256": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
+      "bytes": 416
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/lib/utils.ts",
+      "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+      "bytes": 177
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/next.config.ts",
+      "sha256": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc",
+      "bytes": 133
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/package-lock.json",
+      "sha256": "eedaeab6870c0f70f9db869fcaa24abae9b0f945cbc9acb8a43b6e7ed6bcbfca",
+      "bytes": 504152
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/package.json",
+      "sha256": "eb7b53ec5bdce1db5a8576b2ffc3b63ddd8c5fdee0f97dcb341674abbf69843a",
+      "bytes": 2102
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/postcss.config.mjs",
+      "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde",
+      "bytes": 94
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/public/favicon.svg",
+      "sha256": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+      "bytes": 712
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/public/file.svg",
+      "sha256": "1e0ae4d1a1ddfa36752988647b731e4abf150c414d069ec83c96fb0aaeff0307",
+      "bytes": 392
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/public/globe.svg",
+      "sha256": "d051a8c47936990a9085693d307bb7cea1bc1b6d7ed956bcbaacf674f4ec96b9",
+      "bytes": 1036
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/public/window.svg",
+      "sha256": "decf1cf7bb22b5c99c4857cfcd5718ce5465c4454166317589c83fc73df74b66",
+      "bytes": 386
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/build-verified.sh",
+      "sha256": "2ae5329ac860076070c9217a43106a15cb5ecf907a0f7baeb9ef903f76b53c68",
+      "bytes": 661
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/connector-preview/connector-preview-session.mjs",
+      "sha256": "45d5d0511a5b9689278b59570223017cdd3c4129431c6745e710c26323cac45c",
+      "bytes": 6842
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/connector-preview/host-binding.mjs",
+      "sha256": "9e44ab6864133a5c82f834a5904ebb7d6104cb783c24efba3c0fe1a161182cea",
+      "bytes": 7793
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/connector-preview/protocol.mjs",
+      "sha256": "111e062ebf08d3f180130f5bc3dcb3c1414c1d7be3c032c9d675a61c0c7513a8",
+      "bytes": 1781
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/execution-profile.mjs",
+      "sha256": "2e71116f4d2b70cff8bb70436f8dd5c709ec7ff62893424530f404e0193d3630",
+      "bytes": 624
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/install-ci.mjs",
+      "sha256": "4a5a92d60a08d0ba54effd8373da2da06284312c55b767287c68a0bec7200da7",
+      "bytes": 1685
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/install-ci.sh",
+      "sha256": "10d8764a61be50351dc3496e13588270de7956f0aa5f1189c49cabb2d89fe5c0",
+      "bytes": 6783
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/install-pnpm.sh",
+      "sha256": "a684c02c2b493dfbf262a66252a5cd36f81ca995a4024761728662ae63aa40c0",
+      "bytes": 9015
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/npm-install.mjs",
+      "sha256": "9715c6a32d1d4a0289ef6376a0e819c3b6a6416b8a9877733d9fb4339ce626b6",
+      "bytes": 7025
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/pnpm-install.mjs",
+      "sha256": "a83164e344c1947053def83b546be8115deaa827314bbaead7afe6b6451c5cdf",
+      "bytes": 10633
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/run-framework.mjs",
+      "sha256": "9bf9f41a29314cabe0238b8e9c540ec3f7b5a6adafc7c8fb6c3940722d061dca",
+      "bytes": 993
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/sites-env.mjs",
+      "sha256": "5de99d6806b01f0ee0b941af3684d75dcf1afbbcff22cb95bfa2e584c5dafa88",
+      "bytes": 906
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/scripts/sites-env.sh",
+      "sha256": "df86ebfc27d2f00860036658e933ac0ddd7b5f6879aa5d51218f0863c7e1fb60",
+      "bytes": 1530
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/tsconfig.json",
+      "sha256": "7199c6e4e400921e8049729840165a39f1476fa97901bed00239e7697bfe8da4",
+      "bytes": 800
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/vendor/shadcn-tailwind-4.13.0.LICENSE.md",
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+      "bytes": 1063
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/vendor/shadcn-tailwind-4.13.0.css",
+      "sha256": "bc7d83425702955b4cb67cb14ede9d603f9d912376d57a2d81d661094d2a782a",
+      "bytes": 16041
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/vinext-starter/vite.config.ts",
+      "sha256": "6f6d890794fbe23f3e35cceb327f49d5977432a5aaf715e040a6408932da395b",
+      "bytes": 3115
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/.gitignore",
+      "sha256": "d0fc69648a6324ef66f032712b68ae1f0f24a2a954daa8308da38a45c6a6057b",
+      "bytes": 18
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/.openai/hosting.json",
+      "sha256": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947",
+      "bytes": 31
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/README.md",
+      "sha256": "a96449d81e90c01df1eb3a51e1178df813577712d00ca3695b77bd9a81714e99",
+      "bytes": 954
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/package.json",
+      "sha256": "5314513e9a77e1bf5602ae4db24ef674bbaf6e6dbc9a006eccd852b33b66f5a5",
+      "bytes": 191
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/scripts/build.sh",
+      "sha256": "76bddebeb2accb38b37de0673778d7bf3119bc7da7ed5ae4c1d4c9884969848f",
+      "bytes": 366
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/scripts/validate-artifact.mjs",
+      "sha256": "39d9df53ac2461962466d5965c5f4d06f08024ceca40605952d8b753b88d41fd",
+      "bytes": 953
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-building/templates/worker-esm-starter/worker/index.js",
+      "sha256": "2917434bd856c428f5ea636148dfd0161804c14a2f81e019980d573af28ef883",
+      "bytes": 1346
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-hosting/SKILL.md",
+      "sha256": "c1bf20036e4a2bc167e48c9c515c6cdae930deddd520698c917e2a10d07ed336",
+      "bytes": 10123
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-hosting/scripts/package-site.sh",
+      "sha256": "dc2fe55adac180885d0b9469fd09d5ea7b1824fcea9019fea27ccfda241968e7",
+      "bytes": 1971
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-hosting/scripts/prepare-site-build.cjs",
+      "sha256": "32496143dcc6f7e7c5410444e319469e2525c1d2eda0d2ed7c65e7c67995dbe3",
+      "bytes": 6809
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-mcp/SKILL.md",
+      "sha256": "db574064231c17051fccb4afc4ff951959f16e6fe17bc2caa2aee7aa1d19e2d7",
+      "bytes": 2475
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/sites/0.1.75/skills/sites-preview-troubleshooting/SKILL.md",
+      "sha256": "b8d2cb0731ed0c46888f2e455b23a7114b209c66ac3708e6502b0f280065938e",
+      "bytes": 8167
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/.app.json",
+      "sha256": "05d6956723a574eabf56e6018311930f4ddca56ba59ceb685fb95a3c36535477",
+      "bytes": 116
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/.codex-plugin/plugin.json",
+      "sha256": "c1f27c0864bec7c88e14d3369da870202e98cff4df4ee786747bd22cc93ac29a",
+      "bytes": 1837
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/assets/egg.svg",
+      "sha256": "6385c8fa77bfb72903af49e8a5c2b9db42a864e4fd49e17465236f935822e9f0",
+      "bytes": 1440
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/references/sprite-sheet-contract.md",
+      "sha256": "88d05bfbc76c3a2a64d128cafe5792cc43f78170fee85496d50cb3925934d093",
+      "bytes": 22252
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/references/upload-session.md",
+      "sha256": "59afd4f37755ce5cda6a49ec2f31c6f8c5f3df271c18f6c4073012b70d37e6e6",
+      "bytes": 1215
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/SKILL.md",
+      "sha256": "841354fb8116f8fdfd3b643b30828f5180196c594d3fed9b669b948b88892af1",
+      "bytes": 17353
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/agents/openai.yaml",
+      "sha256": "16690f3d631222d7479bd052c7fda536b4553224a61109fe663f414605d3e27a",
+      "bytes": 219
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/references/animation-rows.md",
+      "sha256": "d27b08d599e73cf6a65a03d2b8ad49e9ad408e18292636164e7b2d2f1815615f",
+      "bytes": 2583
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/assemble_extended_atlas.py",
+      "sha256": "a8684c22e9409f1add388688218c8fa7e267b88b91fcb3edc3280dc87ebf1c3e",
+      "bytes": 21681
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/combine_direction_blind_verdicts.py",
+      "sha256": "4dad56adaad032a4e6d070494b0ab2ca316429cf69363450f9fbf7135d1c2d42",
+      "bytes": 1962
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/compose_atlas.py",
+      "sha256": "d690f42252746b3306007b269168e62cff08b36d58e9aef246b78d986b6a10d5",
+      "bytes": 5756
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/compose_cardinal_anchor_strip.py",
+      "sha256": "e67ac9816a909cad136189bf23eddf8b16e0fcb430ade2262556bbd12db2bca5",
+      "bytes": 1401
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/derive_running_left_from_running_right.py",
+      "sha256": "ae42859720220fe8a407fc0dfff06e8344e535c6c8019220b1f63db7714baa77",
+      "bytes": 5183
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/despill_chroma_edges.py",
+      "sha256": "dc93a5e752f4100e55010205462a8e7272bac451ee7e29b525abd6157a7fe309",
+      "bytes": 10839
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/extract_cardinal_anchors.py",
+      "sha256": "55434d06bc328b1879d98c821f2586963910f89926f4dcbe92682b25555a8cde",
+      "bytes": 5006
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/extract_strip_frames.py",
+      "sha256": "af2cfea385189df30674c91f4658a49e5b51e58471057fbca0b3319cf932c75e",
+      "bytes": 14090
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/inspect_frames.py",
+      "sha256": "d8a43f01970c511c74f77d256c2c81d41e70cfb7ec234f5bbd76b60b3ebbdfe4",
+      "bytes": 9456
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_contact_sheet.py",
+      "sha256": "721399a805ae58d91a85a4d27e8bb3503eb20f4132fe4261e83acc166adc6a56",
+      "bytes": 3450
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_direction_blind_qa_sheet.py",
+      "sha256": "52f2a29251872449fed51c7744c3f9f503274ee288eb23efc29a2c568b0d52bd",
+      "bytes": 5370
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_direction_qa_sheet.py",
+      "sha256": "ed09a31b3bc9b68f929a7a85be367c5b7d5639215260f98af6c97df896197908",
+      "bytes": 4929
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/measure_direction_continuity.py",
+      "sha256": "e24b7065af82eab5638f1fcdeb627d497391a2f1e9ba19801827d1db3a6d8c2d",
+      "bytes": 6706
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/prepare_pet_run.py",
+      "sha256": "cf806ef4bed67b6ca0a568fdc3a47b178272a82d1ce5949ebc2b3c59e4f253d9",
+      "bytes": 51327
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/render_animation_previews.py",
+      "sha256": "5fe50707052f815964cc5bfc35addc79b2d55f3331fc7562645e56835211a400",
+      "bytes": 2549
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_atlas.py",
+      "sha256": "cd28f7e3ed4fc7d879239cbf4d4a5ae1fb603f457b14560ef2c8e15899507b6b",
+      "bytes": 10678
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_direction_blind_verdicts.py",
+      "sha256": "7871667432918e0ffcdbb9beaf88a01c0af4b9e2809c5000f7b533a9ddc6e13d",
+      "bytes": 3836
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_pet_quality.py",
+      "sha256": "2e83db1c5a2a16d4ddc3ef22c4c9856310c438a8426bad99f962f99e9597e555",
+      "bytes": 12965
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/pets/SKILL.md",
+      "sha256": "1bf5d45fd6a6390aab777229293fb05cef7cf898aac882f8955e40c378e52fcd",
+      "bytes": 3552
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/pets/agents/openai.yaml",
+      "sha256": "2570b140c41a0080edcdb323235690ae8f18b0e3c40dbe08a7dc57ce006b8cf2",
+      "bytes": 204
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/update-pet/SKILL.md",
+      "sha256": "c63c98d67b6ad781a72a8f9837ba1fb5e2d2a8054a2562e4025890a97d8a0e67",
+      "bytes": 4272
+    },
+    {
+      "path": "managed/plugin-skills/openai-curated-remote/work-pets/0.1.6/skills/update-pet/agents/openai.yaml",
+      "sha256": "b031edf7b860302fc56ff938ee90906dd09e9d6c3e44447847a068417eaf80b9",
+      "bytes": 220
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/.codex-plugin/plugin.json",
+      "sha256": "0d274805ae83bae44bf993d80e6e7beb94138972d9f4cca2831f01d5ace15101",
+      "bytes": 1561
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/README.md",
+      "sha256": "4bb15fbd6df75b16823636528901d48759e0d8d9e04b35ee5ff7b2702368b0c3",
+      "bytes": 663
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/assets/icon.png",
+      "sha256": "fe53827628afc66036a3fe0281674ab40957c9ad3daad69d7c86ac015200003c",
+      "bytes": 42593
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/assets/logo.png",
+      "sha256": "28655fe441d709a895be11c10f5bfc3493d9aa552a2377e06cce8a2a50360dda",
+      "bytes": 32786
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/LICENSE.txt",
+      "sha256": "d31e7017b70c25daf83b7b01804816ddad6bd984b724e03d52b20b9a81746bd1",
+      "bytes": 1437
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/SKILL.md",
+      "sha256": "97cb38f311782d1002c9d112e6cd6269722cd3240f70582802fccfbc66df68fb",
+      "bytes": 42233
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/agents/openai.yaml",
+      "sha256": "8fc41ecccfae0d0310060235a43f9c4aea6e6c2aa05cec737a59599968ec22c4",
+      "bytes": 321
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/assets/file-document.png",
+      "sha256": "faec8ad51ed2c8db6bb7ba51aa4be1d5d88b80974f7f3c167d56781fbb8d3218",
+      "bytes": 10876
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/container_tools/mark_artifact_operation_started.mjs",
+      "sha256": "703516891e879553004822815dfb454f3277ab22bc031bcc217dd9a4c8825793",
+      "bytes": 736
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/examples/end_to_end_smoke_test.md",
+      "sha256": "2abd9bdec48f2dcb905bf950423e021b61ca8169f56bcff58b4b3131663aec50",
+      "bytes": 962
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/manifest.txt",
+      "sha256": "3357b7233af9bc79d448737b6c6c48d991cfab13b8ab48d9dd03817461ee76e4",
+      "bytes": 2144
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/ooxml/comments.md",
+      "sha256": "aa8004a76499c36a4046041eaff8966fd3ec43fab3a48e1b158e95534ec61557",
+      "bytes": 1916
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/ooxml/hyperlinks_and_fields.md",
+      "sha256": "88b8615aabd48727086208d981958dc1d74a4432b81060707d97c3ded9d7764c",
+      "bytes": 2574
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/ooxml/rels_and_content_types.md",
+      "sha256": "d64fe64dc3daa56f4c90baa9098f94f6fcf52e5d4ce041ab548392e06c9691c2",
+      "bytes": 1418
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/ooxml/tracked_changes.md",
+      "sha256": "9293157ade79498db26fdb79b3d7835896f4f87ebb73c28eddc6a5e48aae47f3",
+      "bytes": 1694
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/references/clarification-questions.md",
+      "sha256": "b7e4725ef46e998a966b6f14a667207c9792b8071244f17a7705038d6808e1b4",
+      "bytes": 2214
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/references/template-elicitation.md",
+      "sha256": "ceb9dc18ab22e26cc03eaf7fe62381f5be34a836dd0766b6caa99a099cb3683c",
+      "bytes": 1491
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/render_docx.py",
+      "sha256": "8b48b8f05f30cc6c7b5a7bd8e18e7ea93a61aec1ea601026a3358b2105f0903a",
+      "bytes": 20248
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/a11y_audit.py",
+      "sha256": "a832e288503704a24ae4e7d9bde4444dee01c835c651f746f19167c4ef4632bf",
+      "bytes": 13207
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/accept_tracked_changes.py",
+      "sha256": "7842a79bc73941a50318bfb4178fd9c01cec8984a4f10565a08f485282799f06",
+      "bytes": 5727
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/add_tracked_replacements.py",
+      "sha256": "2c66d170f70335dbfab691e6d76c73e49dd14b753ead0728a55dbf228c510ba5",
+      "bytes": 6051
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/apply_template_styles.py",
+      "sha256": "47dbba6245fc1f9b5237cb975981ce5c42bb96d513a030ba93c3ad80497ecde9",
+      "bytes": 4180
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/captions_and_crossrefs.py",
+      "sha256": "2d8db89e3f18b7287877c61b9851d083163d3888c8e8d57b52708c1e63db6d03",
+      "bytes": 9983
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/comments_add.py",
+      "sha256": "78fbfc023c644466fd0eb9cdf2ac55983bb6aed1c070e8e7a9126b1a6233efe0",
+      "bytes": 8904
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/comments_apply_patch.py",
+      "sha256": "0c82868fd104f121a830e0394cbf6d6a288e84d8aafddb334ae1298de178edc2",
+      "bytes": 5082
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/comments_extract.py",
+      "sha256": "9eedfdb515111b77cc04bc30030bae13de907ff2202b838cc9ba37a9b1060c09",
+      "bytes": 5589
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/comments_strip.py",
+      "sha256": "b3b27cd86527248a54b3794e7e907b244ea4a2e0e9efa726485aa0b296b906ab",
+      "bytes": 5007
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/content_controls.py",
+      "sha256": "783b38cdbc36864c757c20ec3473d033ead50f2db78b1741405481d070d7c56c",
+      "bytes": 11851
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/docx_ooxml_patch.py",
+      "sha256": "39a998f10e786d892854246accff85c86548fd58ed1429e94eb98a984023f7bb",
+      "bytes": 22752
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/docx_table_to_csv.py",
+      "sha256": "fa993cce50372ae2f647387547d5037c9eca66f0bd6d7f94bc0b2ef481c0d55e",
+      "bytes": 2178
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/fields_materialize.py",
+      "sha256": "d8d0cfe5b0f637e5324bd4ac7d5f384953167acdc247987f491a7d00b4d51889",
+      "bytes": 10804
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/fields_report.py",
+      "sha256": "807537b56e333c613eac74c4cf288c88908bec5a450d7018c612afd5ef879af7",
+      "bytes": 5867
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/flatten_ref_fields.py",
+      "sha256": "01e1089664f005e9aa4590dccc4156addc49c9668a8fbb404bde04fe5678cb39",
+      "bytes": 4872
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/footnotes_report.py",
+      "sha256": "3318c8d535beeee94db3496d80e42a03aeb6522e20f4a4776771f7be677919cb",
+      "bytes": 3004
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/google_docs_title_sanitize.py",
+      "sha256": "c8dafcef80220593411103ea3caefaa221e0ec7970bf31237f6ffbe762b0d4bf",
+      "bytes": 10376
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/heading_audit.py",
+      "sha256": "6c95509da0932cf870ead927a5d9f8d0170cdf31d2f6718d64a3641b8f3931dc",
+      "bytes": 3330
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/images_audit.py",
+      "sha256": "57443a088015fa7a3f28b1f2785d0839cd78b6c6f6dd08eee9601bd7b840bb2c",
+      "bytes": 6010
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/insert_note.py",
+      "sha256": "9584b502051317923e183b3f45fb78cbb855e1a8e944948976ea854e18f4e5ed",
+      "bytes": 9269
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/insert_ref_fields.py",
+      "sha256": "4b20bbc5c297d7f607db6428e6ad00580c5411c949dfe52fb13710d7301c917c",
+      "bytes": 7353
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/insert_toc.py",
+      "sha256": "b069ad3a0c1824742e31c84f417f08b9abba7aff236494544f9a22055ed68943",
+      "bytes": 5242
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/internal_nav.py",
+      "sha256": "53e1695c08f1abb81b4cd07c97c7e27019214f7dda0e37ca84697bce4cc01292",
+      "bytes": 12335
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/make_fixtures.py",
+      "sha256": "c11118357e78084345544c2c232c7d0fc785e766c7c7fcc481f59abf4154968c",
+      "bytes": 8928
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/merge_docx_append.py",
+      "sha256": "0fac13945db9cf61b9cfaa708862dd7ee37fb02d72ae1e8b4745c38ba636d414",
+      "bytes": 3952
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/privacy_scrub.py",
+      "sha256": "ae8d9bc7ef52cc91370a17070f4ee12b400fa7baf2af0ee403099d7762d072a4",
+      "bytes": 5851
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/redact_docx.py",
+      "sha256": "cd02f988732823adb6c1524398bf499cf7d93236871262bbab0074b95b7f4310",
+      "bytes": 9823
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/render_and_diff.py",
+      "sha256": "7b2d613289047a54e8d747520f079c276ab899bd99f76556d5c2827bef2ddb67",
+      "bytes": 4989
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/section_audit.py",
+      "sha256": "c718d416f0d7512ceadc07f76fefd42d633f443dda3412b0722470ce0302d482",
+      "bytes": 2792
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/set_protection.py",
+      "sha256": "3a9fa60ee0fe11ba40a97b84ea1b3a10c8595173aedb35f5b95e18911a91bf14",
+      "bytes": 5141
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/style_lint.py",
+      "sha256": "52e485a8fb96dda954a7f7e88ce3a59714ee1a4c945a41e7dff0d1d77ee5da4d",
+      "bytes": 5586
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/style_normalize.py",
+      "sha256": "9e293590db1e6b71d932dc3b811d9f8b6d1a4351dc07f8d1ccccd868dcddafe0",
+      "bytes": 5848
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/table_geometry.py",
+      "sha256": "c792883c6785663588e80900b73f1bbf696a5e48dd2d56718af3bfbfa2d2b42e",
+      "bytes": 10066
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/watermark_add.py",
+      "sha256": "44f7556f7e6a57ab6ac78f7b9ff35b78e6fa10f2b0c94cf4dc12e5b135330542",
+      "bytes": 5492
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/watermark_audit_remove.py",
+      "sha256": "ed2b0eb4d58970e8f215656f130240c6bd561fdd4fd1b4887366d7ec055ce156",
+      "bytes": 4813
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/scripts/xlsx_to_docx_table.py",
+      "sha256": "181c3bc9fd8789aab352df984da5ef0cccc4d664a967f51dccaab79815e3c9f2",
+      "bytes": 5843
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/accessibility_a11y.md",
+      "sha256": "951dca7ba7e520792776a636c22e512a9a3c53699c6da80c5c3e47b0690c1374",
+      "bytes": 2019
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/captions_crossrefs.md",
+      "sha256": "20a50a2663b2d020d8a7e1bd3a31ae60a45ba41e40b437c9ada4e958987c421f",
+      "bytes": 3900
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/clean_tracked_changes.md",
+      "sha256": "6bd628bce5a571b73b59993a474bae039a7ea2e63e85f1292996688e1e2fa446",
+      "bytes": 1713
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/comments_manage.md",
+      "sha256": "2ec577fca8ef24d2ee3df9bbd3268eda9ca54a84169499c2fbb293d08a3bbbe0",
+      "bytes": 3002
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/compare_diff.md",
+      "sha256": "e06551fbfadd651aa761ba497c04c98449150ddd61ae1221f0ec6f9947fe30a9",
+      "bytes": 1204
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/create_edit.md",
+      "sha256": "a842b20c8709f8bc19526de246e9f8722b4304d30c7a3d9fb7b111fdd6f8ec65",
+      "bytes": 1787
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/equations.md",
+      "sha256": "add25da4ccc4a796db1dd4e793e0b45c68c355d531495df9b42539d2076db947",
+      "bytes": 4674
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/fields_update.md",
+      "sha256": "1ea14774b8e39b37884187e98059e0829e6bc9e0db502b26d4aea38ab68a4148",
+      "bytes": 2429
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/fixtures_edge_cases.md",
+      "sha256": "41718f5b067990ca5e32f4065bb24ec152b3e9ec110fad6e81e81cc08af48cef",
+      "bytes": 1749
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/footnotes_endnotes.md",
+      "sha256": "6e8bd0a290fc5261e85c2dfcfcde483c685a0cacd00b24950f1fadad8b7b7072",
+      "bytes": 1902
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/forms_content_controls.md",
+      "sha256": "d09c066658b0fd8cda6fc51413d57f37dfc12d6828799f52a6137cba20568ec7",
+      "bytes": 2103
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/headings_numbering.md",
+      "sha256": "36bbf196fecac25e2e8c1239356fa2af6994a8939048eb7b59f14d2c5bc1999c",
+      "bytes": 1902
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/images_figures.md",
+      "sha256": "482e14799b7021a9c191b320c60e492ab58f6f36a16187586c7f5bff38c85b45",
+      "bytes": 1418
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/multi_doc_merge.md",
+      "sha256": "9706902b4f91fd8e9af87297a8a66e2767c512a357511ca3ae9bcc56f1a4cd35",
+      "bytes": 1537
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/navigation_internal_links.md",
+      "sha256": "33ee4fa5c4e051a0216728a43f92d4de8319169080834b008c48a837bc5acdbd",
+      "bytes": 2152
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/privacy_scrub_metadata.md",
+      "sha256": "6a1360d873bcade5dd2989f5406ea1c415dbcb52da25cc6c3580da3126880b93",
+      "bytes": 864
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/protection_restrict_editing.md",
+      "sha256": "97024dcc16af3b3666a2d1fc7ae8199f18d881ea62cdb367bd4d37ad0e9e8f53",
+      "bytes": 1232
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/read_review.md",
+      "sha256": "ed1bce5450e03011225dbd2974f307cd5dec6fa48bde0a071e4907fd06f6bb16",
+      "bytes": 2586
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/redaction_anonymization.md",
+      "sha256": "df3b89d5bacc8405e73f4ec16056a78dc655c6d181086a1b37464038cae2bd02",
+      "bytes": 2421
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/sections_layout.md",
+      "sha256": "3b36b7f96ee095c66d4e3d24681b0b9cd1b6b82b1b3b5491aeb748545c89f5cf",
+      "bytes": 2282
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/style_lint_normalize.md",
+      "sha256": "993bb9c5129dc6ccb63d28b95f4e3bc5f716eee9fd6a6c75c106031ed42b12e8",
+      "bytes": 2647
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/tables_spreadsheets.md",
+      "sha256": "eeb08bc4d64db98679a5648a041f7786dca160f35c0909a10b7963e1af3f88db",
+      "bytes": 1153
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/templates_style_packs.md",
+      "sha256": "a75db63fcdfd135bab27b164fe7747adda75c63501e6300d7eb5d56b9fc6a580",
+      "bytes": 1302
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/toc_workflow.md",
+      "sha256": "ae2c36431d7ba8f7be1fad51c5af79831f4e38441060ca5fb0058247a54e9ab9",
+      "bytes": 2012
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/verify_render.md",
+      "sha256": "e94db9fefda34eefb65ea527467d8307eb0e834dca2705b04d027a426ebc9d9b",
+      "bytes": 2483
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/tasks/watermarks_background.md",
+      "sha256": "9f87e23d4b5e54edb1560367e231bb3c0a6ef88193c600af8842d8537dcb9757",
+      "bytes": 1366
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/template-create.md",
+      "sha256": "f02df8f6fa8f764de7a9b0ed4dcd38ae3560df364edd259b127bf53c3f496dd3",
+      "bytes": 5177
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/template-distill.md",
+      "sha256": "dd01e59b5ffc7fb28f43fd4bd0eeb02a7d0e881f7d24780d195e6b3f6fc1f658",
+      "bytes": 4375
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/troubleshooting/libreoffice_headless.md",
+      "sha256": "929b2b124ce2e65b3de17565a8aad2ff9d569f38ae648ec7ca0e3bed87041ae8",
+      "bytes": 1667
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/troubleshooting/run_splitting.md",
+      "sha256": "37df942902847797e8060308121d3db10273f71fd9dac748e0157e3c29624b85",
+      "bytes": 836
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/documents/26.915.20218/skills/documents/writing_quality.md",
+      "sha256": "f3b37e02e3a2b4890f036ae9f279c2f3ce673b9b2c2d0dd893b998b028261129",
+      "bytes": 19371
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/.codex-plugin/plugin.json",
+      "sha256": "ed0b927aa250d3b7169504f542efd6b77f0d5a1ff9b43e31af8f86113177e3aa",
+      "bytes": 1485
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/README.md",
+      "sha256": "7d1f3c2c9b3d64a9201ae4f617f7324e0e1e8f8c9ea92ced3e9e0d3ec7c2ea86",
+      "bytes": 605
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/assets/icon.png",
+      "sha256": "ec784d80676cac375282bd9f3331ac6de6e41746b354b9488a038f6d87335396",
+      "bytes": 43826
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/assets/logo.png",
+      "sha256": "b3f68a264388933205340ab07db00349d54f1e8eca4feb0c0747ed5b9425ddad",
+      "bytes": 34155
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/skills/pdf/SKILL.md",
+      "sha256": "a13d2f878d6f79df9ebba91901c0b09bf799e83973b47ebba2104e385b6e4ede",
+      "bytes": 8076
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/skills/pdf/agents/openai.yaml",
+      "sha256": "5819dd168e544e3293d1501174130c56e139eb37c7d176884d8c6de4b9354f56",
+      "bytes": 302
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/skills/pdf/assets/file-document.png",
+      "sha256": "bbb3c29874cb3bc706eef9ba4436c7ef8ef33462a173c4c3d4deeec774e4da79",
+      "bytes": 1550
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/pdf/26.915.20218/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+      "sha256": "968d66a7b491c7728f2ab009dcb54ac0025d6f474de6f3734f66b8809f6c18a8",
+      "bytes": 735
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/.codex-plugin/plugin.json",
+      "sha256": "0bf9ad24099435c40ad5444349b02f4b591cd364d452ce78b912c9bd4ac275a8",
+      "bytes": 1911
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/README.md",
+      "sha256": "9404ff8c3ad25f3442ebcb44b2771303a9e52ecaee97ce4c3e976a6929b0d843",
+      "bytes": 1399
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/assets/icon.png",
+      "sha256": "27c81cda72d16fb508c06f92bcd591c65581b8a307f6314e911cbd0da331ad75",
+      "bytes": 43234
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/assets/logo.png",
+      "sha256": "5415195adb4b9314e9489be86ed1b476a445ca61009929f7da0d9b0c2e0de138",
+      "bytes": 33744
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/SKILL.md",
+      "sha256": "f12a1c58e04baa8a191fccf71fadc28112ee381e834d011228f33cbeeb61aebc",
+      "bytes": 28893
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/agents/openai.yaml",
+      "sha256": "35fa03254b9d9e2c859a2e1d343406df161e70c07af43a352fc6424d01c03776",
+      "bytes": 317
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/API_QUICK_START.md",
+      "sha256": "c375de120d6df12778a401a1fccffad517bd190bebcc3b78ec5c093a3af09acf",
+      "bytes": 3790
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/API_DOCS.md",
+      "sha256": "01ad12df21f3a9d23a70553cb99a538625c03dcac5c4fd1e201f4d4879958e0b",
+      "bytes": 12731
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/auto-layout.spec.md",
+      "sha256": "e58ac421e5aed6e944cab4fb3e59e3d5b33874844485fe89571ee2b6e3319051",
+      "bytes": 2132
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/charts.spec.md",
+      "sha256": "aae6b1c6b775dc4e8267c81d380149d3bcd7f27c7fb220d94bd1b823535c63c5",
+      "bytes": 9095
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/comments.md",
+      "sha256": "7289cf3218ca948898f3d38a0a7951062b719277472c18ce2f672314dea0c416",
+      "bytes": 2257
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/connectors.md",
+      "sha256": "1bb0ef8f48e82d24be7e28eb1b5ab8b2aa662304e6d024246e651058dd8fc725",
+      "bytes": 5643
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/cookbook/imported-deck.md",
+      "sha256": "960250650c69106a2c9539f31da7ecc20b645c748e8c9972960235de250ef988",
+      "bytes": 5730
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/cookbook/layout.md",
+      "sha256": "75484d640897d2ec8614aefcee6e17bb714b54eb2744c707562a632267e57264",
+      "bytes": 13361
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/fill.spec.md",
+      "sha256": "2d4ed7fe6eb20feb2edc3ee807a9c4366f96c1b890878620869145bc1eec3e28",
+      "bytes": 5175
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/help.md",
+      "sha256": "087277c6b7c572dfd7b52ecc6c8cc9affbf33ab56c0b928651b18f476e03e044",
+      "bytes": 6850
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/images.spec.md",
+      "sha256": "9b57f40b2d85a84ee4d935edc2f1e23fbcc6a64b0476bc712db56f87dc7db4e2",
+      "bytes": 6650
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/inspect.md",
+      "sha256": "f6fc114bd681164a1707bb4396c2c3415a22c7c82aded6934e20d8e7e8270b82",
+      "bytes": 5503
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/jsx.md",
+      "sha256": "9c2e19cd311afef6b0367d6e8f54fadab5f49fa0883bee995112fdf4eded0d0b",
+      "bytes": 10295
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/layout.spec.md",
+      "sha256": "68eaa0c7917606b25d7843cc7ea5be87a8b71aba9b3ac2c9f289306b3a657c2b",
+      "bytes": 2348
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/master.spec.md",
+      "sha256": "25f5032926c3bd7345ca46ca4bc7401d837e8c3d4645853ebd0c21e4d842ac4f",
+      "bytes": 1499
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/presentation.spec.md",
+      "sha256": "de32f33d55adce36532de2ff4586ce198f8094cac99ee2ae65ec95bd411e7bfb",
+      "bytes": 5246
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/rich-text.spec.md",
+      "sha256": "b68cc411e5106d2fc309917b6efdec10bcbd1f193b74cc60a7e10af9fa1b3469",
+      "bytes": 6371
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/shapes.spec.md",
+      "sha256": "5afbe2cea704055d737fddfae2d678836fc065706b9bb58d1224632e532c809c",
+      "bytes": 5867
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/slide.spec.md",
+      "sha256": "4bb61d90bb2491301f5835aca8e74058fb9e02fdeeefeefae14c86cbd1803b69",
+      "bytes": 4850
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/speaker-notes.spec.md",
+      "sha256": "770efeb887a9f0145f34f0a41990ed49c7d613e28035225682a33b7ebeaaa6b4",
+      "bytes": 1121
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/styles.spec.md",
+      "sha256": "142d7abd0e54404fa49067f9a294bf20512540b89d304174386c4db90a73e74c",
+      "bytes": 2114
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/tables.spec.md",
+      "sha256": "bda6b14ac9815eb78600014db6a761ee902e94d40cef1ab2653ea6d3b1f96a76",
+      "bytes": 4131
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/theme.spec.md",
+      "sha256": "3c30018de19af6d2908aaa0f84f5098a8881ed2413577057adb5c77625d9319c",
+      "bytes": 1742
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/artifact_tool_docs/api/references/tokens.md",
+      "sha256": "aa7601c6e7156d45ceeba151ad48633f8556a080678b7ee44daa74c32b42c478",
+      "bytes": 11903
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/assets/file-presentation.png",
+      "sha256": "a3c03edcadfe5af5a06c709b264d276d7e8ac6e150d69729c502459998b2a680",
+      "bytes": 11787
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/artifact_tool_utils.mjs",
+      "sha256": "17e988ef8c486800328e624154aa20b42c30fa85a236f60fbc9254d7a86bf18f",
+      "bytes": 55404
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/create_montage.py",
+      "sha256": "1b9031247132b787748ccd5f65d29f2be6e25bc362578e2cf040b3394811e86b",
+      "bytes": 10635
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/ensure_raster_image.py",
+      "sha256": "2c3bc18a8cddf737f5b3f769561b2cf8c55fe190387e53c2487f7c1b4d0ae8a7",
+      "bytes": 7332
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/inspect_presentation_layout_geometry.py",
+      "sha256": "cfdc5076ffc4bc8c0c1d4578b6ce64c883e2d514780348bb278365fdb9f0e10d",
+      "bytes": 101992
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/inspect_presentation_package_integrity.py",
+      "sha256": "b54cb6004fe58213bcf4268c355e3f15ea78cd9dbfe0c955d65e92024fe080c8",
+      "bytes": 29495
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/mark_artifact_operation_started.mjs",
+      "sha256": "6f46ccf38f7d266ad459309233c597d8f7221ad3fda26af91aeba80bbcd322dd",
+      "bytes": 743
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/materialize_literal_chart_workbooks.py",
+      "sha256": "5f9c89e72f0dd3e8aeca48d2ac7c429fb57dd801e4d3fb57d9c71d189154c8bd",
+      "bytes": 36857
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/native_chart_title_gate.py",
+      "sha256": "494f8dddc3de753fda80f61498c07ca0e744e585a0b84f46ba9e2a88dfb1613f",
+      "bytes": 6135
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/native_quantitative_chart_gate.py",
+      "sha256": "047ac10a0acda115d95a551c91fe16225aaa8d44735170091c80294518225c60",
+      "bytes": 45307
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/native_table_arithmetic_gate.py",
+      "sha256": "604db17de8cce452c515a8e7929bf1fccfc08ad7851ac29eff1a9b70879a50b0",
+      "bytes": 21259
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/rasterize_svg.mjs",
+      "sha256": "73d9ed4573d4a286c1dae520245df86885520f6c85dc83e19649d962e4852982",
+      "bytes": 1611
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/render_presentation.mjs",
+      "sha256": "49024ae5949965f2d163daafb05d4e33b543ea59007a95253a78183b9357c1b8",
+      "bytes": 3317
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/render_slides.py",
+      "sha256": "af5fbe8caf40be4ba57ad42993ff0c3792c0a7e97bd65bbba86ed1494911a220",
+      "bytes": 8661
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/runtime_helpers.mjs",
+      "sha256": "19caf37906712693b6bbb1b20729f51cd90698b2f069679cc78078eb9c923688",
+      "bytes": 1647
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/runtime_helpers.py",
+      "sha256": "93322ca08c0bf5e29e7fd1297d1b3cfc307550cf4251098b366bf4cc42b4370a",
+      "bytes": 3600
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/slides_test.py",
+      "sha256": "e0f660c3a03c524e54a2b0ac4cdd55646502f18bad409593d056a1ea570f5de0",
+      "bytes": 6560
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/template_source_fidelity_gate.py",
+      "sha256": "0e070dce9102403cdd418bfe0810c23f8886d074430ba8fe597cde352a83b7be",
+      "bytes": 22193
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/domain_guidance/finance.md",
+      "sha256": "a0c1799721deab74867b624b15bee44f80a4bd7a6813db2f0bcd61ad90c6b41a",
+      "bytes": 1824
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/clarification-questions.md",
+      "sha256": "38939e48776d6f19ae92b4c0e241dd07cfe970fe2134c532229e84621af2d41a",
+      "bytes": 2610
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/cover_art_direction.md",
+      "sha256": "753e58efd6da31fc68076c554ae919e46893d7a0a15f37c4cf357e7c41025d00",
+      "bytes": 1364
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/finalization.md",
+      "sha256": "7a4f6609e928041dc6338dff0e8632b936b05c8358d2a937796c5ece8846daa1",
+      "bytes": 6102
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/implementation.md",
+      "sha256": "797de82fbe324ff30229190c433ccb13122eb2570040c747cd76d9b78a09d4a4",
+      "bytes": 3489
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/native_bullets.md",
+      "sha256": "727fc17af9a12fb6937b1a7ac41ba6d99ce0e28ced94c06df3c05fd33ecca15d",
+      "bytes": 1554
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/native_evidence.md",
+      "sha256": "9aadd5bfb102663a9b4cf1b9282fa209645e6ce1906381c2c9e0e573659b4cc3",
+      "bytes": 3197
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/template-elicitation.md",
+      "sha256": "b0aab045f830d6a05dbab2bd7d9ca747bd68826e69328e01479589026f7ab7c0",
+      "bytes": 1503
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/references/template_following.md",
+      "sha256": "16ce4367c3029497bb441c850c577dbfb8de767cb450d52d8c0be9688dcd0649",
+      "bytes": 2570
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/routing/google_slides.md",
+      "sha256": "9d7c457194ccccb3db9089effbd57c28d471494d8ab64010319604f2e81313d5",
+      "bytes": 1220
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/style_guidelines.md",
+      "sha256": "b682d1beb638b6ce77ecab86f83afcbde7a68207a749bc7994d8fd805feec619",
+      "bytes": 3179
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/template_following_scripts/check_template_fidelity.mjs",
+      "sha256": "204c580f53818ca188b04af66b2cec6e588520d832bc9f25305686893bf0bd18",
+      "bytes": 18101
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/template_following_scripts/inspect_template_deck.mjs",
+      "sha256": "03a8ea3b36a7b1859ccda3b2cce7c3c73bb0c691fa0114548b804bf5a5465661",
+      "bytes": 8977
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/template_following_scripts/make_contact_sheet.py",
+      "sha256": "69a1f031bca5e0a214aaa848460b36ee17c641b8865d7a5d0a9a0308dea320e8",
+      "bytes": 1781
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/template_following_scripts/prepare_template_starter_deck.mjs",
+      "sha256": "67b18d023a5c28e6c8e9c8d7a139ec441b55ae73f8f3159d122f4b2d34c371bf",
+      "bytes": 11169
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/presentations/26.915.20218/skills/presentations/template_following_scripts/validate_template_plan.mjs",
+      "sha256": "d8aad11b03275eaf800f96ec6c58731c68033312f5b13a44f5c9291ca5e3bacf",
+      "bytes": 19353
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/.app.json",
+      "sha256": "de5282beb7de035a1c6759e6d5ac431de3323b10ef3433f9fc14d0cf8e422098",
+      "bytes": 116
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/.codex-plugin/plugin.json",
+      "sha256": "0c5167b227884a53a45afb43e4f32a390e8f87177364295c7b5e0cf103cad388",
+      "bytes": 1998
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/README.md",
+      "sha256": "6d9090723da36adf770f077573b3d1131a7bb798346fc80db6900d5efe7849de",
+      "bytes": 1030
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/assets/icon.png",
+      "sha256": "0d8e1d3a2a780ebb185a803dce70a1140f0edf076c044688bb511e2ffd820a79",
+      "bytes": 43114
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/assets/logo.png",
+      "sha256": "20e673fc8c3aaba9fae47dd08200034d93015ccb1a3c73e2965fb8d4035957a7",
+      "bytes": 33375
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/SKILL.md",
+      "sha256": "dde282af0ea3e186b04830a1255ce0eeade63042d53a2516ccb4c816986467a2",
+      "bytes": 72132
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/agents/openai.yaml",
+      "sha256": "e7dd753d45019ad2196cef0e2dd866e50bb14832f0653d019d69b0eb4d1a82ea",
+      "bytes": 410
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/domain_guidance/financial_models.md",
+      "sha256": "fb53fa81fd0b6acfa9fdfc3946af1f95312bd02c3367caae51f28bf68ca6bba6",
+      "bytes": 7043
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/domain_guidance/healthcare.md",
+      "sha256": "8edae030b3abb0ef178f5a38691f64d7d9f4a462a70c0656ae8650605363f921",
+      "bytes": 4736
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/domain_guidance/marketing_advertising.md",
+      "sha256": "b2e087facba8e407fb5d47d55505ea544ca7c7ff5d402fd6a535093df740d086",
+      "bytes": 3950
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/domain_guidance/scientific_research.md",
+      "sha256": "bad46ddb8561c02b5460cd8dcb9bc9018b8b24df03a6688af7b9a3977b5b298c",
+      "bytes": 3725
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/features/charts.md",
+      "sha256": "a5bb73e5a3c0f7ec44cf0737d5dc25ae690e420a99d37e23cf8144d8316f56a3",
+      "bytes": 5870
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/officejs.md",
+      "sha256": "cb3d4292191d6a6adfc5251b88ea5a62aab75bb5c9c863fc1ed546b881045955",
+      "bytes": 8866
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/references/image-references.md",
+      "sha256": "7fe546860468950ed80f428c79eea269383aa30f421b957546666ee15161e6b8",
+      "bytes": 1072
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/references/read_only_qna.md",
+      "sha256": "993fa777f0f3003c2a1c3b2021a1f9d78f7a177620603e47cc9cff097cf156fd",
+      "bytes": 1102
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/style_guidelines.md",
+      "sha256": "a0e328147991a4acc3d867d8e10a0a6697373ff2fe43eefd41646c83b29ad630",
+      "bytes": 10165
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/workflows/create_workflows.md",
+      "sha256": "b24cbf85c4358c2269352bf44002ad5a1e24174983010a836f5ead6e6c0b3958",
+      "bytes": 1575
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/excel-live-control/workflows/edit_workflows.md",
+      "sha256": "d195ef03edbb07036706659bfc899b97afd0aa6121f7d607c1d1e0cd8a47f8e8",
+      "bytes": 2505
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/SKILL.md",
+      "sha256": "d863237ee6ca690f52146fed9de1a8c8f18aca942b61c23d2a4d798a462535b8",
+      "bytes": 65365
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/agents/openai.yaml",
+      "sha256": "18eb739db3a18e7d1bbd2c17b6884eff011f9b07814ab23216aba926b4de9cd7",
+      "bytes": 371
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/artifact_tool_docs/API_QUICK_START.md",
+      "sha256": "313e2256d212671638006006926bd80474ba04c9347d2caff7f575e9ea958ab2",
+      "bytes": 26274
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/artifact_tool_docs/DATA_TABLES.md",
+      "sha256": "627423c5c263a0df909c3f7b2253098d80a2c10f068c0756a828d68509d3021e",
+      "bytes": 3649
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/artifact_tool_docs/SPARKLINES.md",
+      "sha256": "284d40cb8624604c638bd3131b004db73fc193bce421e0a085959e0ea6f1afef",
+      "bytes": 1702
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/assets/file-spreadsheet.png",
+      "sha256": "3a1c5e6c52a1877942b8ef8654247fbe1c4a82f6df8ef464dc99983fc72cd6fb",
+      "bytes": 11988
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/container_tools/mark_artifact_operation_started.mjs",
+      "sha256": "fd95cb9918e52bbc2323ed1854fdc7510361f66cbe50446f6fcf0b9b21fa1ded",
+      "bytes": 765
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/domain_guidance/financial_models.md",
+      "sha256": "fb53fa81fd0b6acfa9fdfc3946af1f95312bd02c3367caae51f28bf68ca6bba6",
+      "bytes": 7043
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/domain_guidance/healthcare.md",
+      "sha256": "8edae030b3abb0ef178f5a38691f64d7d9f4a462a70c0656ae8650605363f921",
+      "bytes": 4736
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/domain_guidance/marketing_advertising.md",
+      "sha256": "b2e087facba8e407fb5d47d55505ea544ca7c7ff5d402fd6a535093df740d086",
+      "bytes": 3950
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/domain_guidance/scientific_research.md",
+      "sha256": "bad46ddb8561c02b5460cd8dcb9bc9018b8b24df03a6688af7b9a3977b5b298c",
+      "bytes": 3725
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/features/charts.md",
+      "sha256": "a5bb73e5a3c0f7ec44cf0737d5dc25ae690e420a99d37e23cf8144d8316f56a3",
+      "bytes": 5870
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/references/clarification-questions.md",
+      "sha256": "8c185fdeb01cd8eed5b51255c051cd40bcf2afdac3a68133a705860fa0a25e42",
+      "bytes": 2922
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/references/image-references.md",
+      "sha256": "7fe546860468950ed80f428c79eea269383aa30f421b957546666ee15161e6b8",
+      "bytes": 1072
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/references/read_only_qna.md",
+      "sha256": "993fa777f0f3003c2a1c3b2021a1f9d78f7a177620603e47cc9cff097cf156fd",
+      "bytes": 1102
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/references/template-elicitation.md",
+      "sha256": "3f87388cf81f6cbc72949a6842b614bbc373238bf0f52f7d43d25e9b4dab757a",
+      "bytes": 1501
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/routing/google_sheets.md",
+      "sha256": "187712ad3479ce82f0333d0843cb18de929f4dc8eba44a08923f2cee787b39c1",
+      "bytes": 1470
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/style_guidelines.md",
+      "sha256": "a0e328147991a4acc3d867d8e10a0a6697373ff2fe43eefd41646c83b29ad630",
+      "bytes": 10165
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/workflows/create_workflows.md",
+      "sha256": "b24cbf85c4358c2269352bf44002ad5a1e24174983010a836f5ead6e6c0b3958",
+      "bytes": 1575
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/spreadsheets/26.915.20218/skills/spreadsheets/workflows/edit_workflows.md",
+      "sha256": "d195ef03edbb07036706659bfc899b97afd0aa6121f7d607c1d1e0cd8a47f8e8",
+      "bytes": 2505
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/.codex-plugin/plugin.json",
+      "sha256": "08c0644d3129c073e43ba9027929b64e55640d4654eb71aa0c456e6195213e3d",
+      "bytes": 2047
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/assets/icon.png",
+      "sha256": "d514e9f4bb1ff169f83b0fa7fd53a07b51fec5031e596d7960b9691d1f96cc5b",
+      "bytes": 3499
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/assets/logo.png",
+      "sha256": "74edae8c1848d2c5f1b1cc057fb2638e58925a6dd2b718af8f2cf393a038e307",
+      "bytes": 3197
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/SKILL.md",
+      "sha256": "244bfef01d3e17c6013952ccf34621a90ddfee9c7828058245c3c46f51114944",
+      "bytes": 19242
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/agents/openai.yaml",
+      "sha256": "8bd3aac1e414a976ed07104a66439d368eefdaa13ab1ad869ad9a4466146481e",
+      "bytes": 520
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/assets/site-preview.png",
+      "sha256": "0f644a80c9832957d40fb50ba72fc13a75c4f7f6085f59aaa62fdd5f361ae871",
+      "bytes": 8136
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/host/export-google-workspace-file.mjs",
+      "sha256": "e3f569243d0a7243e2e9579d26e24d95315dd7a69f70f06fa6fcb027f07f12e9",
+      "bytes": 10017
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/host/google-workspace-export-stdin-receiver.mjs",
+      "sha256": "d4dbac9ee213eb3b8cd6ac656af0268f1fb826f2020967dc0a6e4dd8c4d9a111",
+      "bytes": 4630
+    },
+    {
+      "path": "managed/plugin-skills/openai-primary-runtime/template-creator/26.915.20218/skills/template-creator/scripts/create-template-skill.mjs",
+      "sha256": "bc95d9b3663dd8842b752d145d63e4b7d283a9d5da4e886dd7e10d732da6a4a8",
+      "bytes": 30858
+    },
+    {
+      "path": "runtime-catalog.example.json",
+      "sha256": "62fd6271687321d188cb37bc343aaeabed6f80658f2b0b9d840d06dd3d3ec1ca",
+      "bytes": 4132
+    },
+    {
+      "path": "scripts/common.ps1",
+      "sha256": "5ef8bd605bdf43ee4f8bff9d5d8f069a04e417cce6a1dbcb43ad36a47975c4aa",
+      "bytes": 15030
+    },
+    {
+      "path": "scripts/install.ps1",
+      "sha256": "8d40ee91a25ad89d72200ebd9a90014abb0ddb6d7f9d51fcc937b2f084c248b7",
+      "bytes": 7909
+    },
+    {
+      "path": "scripts/inventory.ps1",
+      "sha256": "1bf7f7824d5e82eef03093c3e1b8901f9941d0338e7aa7eeb86bb36490ae123f",
+      "bytes": 2290
+    },
+    {
+      "path": "scripts/verify.ps1",
+      "sha256": "fcadf15fdfdc321171b5776e8967584da4fb6e0e4364054e7600c706c4037347",
+      "bytes": 4754
+    },
+    {
+      "path": "skills-manifest.json",
+      "sha256": "af5c293e9287800db1209a3ead267353f2bed2ea3607df09ad48d477e3a7c677",
+      "bytes": 430206
+    },
+    {
+      "path": "skills/user-global/apple-design/SKILL.md",
+      "sha256": "11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
+      "bytes": 22715
+    },
+    {
+      "path": "skills/user-global/architecture-review/SKILL.md",
+      "sha256": "99606e1080c9f894bdbcfd0f4e9c7c95c9b7eaebcabde4de0bb4b2970f293c92",
+      "bytes": 10394
+    },
+    {
+      "path": "skills/user-global/architecture-review/agents/openai.yaml",
+      "sha256": "dd714e3ad9975f2a20316517837356d59adae1ee9f846cc743ff45de27a7d37c",
+      "bytes": 131
+    },
+    {
+      "path": "skills/user-global/db-impact/SKILL.md",
+      "sha256": "498f6543a05c4f2a625bd2f599f7a5236d5623d0078ce3c6630578c2a8b66c4e",
+      "bytes": 9626
+    },
+    {
+      "path": "skills/user-global/db-impact/agents/openai.yaml",
+      "sha256": "0e38d2f561316ea2f114f4b658a4c99b51a92f5ad38fb5599c22d016766b8947",
+      "bytes": 125
+    },
+    {
+      "path": "skills/user-global/devil/SKILL.md",
+      "sha256": "6563e2e7c5c62f693e1c0d6b1fdc60ed6a84ae93cb6d868a1544c6d3f46e0a01",
+      "bytes": 7195
+    },
+    {
+      "path": "skills/user-global/devil/agents/openai.yaml",
+      "sha256": "fd8557cbb128eafed7a3212b2ba9f9dcf44c275bafd10c9a1d054e3dd1c13e1a",
+      "bytes": 218
+    },
+    {
+      "path": "skills/user-global/devil/references/architecture-data.md",
+      "sha256": "2bfb42ea316e4bff59a3fe9dcd8b2a668579b0355f92f7d03c87e1878a6a0886",
+      "bytes": 2234
+    },
+    {
+      "path": "skills/user-global/devil/references/decision-debate.md",
+      "sha256": "ad402ff48cfe124c2a5eb09d7a658dde6529ab0600203a4b214d084c50f00e43",
+      "bytes": 1037
+    },
+    {
+      "path": "skills/user-global/devil/references/engineering.md",
+      "sha256": "a4d379d4a4ba87308afe27335c56bc7991ae14dc70213290dc71875348f92a32",
+      "bytes": 2390
+    },
+    {
+      "path": "skills/user-global/devil/references/output-format.md",
+      "sha256": "0af07333df35033982a74a4a12261482471cb88fcf695f4cf8b1578c544e55c9",
+      "bytes": 1595
+    },
+    {
+      "path": "skills/user-global/devil/references/product-strategy.md",
+      "sha256": "f94eaa92d2db4beeffb9e8e9d901335913778344843165b8a846e6818b81c599",
+      "bytes": 1255
+    },
+    {
+      "path": "skills/user-global/devil/references/security-operations.md",
+      "sha256": "d48310b89939afa9ca9c15820579e13b669bcbe1e4a5198ff6649083daa26b7e",
+      "bytes": 1789
+    },
+    {
+      "path": "skills/user-global/devil/scripts/validate-skill.ps1",
+      "sha256": "45580820f4638213c90294ef94c52493ec79d0e486ed9fd8c187b3e5f4b14fed",
+      "bytes": 1830
+    },
+    {
+      "path": "skills/user-global/final-check/SKILL.md",
+      "sha256": "9ba12c4ae3b5bfafc15f384e690e5f521fe093cce562e435cdd60de259dd1ac9",
+      "bytes": 4708
+    },
+    {
+      "path": "skills/user-global/final-check/agents/openai.yaml",
+      "sha256": "6502131ce75fb8770e452c28d73c8aa010d15d7c8a640e011f95a0b83e74839f",
+      "bytes": 119
+    },
+    {
+      "path": "skills/user-global/full-plan/CHANGELOG.md",
+      "sha256": "2f37838e93f06de0655e0d58815c009abda613beb3efd9a7963f485f6a87d6d7",
+      "bytes": 789
+    },
+    {
+      "path": "skills/user-global/full-plan/CONTRIBUTING.md",
+      "sha256": "fa200d706fe248413bccdee79ca15603e08e34070e1aeaba6270813d80f6b673",
+      "bytes": 2291
+    },
+    {
+      "path": "skills/user-global/full-plan/LICENSE",
+      "sha256": "b7ec9b37d5e7889a0dec3ba1b40b944061454e63bed6a85c6d3b4f04e8c76475",
+      "bytes": 1074
+    },
+    {
+      "path": "skills/user-global/full-plan/README.md",
+      "sha256": "dd8615bf257b707e93e81fbfbf780a955ad71a4ec165e9b9a3038efe716cf0a8",
+      "bytes": 4470
+    },
+    {
+      "path": "skills/user-global/full-plan/SKILL.md",
+      "sha256": "e647fe50d6e418c381920a693d15d9107559d38fb6638e5ae375bfe27d1b053b",
+      "bytes": 6679
+    },
+    {
+      "path": "skills/user-global/full-plan/agents/openai.yaml",
+      "sha256": "1e40901613f3818115cbdbf4dd7b0fdbbf108dad9a6f6a11e98b48f9c613b14d",
+      "bytes": 132
+    },
+    {
+      "path": "skills/user-global/full-plan/docs/INSTALLATION.md",
+      "sha256": "eeca4644762d9323f9b50fb03e3b2f7984e214c5505ff8c52f2ed67e86d12051",
+      "bytes": 2127
+    },
+    {
+      "path": "skills/user-global/full-plan/docs/OUTPUT-FORMAT.md",
+      "sha256": "3bd6afaa783593d0a30f846dd4aab6cbfc1b8f8e643065675857634ed93f85c3",
+      "bytes": 2754
+    },
+    {
+      "path": "skills/user-global/full-plan/docs/PLATFORM-COMPATIBILITY.md",
+      "sha256": "eba3354c97395c9be4684f645974b88033b10b1e21b5eab5779795fc9c14bc77",
+      "bytes": 4051
+    },
+    {
+      "path": "skills/user-global/full-plan/docs/USAGE.md",
+      "sha256": "e8c47043826f706b67e71a77c1226335f60c34443b5d0c17c712ece59e6f283b",
+      "bytes": 2901
+    },
+    {
+      "path": "skills/user-global/full-plan/platforms/README.md",
+      "sha256": "e9bb2bf9c16cbf2b8d0a3d64fb0b9f6b28a02426a72f7def2f0f5299c2fc0373",
+      "bytes": 1146
+    },
+    {
+      "path": "skills/user-global/full-plan/platforms/chatgpt-custom-gpt/INSTRUCTIONS.md",
+      "sha256": "7b9cf70124f1fa73aa981ff81ffe533d1ec34bd0ba2417c334a0d3c1157f02dd",
+      "bytes": 2232
+    },
+    {
+      "path": "skills/user-global/full-plan/platforms/claude-code/commands/full-plan.md",
+      "sha256": "f920b9c778fe7607785cf47c78afe5b39dd96a6670cec4a32a627f40b1f041f2",
+      "bytes": 1447
+    },
+    {
+      "path": "skills/user-global/full-plan/platforms/claude-web/PROJECT-INSTRUCTIONS.md",
+      "sha256": "deed94085abfdb4b444956e5e8221dc6516e3d9112ff601614b2e81d97d43c5a",
+      "bytes": 2003
+    },
+    {
+      "path": "skills/user-global/multiple-pov/SKILL.md",
+      "sha256": "dc35a3d82ada360b07227cef7951658eaadc21203f9591420c24b553e9f407f6",
+      "bytes": 18122
+    },
+    {
+      "path": "skills/user-global/natural-persian-writing/LICENSE",
+      "sha256": "b7ec9b37d5e7889a0dec3ba1b40b944061454e63bed6a85c6d3b4f04e8c76475",
+      "bytes": 1074
+    },
+    {
+      "path": "skills/user-global/natural-persian-writing/README.md",
+      "sha256": "d9e56a833edcfc9979067038f0a60970c287ff1c3f0a466bae7d1fdd08310752",
+      "bytes": 3173
+    },
+    {
+      "path": "skills/user-global/natural-persian-writing/SKILL.md",
+      "sha256": "7ea8a1f7e35f72b2f5bc8dd0c9f99c7aea005c7dedff67285cfe35f1dce023ad",
+      "bytes": 6124
+    },
+    {
+      "path": "skills/user-global/natural-persian-writing/references/persian-style-guide.md",
+      "sha256": "97c5861dacc219c2f218698995ac104e533bf6d103cb9e7946b1c237b2f676af",
+      "bytes": 6797
+    },
+    {
+      "path": "skills/user-global/performance-review/SKILL.md",
+      "sha256": "bb453dac2bb639288c0fd6f9b1b86b5001ed3c875649b3e763195059e25c8101",
+      "bytes": 10238
+    },
+    {
+      "path": "skills/user-global/performance-review/agents/openai.yaml",
+      "sha256": "ec9475773272d307e02958025603e3b48667c81771059cbf3afdfa1ab61caf19",
+      "bytes": 109
+    },
+    {
+      "path": "skills/user-global/practical-test/SKILL.md",
+      "sha256": "8ac38f3db25a6b3a1071dba97e1b7184e52f90390a637a82215af5fe8ee6c79a",
+      "bytes": 7419
+    },
+    {
+      "path": "skills/user-global/regression-check/SKILL.md",
+      "sha256": "62ad48277fc10441bee94fd6440343a4b374d2cb106d0b40c83f5919452890f7",
+      "bytes": 7784
+    },
+    {
+      "path": "skills/user-global/regression-check/agents/openai.yaml",
+      "sha256": "c8d1a87741929b46db70c8ea116b589b8c021b7f3552b966d789d54421eacb62",
+      "bytes": 112
+    },
+    {
+      "path": "skills/user-global/root-cause/SKILL.md",
+      "sha256": "213695fabc1932a2f95c9cc9fb9fc4f43bcf22f0ef9503c6b7713818a878a404",
+      "bytes": 8746
+    },
+    {
+      "path": "skills/user-global/root-cause/agents/openai.yaml",
+      "sha256": "28f79605d53e7b481fb1769064763c048ae40b72c5ba8a0caa0077ff6019150e",
+      "bytes": 115
+    },
+    {
+      "path": "skills/user-global/steps/SKILL.md",
+      "sha256": "b5231ea20acf60fb87ff677a1b97032eb832353010b978051512367fcc8496c1",
+      "bytes": 10889
+    },
+    {
+      "path": "skills/user-global/steps/references/deep-workflow.md",
+      "sha256": "03faac727d39917c26f0d60a4254b2f2f158e09452d55ec3473b0093dca38724",
+      "bytes": 8848
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/SKILL.md",
+      "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
+      "bytes": 15969
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/app-interface.csv",
+      "sha256": "331e7cf2c0b222d80c566c5f255c63cb339f65bfd02e471a720f28e4864a9f08",
+      "bytes": 11046
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/catalog-summary.json",
+      "sha256": "65fe0b64480a8a827738297d0a64ca55c627d4afcb774fe4555c59cea8dd6905",
+      "bytes": 2392
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/charts.csv",
+      "sha256": "4115cf1120680f2cedef0676cb648f30c7ef4699e2a947535d4113e71ed3b12a",
+      "bytes": 23365
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/colors.csv",
+      "sha256": "8162429222bce22df62b564085946a30d07cc9722c58d0a3a494bd0d1d00841c",
+      "bytes": 37940
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/data-provenance.json",
+      "sha256": "e82fb33ed49375a300e93d9c11ccd1c1493c999e84ee7ee295e527634786e2e0",
+      "bytes": 36686
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/google-font-licenses.json",
+      "sha256": "35688523f2955795caa1a47c53b83099e60c1708461476f9cc3a050cf3b0148a",
+      "bytes": 433127
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/google-fonts.csv",
+      "sha256": "1c8c3b2ea1faf6a1012da463756def8b3889db33f2226f0343bb4daa80307d03",
+      "bytes": 747241
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/icons.csv",
+      "sha256": "50816c6012030178195a16ee481ebf58b47bd985d70e8ec58886cc83f6eddafc",
+      "bytes": 57945
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/landing.csv",
+      "sha256": "9a2edd3bb676c2a58f00ade7a062e285222d4297bfd847c8d5b056f0dbbf52d0",
+      "bytes": 25449
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/motion.csv",
+      "sha256": "381affe8df8ea1f66fbbda2598827f9f54299107bbe6a1b4e9b68f6b62091ceb",
+      "bytes": 14679
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/phosphor-icons-upstream.json",
+      "sha256": "2399325233b277b5c97a80e6a5e8941154f5d057beee4e7613db87c87d700236",
+      "bytes": 823933
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/products.csv",
+      "sha256": "42473f75e8dde5987bdf89ce55d8c168091b80a356cae691dd60247d80720b70",
+      "bytes": 75623
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/react-performance.csv",
+      "sha256": "3d925802539abac5afeb63ae8aa1960b7229ad271b3a47caed40ab2d97ad0734",
+      "bytes": 15080
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/angular.csv",
+      "sha256": "704be83f2bad30c7e6de01afb113ffa01e0c458762f48b7102f31ba2367b5553",
+      "bytes": 19863
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/astro.csv",
+      "sha256": "2c2f55fadaafc05e04cc321c8194a1a28b656e6757fe2ba316f41b16428299c6",
+      "bytes": 14591
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/avalonia.csv",
+      "sha256": "442fca14675a020683473e7e49f08abb27b9df0765c80efe54aef61f1a4ac258",
+      "bytes": 27327
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/flutter.csv",
+      "sha256": "64dba0ac17349f28bce517a0f5f48c54d9ed2e487ec0c0258303463b382f41a0",
+      "bytes": 14192
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/html-tailwind.csv",
+      "sha256": "d05a581d20af57b8ca0104a6d31d90a07c437d500662a96c3029fc2f9a4678ee",
+      "bytes": 16551
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/javafx.csv",
+      "sha256": "2e819b8d5abdd23ad4dae0991650fdb57af497aabd68b37463aa9c442944c869",
+      "bytes": 33577
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/jetpack-compose.csv",
+      "sha256": "699de218b286948eaec7d15767b6e1350ee299167e49bf476d82e3ff58724e0a",
+      "bytes": 12295
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/laravel.csv",
+      "sha256": "854ea4daa5fc61292d22235ad33b49ba3fe22423c3de8d3cb03758ffed3b59f9",
+      "bytes": 20163
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/nextjs.csv",
+      "sha256": "ecd2c27b2ea0127d203ae726060efcdd7335b5e83f96b99e4f3befbbfeebd5a4",
+      "bytes": 18687
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/nuxt-ui.csv",
+      "sha256": "c36ee8470926b4a0748d241363c71664c9969c2edbc62f7f72de0db73880fac6",
+      "bytes": 24106
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/nuxtjs.csv",
+      "sha256": "3d9b54ed2d151bd9c86e9e5609b8a6f88a00c4c52fa601a30af96c49b2c4d176",
+      "bytes": 23014
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/react-native.csv",
+      "sha256": "ba31dd9c0c04da6bc02a74448bf121f9c0728ae5ba3b4d47b487778b0a1135b5",
+      "bytes": 14049
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/react.csv",
+      "sha256": "2d2b9c198e875106a30f7ee68341a9ee0033cad60a7e130cf23152783e08aeda",
+      "bytes": 19036
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/shadcn.csv",
+      "sha256": "e56cfde5b74907836ac3582a4779d5b7f3d206a702ab81b8669a1b668c3eeb51",
+      "bytes": 23184
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/svelte.csv",
+      "sha256": "f6e379ba802941ba26b01d4ffbe3cd39120f2587659a1d93851c707f66bc13db",
+      "bytes": 15078
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/swiftui.csv",
+      "sha256": "bdd9231ff3ad658f4e7c063e1eb49df2fd09ac8d90631a86df899b39833b9623",
+      "bytes": 15323
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/threejs.csv",
+      "sha256": "97542e0ba34915a0ff7578be20e1619495df47c95c8c1c39b83e3785e1de771f",
+      "bytes": 46051
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/uno.csv",
+      "sha256": "a0474363e4225b5367214d5675fd3e075f137026f9500f0d04357882ef4f6d48",
+      "bytes": 30091
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/uwp.csv",
+      "sha256": "c409f08c1fbba1f1029f1acaa554e7b4471cc85517a5751c9f2e62465badcd5c",
+      "bytes": 24692
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/vue.csv",
+      "sha256": "b655f1ebb9dff2652d15981f31b1784c8a6d4759efd2815a14f3088257569f95",
+      "bytes": 12813
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/winui.csv",
+      "sha256": "e676dc1c13ee6c205c40b0746f1335150a346c7a49a0616d2545bc3d2c930c85",
+      "bytes": 27890
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/stacks/wpf.csv",
+      "sha256": "9781a9950b20333637b30a02e498b7efca21b618a3eeb8665836f3ac6e974da7",
+      "bytes": 24158
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/styles.csv",
+      "sha256": "a93a4d9d7025856575d7b7583bda020be9043013432c5af7c58af9dbdfb206b7",
+      "bytes": 149478
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/typography.csv",
+      "sha256": "321fc446e89024488ebae96dda93efc4d2307bd8bddb240857ad51364f6782c8",
+      "bytes": 49997
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/ui-reasoning.csv",
+      "sha256": "f0774dd741cecdad5eec842034bd6d5e9ea50e9f220a1910069748daa0bb8e9a",
+      "bytes": 77360
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/data/ux-guidelines.csv",
+      "sha256": "ff81ec613f70ba9fc3fcce52dbe4ae35d44b2079dbe6dc066d2d6e38c28facd5",
+      "bytes": 27516
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/references/pro-rules.md",
+      "sha256": "d28442d61c310b49c054a4ea736f89fb3008beebdbbc38c4b3a540b8f7fadf23",
+      "bytes": 10909
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/references/quick-reference.md",
+      "sha256": "0609bc7c89dacb40472465d8fc14257b56b2c43439660fc8d6fa3b8c022e1876",
+      "bytes": 24526
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/core.py",
+      "sha256": "e544826963efefce3c59b65e18d83d92a5baf571f05458025bf1fa9021eced42",
+      "bytes": 41234
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/design_system.py",
+      "sha256": "6a94743c3362c9c7e6d1450b94f4014d9ea752e7b4e151f6f0bdb217e0544bf7",
+      "bytes": 70937
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/reasoning_contract.py",
+      "sha256": "b8bac1af82aa280d3e06f00aabaeac4337e632996b07fed874e2b6ee6e9c5913",
+      "bytes": 5824
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/search.py",
+      "sha256": "8373e2dd2d560d9853ec116140de0e0d5bee45a6abe5e041173c84e1c36a7f87",
+      "bytes": 9123
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-api.json",
+      "sha256": "22d8dc81a7d6827b7e8b64b53e7d184210fb9759e8e294e0d5133c81cc460176",
+      "bytes": 1079
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-catalog.json",
+      "sha256": "c608ad5c4084ebc50a4bbbfb69ea2456c01fd5519c457e18410fffd250ae948f",
+      "bytes": 1772
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-existing.csv",
+      "sha256": "4e0761b839dc6b2187a370e82eddc0aed8a7ff10c09e28dd814bb3656dac595b",
+      "bytes": 480
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-metadata.json",
+      "sha256": "30bffc29ae348416a2de2f9c6c418e768e4578f136b0f4bac5d2f70124f2e9ba",
+      "bytes": 328
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-overrides.json",
+      "sha256": "6243a48a4619986768c4628e2d0c98ff195beba71ba9be5df8f0c52fc6d90c0b",
+      "bytes": 97
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/icons-curated.csv",
+      "sha256": "68362c9a700c13b96f000784a0198c1c7e117a7088a01c85744e44233038fe9d",
+      "bytes": 495
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-core.json",
+      "sha256": "ae4d0bb076240824e1b643c2270d1f8cc0952a69502ec1e622b7dedd85b930bb",
+      "bytes": 571
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-package.json",
+      "sha256": "500588c757d6de03e3d7e69b27a8b8b1f88ccf6bb0333e4c1e9b0d6a4f112475",
+      "bytes": 370
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+      "sha256": "d79f2ee0afdbc2f87776733e145df3538a16a25d7c2fba0056bb48295dad0ded",
+      "bytes": 87
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+      "sha256": "1c57a1d76bcc0cdd3632d4c18b9c0e79576b4591df39831c9607e5d0eb4f2cec",
+      "bytes": 81
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/relevance-baseline.json",
+      "sha256": "38398452985116e74e31bd6bccca0f4decd1bbfe4eebc1ac99f7a1836baaf77f",
+      "bytes": 89436
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/relevance-cases.json",
+      "sha256": "e77d36eebbf6ddc2860946a02cdb659351da6c09f2688f1ed30939a418099646",
+      "bytes": 36734
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+      "sha256": "9d738e11c6b82fecc8d0946e7b38515518ded5ed3294a7eb19a021c4edb5b57d",
+      "bytes": 5079
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_catalog_refresh.py",
+      "sha256": "3e2ca5d12702318f641ae62d0c14f22a3bcc84d84e79b863c0e947d475604adb",
+      "bytes": 19466
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_core.py",
+      "sha256": "3527fe2f4b852f69f07c17ddc0d615d9a6e025c924e45a33985579a94a8d2118",
+      "bytes": 16680
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_core_data_quality.py",
+      "sha256": "3ffc6b4905c9ea26d7ac4527ab154d153584231aee71b2ae4bd017977fa09cc5",
+      "bytes": 8954
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
+      "sha256": "0360d6e10080c0bca214f2b0bbad582ba50702a542ce21013351aca54938df3a",
+      "bytes": 19513
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
+      "sha256": "517ba1ba6195c94811126d1162139c51aff77fc68c3e320c7bb6c1e89e76bc9b",
+      "bytes": 7690
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_native_desktop_stack_freshness.py",
+      "sha256": "904f90bc6d364763673fa6067d98a4227d535760fa8b6d26abe22208176997ca",
+      "bytes": 8170
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_relevance_evaluator.py",
+      "sha256": "2fe56a4d6fe5fff15ff592274b0eeaba925146cefea6c0fa29d8f1b77c9aca1f",
+      "bytes": 8430
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_style_taxonomy.py",
+      "sha256": "cd14d0092e8a454d213aa104b53e4e70ba698491fa00fde9fdec5ca8a3d70011",
+      "bytes": 7425
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_text_layout_resilience.py",
+      "sha256": "b51d32ee8a15505b87cb81957fb2d1b385e041e8beb4463c311d236bfd29ebd4",
+      "bytes": 5874
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/tests/test_web_stack_freshness.py",
+      "sha256": "becc5fa40e7516613d4e9930f226aa483e3796090c17cb16542c93d1927e680d",
+      "bytes": 7699
+    },
+    {
+      "path": "skills/user-global/ui-ux-pro-max/scripts/validate_data.py",
+      "sha256": "718ad4cbb227436015c9c2bc80fc583d6ed738b01c1a940ef85e350780d99f58",
+      "bytes": 52064
+    },
+    {
+      "path": "validation-results.json",
+      "sha256": "30b1515efddb8c8197017976f9a9858b7ed7a919467d28c2f5536d2ae7d658f1",
+      "bytes": 6971
+    }
+  ]
+}

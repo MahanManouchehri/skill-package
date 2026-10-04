@@ -1,0 +1,3 @@
+interface:
+  display_name: "Database Impact"
+  short_description: "Analyze database-change blast radius before execution"
