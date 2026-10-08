@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-10-08T08:30:40.859473+00:00",
-  "catalog_basis": "Version 2.1: previous package plus current installed steps, hand-off, and compatible-response source trees; portable plugin and marketplace entry added; managed snapshots retained unchanged.",
+  "created_utc": "2026-10-08T08:34:44.687029+00:00",
+  "catalog_basis": "Version 2.2: previous package plus current installed steps, hand-off, and compatible-response source trees; direct multi-skill installation through Codex skill-installer; managed snapshots retained unchanged.",
   "expected_user_global": 16,
   "expected_plugin_managed": 16,
   "system_skills_excluded": [
@@ -10702,5 +10702,5 @@
       ]
     }
   ],
-  "package_version": "2.1.0"
+  "package_version": "2.2.0"
 }

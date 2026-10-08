@@ -1,6 +1,6 @@
 # Manual restore on another Windows user/account
 
-For Codex plugin installation from the repository URL, follow the **Install in Codex** section of `README.md`. This document is the Windows PowerShell fallback for a direct, hash-verified copy into the user skill directory.
+For installation from a repository URL in a new Codex, follow **Install in Codex** in `README.md` and [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). This document is the Windows PowerShell fallback for a direct, hash-verified copy into the user skill directory.
 
 ## Get the bundle
 
@@ -46,6 +46,10 @@ For a nondefault runtime layout, also pass `-PluginCacheRoot <actual-provider-pl
 Runtime evidence must be observed within the last 24 hours. Runtime evidence is a caller attestation from a live Codex catalog/tool inspection, not a cryptographic assertion. The verifier checks its fields against the destination disk and provider layout but cannot itself ask Codex whether tools are enabled. Refresh it after switching accounts, enabling/disabling plugins or restarting/changing runtime. Current provider upgrades may differ from snapshot hashes; the verifier reports that difference without overwriting provider files.
 
 Expected final outcome: 16 personal skills hash-verified; 16 managed skill entries provided and catalog-verified through proper plugins/runtime; system skills informational; unexpected duplicates 0. Missing managed capability keeps full environment restoration incomplete even when Phase A passes.
+
+## Giving the repository URL to a new Codex
+
+For a Codex that already has the standard `skill-installer`, use the exact prompt in [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). It reads the manifest and installs all 16 portable skill paths in one installer operation. The PowerShell steps below remain for a hash-verified manual restore from an extracted folder.
 
 ## Giving the folder to a new Codex
 

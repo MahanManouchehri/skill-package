@@ -1,28 +1,27 @@
-# skill-package v2
+# skill-package v2.2
 
 Private, verifiable snapshot of the current Codex skill environment. The source skills are preserved without behavioral rewrites. This is a file backup and restore bundle, not an account clone.
 
 ## Contents
 
-- **16 personal skills** in `skills/<skill-name>/`: installable, content-preserving copies and the plugin payload.
+- **16 personal skills** in `skills/<skill-name>/`: installable, content-preserving copies.
 - **16 active plugin-managed skill entries** in `managed/plugin-skills/<provider>/<plugin>/<version>/`: audit/reference snapshots only. Full plugin-relative supporting resources are preserved, including resources outside the individual skill folder.
 - **5 system skills excluded**: imagegen, openai-docs, review-agent, skill-creator, skill-installer. The destination Codex runtime supplies system skills.
 - `skills-manifest.json`: per-file hashes, deterministic skill tree hashes, metadata, dependencies, original physical sources and documented exclusions.
 - `package-integrity.json`: hashes for every distribution file except itself. `.git/` is excluded. Hashes detect accidental changes; they are not signatures or independent proof of authenticity.
 - `AUDIT.md`, `PORTABILITY.md`, `RESTORE.md`, `VALIDATION.md`: findings, dependencies, practical restore steps and test evidence.
 
-Version 2.1 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. It is also a Codex plugin marketplace, so Codex can install the reusable personal skills directly from this repository. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
+Version 2.2 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. A new Codex installs every portable skill through its built-in `skill-installer`; the package is not a Plugin or Marketplace. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
 
 ## Install in Codex
 
-Use the plugin route for Codex CLI or the desktop app. It installs the 16 portable skills; managed snapshots stay audit-only because they need their proper runtime/plugin providers.
+Give a new Codex this exact prompt:
 
-```bash
-codex plugin marketplace add MahanManouchehri/skill-package --ref main
-codex plugin add mahan-skill-package@mahan-skill-package
+```text
+Install every portable skill from https://github.com/MahanManouchehri/skill-package. Use your preinstalled skill-installer: read skills-manifest.json, select every entry with installable: true, and install every physical_path_in_package in one invocation. Verify the installed count equals expected_user_global. Do not install managed/plugin-skills, system skills, credentials, account settings, or plugin caches.
 ```
 
-In Codex desktop, add `https://github.com/MahanManouchehri/skill-package` as a Marketplace from the Plugins Directory, then install **Mahan Skill Package**. Start a new chat if the newly installed skills do not appear immediately.
+Codex will install the 16 directories under `skills/` into its user skill root. It must not install the 16 `managed/plugin-skills` snapshots: those are audit-only and require their original runtime/plugin providers. See [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md) for the exact contract and current path list. Start a new chat if newly installed skills do not appear immediately.
 
 ## Manual restore fallback (Windows)
 

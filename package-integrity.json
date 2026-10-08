@@ -5,13 +5,8 @@
     "package-integrity.json (self)"
   ],
   "algorithm": "SHA256(UTF8(concat ordinal-sorted path + NUL + lowercase file SHA256 + LF))",
-  "package_tree_hash_sha256": "31028dec077efc62d1b6d07d85e3c878adc0aee93069117476ba563e754069ed",
+  "package_tree_hash_sha256": "6e620821b754d2fa5d8a7fbb815988829e6b2440d4cc28e16cd488eae13a6872",
   "files": [
-    {
-      "path": ".agents/plugins/marketplace.json",
-      "sha256": "58cde61859bd79172671c88d16ae61a0226382b1f10620b6e0036bc56fa84a10",
-      "bytes": 379
-    },
     {
       "path": ".gitattributes",
       "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992",
@@ -24,8 +19,13 @@
     },
     {
       "path": "AUDIT.md",
-      "sha256": "fff188fd808dffa795fbf7a7290c5f0b9b0a07a6a5c205072728b297431b9c36",
-      "bytes": 3914
+      "sha256": "da306a915cbc4c07ce0fffdb3fce9b0872ef2b7e13b74651a54bf028b5e5e6cf",
+      "bytes": 4069
+    },
+    {
+      "path": "INSTALL_FOR_CODEX.md",
+      "sha256": "a4b7afa9fe0594e8b43c6a8cb8477d6555d88be45314d1631521ffad269333eb",
+      "bytes": 1743
     },
     {
       "path": "PORTABILITY.md",
@@ -34,22 +34,22 @@
     },
     {
       "path": "README.md",
-      "sha256": "b9a99b75326c6e7cf8965c2c801a667979f38fee4aea697fa66e6c5fc64bbb28",
-      "bytes": 5632
+      "sha256": "1e8a87814b87363f2f3773d31c5e0e67ccfe946f912632a0f56db210849cb219",
+      "bytes": 5907
     },
     {
       "path": "RESTORE.md",
-      "sha256": "a7e612c95d30b673d26960889c0a0aa8e21c6a57c813e21ee120c97654540683",
-      "bytes": 5871
+      "sha256": "36cebb5e73afcb09bc24cf27c277e89772f58ab8356962efa47fe5508f260cee",
+      "bytes": 6270
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "81be54a5dfdb9a274110cc15a9fe5441dc022f9413e7d846a5dc5f8ec6eeb626",
-      "bytes": 8306
+      "sha256": "d65d3cd2803a6a99798d1be572c9993c80bbbcb146dd65b59a4cbc7a94661f20",
+      "bytes": 8645
     },
     {
       "path": "VERSION",
-      "sha256": "c89b87c262e9d5ffd20e73aac74a1772adcc9f5a21682cc33adcf5086e5fef5c",
+      "sha256": "c4a2383a03bdb6739d16a0e24058e4b9c7da4e63d203e0be2f448868cc03c530",
       "bytes": 6
     },
     {
@@ -2188,11 +2188,6 @@
       "bytes": 30858
     },
     {
-      "path": "plugin.json",
-      "sha256": "7bc91afaf8376c746df3362789f1629990e93298655a712b1e98111e81404091",
-      "bytes": 772
-    },
-    {
       "path": "runtime-catalog.example.json",
       "sha256": "62fd6271687321d188cb37bc343aaeabed6f80658f2b0b9d840d06dd3d3ec1ca",
       "bytes": 4132
@@ -2219,8 +2214,8 @@
     },
     {
       "path": "skills-manifest.json",
-      "sha256": "daabefcac7b935a23a15fa02882f8572bdbf1c4dcb50962dd02ab931576236b4",
-      "bytes": 430180
+      "sha256": "7a93ab6a16fe6403160bfe8d7a5a3749bbe012629dcab0857d754c44958eb2ce",
+      "bytes": 430198
     },
     {
       "path": "skills/apple-design/SKILL.md",
@@ -2849,8 +2844,8 @@
     },
     {
       "path": "validation-results.json",
-      "sha256": "ea3ff09c35fb03b6da46b96ac337c75eaedca0c210f3fbe019ce2f443847bdbc",
-      "bytes": 1305
+      "sha256": "9eaac2203f522130ea68a55d434ec518ce8d5242a238d156694a0fbfa9c35dc4",
+      "bytes": 1271
     }
   ]
 }

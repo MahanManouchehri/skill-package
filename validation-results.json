@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "package_version": "2.1.0",
-  "observed_utc": "2026-10-08T08:30:40.860525+00:00",
+  "package_version": "2.2.0",
+  "observed_utc": "2026-10-08T08:34:44.688316+00:00",
   "user_global_expected": 16,
   "plugin_managed_expected": 16,
   "snapshot_roots": 26,
@@ -22,12 +22,9 @@
       "scope": "all package snapshots"
     },
     {
-      "test": "portable plugin manifest and repository marketplace declared",
+      "test": "direct installer manifest maps every portable skill under skills/",
       "pass": true,
-      "scope": [
-        "plugin.json",
-        ".agents/plugins/marketplace.json"
-      ]
+      "scope": "all installable manifest entries"
     }
   ],
   "v1_baseline": {
@@ -37,6 +34,6 @@
   "limitations": [
     "Windows PowerShell installer and isolated restore were not rerun on the macOS v2 build host.",
     "Live plugin/runtime activation and a second-account restore remain unverified.",
-    "A live plugin installation was not run because it would mutate the build host's Codex plugin configuration."
+    "A live multi-skill install into a real Codex skill root was not run; validation uses an isolated destination."
   ]
 }
