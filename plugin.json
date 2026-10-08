@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mahan-skill-package",
+  "version": "2.1.0",
+  "description": "A portable 16-skill Codex package with verified manual-restore metadata.",
+  "author": {
+    "name": "Mahan Manouchehri",
+    "url": "https://github.com/MahanManouchehri"
+  },
+  "repository": "https://github.com/MahanManouchehri/skill-package",
+  "keywords": [
+    "codex",
+    "skills",
+    "development-workflow",
+    "persian"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Mahan Skill Package",
+        "shortDescription": "A portable 16-skill development workflow package.",
+        "developerName": "Mahan Manouchehri",
+        "category": "Productivity"
+      }
+    }
+  }
+}

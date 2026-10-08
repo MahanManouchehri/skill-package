@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-10-08T08:27:41.341175+00:00",
-  "catalog_basis": "Version 2: previous package plus current installed steps, hand-off, and compatible-response source trees; managed snapshots retained unchanged.",
+  "created_utc": "2026-10-08T08:30:40.859473+00:00",
+  "catalog_basis": "Version 2.1: previous package plus current installed steps, hand-off, and compatible-response source trees; portable plugin and marketplace entry added; managed snapshots retained unchanged.",
   "expected_user_global": 16,
   "expected_plugin_managed": 16,
   "system_skills_excluded": [
@@ -19,8 +19,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\apple-design",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\apple-design",
-      "physical_path_in_package": "skills/user-global/apple-design",
-      "snapshot_root": "skills/user-global/apple-design",
+      "physical_path_in_package": "skills/apple-design",
+      "snapshot_root": "skills/apple-design",
       "destination_relative": "apple-design",
       "skill_name": "apple-design",
       "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
@@ -76,8 +76,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\architecture-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\architecture-review",
-      "physical_path_in_package": "skills/user-global/architecture-review",
-      "snapshot_root": "skills/user-global/architecture-review",
+      "physical_path_in_package": "skills/architecture-review",
+      "snapshot_root": "skills/architecture-review",
       "destination_relative": "architecture-review",
       "skill_name": "architecture-review",
       "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for explicit architecture review; do not use for early ideation, generic code review, planning from scratch, or implementation.",
@@ -142,8 +142,8 @@
       "installable": true,
       "physical_source": "/Users/mahan/.agents/skills/compatible-response",
       "source_origin": "/Users/mahan/.agents/skills/compatible-response",
-      "physical_path_in_package": "skills/user-global/compatible-response",
-      "snapshot_root": "skills/user-global/compatible-response",
+      "physical_path_in_package": "skills/compatible-response",
+      "snapshot_root": "skills/compatible-response",
       "destination_relative": "compatible-response",
       "skill_name": "compatible-response",
       "description": "Apply to every Codex user-facing response and output from any skill, across all projects. Adapt presentation to the content and maximize information density without losing essential details.",
@@ -199,8 +199,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\db-impact",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\db-impact",
-      "physical_path_in_package": "skills/user-global/db-impact",
-      "snapshot_root": "skills/user-global/db-impact",
+      "physical_path_in_package": "skills/db-impact",
+      "snapshot_root": "skills/db-impact",
       "destination_relative": "db-impact",
       "skill_name": "db-impact",
       "description": "Analyze the complete blast radius of a proposed database change before it is executed. Use for migrations, schema/data changes, and production-impact reviews; do not use for ordinary read-only data queries.",
@@ -265,8 +265,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\devil",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\devil",
-      "physical_path_in_package": "skills/user-global/devil",
-      "snapshot_root": "skills/user-global/devil",
+      "physical_path_in_package": "skills/devil",
+      "snapshot_root": "skills/devil",
       "destination_relative": "devil",
       "skill_name": "devil",
       "description": "Independently stress-test consequential technical decisions, concrete plans, architectures, migrations, refactors, and implementation strategies. Use when adversarial review would materially improve a decision by challenging assumptions, evidence, failure modes, reversibility, blast radius, or alternatives; do not use for routine coding, factual questions, trivial edits, or ordinary low-risk implementation.",
@@ -416,8 +416,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\final-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\final-check",
-      "physical_path_in_package": "skills/user-global/final-check",
-      "snapshot_root": "skills/user-global/final-check",
+      "physical_path_in_package": "skills/final-check",
+      "snapshot_root": "skills/final-check",
       "destination_relative": "final-check",
       "skill_name": "final-check",
       "description": "Audit an apparently completed implementation against the user's original request before declaring it finished. Use for explicit final verification and substantial implementation tasks; do not use as a generic code review or repeatedly during development.",
@@ -482,8 +482,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\full-plan",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\full-plan",
-      "physical_path_in_package": "skills/user-global/full-plan",
-      "snapshot_root": "skills/user-global/full-plan",
+      "physical_path_in_package": "skills/full-plan",
+      "snapshot_root": "skills/full-plan",
       "destination_relative": "full-plan",
       "skill_name": "full-plan",
       "description": "Before implementing a feature, document each required API endpoint and its ordered user scenarios in natural Persian. Activate automatically for feature work or explicitly with /full-plan; not for small internal refactors with no API behavior.",
@@ -651,8 +651,8 @@
       "installable": true,
       "physical_source": "/Users/mahan/.agents/skills/hand-off",
       "source_origin": "/Users/mahan/.agents/skills/hand-off",
-      "physical_path_in_package": "skills/user-global/hand-off",
-      "snapshot_root": "skills/user-global/hand-off",
+      "physical_path_in_package": "skills/hand-off",
+      "snapshot_root": "skills/hand-off",
       "destination_relative": "hand-off",
       "skill_name": "hand-off",
       "description": "Investigate and explain the actual source code of a feature, module, workflow, API, class or method in the current repository. Use for Persian or English requests about where code lives, who calls a method, how components connect, architecture, behavior, debugging, extending or independently maintaining a feature. For a whole-feature explanation or explicit $hand-off invocation, create a developer guide and portable LLM context; for small questions, answer in chat. Do not use for generic framework theory or implementation-only requests.",
@@ -774,8 +774,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\multiple-pov",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\multiple-pov",
-      "physical_path_in_package": "skills/user-global/multiple-pov",
-      "snapshot_root": "skills/user-global/multiple-pov",
+      "physical_path_in_package": "skills/multiple-pov",
+      "snapshot_root": "skills/multiple-pov",
       "destination_relative": "multiple-pov",
       "skill_name": "multiple-pov",
       "description": "Run a one-time, evidence-first brainstorming and multi-perspective design review before planning or implementing materially new systems, features, substantial workflows, architecture changes, major business logic, integrations, data-model changes, significant or risky refactors, migrations, or other substantial product/engineering work. Do not repeat the full review for the same materially unchanged task, user clarifications, approved implementation follow-ups, simple fixes, or small UI/content changes; use a focused delta review only after a material scope pivot or an explicit request to review again.",
@@ -831,8 +831,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\natural-persian-writing",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\natural-persian-writing",
-      "physical_path_in_package": "skills/user-global/natural-persian-writing",
-      "snapshot_root": "skills/user-global/natural-persian-writing",
+      "physical_path_in_package": "skills/natural-persian-writing",
+      "snapshot_root": "skills/natural-persian-writing",
       "destination_relative": "natural-persian-writing",
       "skill_name": "natural-persian-writing",
       "description": "Produce, rewrite, translate, review, or summarize meaningful Persian prose that sounds natural, preserves meaning, and matches its audience and purpose. Use for any Persian content: personal and formal letters, email, business, marketing, academic, legal and policy text, creative writing, translation, support, UI, technical documentation, and conversation. Do not activate merely because Persian appears in source code, data, an identifier, or text that is not being changed.",
@@ -930,8 +930,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\performance-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\performance-review",
-      "physical_path_in_package": "skills/user-global/performance-review",
-      "snapshot_root": "skills/user-global/performance-review",
+      "physical_path_in_package": "skills/performance-review",
+      "snapshot_root": "skills/performance-review",
       "destination_relative": "performance-review",
       "skill_name": "performance-review",
       "description": "Evidence-driven software performance review for recent changes, endpoints, imports/exports, and explicitly requested audits. Use to identify real bottlenecks and scalable improvements; do not use for speculative micro-optimization.",
@@ -996,8 +996,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\practical-test",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\practical-test",
-      "physical_path_in_package": "skills/user-global/practical-test",
-      "snapshot_root": "skills/user-global/practical-test",
+      "physical_path_in_package": "skills/practical-test",
+      "snapshot_root": "skills/practical-test",
       "destination_relative": "practical-test",
       "skill_name": "practical-test",
       "description": "Perform strict browser-based acceptance testing for all work implemented in the current Codex conversation. Activate when the user explicitly types /practical-test; do not use for code review or for implementing fixes.",
@@ -1053,8 +1053,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\regression-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\regression-check",
-      "physical_path_in_package": "skills/user-global/regression-check",
-      "snapshot_root": "skills/user-global/regression-check",
+      "physical_path_in_package": "skills/regression-check",
+      "snapshot_root": "skills/regression-check",
       "destination_relative": "regression-check",
       "skill_name": "regression-check",
       "description": "Verify that a completed change preserved important existing behavior within its realistic blast radius. Use after implementation, refactoring, bug fixes, database changes, or dependency updates; do not use for pure planning work.",
@@ -1119,8 +1119,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\root-cause",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\root-cause",
-      "physical_path_in_package": "skills/user-global/root-cause",
-      "snapshot_root": "skills/user-global/root-cause",
+      "physical_path_in_package": "skills/root-cause",
+      "snapshot_root": "skills/root-cause",
       "destination_relative": "root-cause",
       "skill_name": "root-cause",
       "description": "Diagnose the actual cause of a bug, failure, or unexpected behavior before proposing or applying a fix. Use for explicit root-cause analysis, deep debugging, and recurring or unclear failures; do not replace ordinary implementation work without a reported problem.",
@@ -1185,8 +1185,8 @@
       "installable": true,
       "physical_source": "/Users/mahan/.codex/skills/steps",
       "source_origin": "/Users/mahan/.codex/skills/steps",
-      "physical_path_in_package": "skills/user-global/steps",
-      "snapshot_root": "skills/user-global/steps",
+      "physical_path_in_package": "skills/steps",
+      "snapshot_root": "skills/steps",
       "destination_relative": "steps",
       "skill_name": "steps",
       "description": "Technical Team Lead for features, bugs, refactors, backend, frontend, database, architecture, and implementation. Inspects governance, rates project-context criticality, assigns minimal specialist workflows, supervises implementation and audits, and explains engineering decisions to the developer/Project Manager. Use for development tasks unless explicitly bypassed or another specialist is directly invoked.",
@@ -1256,8 +1256,8 @@
       "installable": true,
       "physical_source": "C:\\Users\\Mahan\\.codex\\skills\\ui-ux-pro-max",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\ui-ux-pro-max",
-      "physical_path_in_package": "skills/user-global/ui-ux-pro-max",
-      "snapshot_root": "skills/user-global/ui-ux-pro-max",
+      "physical_path_in_package": "skills/ui-ux-pro-max",
+      "snapshot_root": "skills/ui-ux-pro-max",
       "destination_relative": "ui-ux-pro-max",
       "skill_name": "ui-ux-pro-max",
       "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
@@ -9917,7 +9917,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/apple-design",
+      "snapshot_root": "skills/apple-design",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\apple-design",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
@@ -9932,7 +9932,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/architecture-review",
+      "snapshot_root": "skills/architecture-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\architecture-review",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
@@ -9952,7 +9952,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/compatible-response",
+      "snapshot_root": "skills/compatible-response",
       "source_origin": "/Users/mahan/.agents/skills/compatible-response",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
@@ -9967,7 +9967,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/db-impact",
+      "snapshot_root": "skills/db-impact",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\db-impact",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
@@ -9987,7 +9987,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/devil",
+      "snapshot_root": "skills/devil",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\devil",
       "file_count": 9,
       "source_selected_tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
@@ -10042,7 +10042,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/final-check",
+      "snapshot_root": "skills/final-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\final-check",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
@@ -10062,7 +10062,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/full-plan",
+      "snapshot_root": "skills/full-plan",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\full-plan",
       "file_count": 14,
       "source_selected_tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
@@ -10142,7 +10142,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/hand-off",
+      "snapshot_root": "skills/hand-off",
       "source_origin": "/Users/mahan/.agents/skills/hand-off",
       "file_count": 10,
       "source_selected_tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
@@ -10202,7 +10202,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/multiple-pov",
+      "snapshot_root": "skills/multiple-pov",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\multiple-pov",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
@@ -10217,7 +10217,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/natural-persian-writing",
+      "snapshot_root": "skills/natural-persian-writing",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\natural-persian-writing",
       "file_count": 4,
       "source_selected_tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
@@ -10247,7 +10247,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/performance-review",
+      "snapshot_root": "skills/performance-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\performance-review",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
@@ -10267,7 +10267,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/practical-test",
+      "snapshot_root": "skills/practical-test",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\practical-test",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
@@ -10282,7 +10282,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/regression-check",
+      "snapshot_root": "skills/regression-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\regression-check",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
@@ -10302,7 +10302,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/root-cause",
+      "snapshot_root": "skills/root-cause",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\root-cause",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
@@ -10322,7 +10322,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/steps",
+      "snapshot_root": "skills/steps",
       "source_origin": "/Users/mahan/.codex/skills/steps",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
@@ -10342,7 +10342,7 @@
       ]
     },
     {
-      "snapshot_root": "skills/user-global/ui-ux-pro-max",
+      "snapshot_root": "skills/ui-ux-pro-max",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\ui-ux-pro-max",
       "file_count": 70,
       "source_selected_tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
@@ -10702,5 +10702,5 @@
       ]
     }
   ],
-  "package_version": "2.0.0"
+  "package_version": "2.1.0"
 }

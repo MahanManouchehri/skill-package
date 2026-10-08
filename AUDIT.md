@@ -22,6 +22,7 @@ Plugin-cache files outside the active catalog, including the cached openai-templ
 - `hand-off` is added with its `agents`, `assets`, `references`, and `scripts` resources.
 - `compatible-response` is added as a portable user-global presentation skill.
 - The prior 14 retained personal skill trees and all 16 plugin-managed snapshots remain content-preserving carry-forwards.
+- Version 2.1 moves the 16 installable payloads to `skills/<skill-name>/` and adds a portable `plugin.json` plus repository marketplace entry for Codex installation.
 
 ## Pre-existing issues preserved
 

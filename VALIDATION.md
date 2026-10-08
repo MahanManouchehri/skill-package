@@ -1,12 +1,14 @@
 # Validation evidence
 
-## Version 2 structural checks
+## Version 2.1 structural checks
 
 - Manifest schema, catalog uniqueness, safe install mappings, per-file hashes, tree hashes, local Markdown references and package-integrity coverage were rechecked after the v2 delta.
 - The copied `steps`, `hand-off`, and `compatible-response` trees match their selected installed source files byte-for-byte: 13 files in total.
+- `plugin.json` and `.agents/plugins/marketplace.json` were checked as JSON and match the installed Codex CLI's `plugin marketplace add` and `plugin add` command contract.
 - `hand-off/scripts/validate_handoff.py` compiles successfully. Its optional runtime check needs a real generated handoff folder, so it is not treated as package-install evidence.
 - The bundled `skill-creator` quick validator could not run because the available Python lacks `PyYAML`; frontmatter was instead checked by the same `name`/`description` extraction contract used by `scripts/common.ps1`.
 - PowerShell is unavailable on the v2 build host, so the Windows-only installer and isolated-restore suite must be rerun on a Windows PowerShell 5.1+ host before claiming a new runtime restore test.
+- A live plugin installation was not run because it would change this host's Codex marketplace/configuration state. The install commands are documented in `README.md`.
 
 ## Version 1 baseline evidence
 

@@ -146,7 +146,7 @@ function Read-Package([string]$PackageRoot) {
     foreach ($e in $m.skills) {
         $root = Get-SafePath $PackageRoot $e.physical_path_in_package
         if ($e.installable) {
-            if ($e.kind -ne 'user-global' -or $e.physical_path_in_package -ne ('skills/user-global/' + $e.destination_relative)) { throw 'Invalid installable mapping.' }
+            if ($e.kind -ne 'user-global' -or $e.physical_path_in_package -ne ('skills/' + $e.destination_relative)) { throw 'Invalid installable mapping.' }
             if ($e.destination_relative -notmatch '^[a-zA-Z0-9][a-zA-Z0-9_-]*$' -or $e.skill_name -in $m.system_skills_excluded) { throw 'Unsafe/system skill destination.' }
         } elseif ($e.kind -ne 'plugin-managed' -or -not $e.physical_path_in_package.StartsWith('managed/plugin-skills/')) { throw 'Invalid managed snapshot mapping.' }
         if ($e.tree_hash_sha256 -notmatch '^[a-f0-9]{64}$' -or $e.file_count -ne @($e.files).Count) { throw 'Invalid manifest file metadata.' }

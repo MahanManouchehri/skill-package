@@ -1,4 +1,6 @@
-# Restore on another Windows user/account
+# Manual restore on another Windows user/account
+
+For Codex plugin installation from the repository URL, follow the **Install in Codex** section of `README.md`. This document is the Windows PowerShell fallback for a direct, hash-verified copy into the user skill directory.
 
 ## Get the bundle
 
