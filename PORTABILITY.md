@@ -6,10 +6,12 @@ Copying files preserves instructions; it does not transfer account eligibility, 
 |---|---|---|---|
 | `apple-design` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `architecture-review` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
+| `compatible-response` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `db-impact` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `devil` | user-global / PORTABLE_WITH_DEPENDENCIES | Standard Codex skill support; PowerShell 5.1+ for optional validator | Phase A installer; content/hash verification |
 | `final-check` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `full-plan` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
+| `hand-off` | user-global / PORTABLE_WITH_DEPENDENCIES | Standard Codex skill support; Python 3 for the optional handoff structural validator | Phase A installer; content/hash verification |
 | `multiple-pov` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `natural-persian-writing` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `performance-review` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |

@@ -1,0 +1,6 @@
+interface:
+  display_name: "hand-off"
+  short_description: "Source-grounded feature explanation and independent development handoff"
+  default_prompt: "$hand-off Explain the selected repository feature with verified source links and practical maintenance guidance."
+policy:
+  allow_implicit_invocation: true

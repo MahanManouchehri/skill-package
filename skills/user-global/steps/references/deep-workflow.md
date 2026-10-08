@@ -1,6 +1,6 @@
 # /steps Deep Workflow Reference
 
-Load this reference only when the active task needs deeper orchestration: high engineering criticality, complex governance, repeated rework, worker conflicts, complex approval/owner gates, recovery after partial changes, or strict final traceability.
+Load this reference only when the active task needs deeper orchestration: high **Task Criticality**, complex governance, repeated rework, worker conflicts, complex approval/owner gates, recovery after partial changes, or strict final traceability. A sensitive Feature or severe Finding alone is not enough unless the requested task's analysis or decision needs this depth.
 
 ## 1. Detailed workflow states
 
@@ -40,7 +40,9 @@ Terminal non-success:
 For larger work, maintain a compact in-session ledger:
 
 - Goal
-- Criticality / Workload
+- Task Criticality / Workload
+- Feature Criticality, only when it informs a decision
+- Finding Severity, only for material defects or vulnerabilities
 - Requirements (`R1...`)
 - Approved Decisions (`D1...`)
 - Effective Governance / authority map
@@ -72,7 +74,7 @@ Example:
 
 Approval becomes stale when the approved proposal changes materially. Re-open only the affected approval; do not re-ask unrelated decisions.
 
-User workflow overrides may change execution depth, optional reviewers, or specialist choices when allowed by governance. Preserve assessed criticality as an evidence-based value; record a separate deeper execution strategy if requested.
+User workflow overrides may change execution depth, optional reviewers, or specialist choices when allowed by governance. Preserve assessed Task Criticality as an evidence-based value; record a separate deeper execution strategy if requested. Do not relabel Feature Criticality or Finding Severity as Task Criticality.
 
 ## 4. Requirement/decision change control
 
@@ -196,24 +198,24 @@ Anything that adds a feature, new behavior, contract, subsystem, destructive cha
 When DB impact is real:
 
 1. use `/db-impact` when it adds value;
-2. present schema/data/migration/compatibility details proportionate to criticality;
+2. present schema/data/migration/compatibility details proportionate to Task Criticality;
 3. request scoped approval where governance requires it;
 4. perform only allowed source/model changes;
 5. never infer permission to run migrations or mutate production data;
 6. create `OWNER_ACTION_REQUIRED` for owner-only commands/actions;
 7. after owner confirmation, re-read the relevant model/schema/artifacts before continuing.
 
-Database involvement alone does not determine star rating; governance and criticality remain separate.
+Database involvement alone does not determine Task Criticality; governance and the three assessment concepts remain separate.
 
 ## 13. Test and evidence policy
 
-Scale evidence with criticality.
+Scale evidence with Task Criticality and the consequence of a wrong conclusion.
 
 Low criticality may need only focused diff/render/behavior verification.
 
 Standard work should usually include targeted tests and affected-flow verification.
 
-High/critical work may require multiple evidence types: targeted tests, regression evidence, independent review, rollback reasoning, permission/security checks, critical-path verification, and practical testing when applicable.
+High/critical Task Criticality may require multiple evidence types: targeted tests, regression evidence, independent review, rollback reasoning, permission/security checks, critical-path verification, and practical testing when applicable. For READ_ONLY analysis of a sensitive Feature, use deeper bounded inspection when needed; do not add mutations merely to satisfy a generic test expectation.
 
 Never run destructive tests against an environment whose safety is unclear.
 

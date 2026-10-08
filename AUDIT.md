@@ -1,12 +1,12 @@
 # Source audit
 
-The source is the current disk state plus the active catalog exposed in this Codex session. Source directories were read and copied, never moved, deleted, merged, rewritten or regenerated.
+Version 2 retains the prior verified snapshot and applies an audited delta from the current disk state: the installed `steps` tree plus the new `hand-off` and `compatible-response` trees. Source directories were read and copied, never moved, deleted, merged, rewritten or regenerated.
 
 ## Counts
 
-- Personal/user-global: 14
+- Personal/user-global: 16
 - Active plugin-managed: 16
-- Packaged active entries: 30
+- Packaged active entries: 32
 - System-managed excluded: 5
 - full-plan discoverable entries: 1
 - Dangling Markdown relative links observed: 0
@@ -15,6 +15,13 @@ The source is the current disk state plus the active catalog exposed in this Cod
 - Original included skill/support files containing C:\Users\Mahan or C:/Users/Mahan: 0
 
 Plugin-cache files outside the active catalog, including the cached openai-templates examples, are not promoted into the package. They may be reported as cached candidates by inventory.ps1; candidate presence is not activation.
+
+## Version 2 delta
+
+- `steps` is replaced with the currently installed source tree, including `references/deep-workflow.md`.
+- `hand-off` is added with its `agents`, `assets`, `references`, and `scripts` resources.
+- `compatible-response` is added as a portable user-global presentation skill.
+- The prior 14 retained personal skill trees and all 16 plugin-managed snapshots remain content-preserving carry-forwards.
 
 ## Pre-existing issues preserved
 

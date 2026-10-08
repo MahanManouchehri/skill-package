@@ -1,17 +1,17 @@
-# skill-package
+# skill-package v2
 
 Private, verifiable snapshot of the current Codex skill environment. The source skills are preserved without behavioral rewrites. This is a file backup and restore bundle, not an account clone.
 
 ## Contents
 
-- **14 personal/user-global skills** in `skills/user-global/`: installable, content-preserving copies.
+- **16 personal/user-global skills** in `skills/user-global/`: installable, content-preserving copies.
 - **16 active plugin-managed skill entries** in `managed/plugin-skills/<provider>/<plugin>/<version>/`: audit/reference snapshots only. Full plugin-relative supporting resources are preserved, including resources outside the individual skill folder.
 - **5 system skills excluded**: imagegen, openai-docs, review-agent, skill-creator, skill-installer. The destination Codex runtime supplies system skills.
 - `skills-manifest.json`: per-file hashes, deterministic skill tree hashes, metadata, dependencies, original physical sources and documented exclusions.
 - `package-integrity.json`: hashes for every distribution file except itself. `.git/` is excluded. Hashes detect accidental changes; they are not signatures or independent proof of authenticity.
 - `AUDIT.md`, `PORTABILITY.md`, `RESTORE.md`, `VALIDATION.md`: findings, dependencies, practical restore steps and test evidence.
 
-The previous 22-skill baseline is superseded by the current active catalog: 14 personal + 16 managed = 30. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
+Version 2 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
 
 ## Quick start (Windows)
 

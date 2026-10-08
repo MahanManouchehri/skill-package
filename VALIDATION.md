@@ -1,5 +1,17 @@
 # Validation evidence
 
+## Version 2 structural checks
+
+- Manifest schema, catalog uniqueness, safe install mappings, per-file hashes, tree hashes, local Markdown references and package-integrity coverage were rechecked after the v2 delta.
+- The copied `steps`, `hand-off`, and `compatible-response` trees match their selected installed source files byte-for-byte: 13 files in total.
+- `hand-off/scripts/validate_handoff.py` compiles successfully. Its optional runtime check needs a real generated handoff folder, so it is not treated as package-install evidence.
+- The bundled `skill-creator` quick validator could not run because the available Python lacks `PyYAML`; frontmatter was instead checked by the same `name`/`description` extraction contract used by `scripts/common.ps1`.
+- PowerShell is unavailable on the v2 build host, so the Windows-only installer and isolated-restore suite must be rerun on a Windows PowerShell 5.1+ host before claiming a new runtime restore test.
+
+## Version 1 baseline evidence
+
+The following 52 checks are retained as baseline evidence for the unchanged installer and managed snapshots. They are not a claim that v2's new user-global trees were exercised by the Windows suite.
+
 ## Scope
 
 This report verifies backup/distribution preparation and isolated restore logic. It does not claim that another account has been restored or that entitlement-dependent capabilities work on that account. All restore mutations used isolated work/test directories, never the source skill root. Source verification was read-only.
@@ -74,7 +86,7 @@ This report verifies backup/distribution preparation and isolated restore logic.
 
 Managed-catalog success in synthetic fixtures tests the verifier logic only. It is not second-account evidence. Default Phase A verification intentionally reports unavailable managed dependencies without declaring full environment restoration complete; -RequireManaged fails until all required catalog and capability evidence is provided. Runtime evidence must be observed within the last 24 hours and refreshed when the environment changes.
 
-# Regression Check
+# Regression Check: Version 1 baseline
 
 ## Verdict
 

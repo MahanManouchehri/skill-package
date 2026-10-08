@@ -20,7 +20,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Insta
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
 ```
 
-This installs only 14 personal skills. The manifest is the count authority. The installer uses CODEX_HOME if set, otherwise the current USERPROFILE; it never reads the original source paths as destinations. The dry-run lists installs, replacements, conflicts and dependency limitations without changing any files. Resolve conflicts before installing; the scripts never merge skills or make manual copies of managed skills.
+This installs only 16 personal skills. The manifest is the count authority. The installer uses CODEX_HOME if set, otherwise the current USERPROFILE; it never reads the original source paths as destinations. The dry-run lists installs, replacements, conflicts and dependency limitations without changing any files. Resolve conflicts before installing; the scripts never merge skills or make manual copies of managed skills.
 
 An existing different personal skill is backed up to `<parent-of-skills>\skills-backup\<UTC timestamp>-<unique ID>\<skill>`. `install-report.json` records changed skills and backup locations. Unchanged content is skipped. Retain backups until you have verified the restored environment. To roll back manually, close Codex, inspect that report, and restore only the reported personal directories from the chosen backup. Do not replace the entire `.codex` directory.
 
@@ -43,7 +43,7 @@ For a nondefault runtime layout, also pass `-PluginCacheRoot <actual-provider-pl
 
 Runtime evidence must be observed within the last 24 hours. Runtime evidence is a caller attestation from a live Codex catalog/tool inspection, not a cryptographic assertion. The verifier checks its fields against the destination disk and provider layout but cannot itself ask Codex whether tools are enabled. Refresh it after switching accounts, enabling/disabling plugins or restarting/changing runtime. Current provider upgrades may differ from snapshot hashes; the verifier reports that difference without overwriting provider files.
 
-Expected final outcome: 14 personal skills hash-verified; 16 managed skill entries provided and catalog-verified through proper plugins/runtime; system skills informational; unexpected duplicates 0. Missing managed capability keeps full environment restoration incomplete even when Phase A passes.
+Expected final outcome: 16 personal skills hash-verified; 16 managed skill entries provided and catalog-verified through proper plugins/runtime; system skills informational; unexpected duplicates 0. Missing managed capability keeps full environment restoration incomplete even when Phase A passes.
 
 ## Giving the folder to a new Codex
 
