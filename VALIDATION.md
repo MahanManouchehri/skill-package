@@ -1,6 +1,6 @@
 # Validation evidence
 
-## Version 2.2 structural checks
+## Version 3.0 structural checks
 
 - Manifest schema, catalog uniqueness, safe install mappings, per-file hashes, tree hashes, local Markdown references and package-integrity coverage were rechecked after the v2 delta.
 - The copied `steps`, `hand-off`, and `compatible-response` trees match their selected installed source files byte-for-byte: 13 files in total.

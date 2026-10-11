@@ -5,7 +5,7 @@
     "package-integrity.json (self)"
   ],
   "algorithm": "SHA256(UTF8(concat ordinal-sorted path + NUL + lowercase file SHA256 + LF))",
-  "package_tree_hash_sha256": "0423458a4f3b873ab422ae734d6df241daea20dafefc19c6930c826d7eb85fe8",
+  "package_tree_hash_sha256": "2ae656c6ac52fac06d6bc7d8eb6c098314bd13fb0ef5d8de57628bca6fae50e0",
   "files": [
     {
       "path": ".gitattributes",
@@ -34,7 +34,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "f523236ce5cdeb8b7b9579632cec0e6c4a67eed8170e9d1d78ff54cbffe229b3",
+      "sha256": "263124456a94ee5463dd3983157fc8a2c87285d58f04089eb3b5f15147faf068",
       "bytes": 9266
     },
     {
@@ -44,12 +44,12 @@
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "d65d3cd2803a6a99798d1be572c9993c80bbbcb146dd65b59a4cbc7a94661f20",
+      "sha256": "77398a08469e5c643807b3d8430f20e2fa36724adbc85cd60d6103db5483b46b",
       "bytes": 8645
     },
     {
       "path": "VERSION",
-      "sha256": "c4a2383a03bdb6739d16a0e24058e4b9c7da4e63d203e0be2f448868cc03c530",
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
       "bytes": 6
     },
     {
@@ -2214,7 +2214,7 @@
     },
     {
       "path": "skills-manifest.json",
-      "sha256": "7a93ab6a16fe6403160bfe8d7a5a3749bbe012629dcab0857d754c44958eb2ce",
+      "sha256": "162032efab726a8a423332cda5180c68a59693751c5288c56b43db00ad8d6806",
       "bytes": 430198
     },
     {
@@ -2844,7 +2844,7 @@
     },
     {
       "path": "validation-results.json",
-      "sha256": "9eaac2203f522130ea68a55d434ec518ce8d5242a238d156694a0fbfa9c35dc4",
+      "sha256": "1a65894856271a18d04bd4fa7e703ec6b61a61b4d87a27a0173c40734ef93269",
       "bytes": 1271
     }
   ]

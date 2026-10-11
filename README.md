@@ -1,4 +1,4 @@
-# skill-package v2.2
+# skill-package v3.0
 
 Private, verifiable snapshot of the current Codex skill environment. The source skills are preserved without behavioral rewrites. This is a file backup and restore bundle, not an account clone.
 
@@ -11,7 +11,7 @@ Private, verifiable snapshot of the current Codex skill environment. The source 
 - `package-integrity.json`: hashes for every distribution file except itself. `.git/` is excluded. Hashes detect accidental changes; they are not signatures or independent proof of authenticity.
 - `AUDIT.md`, `PORTABILITY.md`, `RESTORE.md`, `VALIDATION.md`: findings, dependencies, practical restore steps and test evidence.
 
-Version 2.2 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. A new Codex installs every portable skill through its built-in `skill-installer`; the package is not a Plugin or Marketplace. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
+Version 3.0 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. A new Codex installs every portable skill through its built-in `skill-installer`; the package is not a Plugin or Marketplace. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
 
 ## Portable skills installed in Phase A
 
