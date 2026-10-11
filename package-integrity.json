@@ -5,7 +5,7 @@
     "package-integrity.json (self)"
   ],
   "algorithm": "SHA256(UTF8(concat ordinal-sorted path + NUL + lowercase file SHA256 + LF))",
-  "package_tree_hash_sha256": "6e620821b754d2fa5d8a7fbb815988829e6b2440d4cc28e16cd488eae13a6872",
+  "package_tree_hash_sha256": "0423458a4f3b873ab422ae734d6df241daea20dafefc19c6930c826d7eb85fe8",
   "files": [
     {
       "path": ".gitattributes",
@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "1e8a87814b87363f2f3773d31c5e0e67ccfe946f912632a0f56db210849cb219",
-      "bytes": 5907
+      "sha256": "f523236ce5cdeb8b7b9579632cec0e6c4a67eed8170e9d1d78ff54cbffe229b3",
+      "bytes": 9266
     },
     {
       "path": "RESTORE.md",

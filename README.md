@@ -13,6 +13,29 @@ Private, verifiable snapshot of the current Codex skill environment. The source 
 
 Version 2.2 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. A new Codex installs every portable skill through its built-in `skill-installer`; the package is not a Plugin or Marketplace. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
 
+## Portable skills installed in Phase A
+
+The following 16 personal skills are installed into the destination user's global skill directory. The 16 entries under `managed/plugin-skills/` are deliberately excluded from this list because they require their own Plugin or runtime provider.
+
+| Skill | What it does |
+|---|---|
+| `apple-design` | Guides Apple-inspired interface design, including motion, spatial hierarchy, typography and reduced-motion behavior. Use it for gesture-driven or polished, physical-feeling UI work. |
+| `architecture-review` | Independently reviews a concrete system design or implementation plan before coding. It focuses on boundaries, coupling, maintainability and realistic structural risk. |
+| `compatible-response` | Shapes user-facing Codex responses for the task at hand and keeps them concise without losing needed information. It applies across projects and other skills. |
+| `db-impact` | Maps the full impact of a proposed database or migration change before execution. It covers compatibility, existing data, rollback and downstream dependencies. |
+| `devil` | Stress-tests important technical decisions and plans by challenging assumptions, failure modes and reversibility. It is an evidence-based adversarial review, not an implementation skill. |
+| `final-check` | Audits completed work against the original request before it is declared finished. It checks requirements, evidence, scope and remaining limitations. |
+| `full-plan` | Documents API endpoints and ordered user scenarios in natural Persian before implementing an API-driven feature. It requires explicit confirmation before API-contract changes. |
+| `hand-off` | Explains real source code, call paths and feature behavior for developers taking over a project. A full handoff can generate a developer guide and standalone LLM context. |
+| `multiple-pov` | Runs a one-time, evidence-first design review before substantial new systems or changes. It surfaces trade-offs and decisions before planning or implementation begins. |
+| `natural-persian-writing` | Produces and reviews clear, natural Persian while preserving technical facts and the intended tone. Use it for meaningful Persian prose, documentation and support text. |
+| `performance-review` | Reviews recent changes or known workloads for real performance bottlenecks and scalable improvements. It avoids speculative micro-optimization. |
+| `practical-test` | Performs strict browser-based acceptance testing for work implemented in the current conversation. It activates only when explicitly requested with `/practical-test`. |
+| `regression-check` | Verifies that completed changes preserved important existing behavior within their realistic blast radius. It identifies what must be tested and reports residual uncertainty. |
+| `root-cause` | Investigates the actual cause of a bug or unexpected behavior before proposing a fix. It prevents symptom-driven or speculative patching. |
+| `steps` | Leads development work by applying governance, setting proportionate workflow and coordinating relevant specialist skills. It tracks criticality, evidence, verification and handoff. |
+| `ui-ux-pro-max` | Supplies UI/UX guidance, searchable design data and stack-specific patterns for web, mobile and desktop interfaces. It covers interaction, accessibility, layout, typography and visual systems. |
+
 ## Install in Codex
 
 Give a new Codex this exact prompt:
