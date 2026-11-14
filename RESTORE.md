@@ -1,19 +1,30 @@
-# Manual restore on another Windows user/account
+# Restore, upgrade and rollback
 
-For installation from a repository URL in a new Codex, follow **Install in Codex** in `README.md` and [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). This document is the Windows PowerShell fallback for a direct, hash-verified copy into the user skill directory.
+For exact-SHA download/staging and active-root inspection, follow [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). The install set is exactly26 personal skills. Managed/system/plugin snapshots never enter personal roots; do not replace the whole .codex or .agents directory.
 
-## Get the bundle
+## Python promotion and recovery
 
-Authenticate GitHub separately if using the private repository:
+Use Python3 with scripts/requirements.txt installed in an external environment. Verify package/staging, inspect plan and use --replace only for authorized recognized upgrades. A clean install refuses unknown or differing collisions by default. Every replaced directory and explicitly removed same-name duplicate is backed up and hash-verified before the first destination rename. Unchanged/unrelated directories remain outside ownership.
 
-```powershell
-git clone https://github.com/MahanManouchehri/skill-package.git
-cd skill-package
+The returned timestamped backup root contains backups/ and transaction.json. Keep it private/local. The journal records exact approved paths, original/new hashes, backups, transaction identity and phase. It cannot grant itself authority: rollback requires trusted explicit allowed roots.
+
+```sh
+python3 -B scripts/package_tools.py rollback \
+  --journal <verified-backup-root>/transaction.json \
+  --allow-root <actual-codex-root>/skills
 ```
 
-Alternatively extract `skill-package-portable.zip` into a new folder and open PowerShell in that extracted folder. The ZIP does not contain `.git`, credentials, sessions or runtime cache. Check the independently supplied ZIP SHA-256 against the archive before extraction when available.
+For a transaction spanning an agents overlay, also pass `--allow-root <actual-user>/.agents/skills`. Allowed roots must exactly match the reviewed journal scope. Never supply unknown roots merely to satisfy a journal. Backups under system/plugin/cache trees and unsafe links are refused.
 
-## Phase A: personal/user-global skills
+Rollback validates every backup and all current owned states before changing anything. It restores original directories and removes only newly installed approved paths, preserving unrelated content. Post-install manual edits to an owned skill cause refusal instead of deletion; inspect and preserve those edits before recovery. Repeated rollback verifies the restored state. Backups remain available.
+
+After an interrupted transaction, stop/confirm the original process is no longer alive, inspect its lock/journal, then use the same explicit rollback command. Another transaction's lock is never removed. A crash before the prepared journal exists has not renamed any destination; inspect the owned PREPARING scratch/lock and preserve all backups before targeted manual cleanup. Do not blindly delete locks or all stage directories. A failed automatic rollback is BLOCKED/recovery-required, not a successful install.
+
+After installation or rollback, verify complete hashes and inspect a fresh Codex catalog; use the next turn/fresh chat/restart if needed. Discovery is distinct from model behavior.
+
+## Windows PowerShell fallback
+
+The original PowerShell5.1 scripts remain unchanged and retain their existing contract. They are a Windows fallback; current macOS execution does not establish a new Windows pass. Use a trusted exact-ref checkout or authorized archive with independent checksum when available.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -PackageOnly
@@ -22,45 +33,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Insta
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
 ```
 
-This installs only 16 personal skills. The manifest is the count authority. The installer uses CODEX_HOME if set, otherwise the current USERPROFILE; it never reads the original source paths as destinations. The dry-run lists installs, replacements, conflicts and dependency limitations without changing any files. Resolve conflicts before installing; the scripts never merge skills or make manual copies of managed skills.
+Destination is CODEX_HOME/skills or USERPROFILE/.codex/skills, never manifest provenance paths. -DestinationRoot supports an isolated test root. The manifest supplies26 personal entries; managed snapshots are never installed. Existing recognized differences receive timestamped verified backups; unrelated/system/AGENTS/account content is preserved. Review install-report.json before manual recovery of only named directories. The Python overlay mapper is recommended for multiple active roots; PowerShell's single-root interface does not automatically consolidate overlays.
 
-An existing different personal skill is backed up to `<parent-of-skills>\skills-backup\<UTC timestamp>-<unique ID>\<skill>`. `install-report.json` records changed skills and backup locations. Unchanged content is skipped. Retain backups until you have verified the restored environment. To roll back manually, close Codex, inspect that report, and restore only the reported personal directories from the chosen backup. Do not replace the entire `.codex` directory.
+## Managed capabilities — separate restoration
 
-Restart Codex or open a fresh chat after installation and confirm the personal entries appear exactly once in the live skill catalog. The disk verifier confirms discoverable metadata, structure, references and hashes; live runtime discovery must also be checked in Codex.
+The sixteen managed entries are historical audit snapshots. Enable the corresponding plugin/runtime through its supported destination mechanism and authenticate separately. Confirm actual active catalog entries, physical provider identity and tools; file existence/cache inventory alone does not prove activation. Consult PORTABILITY.md and runtime-catalog.example.json.
 
-## Phase B: managed capabilities
+The PowerShell -RequireManaged option needs fresh caller-attested live catalog/capability evidence, not a fabricated success file. Provider versions may differ from historical snapshots. No package installer activates plugins, modifies provider caches or transfers account entitlements. Missing managed capabilities do not change the personal26 installation count, and must not be mislabeled a complete environment restore.
 
-1. Open destination Codex Settings → Plugins (or the available Plugins interface).
-2. Find/enable each provider/plugin in PORTABILITY.md using the supported interface. Some bundled/runtime plugins are supplied by Codex and may have no separate install button. If unavailable, report **MISSING RUNTIME/PLUGIN DEPENDENCY**.
-3. Connect/authenticate required services separately. Verify the actual required tools/runtime, including Excel's connected add-in session when using live Excel control. File snapshots do not supply these capabilities.
-4. In a fresh destination chat, inspect the **active** catalog, identify actual physical plugin skill directories, and check tools. Populate a runtime evidence JSON outside the bundle using `runtime-catalog.example.json` as its schema. Never use cache inventory alone as evidence. Never set `enabled` or `capabilities_confirmed` true without observing them.
-5. Run strict verification with that evidence and the destination plugin cache root:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -RuntimeCatalogPath C:\path\to\runtime-catalog.json -RequireManaged
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\inventory.ps1 -RuntimeCatalogPath C:\path\to\runtime-catalog.json -OutputPath C:\path\to\inventory.json
-```
-
-For a nondefault runtime layout, also pass `-PluginCacheRoot <actual-provider-plugin-version-cache-root>`. Current verification supports the observed provider/plugin/version/skills layout. An unsupported destination layout requires inspection, not manual snapshot copying.
-
-Runtime evidence must be observed within the last 24 hours. Runtime evidence is a caller attestation from a live Codex catalog/tool inspection, not a cryptographic assertion. The verifier checks its fields against the destination disk and provider layout but cannot itself ask Codex whether tools are enabled. Refresh it after switching accounts, enabling/disabling plugins or restarting/changing runtime. Current provider upgrades may differ from snapshot hashes; the verifier reports that difference without overwriting provider files.
-
-Expected final outcome: 16 personal skills hash-verified; 16 managed skill entries provided and catalog-verified through proper plugins/runtime; system skills informational; unexpected duplicates 0. Missing managed capability keeps full environment restoration incomplete even when Phase A passes.
-
-## Giving the repository URL to a new Codex
-
-For a Codex that already has the standard `skill-installer`, use the exact prompt in [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). It reads the manifest and installs all 16 portable skill paths in one installer operation. The PowerShell steps below remain for a hash-verified manual restore from an extracted folder.
-
-## Giving the folder to a new Codex
-
-Use this prompt with the extracted folder or authorized private repository:
-
-> Read README.md, RESTORE.md, PORTABILITY.md and skills-manifest.json. Audit package integrity, run install.ps1 -DryRun, restore only the installable user-global skills, then verify hashes and duplicates. Restore plugin capabilities through their supported mechanisms; never install managed/plugin-skills into user skills or plugin cache. Inspect the fresh active catalog/tools and report missing runtime/plugin dependencies separately. Do not alter skill content, system skills, AGENTS.md, account config or credentials.
-
-## Isolated test
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun -DestinationRoot C:\path\to\temporary-test\skills
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Install -DestinationRoot C:\path\to\temporary-test\skills
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -DestinationRoot C:\path\to\temporary-test\skills
-```
+Recovery uses a nonblocking kernel lock (fcntl on POSIX, msvcrt on Windows) in addition to the installer marker; two recoveries cannot write the journal concurrently. Live trees are displaced atomically into owned scratch before restoration. A process crash releases kernel ownership and the next validated recovery can resume. Windows execution remains unverified on the current macOS build host.

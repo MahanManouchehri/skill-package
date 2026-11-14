@@ -1,0 +1,240 @@
+{
+  "case_id": "S27",
+  "original_prompt": "این صفحه دیر باز می‌شود؛ راه رفع کندی را پیدا کن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S27/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS coordination; READ_ONLY",
+      "reason": "Bound a slow-page engineering diagnosis to actual source, minimum workflow and existing governance."
+    },
+    {
+      "name": "performance-review",
+      "path": "$FIXTURES/S27/.agents/skills/performance-review/SKILL.md",
+      "mode": "ENDPOINT_REVIEW; no FIX_MODE",
+      "reason": "A concrete slow-page concern requires source-grounded performance diagnosis and a comparable baseline, not stress traffic."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S27/.agents/skills/compatible-response/SKILL.md",
+      "mode": "SUPPORTING",
+      "reason": "Required presentation standard."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S27/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "SUPPORTING",
+      "reason": "Generate concise technical Persian without overstating certainty."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S27/AGENTS.md",
+    "$FIXTURES/S27/prompt.txt",
+    "$FIXTURES/S27/available_catalog.json",
+    "$FIXTURES/S27/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S27/.agents/skills/performance-review/SKILL.md",
+    "$FIXTURES/S27/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S27/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S27/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S27/resources/js/dashboard.js",
+    "$FIXTURES/S27/resources/views/form.blade.php",
+    "$FIXTURES/S27/resources/css/app.css",
+    "$FIXTURES/S27/routes/api.php",
+    "$FIXTURES/S27/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S27/app/Models/User.php",
+    "$FIXTURES/S27/schema.sql",
+    "$FIXTURES/S27/README.md",
+    "$FIXTURES/S27/snapshot.json",
+    "$FIXTURES/S27/composer.json",
+    "$FIXTURES/S27/spec/api/users.md",
+    "$FIXTURES/S27/tests/test_contract.py",
+    "$FIXTURES/S27/NOTES.md"
+  ],
+  "skill_body_sha256": {
+    "steps": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+    "performance-review": "00aa8da834b8be3fc0244a8d2a9411ba233b19a3b4d018c651250166a960966e",
+    "compatible-response": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+    "natural-persian-writing": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+  },
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md && cat AGENTS.md && cat prompt.txt && cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read single-case READ_ONLY contract, local constraints, exact prompt and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read coordination/routing and authority guidance. Combined tool output truncated some tail content; the remaining reporting guidance was separately read."
+    },
+    {
+      "command": "cat .agents/skills/performance-review/SKILL.md",
+      "exit_code": 0,
+      "result": "First combined output was truncated; repeated full read below supplied all 3255 output tokens."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read adaptive presentation and information-density requirements."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read Persian register, accuracy and uncertainty requirements."
+    },
+    {
+      "command": "rg --files -g '!node_modules' -g '!vendor' -g '!available_catalog.json'",
+      "exit_code": 0,
+      "result": "Found small Laravel/Blade/vanilla-JS fixture and relevant controller, schema, routes and docs."
+    },
+    {
+      "command": "cat .agents/skills/performance-review/SKILL.md",
+      "exit_code": 0,
+      "result": "Read entire body: ENDPOINT_REVIEW, default read-only diagnosis, confidence levels, no load generation from a slow-page request."
+    },
+    {
+      "command": "sed -n '145,260p' .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "No output; file has no lines in this range. Subsequently read relevant tail at lines 95-144."
+    },
+    {
+      "command": "cat resources/js/dashboard.js resources/views/form.blade.php resources/css/app.css routes/api.php app/Http/Controllers/UserController.php app/Models/User.php schema.sql",
+      "exit_code": 0,
+      "result": "Inspected actual source: 30-second polling, owner-scoped unbounded get(), simple Blade/CSS, sample users schema with primary key only."
+    },
+    {
+      "command": "cat README.md snapshot.json composer.json spec/api/users.md tests/test_contract.py",
+      "exit_code": 0,
+      "result": "README explicitly says synthetic fixture with no installed framework, DB server or running app. Docs preserve actor-owned list contract. Existing test is a duplicate-phone precondition test, not a latency test; it was not run."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read linked technical/Persian style reference."
+    },
+    {
+      "command": "sed -n '95,144p' .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read remaining worker evidence, verification, reporting and final-handoff guidance."
+    },
+    {
+      "command": "cat NOTES.md",
+      "exit_code": 0,
+      "result": "Observed user-authored draft note; preserved it without modification."
+    },
+    {
+      "command": "rg -n 'fetch|setInterval|owner_id|->get|paginate|index|script|stylesheet' app routes resources schema.sql composer.json README.md spec/api",
+      "exit_code": 0,
+      "result": "Confirmed concrete matches at dashboard.js:1, UserController.php:4, routes/api.php:3, User.php:3 and schema.sql:1. No asset-wiring or pagination match found in these inspected paths."
+    }
+  ],
+  "task_assessment": {
+    "task_criticality": "★",
+    "workload": "LOW",
+    "scope": "Local static page/API performance inspection and first-phase plan only",
+    "execution_owner": "IN_PROCESS",
+    "status": "INCOMPLETE_RUNTIME_EVIDENCE"
+  },
+  "source_findings": [
+    {
+      "confidence": "STRONG_EVIDENCE",
+      "category": [
+        "QUERY_SHAPE",
+        "MEMORY",
+        "RESPONSE_SIZE"
+      ],
+      "location": "app/Http/Controllers/UserController.php:4",
+      "observation": "User::where('owner_id', $request->user()->id)->get() loads every matching row with no projection or pagination in this controller.",
+      "impact": "Potential growth-dependent query, hydration, serialization and transfer cost; not a measured cause of the reported slow page.",
+      "severity": "INFO_PENDING_MEASUREMENT",
+      "recommendation": "Measure actor-specific row count, SQL time, payload bytes and API contribution to page timing before selecting a bounded projection or pagination change.",
+      "implementation_cost": "MEDIUM",
+      "expected_benefit": "UNKNOWN_PENDING_MEASUREMENT",
+      "regression_risk": "MEDIUM: changing array/pagination fields or dropping consumed attributes changes the API contract."
+    },
+    {
+      "confidence": "STRONG_EVIDENCE",
+      "category": [
+        "FRONTEND",
+        "NETWORK"
+      ],
+      "location": "resources/js/dashboard.js:1",
+      "observation": "setInterval fetches /api/users every 30000 ms. This fragment contains no immediate fetch or rendering, and no included source proves its connection to the reported initial page load.",
+      "impact": "The repeated request is inspectable; its effect on initial opening is unverified.",
+      "recommendation": "Preserve polling and its interval; inspect actual page asset wiring and waterfall in the real safe runtime before attributing initial-load cost."
+    },
+    {
+      "confidence": "POTENTIAL",
+      "category": [
+        "INDEX"
+      ],
+      "location": "schema.sql:1",
+      "observation": "The example schema declares only id as primary key, with no owner_id index shown. It has two sample rows, not a representative production dataset.",
+      "impact": "An owner-filter scan may matter at larger cardinality; current evidence does not justify adding an index.",
+      "recommendation": "Only if measured query cost points here: inspect real existing indexes, cardinality and a safe query plan. Use db-impact before any subsequently authorized index/schema change; do not infer production indexes from this fixture."
+    }
+  ],
+  "intended_actions": [
+    {
+      "order": 1,
+      "mode": "READ_ONLY completed",
+      "action": "Inspect local instructions, actual route/controller/model, page fragments, schema and API contract.",
+      "observable_end": "Locate candidate hot path and state which observations are static versus measured."
+    },
+    {
+      "order": 2,
+      "mode": "PLAN_ONLY pending a real safe target and available evidence",
+      "action": "Identify the actual slow URL and collect a small representative baseline separating TTFB, API SQL/hydration, payload/download and browser render. Compare the same actor, dataset, device and cold/warm cache conditions.",
+      "observable_end": "Recorded timings and dominant critical-path component; no p95/p99 inference from tiny samples and no load/stress generation."
+    },
+    {
+      "order": 3,
+      "mode": "PLAN_ONLY conditional",
+      "action": "Choose the smallest measured fix within Laravel/Blade/vanilla JS. Treat projection/pagination as consumer-contract decisions; consider an owner_id index only with real query-plan/selectivity evidence and db-impact before execution. Avoid default cache, Redis, queues, realtime or framework replacement.",
+      "observable_end": "A concrete optimization plan tied to measured cost with explicit contract and regression impact."
+    },
+    {
+      "order": 4,
+      "mode": "PLAN_ONLY future verification after separately permitted implementation",
+      "action": "Compare the identical baseline and verify actor ownership isolation, returned fields/list behavior, polling and relevant UI functionality.",
+      "observable_end": "Observed before/after improvement plus preserved correctness. Until then, report no verified speedup."
+    }
+  ],
+  "authorization_handling": {
+    "allowed": [
+      "Inspect only this case and its candidate skill bodies/relevant linked reference.",
+      "Write only the requested evidence JSON."
+    ],
+    "forbidden_in_current_execution": [
+      "Application or schema edits",
+      "Dependency installation",
+      "Service start",
+      "Network or provider requests",
+      "Load/stress generation",
+      "Production access",
+      "Cron/worker configuration",
+      "Commit, push or deployment"
+    ],
+    "approval_requests": [],
+    "reason_no_confirmation_was_needed": "Completed all available safe static investigation. Missing runtime is an evidence limitation, not permission to start services or access another environment.",
+    "excluded_skills": {
+      "load-testing": "The user reported a slow page and did not request finite load/stress/concurrent traffic.",
+      "apple-design": "No gesture or motion defect is established.",
+      "practical-test": "There is no confirmed safe running target and no implemented flow to accept.",
+      "root-cause": "Performance review owns the initial diagnosis; deeper root-cause work is conditional on runtime evidence that remains unexplained.",
+      "db-impact": "No database change is being selected or executed; only conditional future index investigation is described."
+    }
+  },
+  "concise_persian_response": "★\n\n۱. [✓] با اسکیل `performance-review` مسیر موجود را بررسی کردم؛ اجرا: `IN_PROCESS`. معیار پایان این مرحله، شناسایی نقاط پرهزینه از روی کد بود. در `UserController::index` همهٔ کاربران مالک فعلی با `get()` خوانده می‌شوند؛ با زیاد شدن داده، هزینهٔ کوئری، حافظه و حجم پاسخ می‌تواند افزایش یابد. این احتمال هنوز اندازه‌گیری نشده است.\n\n۲. [!] برای تشخیص علت واقعی، زمان پاسخ سرور، کوئری، حجم پاسخ و دانلود و رندر صفحه باید در محیط امن و با دادهٔ نماینده جداگانه ثبت شوند. این مخزن برنامهٔ در حال اجرا ندارد و نشانی صفحهٔ کند هم مشخص نیست؛ بنابراین علت قطعی یا میزان بهبود را نمی‌توان تأیید کرد. درخواست دوره‌ای `/api/users` هر ۳۰ ثانیه در کد هست، اما ارتباط آن با کندی بازشدن اولیه ثابت نشده است.\n\n۳. [ ] پس از اندازه‌گیری، کوچک‌ترین اصلاح مناسب انتخاب می‌شود: محدود کردن داده یا صفحه‌بندی فقط با بررسی قرارداد مصرف‌کننده؛ بررسی ایندکس `owner_id` فقط در صورت تأیید هزینهٔ کوئری و پیش از تغییر با `db-impact`. معیار پایان، کاهش زمان در شرایط یکسان همراه با حفظ فیلتر مالکیت و رفتار فعلی است.\n\nهیچ فایل برنامه‌ای تغییر نکرد و هیچ تست، درخواست شبکه یا اندازه‌گیری زمان اجرا انجام نشد.",
+  "limitations": [
+    "README declares a synthetic fixture with no installed framework, database server or running application. No runtime was started or installed.",
+    "Actual slow-page URL, target device/network, representative data volume, desired latency, profiler output and baseline are absent.",
+    "The inspected fragments do not establish that dashboard.js is loaded by the displayed Blade form or that /api/users lies on initial-render critical path.",
+    "No runtime latency, query count, execution plan, bundle size, LCP/CLS, browser acceptance or before/after speedup is measured.",
+    "Existing duplicate-phone test was read, not run; it supplies no performance evidence.",
+    "The sample schema and two sample rows do not establish production schema, indexes, cardinality or behavior."
+  ],
+  "artifact_provenance": "Generated locally with Python json.dumps; the commands array records actual investigative shell commands. Only this authorized result file was written."
+}

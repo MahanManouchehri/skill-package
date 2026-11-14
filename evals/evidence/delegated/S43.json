@@ -1,0 +1,124 @@
+{
+  "case_id": "S43",
+  "original_prompt": "برای درخواست مشتری یک Technical Proposal با scope و deliverables بنویس.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "technical-proposal-discovery",
+      "mode": "TECHNICAL_PROPOSAL",
+      "path": "$FIXTURES/S43/.agents/skills/technical-proposal-discovery/SKILL.md",
+      "reason": "درخواست صریح Technical Proposal با دامنه و تحویل‌دادنی‌ها.",
+      "sha256": "3af2482b99f8c8535ff768a03d60c06536b8534530262d1d776bb74582494104"
+    },
+    {
+      "name": "compatible-response",
+      "mode": "SUPPORTING",
+      "path": "$FIXTURES/S43/.agents/skills/compatible-response/SKILL.md",
+      "reason": "سیاست ارائهٔ پاسخ.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    },
+    {
+      "name": "natural-persian-writing",
+      "mode": "professional_technical",
+      "path": "$FIXTURES/S43/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "نگارش فارسی حرفه‌ای با حفظ معنای فنی.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S43/AGENTS.md",
+    "$FIXTURES/S43/prompt.txt",
+    "$FIXTURES/S43/available_catalog.json",
+    "$FIXTURES/S43/.agents/skills/technical-proposal-discovery/SKILL.md",
+    "$FIXTURES/S43/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S43/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S43/README.md",
+    "$FIXTURES/S43/NOTES.md",
+    "$FIXTURES/S43/snapshot.json",
+    "$FIXTURES/S43/composer.json",
+    "$FIXTURES/S43/routes/api.php",
+    "$FIXTURES/S43/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S43/app/Models/User.php",
+    "$FIXTURES/S43/spec/api/users.md",
+    "$FIXTURES/S43/schema.sql",
+    "$FIXTURES/S43/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md; cat AGENTS.md; cat prompt.txt; cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read single-case contract, read-only constraints, exact user prompt and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/technical-proposal-discovery/SKILL.md",
+      "exit_code": 0,
+      "result": "Read explicit-only technical proposal workflow, scope/deliverables/acceptance and authorization boundaries."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read adaptive presentation and information-density policy."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read Persian writing rules."
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!.agents/**' -g '!AGENTS.md' -g '!prompt.txt'",
+      "exit_code": 0,
+      "result": "Found application example files, README, NOTES and existing API docs; no dedicated customer brief filename."
+    },
+    {
+      "command": "cat README.md NOTES.md snapshot.json composer.json",
+      "exit_code": 0,
+      "result": "Synthetic fixture with no installed framework/database/provider/running app; preserve user draft; PHP >=8.2 and laravel/framework dependency declared."
+    },
+    {
+      "command": "cat routes/api.php app/Http/Controllers/UserController.php app/Models/User.php spec/api/users.md schema.sql",
+      "exit_code": 0,
+      "result": "Observed GET /users route, owner_id filter using current request user, guarded id/owner_id, matching existing API description and example users schema. No runtime verification."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read technical/professional Persian wording and preservation of permission semantics."
+    },
+    {
+      "command": "rg -n -i 'brief|proposal|customer|client|requirement|scope|deliverable|درخواست|مشتری|پروپوزال|نیاز|دامنه' README.md NOTES.md contracts spec app routes resources tests composer.json",
+      "exit_code": 1,
+      "result": "No matching customer requirements or proposal brief found in the searched application/document paths."
+    }
+  ],
+  "findings": [
+    {
+      "status": "VERIFIED",
+      "finding": "No customer brief found in inspected docs/application files or targeted search; prompt requests proposal but does not define requested software behavior."
+    },
+    {
+      "status": "VERIFIED",
+      "finding": "Composer declares PHP >=8.2 and Laravel dependency; existing GET users controller filters records by current actor owner_id. Static source evidence only."
+    },
+    {
+      "status": "UNVERIFIED",
+      "finding": "Application execution, authentication behavior, persisted data and production behavior; README explicitly states absent framework, DB server, provider and running application."
+    }
+  ],
+  "intended_actions": [
+    "Deliver a bounded discovery-stage technical proposal now, with included scope, deliverables, acceptance, dependencies and missing owner decisions.",
+    "Obtain customer brief, actors/workflows, essential features, constraints and deployment ownership before committing feature scope.",
+    "After scope confirmation, refine technical approach using existing PHP/Laravel stack, document relevant API contracts under spec/api and define verification evidence; do not begin implementation automatically."
+  ],
+  "authorization_handling": {
+    "authorized": "Read-only source inspection and proposal planning; sole allowed output write is delegated-results/S43.json.",
+    "not_inferred": "A proposal does not authorize implementation, dependency installation, services, schema/data changes, provider traffic, production access, deployment, commercial commitments or contacting anyone.",
+    "actions_taken": "Read only this scenario and shared WORKER_CONTRACT.md; no network, services, runtime tests, source edits, commits or external mutations; wrote only the permitted evidence JSON."
+  },
+  "concise_persian_response": "پیش‌نویس Technical Proposal در این مرحله به کشف نیاز و تثبیت دامنه محدود است؛ شرح درخواست مشتری در فایل‌های بررسی‌شده موجود نیست و نمی‌توان قابلیت مشخصی را به او نسبت داد.\n\nواقعیت‌های تأییدشده از کد (VERIFIED): پروژه وابستگی PHP >=8.2 و Laravel دارد؛ مسیر `GET /api/users` در کنترلر، رکوردها را با `owner_id` کاربر فعلی فیلتر می‌کند. این مشاهدهٔ ایستا است؛ اجرای برنامه و احراز هویت مسیر تأیید نشده‌اند.\n\n| دامنهٔ پیشنهادی این مرحله | تحویل‌دادنی | معیار پذیرش |\n|---|---|---|\n| روشن‌کردن مسئله، کاربران، جریان‌های اصلی و محدودیت‌ها | شرح نیاز با تفکیک واقعیت، فرض و تصمیم باز | صاحب محصول مسئله و سناریوهای اصلی را تأیید کند |\n| تعیین موارد داخل و خارج از دامنه | فهرست قابلیت‌ها، وابستگی‌ها و معیار پذیرش هر قابلیت | هر قابلیت خروجی قابل مشاهده و مرز مشخص داشته باشد |\n| بررسی انطباق با کد موجود و حفظ پشتهٔ فعلی | طرح فنی متناسب با نیاز، قراردادهای API/UI/data در صورت نیاز و ترتیب اجرا | اثر بر دسترسی، سازگاری و داده‌ها مشخص باشد |\n| تعیین روش تحویل | برنامهٔ آزمون، مستندات مرتبط زیر `spec/api` و مسئولیت استقرار و نگه‌داری | مسئول هر مرحله و شواهد لازم برای پذیرش روشن باشد |\n\nترتیب پیشنهادی: دریافت شرح درخواست ← تأیید دامنه و معیارها ← نهایی‌کردن طرح و وابستگی‌ها ← برنامهٔ اجرای مرحله‌ای. نیاز به تغییر دیتابیس، سرویس بیرونی یا زیرساخت هنوز نامشخص است (UNVERIFIED). فرض پیشنهادی، ادامه با پشتهٔ موجود است؛ هنوز تأیید مالک دریافت نشده است.\n\nبرای نهایی‌کردن پروپوزال، متن درخواست مشتری، کاربران هدف، قابلیت‌های ضروری، محدودیت‌های فنی و مسئول استقرار لازم است. قیمت، تعهد زمانی تجاری، قرارداد، پیاده‌سازی، ارسال پیام و استقرار در این مرحله قرار ندارند. فقط بررسی ایستا انجام شد؛ محیط اجرایی و شواهد عملیاتی در دسترس نیست.",
+  "limitations": [
+    "Customer request and product-specific business requirements are absent; feature-level scope and estimates cannot be responsibly fixed.",
+    "Synthetic fixture lacks framework/runtime database/provider/running target; only static observations are available.",
+    "Source contracts are examples and do not establish production security, operational behavior or acceptance success."
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "package-tool-tests",
+    "command": [
+      "$WORKSPACE/work/v3-evaluation/venv/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_package_tools.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "observed_utc": "2026-11-14T04:22:28.185778+00:00",
+    "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "output_file": "work/v3-evaluation/package-tool-tests.txt",
+    "script_sha256": "00aa184dfaa05a8e3fc93386a59a2f3d2d69d345215d8acf7b1cf64e139b6d1c"
+  },
+  {
+    "name": "runner-tests",
+    "command": [
+      "$WORKSPACE/work/v3-evaluation/venv/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "evals",
+      "-p",
+      "test_runner.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "observed_utc": "2026-11-14T03:46:12.337979+00:00",
+    "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "output_file": "work/v3-evaluation/runner-tests.txt",
+    "script_sha256": "d13cd8bc0499829c3abdbda993ca95ca4f5f67acac3ca762d3c425646b292118"
+  }
+]

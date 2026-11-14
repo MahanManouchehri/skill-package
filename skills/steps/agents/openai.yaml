@@ -1,0 +1,6 @@
+interface:
+  display_name: "Steps — Engineering Lead"
+  short_description: "Coordinate proportionate software engineering workflows"
+  default_prompt: "Use $steps to implement this software change with appropriate verification."
+policy:
+  allow_implicit_invocation: true

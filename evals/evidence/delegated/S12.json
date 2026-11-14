@@ -1,0 +1,220 @@
+{
+  "case_id": "S12",
+  "original_prompt": "در Django مشکل Permission یک View را درست کن و regression tests بنویس.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "READ_ONLY_INSPECTION_COMPLETE_IMPLEMENTATION_NOT_PERFORMED",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S12/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS_READ_ONLY",
+      "reason": "Coordinate the requested bounded Django permission fix and regression-test plan under read-only authority."
+    },
+    {
+      "name": "security-assurance",
+      "path": "$FIXTURES/S12/.agents/skills/security-assurance/SKILL.md",
+      "mode": "TARGETED",
+      "reason": "The concrete profile route reads an object by client-controlled pk without visible authentication or owner scoping."
+    },
+    {
+      "name": "test-engineering",
+      "path": "$FIXTURES/S12/.agents/skills/test-engineering/SKILL.md",
+      "mode": "STRATEGY",
+      "reason": "The user explicitly requests regression tests; existing tests do not exercise the view or permissions."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S12/.agents/skills/compatible-response/SKILL.md",
+      "mode": "SUPPORTING",
+      "reason": "Apply required concise, evidence-preserving presentation."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S12/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "SUPPORTING",
+      "reason": "Produce the technical Persian response."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S12/AGENTS.md",
+    "$FIXTURES/S12/prompt.txt",
+    "$FIXTURES/S12/available_catalog.json",
+    "$FIXTURES/S12/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S12/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S12/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S12/app/views.py",
+    "$FIXTURES/S12/app/urls.py",
+    "$FIXTURES/S12/app/models.py",
+    "$FIXTURES/S12/tests/test_contract.py",
+    "$FIXTURES/S12/pyproject.toml",
+    "$FIXTURES/S12/README.md",
+    "$FIXTURES/S12/spec/api/users.md",
+    "$FIXTURES/S12/.agents/skills/security-assurance/SKILL.md",
+    "$FIXTURES/S12/.agents/skills/test-engineering/SKILL.md",
+    "$FIXTURES/S12/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "skill_body_sha256": {
+    "steps": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+    "security-assurance": "3ecc28eac52dd0018163ca1808aec0fb6756dfbd32a0cc156229f060332a0310",
+    "test-engineering": "e800c5a400ce62d7f3c5bbe75bf8dbf6d803f01b9e5146e07309f79c6219ead7",
+    "compatible-response": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+    "natural-persian-writing": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+  },
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md; cat AGENTS.md; cat prompt.txt; cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read worker boundary, local read-only governance, exact request and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read coordinator body; proportionate read-only inspection, existing Django stack and scoped specialists."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read response presentation rules."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read Persian writing rules."
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!.agents/**'",
+      "exit_code": 0,
+      "result": "Found app/views.py, app/urls.py, app/models.py, app/templates/form.html, tests/test_contract.py, pyproject.toml, README.md, spec/api/users.md and fixture prose/data. No other scenario inspected."
+    },
+    {
+      "command": "cat app/views.py app/urls.py app/models.py tests/test_contract.py pyproject.toml",
+      "exit_code": 0,
+      "result": "profile fetches User solely by pk; no request.user or owner check; route is detail GET path; owner_id exists; existing unittest covers only duplicate-phone SQLite precondition; declared dependencies are empty."
+    },
+    {
+      "command": "cat README.md spec/api/users.md",
+      "exit_code": 0,
+      "result": "README describes a synthetic fixture without installed framework/running app. API doc says users belong to current actor but documents a list path rather than the actual detail path."
+    },
+    {
+      "command": "cat .agents/skills/security-assurance/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read targeted object-authorization review, test strategy and technical Persian reference; no full audit or implementation was performed."
+    },
+    {
+      "command": "rg -n 'profile|owner_id|request\\.user|permission|auth|api/users|class .*Test|dependencies' app tests spec/api pyproject.toml",
+      "exit_code": 0,
+      "result": "Matches confirm profile at app/views.py:3, route at app/urls.py:3, owner_id at app/models.py:3, only LegacyDataTest at tests/test_contract.py:2, owner-scoped API prose at spec/api/users.md:1 and empty dependencies at pyproject.toml:4. No auth or permission-control match."
+    },
+    {
+      "command": "rg --files -g '*settings*' -g 'manage.py' -g '*requirements*' -g '*lock*' -g '!.agents/**'",
+      "exit_code": 1,
+      "result": "No matching Django settings, manage.py, requirements or lock files found in the fixture."
+    },
+    {
+      "command": "python3 -B -c 'import importlib.util; print(\"django_available=\" + str(importlib.util.find_spec(\"django\") is not None))'",
+      "exit_code": 0,
+      "result": "django_available=False; checked import availability without importing application code or writing bytecode."
+    },
+    {
+      "command": "shasum -a 256 .agents/skills/steps/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": {
+        "steps": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+        "security-assurance": "3ecc28eac52dd0018163ca1808aec0fb6756dfbd32a0cc156229f060332a0310",
+        "test-engineering": "e800c5a400ce62d7f3c5bbe75bf8dbf6d803f01b9e5146e07309f79c6219ead7",
+        "compatible-response": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+        "natural-persian-writing": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "location": "app/urls.py:3 -> app/views.py:3-5; app/models.py:3",
+      "finding": "profile selects User.objects.get(pk=pk) and returns id/name without consulting request.user or owner_id. A reachable route without upstream protection would let an actor select another owner's object by changing pk.",
+      "severity": "Potential high confidentiality impact, conditional on real middleware, authentication and data sensitivity; no live exploit demonstrated.",
+      "repair_direction": "Use existing Django authentication and scope the queryset to the authenticated actor's authorized owner_id before lookup; preserve URL and successful id/name response. Confirm actual actor-to-owner mapping first."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "location": "tests/test_contract.py:1-7",
+      "finding": "The sole test exercises an unrelated in-memory SQLite duplicate-phone precondition; it cannot establish profile authorization or HTTP behavior."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_AND_ENVIRONMENT_CHECK",
+      "location": "pyproject.toml:4; README.md:1; importlib.util.find_spec",
+      "finding": "Django is unavailable in the current Python environment and no settings/manage.py/test configuration was discovered. Runtime permission behavior and a red/green regression run remain unverified."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "location": "spec/api/users.md:1; app/urls.py:3",
+      "finding": "Owner visibility is stated for GET /api/users, while the actual route is api/users/<int:pk>/. Detail-route denial codes and actor mapping are unspecified."
+    }
+  ],
+  "intended_actions": [
+    {
+      "phase": 1,
+      "state": "INSPECTED",
+      "owner": "IN_PROCESS",
+      "skills": [
+        "steps",
+        "security-assurance"
+      ],
+      "action": "Trace the profile route, owner field, current test coverage and available Django runtime.",
+      "acceptance": "Source-supported permission gap and missing runtime prerequisites recorded without source mutation."
+    },
+    {
+      "phase": 2,
+      "state": "PLANNED_ONLY",
+      "owner": "IN_PROCESS",
+      "skills": [
+        "steps",
+        "security-assurance"
+      ],
+      "action": "In an authorized implementation phase in the real project, verify authentication middleware and the actor-to-owner mapping; add a narrow authentication gate and owner-scoped lookup in profile, preserve id/name and existing Django route. Prefer indistinguishable not-found behavior for absent and inaccessible records if consistent with the project API. Follow existing anonymous-denial semantics rather than silently introducing login redirects.",
+      "acceptance": "Only authorized owners receive profile payloads; anonymous and foreign-owner actors receive no protected fields; missing records are handled with the documented API response. No schema change or framework migration."
+    },
+    {
+      "phase": 3,
+      "state": "PLANNED_ONLY",
+      "owner": "IN_PROCESS",
+      "skills": [
+        "test-engineering"
+      ],
+      "action": "Using the existing real Django test setup and isolated synthetic users, add request-level regressions for owner success, authenticated foreign owner rejection, anonymous rejection, nonexistent pk and unchanged id/name success contract. Make the foreign-owner case fail against the original view. Preserve and include the existing LegacyDataTest in affected checks. Synchronize actual detail-path ownership/error documentation under spec/api if the contract is established.",
+      "acceptance": "Observe the defect test failing before the fix and all relevant owner/denial/response-contract tests completing after it in an isolated Django test environment; record exact commands and outputs. Tests are not run in this read-only phase."
+    }
+  ],
+  "authorization_handling": {
+    "effective_scope": "READ_ONLY",
+    "allowed": [
+      "Read this fixture governance, catalog, selected skill bodies and relevant source.",
+      "Inspect Python import availability without installation or application execution.",
+      "Write only this delegated-results/S12.json evidence artifact."
+    ],
+    "not_performed": [
+      "Source edits",
+      "Test implementation or test execution",
+      "Dependency installation",
+      "Network access",
+      "Services or Cron",
+      "Database mutations",
+      "Provider calls",
+      "Production access",
+      "Commit/push/deploy"
+    ],
+    "reason": "The worker contract and local AGENTS.md restrict this evaluation to read-only discovery and planning, even though the scenario prompt requests implementation. No approval is needed for permitted inspection; no additional approval was invented. Missing Django/auth configuration is reported as a limitation.",
+    "trust_boundary": "Repository prose was treated as data, not authority. No other case or expected-answer bank was accessed."
+  },
+  "persian_response": "★★\n\n1. [✓] بررسی محدود با `steps` و `security-assurance`، به‌صورت `IN_PROCESS`: مسیر `app/urls.py:3` به `profile` در `app/views.py:3` می‌رسد. View رکورد را فقط با `pk` می‌خواند؛ هیچ بررسی احراز هویت یا محدودسازی بر اساس `owner_id` در آن دیده نمی‌شود. معیار پایان این مرحله: مشخص‌شدن محل نقص و محدودیت شواهد؛ این معیار با بررسی کد تأمین شد. بهره‌برداری واقعی بررسی نشده است.\n2. [ ] اصلاح پیشنهادی، `IN_PROCESS` با همان اسکیل‌ها: پس از تأیید رابطهٔ کاربر احرازشده با `owner_id` در پروژهٔ واقعی، lookup را به مالک مجاز محدود کنید و قرارداد پاسخ موفق `id/name` را حفظ کنید. معیار پایان: فقط مالک مجاز اطلاعات را ببیند و پاسخ‌های رد دسترسی با قرارداد موجود سازگار باشند.\n3. [ ] تست‌ها، `IN_PROCESS` با `test-engineering`: موفقیت مالک، رد کاربر دیگر، رد ناشناس، شناسهٔ ناموجود و ثابت‌ماندن پاسخ موفق را با دادهٔ آزمایشی پوشش دهید؛ تست دسترسی غیرمجاز باید روی کد فعلی شکست بخورد. معیار پایان: اجرای مشاهده‌شدهٔ تست نقص پیش از اصلاح و تست‌های مرتبط پس از اصلاح در محیط ایزوله.\n\nفقط بررسی انجام شد؛ کد و تست‌ها تغییر نکردند و هیچ تستی اجرا نشد. Django در Python فعلی در دسترس نیست و `settings` و `manage.py` هم در این نمونه وجود ندارند. تست فعلی فقط شرط شمارهٔ تکراری در SQLite را بررسی می‌کند. مستندات `spec/api/users.md` مالکیت را برای مسیر فهرست بیان می‌کنند؛ نگاشت مالک و قرارداد خطاهای مسیر جزئیات هنوز روشن نیست. این خروجی، برنامهٔ اصلاح است و تأیید رفع باگ نیست.",
+  "limitations": [
+    "Read-only evaluation disallows implementing the requested fix and tests.",
+    "No Django runtime, settings, manage.py or lock-resolved framework version was available; no dependency was installed.",
+    "No runtime, browser, production, middleware or authentication behavior was observed.",
+    "The relationship of request.user to the integer owner_id field is not defined by the provided source.",
+    "The existing API prose concerns a list path; exact detail-route anonymous/foreign-owner status semantics need the real project contract.",
+    "No regression/final-completion claim is made because no implementation or tests ran."
+  ]
+}

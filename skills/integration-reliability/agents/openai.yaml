@@ -1,0 +1,7 @@
+interface:
+  display_name: "Integration Reliability"
+  short_description: "Reliable provider APIs and webhook failure handling"
+  default_prompt: "Use $integration-reliability to handle provider failures without duplicating external effects."
+
+policy:
+  allow_implicit_invocation: true

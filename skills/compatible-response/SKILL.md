@@ -32,4 +32,4 @@ Keep all information needed to understand, verify, or perform the task, using th
 
 Before sending, check: (a) Is this the clearest structure for this content? (b) Can any words be removed without losing important information?
 
-Respect explicit user-requested formats and higher-priority constraints. When another skill specifies required content, preserve that content while applying these two presentation rules.
+Respect explicit user-requested formats and higher-priority constraints. When another skill specifies required content, preserve that content while applying these two presentation rules. This is a `SUPPORTING` presentation policy, not an engineering coordinator: it never grants action authority, skips required tests, suppresses material evidence or limitations, changes a specialist verdict, or forces unrelated skills to run. Compact wording must retain required traceability, status labels and exact report formats.

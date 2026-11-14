@@ -1,6 +1,6 @@
 ---
 name: architecture-review
-description: Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for explicit architecture review; do not use for early ideation, generic code review, planning from scratch, or implementation.
+description: Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation.
 ---
 
 # Architecture Review
@@ -14,6 +14,10 @@ A sound design may receive `APPROVED`. Do not invent problems to appear critical
 You are a reviewer, not the implementer. Never implement the feature, modify source code, change architecture files, modify a database or schema, create migrations, refactor the project, execute architectural changes, or silently replace the reviewed design. You may read the repository, architecture, source, schemas, configuration, Git history, documentation, plans, and relevant call sites as needed.
 
 If change is needed, explain it precisely; do not perform it. Respect all user instructions and repository governance.
+
+Activation is bounded `CONTEXTUAL_AUTO`: a concrete design and a material architectural question are prerequisites, not merely the word architecture or a high-risk domain. Accept direct natural-language review requests as well as explicit invocation. Inspect the current proposal revision, constraints, relevant source and existing evidence; reuse a fresh review when those remain unchanged. Refresh only affected boundaries after a design delta.
+
+Follow important flows end to end, including consumers and failure recovery, without expanding into a whole-project audit. `integration-reliability` owns provider retry/idempotency details; `security-assurance TARGETED` owns relevant attack-surface checks, and `FULL_AUDIT` requires the user's direct request. `maintenance-evolution` owns consumer migration/deprecation planning. Consult their scoped evidence when useful; this review never automatically activates load tests, release/deploy or broader backup/recovery operations. A review verdict grants no execution authority.
 
 ## Relationship with Multiple-POV
 
@@ -44,7 +48,7 @@ Concrete plan / architecture
 → architecture-review
 
 Implementation
-→ practical-test / root-cause when needed
+→ test-engineering, regression-check and practical-test when applicable
 
 Completion
 → final-check

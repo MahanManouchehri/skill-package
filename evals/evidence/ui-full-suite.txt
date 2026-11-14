@@ -1,0 +1,46 @@
+COMMAND ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3", "-m", "unittest", "discover", "-s", "scripts/tests"]
+CWD /Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max
+EXIT 1
+STDOUT
+
+STDERR
+E.........................................................................................................E.........................
+======================================================================
+ERROR: test_catalog_refresh (unittest.loader._FailedTest.test_catalog_refresh)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_catalog_refresh
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/tests/test_catalog_refresh.py", line 13, in <module>
+    REPO = next(
+        parent for parent in Path(__file__).resolve().parents
+    ...<2 lines>...
+        ))
+    )
+StopIteration
+
+
+======================================================================
+ERROR: test_relevance_evaluator (unittest.loader._FailedTest.test_relevance_evaluator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_relevance_evaluator
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/tests/test_relevance_evaluator.py", line 9, in <module>
+    ROOT = next(parent for parent in Path(__file__).resolve().parents
+                if (parent / "scripts/evaluate-relevance.py").exists())
+StopIteration
+
+
+----------------------------------------------------------------------
+Ran 132 tests in 2.332s
+
+FAILED (errors=2)

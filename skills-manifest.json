@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-10-08T08:34:44.687029+00:00",
-  "catalog_basis": "Version 3.0: previous package plus current installed steps, hand-off, and compatible-response source trees; direct multi-skill installation through Codex skill-installer; managed snapshots retained unchanged.",
-  "expected_user_global": 16,
+  "created_utc": "2026-11-14T04:25:52.525872+00:00",
+  "catalog_basis": "26 personal skills: 16 retained/upgraded and 10 approved specialists; 16 managed audit-only snapshots preserved.",
+  "expected_user_global": 26,
   "expected_plugin_managed": 16,
   "system_skills_excluded": [
     "imagegen",
@@ -23,12 +23,12 @@
       "snapshot_root": "skills/apple-design",
       "destination_relative": "apple-design",
       "skill_name": "apple-design",
-      "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+      "description": "Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity.",
       "frontmatter": {
         "name": "apple-design",
-        "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+        "description": "Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "a4ef2df147aae33506c3be04e0bbc440602bb21913400172733783830b4758f5"
+        "_raw_frontmatter_sha256": "5a88d802b55cf34cf16ac9047da3663cd7e59c6f6ec6daf0c42c8941ec104393"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -36,22 +36,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 1,
-      "tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
+      "tree_hash_sha256": "93ce07f5c541cc18bd15e97a5a956d18a4fe651f3804c1b6b296d9007cd8c552",
       "source_tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
-          "bytes": 22715
+          "sha256": "8c2e918ef408b3163955febf0e9c6a98474b64ff20a14869642b0cc84b8b0aef",
+          "bytes": 24195
         }
       ],
       "discoverable_entries": [
@@ -62,13 +60,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "architecture-review",
@@ -80,12 +82,12 @@
       "snapshot_root": "skills/architecture-review",
       "destination_relative": "architecture-review",
       "skill_name": "architecture-review",
-      "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for explicit architecture review; do not use for early ideation, generic code review, planning from scratch, or implementation.",
+      "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation.",
       "frontmatter": {
         "name": "architecture-review",
-        "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for explicit architecture review; do not use for early ideation, generic code review, planning from scratch, or implementation.",
+        "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "45cab968141b1a808d6450da6ed6404e0f2ca979429018cfb0fb492a7297474f"
+        "_raw_frontmatter_sha256": "d821bfcb66a329540b634e09bac6777581266124d04d435e1eadc4be74aeca36"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -93,22 +95,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
+      "tree_hash_sha256": "9c83ed44d69a40fffbce48579c4d4fe845f76e1f610ba8f6cfd7eac7c413850a",
       "source_tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "99606e1080c9f894bdbcfd0f4e9c7c95c9b7eaebcabde4de0bb4b2970f293c92",
-          "bytes": 10394
+          "sha256": "bdea0fc7adee1529df1d20b255c34f6639765e89badfbc726d5fc916d5f221ea",
+          "bytes": 11293
         },
         {
           "path": "agents/openai.yaml",
@@ -126,15 +126,81 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
+      "supporting_configs": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/backup-recovery",
+      "source_origin": "repository:skills/backup-recovery",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "backup-recovery",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/backup-recovery",
+      "snapshot_root": "skills/backup-recovery",
+      "destination_relative": "backup-recovery",
+      "skill_name": "backup-recovery",
+      "description": "Design backup and recovery runbooks, verify backup integrity or rehearse/execute a restore only on direct request with appropriate scope. Ordinary database changes, migrations, application jobs and feature delivery do not trigger a backup service or production restore.",
+      "frontmatter": {
+        "name": "backup-recovery",
+        "description": "Design backup and recovery runbooks, verify backup integrity or rehearse/execute a restore only on direct request with appropriate scope. Ordinary database changes, migrations, application jobs and feature delivery do not trigger a backup service or production restore.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "c9e36e5184e821e1d6e19dfbdfc86dd0de6f6df44f77cebaeb9ba91b40ce0377"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "5074991348cdf44cfac2f31196af85120f02f8e97dc22785d2c42eac9da3c052",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e05e675d3e6807db928c729756602cf0c3c2f07ffd5258b6e251e30df50b113a",
+          "bytes": 5206
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "327a89457580965d970d3a6bcd4b9919a8c2ccd951b1081ab2f187e069d156f8",
+          "bytes": 263
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
         "agents/openai.yaml"
       ],
-      "symlinks": [],
-      "platform_assumption_evidence": []
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "compatible-response",
@@ -159,22 +225,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 1,
-      "tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
+      "tree_hash_sha256": "083f8de7e7fe7e40e04e0a2868ddfc577885ac1122a6315226a7c116185c5d38",
       "source_tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "1c0f4f70815e5dddfab39661b0dbb653027335b360e75932979e505a2b9d01e7",
-          "bytes": 2902
+          "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "bytes": 3235
         }
       ],
       "discoverable_entries": [
@@ -185,13 +249,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "db-impact",
@@ -216,22 +284,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
+      "tree_hash_sha256": "c07ddd3cecd2d2ba1501325502690602c41c50d45e05cefbea3f758d1f1c7b2b",
       "source_tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "498f6543a05c4f2a625bd2f599f7a5236d5623d0078ce3c6630578c2a8b66c4e",
-          "bytes": 9626
+          "sha256": "99df764aa0e531398af7489f1426ad7568fdf1b7baa9f220102dd474b40dfb0f",
+          "bytes": 10574
         },
         {
           "path": "agents/openai.yaml",
@@ -249,15 +315,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
-        "agents/openai.yaml"
-      ],
+      "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "devil",
@@ -287,7 +355,7 @@
         "Standard Codex skill support"
       ],
       "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
+        "PowerShell 5.1+ for the optional skill validator"
       ],
       "plugin_provider": null,
       "plugin_name": null,
@@ -295,13 +363,13 @@
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 9,
-      "tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
+      "tree_hash_sha256": "632a75787c7a99ba870091810e565aa5d930656e4abda21b583f2e8385b4e146",
       "source_tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "6563e2e7c5c62f693e1c0d6b1fdc60ed6a84ae93cb6d868a1544c6d3f46e0a01",
-          "bytes": 7195
+          "sha256": "e35b724b2d448f2ce10be39a7a6643c3fabf4d25d1ae9968ed2617c7862392d4",
+          "bytes": 7882
         },
         {
           "path": "agents/openai.yaml",
@@ -364,51 +432,105 @@
       "relative_links": [
         {
           "file": "SKILL.md",
-          "target": "references/engineering.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/engineering.md"
         },
         {
           "file": "SKILL.md",
-          "target": "references/architecture-data.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/architecture-data.md"
         },
         {
           "file": "SKILL.md",
-          "target": "references/security-operations.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/security-operations.md"
         },
         {
           "file": "SKILL.md",
-          "target": "references/product-strategy.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/product-strategy.md"
         },
         {
           "file": "SKILL.md",
-          "target": "references/decision-debate.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/decision-debate.md"
         },
         {
           "file": "SKILL.md",
-          "target": "references/output-format.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/output-format.md"
         }
       ],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
+      "supporting_configs": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/docs-maintenance",
+      "source_origin": "repository:skills/docs-maintenance",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "docs-maintenance",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/docs-maintenance",
+      "snapshot_root": "skills/docs-maintenance",
+      "destination_relative": "docs-maintenance",
+      "skill_name": "docs-maintenance",
+      "description": "Synchronize existing project documentation with real code, API or configuration changes, and write end-user guides when directly requested. Follow project documentation paths; skip unaffected docs and delegate source-code explanation or developer handoff to hand-off.",
+      "frontmatter": {
+        "name": "docs-maintenance",
+        "description": "Synchronize existing project documentation with real code, API or configuration changes, and write end-user guides when directly requested. Follow project documentation paths; skip unaffected docs and delegate source-code explanation or developer handoff to hand-off.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "97b5f6ce0d40e0b66f188485906fac92122cea66bb0a8b4af12e171f95f1bd2f"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "34261b0663a2d001f4bcd362f3c03aadc1a899af4c74a63b273ac3e21c2ea976",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "201c709556fe825db0582a5fd8f49e0db15caafff5a047b8a9839fcb26b3c25e",
+          "bytes": 4100
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "428c66177a684ca3dfc2331e845257e17971e0984963e47e8b8c07d20821359a",
+          "bytes": 254
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
         "agents/openai.yaml"
       ],
-      "symlinks": [],
-      "platform_assumption_evidence": []
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "final-check",
@@ -433,22 +555,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
+      "tree_hash_sha256": "f86a0d526b33295536801b431214b954f1f0d2e2992136b963c251e4d3b97cfb",
       "source_tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "9ba12c4ae3b5bfafc15f384e690e5f521fe093cce562e435cdd60de259dd1ac9",
-          "bytes": 4708
+          "sha256": "465127b287b64a03092e408ba6c0028eb097e5f79299aad7bbff2c3ac8481b36",
+          "bytes": 6006
         },
         {
           "path": "agents/openai.yaml",
@@ -466,15 +586,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
-        "agents/openai.yaml"
-      ],
+      "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "full-plan",
@@ -486,12 +608,12 @@
       "snapshot_root": "skills/full-plan",
       "destination_relative": "full-plan",
       "skill_name": "full-plan",
-      "description": "Before implementing a feature, document each required API endpoint and its ordered user scenarios in natural Persian. Activate automatically for feature work or explicitly with /full-plan; not for small internal refactors with no API behavior.",
+      "description": "Plan meaningful feature behavior, actors, invariants, failure modes and acceptance before implementation, including precise API contracts when needed. Use for new or changed workflows or explicit planning requests; skip trivial internal or cosmetic edits.",
       "frontmatter": {
         "name": "full-plan",
-        "description": "Before implementing a feature, document each required API endpoint and its ordered user scenarios in natural Persian. Activate automatically for feature work or explicitly with /full-plan; not for small internal refactors with no API behavior.",
+        "description": "Plan meaningful feature behavior, actors, invariants, failure modes and acceptance before implementation, including precise API contracts when needed. Use for new or changed workflows or explicit planning requests; skip trivial internal or cosmetic edits.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "c47bd492b2d0c12c75a3725ac507c0e9b7130979cb2e3f0a6287705a6fd0898e"
+        "_raw_frontmatter_sha256": "1b25fc1439dd14a9ce58ea989743c8b34943b2d65865752deae699a8e54a7403"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -499,16 +621,14 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 14,
-      "tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
+      "tree_hash_sha256": "243b5753e560e233fd1dd33a9d5695563593992905672603f23c6648abab5adb",
       "source_tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
       "files": [
         {
@@ -518,8 +638,8 @@
         },
         {
           "path": "CONTRIBUTING.md",
-          "sha256": "fa200d706fe248413bccdee79ca15603e08e34070e1aeaba6270813d80f6b673",
-          "bytes": 2291
+          "sha256": "2e82a696ba0c22ad12fd303a2527874783f7da6236488a0b5eccdff92276160c",
+          "bytes": 2454
         },
         {
           "path": "LICENSE",
@@ -528,58 +648,58 @@
         },
         {
           "path": "README.md",
-          "sha256": "dd8615bf257b707e93e81fbfbf780a955ad71a4ec165e9b9a3038efe716cf0a8",
-          "bytes": 4470
+          "sha256": "b54440ed7e1917037b122e35bc80ff1d9bfbde3c186c07c1a254f531ada9fd21",
+          "bytes": 5106
         },
         {
           "path": "SKILL.md",
-          "sha256": "e647fe50d6e418c381920a693d15d9107559d38fb6638e5ae375bfe27d1b053b",
-          "bytes": 6679
+          "sha256": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7",
+          "bytes": 9551
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "1e40901613f3818115cbdbf4dd7b0fdbbf108dad9a6f6a11e98b48f9c613b14d",
-          "bytes": 132
+          "sha256": "1a36797c1f83386e54fa687e5ab40b589dbec4887ea011b1d1f47a3ed1196857",
+          "bytes": 151
         },
         {
           "path": "docs/INSTALLATION.md",
-          "sha256": "eeca4644762d9323f9b50fb03e3b2f7984e214c5505ff8c52f2ed67e86d12051",
-          "bytes": 2127
+          "sha256": "992fff7878f7b6caa96efb3f367ba9aec473fb3cfd7f3aef152c9e90c783ab87",
+          "bytes": 2263
         },
         {
           "path": "docs/OUTPUT-FORMAT.md",
-          "sha256": "3bd6afaa783593d0a30f846dd4aab6cbfc1b8f8e643065675857634ed93f85c3",
-          "bytes": 2754
+          "sha256": "ed1ae9ab8fc6d99c2b694249d7fe0fed9629305cbb0937e2e918d24290620b8c",
+          "bytes": 3173
         },
         {
           "path": "docs/PLATFORM-COMPATIBILITY.md",
-          "sha256": "eba3354c97395c9be4684f645974b88033b10b1e21b5eab5779795fc9c14bc77",
-          "bytes": 4051
+          "sha256": "648affb763a8fc74d5a5041b1e1ef8c6a3d6d16da5bb6baea2c2082c8f28b8aa",
+          "bytes": 3591
         },
         {
           "path": "docs/USAGE.md",
-          "sha256": "e8c47043826f706b67e71a77c1226335f60c34443b5d0c17c712ece59e6f283b",
-          "bytes": 2901
+          "sha256": "68a5aea8bfc4c0d3388a0db26ecfc053494abb581d1c3489ac5ca1e3f09e0afd",
+          "bytes": 3247
         },
         {
           "path": "platforms/README.md",
-          "sha256": "e9bb2bf9c16cbf2b8d0a3d64fb0b9f6b28a02426a72f7def2f0f5299c2fc0373",
-          "bytes": 1146
+          "sha256": "ba445f094c2a236c529fedeacf59613993e879822e39ef26f7e3a0801572cd7c",
+          "bytes": 1230
         },
         {
           "path": "platforms/chatgpt-custom-gpt/INSTRUCTIONS.md",
-          "sha256": "7b9cf70124f1fa73aa981ff81ffe533d1ec34bd0ba2417c334a0d3c1157f02dd",
-          "bytes": 2232
+          "sha256": "259baaa237cbcc9982ba9cb1c1f02e7793388a25c6c0ed9a51e17e522bdf3dcb",
+          "bytes": 2539
         },
         {
           "path": "platforms/claude-code/commands/full-plan.md",
-          "sha256": "f920b9c778fe7607785cf47c78afe5b39dd96a6670cec4a32a627f40b1f041f2",
-          "bytes": 1447
+          "sha256": "f4d2d0c2e11179a1528158c7e3c7d0d126b792da0ad874fb7d5d528dc32961dd",
+          "bytes": 1757
         },
         {
           "path": "platforms/claude-web/PROJECT-INSTRUCTIONS.md",
-          "sha256": "deed94085abfdb4b444956e5e8221dc6516e3d9112ff601614b2e81d97d43c5a",
-          "bytes": 2003
+          "sha256": "eaac8e476bc980e4d2f4f1b41b1b2166111c93af9ab4c3df8253e919875b2e0e",
+          "bytes": 2392
         }
       ],
       "discoverable_entries": [
@@ -593,57 +713,45 @@
       "relative_links": [
         {
           "file": "README.md",
-          "target": "docs/INSTALLATION.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "docs/INSTALLATION.md"
         },
         {
           "file": "README.md",
-          "target": "docs/USAGE.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "docs/USAGE.md"
         },
         {
           "file": "README.md",
-          "target": "docs/OUTPUT-FORMAT.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "docs/OUTPUT-FORMAT.md"
         },
         {
           "file": "README.md",
-          "target": "docs/PLATFORM-COMPATIBILITY.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "docs/PLATFORM-COMPATIBILITY.md"
         },
         {
           "file": "README.md",
-          "target": "CONTRIBUTING.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "CONTRIBUTING.md"
         },
         {
           "file": "README.md",
-          "target": "LICENSE",
-          "exists": true,
-          "within_boundary": true
+          "target": "LICENSE"
         },
         {
           "file": "platforms/README.md",
-          "target": "../docs/PLATFORM-COMPATIBILITY.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "../docs/PLATFORM-COMPATIBILITY.md"
         }
       ],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
-        "agents/openai.yaml"
-      ],
+      "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "hand-off",
@@ -655,12 +763,12 @@
       "snapshot_root": "skills/hand-off",
       "destination_relative": "hand-off",
       "skill_name": "hand-off",
-      "description": "Investigate and explain the actual source code of a feature, module, workflow, API, class or method in the current repository. Use for Persian or English requests about where code lives, who calls a method, how components connect, architecture, behavior, debugging, extending or independently maintaining a feature. For a whole-feature explanation or explicit $hand-off invocation, create a developer guide and portable LLM context; for small questions, answer in chat. Do not use for generic framework theory or implementation-only requests.",
+      "description": "Explain actual repository source, callers, architecture and behavior in Persian or English. Use EXPLAIN/EXPLORE for source questions; create developer and LLM handoff documents only for an explicit invocation or clear request for complete knowledge transfer. Skip generic theory, documentation sync and implementation-only work.",
       "frontmatter": {
         "name": "hand-off",
-        "description": "Investigate and explain the actual source code of a feature, module, workflow, API, class or method in the current repository. Use for Persian or English requests about where code lives, who calls a method, how components connect, architecture, behavior, debugging, extending or independently maintaining a feature. For a whole-feature explanation or explicit $hand-off invocation, create a developer guide and portable LLM context; for small questions, answer in chat. Do not use for generic framework theory or implementation-only requests.",
+        "description": "Explain actual repository source, callers, architecture and behavior in Persian or English. Use EXPLAIN/EXPLORE for source questions; create developer and LLM handoff documents only for an explicit invocation or clear request for complete knowledge transfer. Skip generic theory, documentation sync and implementation-only work.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "55acff742598e66889a227faa4c0c96cc3ea03d50264c881f00efe1d481c2fe3"
+        "_raw_frontmatter_sha256": "2c7c12523e5461659c93d6d0983fbdd6cd6f441397228d95451065b7d1cb450c"
       },
       "portability": "PORTABLE_WITH_DEPENDENCIES",
       "dependencies": [
@@ -673,7 +781,7 @@
         "Standard Codex skill support"
       ],
       "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
+        "Python 3 for optional skill helpers"
       ],
       "plugin_provider": null,
       "plugin_name": null,
@@ -681,18 +789,18 @@
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 10,
-      "tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
+      "tree_hash_sha256": "b71e2b25efc4269f31f1f92cda7f834900d80b4511787da5f6a7b9290d8080cd",
       "source_tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "3cce5f564bb081f1ed349f0b47ceb7705836b9e415b2f6b2da98636c706ebbeb",
-          "bytes": 9286
+          "sha256": "c6a3248bcd8994a653a603920c867a77d24b24a0051fff37f2dad35ce15be373",
+          "bytes": 9801
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "ed0e3df3a5cf8eec88148e1fc178668c0f01c00ebad336190359b1c4a04dd6bf",
-          "bytes": 308
+          "sha256": "a0878e182a83490b7f2b35a025824413b3174b746465bb5e7b6a4738cb6bfb12",
+          "bytes": 286
         },
         {
           "path": "assets/developer-guide.template.md",
@@ -755,18 +863,212 @@
       "notes": [
         "The validator is optional and does not certify semantic correctness."
       ],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [
         "assets/developer-guide.template.md",
         "assets/llm-context.template.md"
       ],
-      "supporting_configs": [
+      "supporting_configs": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/integration-reliability",
+      "source_origin": "repository:skills/integration-reliability",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "integration-reliability",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/integration-reliability",
+      "snapshot_root": "skills/integration-reliability",
+      "destination_relative": "integration-reliability",
+      "skill_name": "integration-reliability",
+      "description": "Design, implement or diagnose reliable third-party API and webhook integrations, including timeouts, retries, 429s, duplicates and uncertain external effects. Use for a real provider dependency, not internal CRUD or an ordinary local REST endpoint.",
+      "frontmatter": {
+        "name": "integration-reliability",
+        "description": "Design, implement or diagnose reliable third-party API and webhook integrations, including timeouts, retries, 429s, duplicates and uncertain external effects. Use for a real provider dependency, not internal CRUD or an ordinary local REST endpoint.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "5ff53509d66aeead443c6fd177c790a95485f5852283ec1cac61daf6da676cd9"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "21c862452a715a443d08ac71dfc925eedbf7845ccfb4f6e7b332409a780403bd",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3aa1ab82e840e4d7c2671bc329d67c2ca03d3ed06f8a4d6343ef52968c772b5b",
+          "bytes": 5704
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "083cff87398b1adfcbd9fbcad1563fb8fa81f39b8c8d68214a636283717f1643",
+          "bytes": 286
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
         "agents/openai.yaml"
       ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
+    },
+    {
+      "physical_source": "repository:skills/load-testing",
+      "source_origin": "repository:skills/load-testing",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "catalog_name": "load-testing",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/load-testing",
+      "snapshot_root": "skills/load-testing",
+      "destination_relative": "load-testing",
+      "skill_name": "load-testing",
+      "description": "Plan and run bounded load, stress or concurrent-traffic benchmarks only when directly requested, with a validated target, authority and finite traffic profile. A slow endpoint or routine performance review does not request load generation.",
+      "frontmatter": {
+        "name": "load-testing",
+        "description": "Plan and run bounded load, stress or concurrent-traffic benchmarks only when directly requested, with a validated target, authority and finite traffic profile. A slow endpoint or routine performance review does not request load generation.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "e12b21260ccf69a61bb6d11e5f02b904b2d214d029025d6a82838ffd1d103524"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "73624a713ca31938b2bf290a91a9f3fae54fa4ae1e19e9876d5ceecbf731dca1",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "da1409201f40fcc91e42788e34f1ad6a5298face4b84df8b8e515577fcdeddbc",
+          "bytes": 4682
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "3935f20c72eaf13db9148eeade9695a518bad0ceab714ad60d4321ee50d2ce52",
+          "bytes": 266
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
+        "agents/openai.yaml"
+      ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
+    },
+    {
+      "physical_source": "repository:skills/maintenance-evolution",
+      "source_origin": "repository:skills/maintenance-evolution",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "maintenance-evolution",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/maintenance-evolution",
+      "snapshot_root": "skills/maintenance-evolution",
+      "destination_relative": "maintenance-evolution",
+      "skill_name": "maintenance-evolution",
+      "description": "Plan or implement bounded compatibility-preserving evolution, substantial refactors, deprecations, removals and major framework upgrades; assess scoped technical debt when requested. Skip routine implementation, small TODO cleanup and speculative future-proofing.",
+      "frontmatter": {
+        "name": "maintenance-evolution",
+        "description": "Plan or implement bounded compatibility-preserving evolution, substantial refactors, deprecations, removals and major framework upgrades; assess scoped technical debt when requested. Skip routine implementation, small TODO cleanup and speculative future-proofing.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "f2658dc354398067ea8b7cf412cf0b0c780d777064f3ef01c1df8dd4a54cd31a"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "020630bf77d2e0977ca170ee612187201b53ac5eceb8cc34ab85ec1030012bf3",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3f8b3c9be3197ed6c64e5c86a0aec836199f46a6ba177c6175659294078db995",
+          "bytes": 4657
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "ed8fd71735634a7416d8e165983bbd9d55553bb24ec613566de7137563023766",
+          "bytes": 276
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
+        "agents/openai.yaml"
+      ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "multiple-pov",
@@ -791,22 +1093,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 1,
-      "tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
+      "tree_hash_sha256": "c77b97b320fe3b7a125b9562055b803467b3a8709eb8f9a6e9c56ccdc78343ef",
       "source_tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "dc35a3d82ada360b07227cef7951658eaadc21203f9591420c24b553e9f407f6",
-          "bytes": 18122
+          "sha256": "d6d553b07466efcaeabd7a2b5dc19634f8efe05bd6948eced9a7ed924bb7a85e",
+          "bytes": 19080
         }
       ],
       "discoverable_entries": [
@@ -817,13 +1117,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "natural-persian-writing",
@@ -839,8 +1143,8 @@
       "frontmatter": {
         "name": "natural-persian-writing",
         "description": "Produce, rewrite, translate, review, or summarize meaningful Persian prose that sounds natural, preserves meaning, and matches its audience and purpose. Use for any Persian content: personal and formal letters, email, business, marketing, academic, legal and policy text, creative writing, translation, support, UI, technical documentation, and conversation. Do not activate merely because Persian appears in source code, data, an identifier, or text that is not being changed.",
-        "_strict_yaml_valid": false,
-        "_raw_frontmatter_sha256": "599dd89fb45224bf1b583f3a5c4d31b49ac0d57f1018e3829fdfc4a8bd199189"
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "3996996de71a72c6c041caa261e527f1bc767f32e77b748ea0e05f6e62e6a0a7"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -848,16 +1152,14 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 4,
-      "tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
+      "tree_hash_sha256": "0018943af6fa00d7f18829013debcbe3513b248753c75330653ddc07e9a0adba",
       "source_tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
       "files": [
         {
@@ -872,8 +1174,8 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "7ea8a1f7e35f72b2f5bc8dd0c9f99c7aea005c7dedff67285cfe35f1dce023ad",
-          "bytes": 6124
+          "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+          "bytes": 6126
         },
         {
           "path": "references/persian-style-guide.md",
@@ -892,37 +1194,33 @@
       "relative_links": [
         {
           "file": "README.md",
-          "target": "SKILL.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "SKILL.md"
         },
         {
           "file": "README.md",
-          "target": "references/persian-style-guide.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/persian-style-guide.md"
         },
         {
           "file": "README.md",
-          "target": "LICENSE",
-          "exists": true,
-          "within_boundary": true
+          "target": "LICENSE"
         },
         {
           "file": "SKILL.md",
-          "target": "references/persian-style-guide.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/persian-style-guide.md"
         }
       ],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "performance-review",
@@ -947,27 +1245,25 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
+      "tree_hash_sha256": "3c235d71e7f9329991d19a6d22640b52a860b104bd47b003da60fc2fc9bade3b",
       "source_tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "bb453dac2bb639288c0fd6f9b1b86b5001ed3c875649b3e763195059e25c8101",
-          "bytes": 10238
+          "sha256": "00aa8da834b8be3fc0244a8d2a9411ba233b19a3b4d018c651250166a960966e",
+          "bytes": 13019
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "ec9475773272d307e02958025603e3b48667c81771059cbf3afdfa1ab61caf19",
-          "bytes": 109
+          "sha256": "04ca2d1751de1ff14b8c7d61f3638571ff5e9427d55ef868bcdbd8582e3bf2a3",
+          "bytes": 129
         }
       ],
       "discoverable_entries": [
@@ -980,15 +1276,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
-        "agents/openai.yaml"
-      ],
+      "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "practical-test",
@@ -1000,12 +1298,12 @@
       "snapshot_root": "skills/practical-test",
       "destination_relative": "practical-test",
       "skill_name": "practical-test",
-      "description": "Perform strict browser-based acceptance testing for all work implemented in the current Codex conversation. Activate when the user explicitly types /practical-test; do not use for code review or for implementing fixes.",
+      "description": "Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes.",
       "frontmatter": {
         "name": "practical-test",
-        "description": "Perform strict browser-based acceptance testing for all work implemented in the current Codex conversation. Activate when the user explicitly types /practical-test; do not use for code review or for implementing fixes.",
+        "description": "Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "adf78050393e66a940e8c25d3fecac5e9f2b8bbd545c83ad7a77a32888825cef"
+        "_raw_frontmatter_sha256": "cc6e79cfb620b6977f4bd4c36df1f8b363d9dcc114d9d661bdc0415fe58b0c22"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -1013,22 +1311,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 1,
-      "tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
+      "tree_hash_sha256": "c1852ae0c1de8512b1f02cda5c4a131d6e4487b398dc66e7e2bad9bae7b71f6e",
       "source_tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "8ac38f3db25a6b3a1071dba97e1b7184e52f90390a637a82215af5fe8ee6c79a",
-          "bytes": 7419
+          "sha256": "f68af4daaa40f0f8d016fc05de605bd34c0ac4408ab7ea04e7e5d93ce6382865",
+          "bytes": 8414
         }
       ],
       "discoverable_entries": [
@@ -1039,13 +1335,17 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
     },
     {
       "catalog_name": "regression-check",
@@ -1070,22 +1370,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
+      "tree_hash_sha256": "7cf212432bd17f1af1990077b2aefe88426a58d65422acbe478dc7d148820032",
       "source_tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "62ad48277fc10441bee94fd6440343a4b374d2cb106d0b40c83f5919452890f7",
-          "bytes": 7784
+          "sha256": "56d2b12e10deca18f72dcab4caa82c52a0c72650d826bd6002fb2a5ec6728f62",
+          "bytes": 8190
         },
         {
           "path": "agents/openai.yaml",
@@ -1103,15 +1401,81 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
+      "supporting_configs": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/release-management",
+      "source_origin": "repository:skills/release-management",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "release-management",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/release-management",
+      "snapshot_root": "skills/release-management",
+      "destination_relative": "release-management",
+      "skill_name": "release-management",
+      "description": "Prepare versions, release notes, provenance and deployment or rollback plans when directly requested, and execute specifically authorized release actions. Passing tests, a finished feature or a routine commit does not request publication, CI changes or deployment.",
+      "frontmatter": {
+        "name": "release-management",
+        "description": "Prepare versions, release notes, provenance and deployment or rollback plans when directly requested, and execute specifically authorized release actions. Passing tests, a finished feature or a routine commit does not request publication, CI changes or deployment.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "94e341635185435a29b6cc1aadb264a06caf0c28f57797e84c530212607387dc"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "47aeea3531807a4304ec7f4f097119b0b5b193c3634ea43449c8515db25d24f1",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "b07125282df8115c57a687856036ee4b976b796b3738d933b8f45c50720bf935",
+          "bytes": 4977
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "d3a932eec6ca884fd68f0410d67af5843933b72dd4111b4324f95704cd6edaf4",
+          "bytes": 249
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
         "agents/openai.yaml"
       ],
-      "symlinks": [],
-      "platform_assumption_evidence": []
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "root-cause",
@@ -1136,22 +1500,20 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 2,
-      "tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
+      "tree_hash_sha256": "bbaaa2599978fe44df3f266c0f8abc0bec7e78abc192a3e0ab8f8ab61082a5fb",
       "source_tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "213695fabc1932a2f95c9cc9fb9fc4f43bcf22f0ef9503c6b7713818a878a404",
-          "bytes": 8746
+          "sha256": "b8822956da7ec1b0def65047ccac583089789c21fc3630d3d3012c23e29a8b2e",
+          "bytes": 10192
         },
         {
           "path": "agents/openai.yaml",
@@ -1169,15 +1531,145 @@
       "scripts": [],
       "relative_links": [],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
-      "supporting_configs": [
+      "supporting_configs": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/security-assurance",
+      "source_origin": "repository:skills/security-assurance",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "security-assurance",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/security-assurance",
+      "snapshot_root": "skills/security-assurance",
+      "destination_relative": "security-assurance",
+      "skill_name": "security-assurance",
+      "description": "Review the relevant security surfaces of material auth, permissions, upload, secrets, payment, trust-boundary or dependency changes. A full feature or project security audit requires a direct request; routine CSS and unrelated local changes do not trigger it.",
+      "frontmatter": {
+        "name": "security-assurance",
+        "description": "Review the relevant security surfaces of material auth, permissions, upload, secrets, payment, trust-boundary or dependency changes. A full feature or project security audit requires a direct request; routine CSS and unrelated local changes do not trigger it.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "c13f48879276bd33caf4a6de5bbb142cfd4ca62b9c5520a740b734835ac4f824"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "95a788297d47dfa21bba943655594e54bfc3accae717739604394f8a7f1d7ceb",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3ecc28eac52dd0018163ca1808aec0fb6756dfbd32a0cc156229f060332a0310",
+          "bytes": 5016
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "49256a5113ab193f89a526f5d2affd251a4bcd2ef42e362680f5f5ee81b3e8a3",
+          "bytes": 266
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
         "agents/openai.yaml"
       ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
+    },
+    {
+      "physical_source": "repository:skills/skill-evals",
+      "source_origin": "repository:skills/skill-evals",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "catalog_name": "skill-evals",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/skill-evals",
+      "snapshot_root": "skills/skill-evals",
+      "destination_relative": "skill-evals",
+      "skill_name": "skill-evals",
+      "description": "Evaluate Codex skill structure and observed routing or workflow behavior when the user explicitly creates, upgrades, tests or audits a skill, package or steps. Do not use for ordinary application development or comparisons between AI models.",
+      "frontmatter": {
+        "name": "skill-evals",
+        "description": "Evaluate Codex skill structure and observed routing or workflow behavior when the user explicitly creates, upgrades, tests or audits a skill, package or steps. Do not use for ordinary application development or comparisons between AI models.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "e4a827df4631c57e7cb0f532757404079212ff479d6c38a3f3d882b38fca77b1"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "cb57d86bf54cd44906803d2ad6f76002447a10f931612ff02c218adc09da9c5c",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7868c5136d84d3a3a122e702c3837f3c90c02012149d1f340719a59837a70513",
+          "bytes": 6405
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "9cb19d88b052254f119038f548221e3c4fe7a142d59771a5b79354336b8d8076",
+          "bytes": 249
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
+        "agents/openai.yaml"
+      ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "steps",
@@ -1189,12 +1681,12 @@
       "snapshot_root": "skills/steps",
       "destination_relative": "steps",
       "skill_name": "steps",
-      "description": "Technical Team Lead for features, bugs, refactors, backend, frontend, database, architecture, and implementation. Inspects governance, rates project-context criticality, assigns minimal specialist workflows, supervises implementation and audits, and explains engineering decisions to the developer/Project Manager. Use for development tasks unless explicitly bypassed or another specialist is directly invoked.",
+      "description": "Coordinate software development, bugs, refactors and engineering verification with proportionate governance, risk assessment and the minimum relevant specialists. Use for implementation work unless bypassed or a directly requested specialist owns the task. Exclude general IT support, commercial/legal advice and multi-model benchmarks; routine changes must not trigger full audits, release or load testing.",
       "frontmatter": {
         "name": "steps",
-        "description": "Technical Team Lead for features, bugs, refactors, backend, frontend, database, architecture, and implementation. Inspects governance, rates project-context criticality, assigns minimal specialist workflows, supervises implementation and audits, and explains engineering decisions to the developer/Project Manager. Use for development tasks unless explicitly bypassed or another specialist is directly invoked.",
+        "description": "Coordinate software development, bugs, refactors and engineering verification with proportionate governance, risk assessment and the minimum relevant specialists. Use for implementation work unless bypassed or a directly requested specialist owns the task. Exclude general IT support, commercial/legal advice and multi-model benchmarks; routine changes must not trigger full audits, release or load testing.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "facb3f10ef7eab9f2efb6fb04d1e3eb56d91b8679b6cf8013458e5e55c327744"
+        "_raw_frontmatter_sha256": "7c74aab48728ace3cd23f85a96a31a1622d1c5c3acc05649c57c9293d6b8b75e"
       },
       "portability": "PORTABLE",
       "dependencies": [],
@@ -1202,53 +1694,198 @@
       "required_runtime_capabilities": [
         "Standard Codex skill support"
       ],
-      "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
-      ],
+      "platform_requirements": [],
       "plugin_provider": null,
       "plugin_name": null,
       "plugin_version": null,
       "plugin_id": null,
       "plugin_id_basis": null,
-      "file_count": 2,
-      "tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
+      "file_count": 4,
+      "tree_hash_sha256": "87548c68c28b4cf935852b16c519f7b68f244040f6d6359c7f0be6ee9f3078d8",
       "source_tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "ddbd2b1274fcc382e112e9fb1675453347ed7188ebea16c4315e82e443a76b53",
-          "bytes": 18020
+          "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+          "bytes": 23866
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "15c7acf9fae303002fd64c95ebe9f474312bce17dcd3aac8f61cdeb69ab73fe2",
+          "bytes": 273
         },
         {
           "path": "references/deep-workflow.md",
           "sha256": "d59b62bc8815c54c636317430c4f793f99e05eea35cfd18a461861c73c6a66d7",
           "bytes": 9420
+        },
+        {
+          "path": "references/routing-boundaries.md",
+          "sha256": "bfadf2cc2fd043aa4af526a61276440e7bdf8ad56718a9b59d97dbdd4b8de0ef",
+          "bytes": 3490
         }
       ],
       "discoverable_entries": [
         "SKILL.md"
       ],
-      "agents": [],
+      "agents": [
+        "agents/openai.yaml"
+      ],
       "references": [
-        "references/deep-workflow.md"
+        "references/deep-workflow.md",
+        "references/routing-boundaries.md"
       ],
       "scripts": [],
       "relative_links": [
         {
           "file": "SKILL.md",
-          "target": "references/deep-workflow.md",
-          "exists": true,
-          "within_boundary": true
+          "target": "references/deep-workflow.md"
+        },
+        {
+          "file": "SKILL.md",
+          "target": "references/routing-boundaries.md"
         }
       ],
       "notes": [],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [],
       "symlinks": [],
-      "platform_assumption_evidence": []
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
+      ]
+    },
+    {
+      "physical_source": "repository:skills/technical-proposal-discovery",
+      "source_origin": "repository:skills/technical-proposal-discovery",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "technical-proposal-discovery",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/technical-proposal-discovery",
+      "snapshot_root": "skills/technical-proposal-discovery",
+      "destination_relative": "technical-proposal-discovery",
+      "skill_name": "technical-proposal-discovery",
+      "description": "Produce a technical proposal or an evidence-backed competitor software comparison only on direct request. Distinguish proposal scope and deliverables from ordinary feature brainstorming; exclude commercial pricing, contracts and financial management.",
+      "frontmatter": {
+        "name": "technical-proposal-discovery",
+        "description": "Produce a technical proposal or an evidence-backed competitor software comparison only on direct request. Distinguish proposal scope and deliverables from ordinary feature brainstorming; exclude commercial pricing, contracts and financial management.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "c203ba53f0672b493b6cf9f45acad63936116f5d845675432219b49a13d71a6d"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "1f3f462eff7ef166743e826d6ef40a9a91019a6eae9b15cc6f08fd4703b58aa5",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3af2482b99f8c8535ff768a03d60c06536b8534530262d1d776bb74582494104",
+          "bytes": 4665
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "0653bcd3ee1d6c33d9be2aeed214402a1aaa9e337301b0e99ab506e976b419eb",
+          "bytes": 278
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
+        "agents/openai.yaml"
+      ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
+    },
+    {
+      "physical_source": "repository:skills/test-engineering",
+      "source_origin": "repository:skills/test-engineering",
+      "source_tree_hash_sha256": null,
+      "dependencies": [],
+      "required_external_tools": [],
+      "required_runtime_capabilities": [
+        "Standard Codex skill support"
+      ],
+      "platform_requirements": [],
+      "plugin_provider": null,
+      "plugin_name": null,
+      "plugin_version": null,
+      "plugin_id": null,
+      "plugin_id_basis": null,
+      "notes": [],
+      "symlinks": [],
+      "platform_assumption_evidence": [],
+      "catalog_name": "test-engineering",
+      "kind": "user-global",
+      "installable": true,
+      "physical_path_in_package": "skills/test-engineering",
+      "snapshot_root": "skills/test-engineering",
+      "destination_relative": "test-engineering",
+      "skill_name": "test-engineering",
+      "description": "Design and implement meaningful unit, integration and contract tests for changed application behavior, APIs, business rules, permissions and data operations. Use existing project tooling; skip descriptive read-only work and trivial cosmetics without a behavior change.",
+      "frontmatter": {
+        "name": "test-engineering",
+        "description": "Design and implement meaningful unit, integration and contract tests for changed application behavior, APIs, business rules, permissions and data operations. Use existing project tooling; skip descriptive read-only work and trivial cosmetics without a behavior change.",
+        "_strict_yaml_valid": true,
+        "_raw_frontmatter_sha256": "04729d026465e278bcf14c93fd7cd3fd5a023196d6c30171c8863d2760032de9"
+      },
+      "portability": "PORTABLE",
+      "file_count": 2,
+      "tree_hash_sha256": "216c3a6ed89753716070a6dd79eda7aac3f79812d43c494ad346e87098269dce",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e800c5a400ce62d7f3c5bbe75bf8dbf6d803f01b9e5146e07309f79c6219ead7",
+          "bytes": 5272
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "ed679d2733dad5548a5618bd35e494297db95644390c519f22b3c8233152edba",
+          "bytes": 270
+        }
+      ],
+      "discoverable_entries": [
+        "SKILL.md"
+      ],
+      "relative_links": [],
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
+      "agents": [
+        "agents/openai.yaml"
+      ],
+      "references": [],
+      "scripts": [],
+      "templates": [],
+      "assets": [],
+      "supporting_configs": [],
+      "baseline_source_tree_hash_sha256": null,
+      "baseline_platform_requirements": []
     },
     {
       "catalog_name": "ui-ux-pro-max",
@@ -1260,16 +1897,16 @@
       "snapshot_root": "skills/ui-ux-pro-max",
       "destination_relative": "ui-ux-pro-max",
       "skill_name": "ui-ux-pro-max",
-      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+      "description": "Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits.",
       "frontmatter": {
         "name": "ui-ux-pro-max",
-        "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+        "description": "Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits.",
         "_strict_yaml_valid": true,
-        "_raw_frontmatter_sha256": "ee964bb0633e97c28170234061ccc1c388269f6db19cedb20991ffd9d889e6b4"
+        "_raw_frontmatter_sha256": "9fc2ce83ca8070a9a314b25a2fcd3e8c30a2dd8cde98b25021188c4287ed24c0"
       },
-      "portability": "PARTIALLY_PORTABLE",
+      "portability": "PORTABLE_WITH_DEPENDENCIES",
       "dependencies": [
-        "CLAUDE_PLUGIN_ROOT path mapping or correct physical scripts path"
+        "Python 3 for optional local search; resolve the actual installed skill directory"
       ],
       "required_external_tools": [
         "Python 3"
@@ -1278,7 +1915,7 @@
         "Standard Codex skill support"
       ],
       "platform_requirements": [
-        "Windows PowerShell 5.1+ for bundle scripts"
+        "Python 3 for optional skill helpers"
       ],
       "plugin_provider": null,
       "plugin_name": null,
@@ -1286,13 +1923,13 @@
       "plugin_id": null,
       "plugin_id_basis": null,
       "file_count": 70,
-      "tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
+      "tree_hash_sha256": "830b50385b9b529c2c9067dfd16562ee1d2850a028c601414802893562f37932",
       "source_tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
-          "bytes": 15969
+          "sha256": "9fcd7a31ae8736647545398ecd331f88a7a0887442e0795be7468d2cecd578ff",
+          "bytes": 17498
         },
         {
           "path": "data/app-interface.csv",
@@ -1680,10 +2317,10 @@
       ],
       "relative_links": [],
       "notes": [
-        "SKILL.md invokes ${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py; this existing platform assumption is preserved, not rewritten."
+        "Search uses the actual loaded skill directory; no plugin environment variable is required."
       ],
-      "restore_method": "Run scripts/install.ps1 -Install",
-      "post_enable_verification": "Verify tree hash, metadata, references and duplicate catalog names.",
+      "restore_method": "Official skill-installer into staging, then scripts/package_tools.py promote",
+      "post_enable_verification": "Verify staged/live hashes and inspect a fresh Codex skill catalog.",
       "templates": [],
       "assets": [],
       "supporting_configs": [
@@ -1704,7 +2341,12 @@
         "scripts/tests/fixtures/relevance-thresholds.json"
       ],
       "symlinks": [],
-      "platform_assumption_evidence": [
+      "platform_assumption_evidence": [],
+      "baseline_source_tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
+      "baseline_notes": [
+        "SKILL.md invokes ${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py; this existing platform assumption is preserved, not rewritten."
+      ],
+      "baseline_platform_assumption_evidence": [
         {
           "file": "SKILL.md",
           "line": 42,
@@ -1835,6 +2477,9 @@
           "line": 1,
           "text": "#!/usr/bin/env python3"
         }
+      ],
+      "baseline_platform_requirements": [
+        "Windows PowerShell 5.1+ for bundle scripts"
       ]
     },
     {
@@ -9921,83 +10566,108 @@
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\apple-design",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
-      "package_tree_hash_sha256": "84ebad0905bc9274fc22eb0b100778adaee20e6d479a69168b5f3a2f018e19de",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "93ce07f5c541cc18bd15e97a5a956d18a4fe651f3804c1b6b296d9007cd8c552",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
-          "bytes": 22715
+          "sha256": "8c2e918ef408b3163955febf0e9c6a98474b64ff20a14869642b0cc84b8b0aef",
+          "bytes": 24195
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/architecture-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\architecture-review",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
-      "package_tree_hash_sha256": "beb7684ae31b5401265e6a8db70b46d7d5aa63e9f60bc0a82508adf22dc89bc0",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "9c83ed44d69a40fffbce48579c4d4fe845f76e1f610ba8f6cfd7eac7c413850a",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "99606e1080c9f894bdbcfd0f4e9c7c95c9b7eaebcabde4de0bb4b2970f293c92",
-          "bytes": 10394
+          "sha256": "bdea0fc7adee1529df1d20b255c34f6639765e89badfbc726d5fc916d5f221ea",
+          "bytes": 11293
         },
         {
           "path": "agents/openai.yaml",
           "sha256": "dd714e3ad9975f2a20316517837356d59adae1ee9f846cc743ff45de27a7d37c",
           "bytes": 131
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/backup-recovery",
+      "source_origin": "repository:skills/backup-recovery",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "5074991348cdf44cfac2f31196af85120f02f8e97dc22785d2c42eac9da3c052",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e05e675d3e6807db928c729756602cf0c3c2f07ffd5258b6e251e30df50b113a",
+          "bytes": 5206
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "327a89457580965d970d3a6bcd4b9919a8c2ccd951b1081ab2f187e069d156f8",
+          "bytes": 263
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/compatible-response",
       "source_origin": "/Users/mahan/.agents/skills/compatible-response",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
-      "package_tree_hash_sha256": "36e5ab782d1a58b7037b10ff44a5849cbcd6dd12ce89c6e63bf8149759b362f8",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "083f8de7e7fe7e40e04e0a2868ddfc577885ac1122a6315226a7c116185c5d38",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "1c0f4f70815e5dddfab39661b0dbb653027335b360e75932979e505a2b9d01e7",
-          "bytes": 2902
+          "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "bytes": 3235
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/db-impact",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\db-impact",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
-      "package_tree_hash_sha256": "9b4a8caf63973e2d80f008366a7e5b9ee6196f0de964bd30945f53399a40a10d",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "c07ddd3cecd2d2ba1501325502690602c41c50d45e05cefbea3f758d1f1c7b2b",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "498f6543a05c4f2a625bd2f599f7a5236d5623d0078ce3c6630578c2a8b66c4e",
-          "bytes": 9626
+          "sha256": "99df764aa0e531398af7489f1426ad7568fdf1b7baa9f220102dd474b40dfb0f",
+          "bytes": 10574
         },
         {
           "path": "agents/openai.yaml",
           "sha256": "0e38d2f561316ea2f114f4b658a4c99b51a92f5ad38fb5599c22d016766b8947",
           "bytes": 125
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/devil",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\devil",
       "file_count": 9,
       "source_selected_tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
-      "package_tree_hash_sha256": "9bb5d58ee02ab3246f3bde01299dbc56166bb3fc8f51b0e56edbc93ff39b1c61",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "632a75787c7a99ba870091810e565aa5d930656e4abda21b583f2e8385b4e146",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "6563e2e7c5c62f693e1c0d6b1fdc60ed6a84ae93cb6d868a1544c6d3f46e0a01",
-          "bytes": 7195
+          "sha256": "e35b724b2d448f2ce10be39a7a6643c3fabf4d25d1ae9968ed2617c7862392d4",
+          "bytes": 7882
         },
         {
           "path": "agents/openai.yaml",
@@ -10039,35 +10709,58 @@
           "sha256": "45580820f4638213c90294ef94c52493ec79d0e486ed9fd8c187b3e5f4b14fed",
           "bytes": 1830
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/docs-maintenance",
+      "source_origin": "repository:skills/docs-maintenance",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "34261b0663a2d001f4bcd362f3c03aadc1a899af4c74a63b273ac3e21c2ea976",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "201c709556fe825db0582a5fd8f49e0db15caafff5a047b8a9839fcb26b3c25e",
+          "bytes": 4100
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "428c66177a684ca3dfc2331e845257e17971e0984963e47e8b8c07d20821359a",
+          "bytes": 254
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/final-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\final-check",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
-      "package_tree_hash_sha256": "d003714c29b16e7f532ee93f1b64330a8db7e4f32ed488eadb4ab9a676c2283f",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "f86a0d526b33295536801b431214b954f1f0d2e2992136b963c251e4d3b97cfb",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "9ba12c4ae3b5bfafc15f384e690e5f521fe093cce562e435cdd60de259dd1ac9",
-          "bytes": 4708
+          "sha256": "465127b287b64a03092e408ba6c0028eb097e5f79299aad7bbff2c3ac8481b36",
+          "bytes": 6006
         },
         {
           "path": "agents/openai.yaml",
           "sha256": "6502131ce75fb8770e452c28d73c8aa010d15d7c8a640e011f95a0b83e74839f",
           "bytes": 119
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/full-plan",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\full-plan",
       "file_count": 14,
       "source_selected_tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
-      "package_tree_hash_sha256": "aa563625dfec7ab935398dc7100d65991823b8c61704354ec141410b1b72ef86",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "243b5753e560e233fd1dd33a9d5695563593992905672603f23c6648abab5adb",
+      "source_package_equal": false,
       "files": [
         {
           "path": "CHANGELOG.md",
@@ -10076,8 +10769,8 @@
         },
         {
           "path": "CONTRIBUTING.md",
-          "sha256": "fa200d706fe248413bccdee79ca15603e08e34070e1aeaba6270813d80f6b673",
-          "bytes": 2291
+          "sha256": "2e82a696ba0c22ad12fd303a2527874783f7da6236488a0b5eccdff92276160c",
+          "bytes": 2454
         },
         {
           "path": "LICENSE",
@@ -10086,78 +10779,79 @@
         },
         {
           "path": "README.md",
-          "sha256": "dd8615bf257b707e93e81fbfbf780a955ad71a4ec165e9b9a3038efe716cf0a8",
-          "bytes": 4470
+          "sha256": "b54440ed7e1917037b122e35bc80ff1d9bfbde3c186c07c1a254f531ada9fd21",
+          "bytes": 5106
         },
         {
           "path": "SKILL.md",
-          "sha256": "e647fe50d6e418c381920a693d15d9107559d38fb6638e5ae375bfe27d1b053b",
-          "bytes": 6679
+          "sha256": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7",
+          "bytes": 9551
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "1e40901613f3818115cbdbf4dd7b0fdbbf108dad9a6f6a11e98b48f9c613b14d",
-          "bytes": 132
+          "sha256": "1a36797c1f83386e54fa687e5ab40b589dbec4887ea011b1d1f47a3ed1196857",
+          "bytes": 151
         },
         {
           "path": "docs/INSTALLATION.md",
-          "sha256": "eeca4644762d9323f9b50fb03e3b2f7984e214c5505ff8c52f2ed67e86d12051",
-          "bytes": 2127
+          "sha256": "992fff7878f7b6caa96efb3f367ba9aec473fb3cfd7f3aef152c9e90c783ab87",
+          "bytes": 2263
         },
         {
           "path": "docs/OUTPUT-FORMAT.md",
-          "sha256": "3bd6afaa783593d0a30f846dd4aab6cbfc1b8f8e643065675857634ed93f85c3",
-          "bytes": 2754
+          "sha256": "ed1ae9ab8fc6d99c2b694249d7fe0fed9629305cbb0937e2e918d24290620b8c",
+          "bytes": 3173
         },
         {
           "path": "docs/PLATFORM-COMPATIBILITY.md",
-          "sha256": "eba3354c97395c9be4684f645974b88033b10b1e21b5eab5779795fc9c14bc77",
-          "bytes": 4051
+          "sha256": "648affb763a8fc74d5a5041b1e1ef8c6a3d6d16da5bb6baea2c2082c8f28b8aa",
+          "bytes": 3591
         },
         {
           "path": "docs/USAGE.md",
-          "sha256": "e8c47043826f706b67e71a77c1226335f60c34443b5d0c17c712ece59e6f283b",
-          "bytes": 2901
+          "sha256": "68a5aea8bfc4c0d3388a0db26ecfc053494abb581d1c3489ac5ca1e3f09e0afd",
+          "bytes": 3247
         },
         {
           "path": "platforms/README.md",
-          "sha256": "e9bb2bf9c16cbf2b8d0a3d64fb0b9f6b28a02426a72f7def2f0f5299c2fc0373",
-          "bytes": 1146
+          "sha256": "ba445f094c2a236c529fedeacf59613993e879822e39ef26f7e3a0801572cd7c",
+          "bytes": 1230
         },
         {
           "path": "platforms/chatgpt-custom-gpt/INSTRUCTIONS.md",
-          "sha256": "7b9cf70124f1fa73aa981ff81ffe533d1ec34bd0ba2417c334a0d3c1157f02dd",
-          "bytes": 2232
+          "sha256": "259baaa237cbcc9982ba9cb1c1f02e7793388a25c6c0ed9a51e17e522bdf3dcb",
+          "bytes": 2539
         },
         {
           "path": "platforms/claude-code/commands/full-plan.md",
-          "sha256": "f920b9c778fe7607785cf47c78afe5b39dd96a6670cec4a32a627f40b1f041f2",
-          "bytes": 1447
+          "sha256": "f4d2d0c2e11179a1528158c7e3c7d0d126b792da0ad874fb7d5d528dc32961dd",
+          "bytes": 1757
         },
         {
           "path": "platforms/claude-web/PROJECT-INSTRUCTIONS.md",
-          "sha256": "deed94085abfdb4b444956e5e8221dc6516e3d9112ff601614b2e81d97d43c5a",
-          "bytes": 2003
+          "sha256": "eaac8e476bc980e4d2f4f1b41b1b2166111c93af9ab4c3df8253e919875b2e0e",
+          "bytes": 2392
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/hand-off",
       "source_origin": "/Users/mahan/.agents/skills/hand-off",
       "file_count": 10,
       "source_selected_tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
-      "package_tree_hash_sha256": "978c7543eff80d196ca9882cb9e0b4a81d18c732c797beac88ed48cc9459b451",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "b71e2b25efc4269f31f1f92cda7f834900d80b4511787da5f6a7b9290d8080cd",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "3cce5f564bb081f1ed349f0b47ceb7705836b9e415b2f6b2da98636c706ebbeb",
-          "bytes": 9286
+          "sha256": "c6a3248bcd8994a653a603920c867a77d24b24a0051fff37f2dad35ce15be373",
+          "bytes": 9801
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "ed0e3df3a5cf8eec88148e1fc178668c0f01c00ebad336190359b1c4a04dd6bf",
-          "bytes": 308
+          "sha256": "a0878e182a83490b7f2b35a025824413b3174b746465bb5e7b6a4738cb6bfb12",
+          "bytes": 286
         },
         {
           "path": "assets/developer-guide.template.md",
@@ -10199,30 +10893,95 @@
           "sha256": "74cb544a84bc8d0caa68027e2bf732c311779108222729c3eba2ef9c5e0258c3",
           "bytes": 2649
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/integration-reliability",
+      "source_origin": "repository:skills/integration-reliability",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "21c862452a715a443d08ac71dfc925eedbf7845ccfb4f6e7b332409a780403bd",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3aa1ab82e840e4d7c2671bc329d67c2ca03d3ed06f8a4d6343ef52968c772b5b",
+          "bytes": 5704
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "083cff87398b1adfcbd9fbcad1563fb8fa81f39b8c8d68214a636283717f1643",
+          "bytes": 286
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/load-testing",
+      "source_origin": "repository:skills/load-testing",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "73624a713ca31938b2bf290a91a9f3fae54fa4ae1e19e9876d5ceecbf731dca1",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "da1409201f40fcc91e42788e34f1ad6a5298face4b84df8b8e515577fcdeddbc",
+          "bytes": 4682
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "3935f20c72eaf13db9148eeade9695a518bad0ceab714ad60d4321ee50d2ce52",
+          "bytes": 266
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/maintenance-evolution",
+      "source_origin": "repository:skills/maintenance-evolution",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "020630bf77d2e0977ca170ee612187201b53ac5eceb8cc34ab85ec1030012bf3",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3f8b3c9be3197ed6c64e5c86a0aec836199f46a6ba177c6175659294078db995",
+          "bytes": 4657
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "ed8fd71735634a7416d8e165983bbd9d55553bb24ec613566de7137563023766",
+          "bytes": 276
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/multiple-pov",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\multiple-pov",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
-      "package_tree_hash_sha256": "d781613ba2b84890df6b11e51c1a9a5e125fa92edd10a51cd01225837904797c",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "c77b97b320fe3b7a125b9562055b803467b3a8709eb8f9a6e9c56ccdc78343ef",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "dc35a3d82ada360b07227cef7951658eaadc21203f9591420c24b553e9f407f6",
-          "bytes": 18122
+          "sha256": "d6d553b07466efcaeabd7a2b5dc19634f8efe05bd6948eced9a7ed924bb7a85e",
+          "bytes": 19080
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/natural-persian-writing",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\natural-persian-writing",
       "file_count": 4,
       "source_selected_tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
-      "package_tree_hash_sha256": "849a5e5283c7cf91c3f7ff6c815a340725a039251cb04860a178e2fa9bd87d54",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "0018943af6fa00d7f18829013debcbe3513b248753c75330653ddc07e9a0adba",
+      "source_package_equal": false,
       "files": [
         {
           "path": "LICENSE",
@@ -10236,123 +10995,244 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "7ea8a1f7e35f72b2f5bc8dd0c9f99c7aea005c7dedff67285cfe35f1dce023ad",
-          "bytes": 6124
+          "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+          "bytes": 6126
         },
         {
           "path": "references/persian-style-guide.md",
           "sha256": "97c5861dacc219c2f218698995ac104e533bf6d103cb9e7946b1c237b2f676af",
           "bytes": 6797
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/performance-review",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\performance-review",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
-      "package_tree_hash_sha256": "3080c24ec4d3ab185a14291b6d0ddcee95d94cedb3dcae1a4b62bd01570a7e4f",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "3c235d71e7f9329991d19a6d22640b52a860b104bd47b003da60fc2fc9bade3b",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "bb453dac2bb639288c0fd6f9b1b86b5001ed3c875649b3e763195059e25c8101",
-          "bytes": 10238
+          "sha256": "00aa8da834b8be3fc0244a8d2a9411ba233b19a3b4d018c651250166a960966e",
+          "bytes": 13019
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "ec9475773272d307e02958025603e3b48667c81771059cbf3afdfa1ab61caf19",
-          "bytes": 109
+          "sha256": "04ca2d1751de1ff14b8c7d61f3638571ff5e9427d55ef868bcdbd8582e3bf2a3",
+          "bytes": 129
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/practical-test",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\practical-test",
       "file_count": 1,
       "source_selected_tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
-      "package_tree_hash_sha256": "f0700b2aeb04ea0dd753f4396686ff9208a7508b1f803807bb548416e10413aa",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "c1852ae0c1de8512b1f02cda5c4a131d6e4487b398dc66e7e2bad9bae7b71f6e",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "8ac38f3db25a6b3a1071dba97e1b7184e52f90390a637a82215af5fe8ee6c79a",
-          "bytes": 7419
+          "sha256": "f68af4daaa40f0f8d016fc05de605bd34c0ac4408ab7ea04e7e5d93ce6382865",
+          "bytes": 8414
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/regression-check",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\regression-check",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
-      "package_tree_hash_sha256": "8f8946c12f2b28a1e4ac9c049e4bc037b46b0b0859d8b37d680cead2b64645e5",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "7cf212432bd17f1af1990077b2aefe88426a58d65422acbe478dc7d148820032",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "62ad48277fc10441bee94fd6440343a4b374d2cb106d0b40c83f5919452890f7",
-          "bytes": 7784
+          "sha256": "56d2b12e10deca18f72dcab4caa82c52a0c72650d826bd6002fb2a5ec6728f62",
+          "bytes": 8190
         },
         {
           "path": "agents/openai.yaml",
           "sha256": "c8d1a87741929b46db70c8ea116b589b8c021b7f3552b966d789d54421eacb62",
           "bytes": 112
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/release-management",
+      "source_origin": "repository:skills/release-management",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "47aeea3531807a4304ec7f4f097119b0b5b193c3634ea43449c8515db25d24f1",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "b07125282df8115c57a687856036ee4b976b796b3738d933b8f45c50720bf935",
+          "bytes": 4977
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "d3a932eec6ca884fd68f0410d67af5843933b72dd4111b4324f95704cd6edaf4",
+          "bytes": 249
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/root-cause",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\root-cause",
       "file_count": 2,
       "source_selected_tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
-      "package_tree_hash_sha256": "e6647dce46ecafc59a802e0011e8329e02587d742408f9a6259d4ed452bbc6e5",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "bbaaa2599978fe44df3f266c0f8abc0bec7e78abc192a3e0ab8f8ab61082a5fb",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "213695fabc1932a2f95c9cc9fb9fc4f43bcf22f0ef9503c6b7713818a878a404",
-          "bytes": 8746
+          "sha256": "b8822956da7ec1b0def65047ccac583089789c21fc3630d3d3012c23e29a8b2e",
+          "bytes": 10192
         },
         {
           "path": "agents/openai.yaml",
           "sha256": "28f79605d53e7b481fb1769064763c048ae40b72c5ba8a0caa0077ff6019150e",
           "bytes": 115
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/security-assurance",
+      "source_origin": "repository:skills/security-assurance",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "95a788297d47dfa21bba943655594e54bfc3accae717739604394f8a7f1d7ceb",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3ecc28eac52dd0018163ca1808aec0fb6756dfbd32a0cc156229f060332a0310",
+          "bytes": 5016
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "49256a5113ab193f89a526f5d2affd251a4bcd2ef42e362680f5f5ee81b3e8a3",
+          "bytes": 266
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/skill-evals",
+      "source_origin": "repository:skills/skill-evals",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "cb57d86bf54cd44906803d2ad6f76002447a10f931612ff02c218adc09da9c5c",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7868c5136d84d3a3a122e702c3837f3c90c02012149d1f340719a59837a70513",
+          "bytes": 6405
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "9cb19d88b052254f119038f548221e3c4fe7a142d59771a5b79354336b8d8076",
+          "bytes": 249
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/steps",
       "source_origin": "/Users/mahan/.codex/skills/steps",
-      "file_count": 2,
+      "file_count": 4,
       "source_selected_tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
-      "package_tree_hash_sha256": "ff7eeba32199f064b3c5393388dcd4e2503a4c893de227f5ed00c2740f7cc6f9",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "87548c68c28b4cf935852b16c519f7b68f244040f6d6359c7f0be6ee9f3078d8",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "ddbd2b1274fcc382e112e9fb1675453347ed7188ebea16c4315e82e443a76b53",
-          "bytes": 18020
+          "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+          "bytes": 23866
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "15c7acf9fae303002fd64c95ebe9f474312bce17dcd3aac8f61cdeb69ab73fe2",
+          "bytes": 273
         },
         {
           "path": "references/deep-workflow.md",
           "sha256": "d59b62bc8815c54c636317430c4f793f99e05eea35cfd18a461861c73c6a66d7",
           "bytes": 9420
+        },
+        {
+          "path": "references/routing-boundaries.md",
+          "sha256": "bfadf2cc2fd043aa4af526a61276440e7bdf8ad56718a9b59d97dbdd4b8de0ef",
+          "bytes": 3490
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/technical-proposal-discovery",
+      "source_origin": "repository:skills/technical-proposal-discovery",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "1f3f462eff7ef166743e826d6ef40a9a91019a6eae9b15cc6f08fd4703b58aa5",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3af2482b99f8c8535ff768a03d60c06536b8534530262d1d776bb74582494104",
+          "bytes": 4665
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "0653bcd3ee1d6c33d9be2aeed214402a1aaa9e337301b0e99ab506e976b419eb",
+          "bytes": 278
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
+    },
+    {
+      "snapshot_root": "skills/test-engineering",
+      "source_origin": "repository:skills/test-engineering",
+      "file_count": 2,
+      "source_selected_tree_hash_sha256": null,
+      "package_tree_hash_sha256": "216c3a6ed89753716070a6dd79eda7aac3f79812d43c494ad346e87098269dce",
+      "source_package_equal": null,
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e800c5a400ce62d7f3c5bbe75bf8dbf6d803f01b9e5146e07309f79c6219ead7",
+          "bytes": 5272
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "ed679d2733dad5548a5618bd35e494297db95644390c519f22b3c8233152edba",
+          "bytes": 270
+        }
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     },
     {
       "snapshot_root": "skills/ui-ux-pro-max",
       "source_origin": "C:\\Users\\Mahan\\.codex\\skills\\ui-ux-pro-max",
       "file_count": 70,
       "source_selected_tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
-      "package_tree_hash_sha256": "805a86f4e4442665c7952b75a3f670bda39c0795980abfccf22b7c04d68d683c",
-      "source_package_equal": true,
+      "package_tree_hash_sha256": "830b50385b9b529c2c9067dfd16562ee1d2850a028c601414802893562f37932",
+      "source_package_equal": false,
       "files": [
         {
           "path": "SKILL.md",
-          "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
-          "bytes": 15969
+          "sha256": "9fcd7a31ae8736647545398ecd331f88a7a0887442e0795be7468d2cecd578ff",
+          "bytes": 17498
         },
         {
           "path": "data/app-interface.csv",
@@ -10699,8 +11579,9 @@
           "sha256": "718ad4cbb227436015c9c2bc80fc583d6ed738b01c1a940ef85e350780d99f58",
           "bytes": 52064
         }
-      ]
+      ],
+      "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     }
   ],
-  "package_version": "3.0.0"
+  "package_version": "3.1.0"
 }

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Maintenance Evolution"
+  short_description: "Compatibility, deprecation and scoped debt decisions"
+  default_prompt: "Use $maintenance-evolution to plan a compatible transition for this existing feature."
+
+policy:
+  allow_implicit_invocation: true

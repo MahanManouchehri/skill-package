@@ -1,0 +1,7 @@
+interface:
+  display_name: "Docs Maintenance"
+  short_description: "Source-backed documentation sync and user guides"
+  default_prompt: "Use $docs-maintenance to synchronize the affected project documentation."
+
+policy:
+  allow_implicit_invocation: true

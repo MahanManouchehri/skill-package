@@ -1,0 +1,356 @@
+{
+  "case_id": "S06",
+  "original_prompt": "در Django webhook سرویس پیامک را دریافت کن، Provider ممکن است پیام را دوبار بفرستد.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "READ_ONLY_PLAN_COMPLETE",
+  "implementation_status": "NOT_IMPLEMENTED",
+  "task_criticality": "★★",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "reason": "هماهنگی محدود کار توسعه، اختیار READ_ONLY و تفکیک طرح از اجرا",
+      "path": "$FIXTURES/S06/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS"
+    },
+    {
+      "name": "integration-reliability",
+      "reason": "قرارداد webhook خارجی، تکرار، ترتیب، امضا و ACK",
+      "path": "$FIXTURES/S06/.agents/skills/integration-reliability/SKILL.md",
+      "mode": "IN_PROCESS"
+    },
+    {
+      "name": "multiple-pov",
+      "reason": "یک بررسی محدود انتخاب تراکنش محلی در برابر افزودن صف برای یکپارچه‌سازی جدید",
+      "path": "$FIXTURES/S06/.agents/skills/multiple-pov/SKILL.md",
+      "mode": "IN_PROCESS"
+    },
+    {
+      "name": "full-plan",
+      "reason": "قرارداد پیشنهادی endpoint، سناریو و معیار پذیرش پیش از اجرا",
+      "path": "$FIXTURES/S06/.agents/skills/full-plan/SKILL.md",
+      "mode": "IN_PROCESS"
+    },
+    {
+      "name": "natural-persian-writing",
+      "reason": "پاسخ فنی فارسی",
+      "path": "$FIXTURES/S06/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "IN_PROCESS"
+    },
+    {
+      "name": "compatible-response",
+      "reason": "سیاست ارائه پاسخ",
+      "path": "$FIXTURES/S06/.agents/skills/compatible-response/SKILL.md",
+      "mode": "IN_PROCESS"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S06/AGENTS.md",
+    "$FIXTURES/S06/prompt.txt",
+    "$FIXTURES/S06/available_catalog.json",
+    "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/integration-reliability/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/multiple-pov/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/full-plan/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S06/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S06/app/views.py",
+    "$FIXTURES/S06/app/urls.py",
+    "$FIXTURES/S06/app/models.py",
+    "$FIXTURES/S06/contracts/provider.md",
+    "$FIXTURES/S06/tests/test_contract.py",
+    "$FIXTURES/S06/pyproject.toml",
+    "$FIXTURES/S06/schema.sql",
+    "$FIXTURES/S06/README.md",
+    "$FIXTURES/S06/NOTES.md",
+    "$FIXTURES/S06/spec/api/users.md"
+  ],
+  "commands_run": [
+    {
+      "cwd": "$FIXTURES",
+      "command": "cat WORKER_CONTRACT.md",
+      "exit_code": 0,
+      "result": "Read single-scenario READ_ONLY contract; no services/network/implementation; output-only exception."
+    },
+    {
+      "cwd": "$FIXTURES",
+      "command": "cat S06/AGENTS.md",
+      "exit_code": 0,
+      "result": "Read fixture governance; preserve Django, spec/api docs, no mutations/provider traffic."
+    },
+    {
+      "cwd": "$FIXTURES",
+      "command": "cat S06/prompt.txt",
+      "exit_code": 0,
+      "result": "Read original Persian Django SMS webhook request."
+    },
+    {
+      "cwd": "$FIXTURES",
+      "command": "cat S06/available_catalog.json",
+      "exit_code": 0,
+      "result": "Read candidate metadata; selected six relevant bodies, not all bodies."
+    },
+    {
+      "command": "cat /Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read required global presentation policy."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read coordinator body; aggregate output truncated a small span, recovered through tail below."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/integration-reliability/SKILL.md",
+      "exit_code": 0,
+      "result": "Read actual integration specialist body."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read actual Persian writing body."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read catalog presentation body."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "rg --files -g '!available_catalog.json' -g '!.agents/**' -g '!prompt.txt' -g '!AGENTS.md'",
+      "exit_code": 0,
+      "result": "Located app/views.py, app/urls.py, app/models.py, contracts/provider.md, tests/test_contract.py, pyproject.toml, schema.sql and docs; snapshot.json was listed but not opened."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat app/views.py app/urls.py app/models.py",
+      "exit_code": 0,
+      "result": "Only profile(request, pk), api/users/<int:pk>/ and User fields owner_id/phone/name; no webhook or event model."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat contracts/provider.md tests/test_contract.py",
+      "exit_code": 0,
+      "result": "Synthetic HMAC raw-byte/version/event-ID contract; only existing test exercises legacy duplicate phone SQL."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat pyproject.toml schema.sql README.md NOTES.md spec/api/users.md",
+      "exit_code": 0,
+      "result": "Empty dependencies, only users SQL, source-declared absent framework/server/account/runtime, preserve draft, spec/api is docs location."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md",
+      "exit_code": 0,
+      "result": "Read scoped feature-contract and one-time design-review bodies."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read required technical Persian guidance."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "sed -n '145,240p' .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "No output: requested range beyond file; no evidence inferred."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "tail -n 42 .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Recovered coordinator closing sections and completion/verification rules."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "rg -n 'webhook|sms|event_id|resource_id|HMAC|transaction|unique|version|state' app contracts tests pyproject.toml schema.sql spec/api README.md",
+      "exit_code": 0,
+      "result": "Only provider contract and pyproject version matched; no webhook implementation in inspected source."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "git status --short -- .",
+      "exit_code": 0,
+      "result": "All fixture paths shown untracked; no reset/add/commit or source modification performed."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "nl -ba app/views.py app/urls.py app/models.py contracts/provider.md README.md pyproject.toml tests/test_contract.py schema.sql",
+      "exit_code": 1,
+      "result": "macOS nl rejected multiple operands and printed usage; corrected by read-only Python enumeration."
+    },
+    {
+      "cwd": "$FIXTURES/S06",
+      "command": "python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json\npaths = ['app/views.py','app/urls.py','app/models.py','contracts/provider.md','pyproject.toml','README.md','tests/test_contract.py','schema.sql','spec/api/users.md']\nfor name in paths:\n    p=Path(name)\n    print(json.dumps({'path':name,'numbered_lines':[f'{i}: {line}' for i,line in enumerate(p.read_text().splitlines(),1)]},ensure_ascii=False))\nfor name in ['steps','integration-reliability','full-plan','multiple-pov','compatible-response','natural-persian-writing']:\n    p=Path('.agents/skills')/name/'SKILL.md'\n    print(json.dumps({'skill':name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}))\nPY",
+      "exit_code": 0,
+      "result": "Read numbered source lines and computed six skill SHA-256 values; no imports of Django, network, database writes or tests."
+    }
+  ],
+  "observations": [
+    {
+      "status": "VERIFIED",
+      "source": "app/urls.py:3; app/views.py:3-5",
+      "finding": "Only profile route/handler; no incoming webhook."
+    },
+    {
+      "status": "VERIFIED",
+      "source": "app/models.py:2-5; schema.sql:1-2",
+      "finding": "Only User/users exists; no receipt uniqueness, SMS resource state or version model. No unrelated legacy-phone change is proposed."
+    },
+    {
+      "status": "VERIFIED",
+      "source": "contracts/provider.md:2",
+      "finding": "Local synthetic contract specifies event_id/resource_id/version/state, timestamped raw-byte HMAC, dedupe, stale-version rejection and missing-event reconciliation; exact wire/signature/ACK details missing."
+    },
+    {
+      "status": "VERIFIED",
+      "source": "pyproject.toml:4; tests/test_contract.py:2-7",
+      "finding": "No declared dependencies; only legacy duplicate-phone SQLite test; no webhook acceptance evidence."
+    },
+    {
+      "status": "UNVERIFIED",
+      "source": "README.md:1",
+      "finding": "README states no framework, DB server, provider account or running app installed. Runtime availability not independently probed."
+    }
+  ],
+  "design_review": {
+    "execution": "IN_PROCESS; one bounded review, no independent reviewer claim",
+    "known": [
+      "Incoming SMS provider integration requested; duplicate delivery explicitly possible.",
+      "No existing webhook, queue or message resource in the inspected source."
+    ],
+    "unknown": [
+      "Real Provider identity/version and full SMS wire contract.",
+      "Signature headers/encoding/algorithm, timestamp rules/replay window, event ID scope/lifetime and retention.",
+      "SMS resource mapping, allowed states, terminal transitions, version semantics, ACK/retry SLA and missing-event status lookup."
+    ],
+    "strength": "Stable event_id and version fields supplied by the local contract support durable dedupe and ordering without introducing another infrastructure service.",
+    "alternatives": [
+      {
+        "option": "Durable receipt plus synchronous local-state transaction",
+        "assessment": "Recommended contingent on local bounded processing and defining the message model; smallest repository-native implementation."
+      },
+      {
+        "option": "Durable inbox plus asynchronous worker",
+        "assessment": "Only if later business processing requires it; current source has no worker/queue and request does not justify adding one."
+      },
+      {
+        "option": "In-memory cache or existence-check then insert",
+        "assessment": "Rejected: races and restart loss allow duplicate effects."
+      }
+    ],
+    "red_team": [
+      "Two concurrent identical events must be arbitrated by database uniqueness, not pre-check.",
+      "Commit followed by lost response must permit ACK replay without second effect.",
+      "DB failure before commit must not leave a permanent dedupe marker hiding unperformed work.",
+      "Out-of-order resource updates require atomic version protection as well as event dedupe.",
+      "Unknown Provider signature or ACK semantics must not be filled with guessed production guarantees."
+    ]
+  },
+  "intended_actions": [
+    {
+      "order": 1,
+      "action": "Finalize only missing provider contract and local SMS resource/state mapping from authoritative supplied documentation; no network under current authority.",
+      "authority_now": "READ_ONLY inspection/plan only"
+    },
+    {
+      "order": 2,
+      "action": "Propose POST /api/webhooks/sms/ in Django; authenticate raw bytes/timestamp, validate fields, use durable provider/event_id uniqueness, store payload digest, and apply receipt plus local state in one transaction with atomic version guard. ACK after commit.",
+      "authority_now": "Not executed: source/model/migration writes forbidden"
+    },
+    {
+      "order": 3,
+      "action": "Before any later authorized schema execution, analyze additive receipt/message-state constraints, database backend concurrency, retention and migration compatibility; do not alter users/phone or legacy data for dedupe.",
+      "authority_now": "Future prerequisite, not migration execution"
+    },
+    {
+      "order": 4,
+      "action": "Design isolated tests for duplicate concurrency, stale/conflicting event, signature/replay, partial failure and lost ACK; preserve profile behavior. Sync only affected API docs under spec/api when code changes are authorized.",
+      "authority_now": "Plan only; no test execution or documentation/source edits"
+    }
+  ],
+  "failure_matrix": [
+    {
+      "case": "Valid new event",
+      "consumer": "Verify signature/raw bytes/time, validate, commit durable receipt and state atomically, then ACK.",
+      "evidence": "PROPOSED"
+    },
+    {
+      "case": "Sequential/concurrent duplicate",
+      "consumer": "Unique provider/event_id; same payload returns same successful ACK only after original commit; no second effect.",
+      "evidence": "PROPOSED"
+    },
+    {
+      "case": "Same ID with conflicting payload",
+      "consumer": "Detect via stable digest and event fields; no mutation, safe diagnostics; exact Provider ACK/error policy unresolved.",
+      "evidence": "CONTRACT_UNKNOWN"
+    },
+    {
+      "case": "Invalid/stale signature",
+      "consumer": "Reject before durable business effects, no secret logging; exact header, timestamp rules and replay window unresolved.",
+      "evidence": "CONTRACT_PARTIAL"
+    },
+    {
+      "case": "Out-of-order/stale version",
+      "consumer": "Atomically compare resource version and transitions; ignore stale event effect, do not reverse terminal state; accepted stale receipt may receive agreed ACK.",
+      "evidence": "PROPOSED; state mapping unknown"
+    },
+    {
+      "case": "DB failure/crash before commit",
+      "consumer": "Rollback receipt plus local effect; no success ACK; redelivery depends on Provider's unconfirmed delivery contract.",
+      "evidence": "PROPOSED"
+    },
+    {
+      "case": "Commit succeeds, response lost/timeout-after-effect",
+      "consumer": "Subsequent duplicate finds committed receipt and gets stable ACK without a new effect; sender timeout does not prove failure.",
+      "evidence": "PROPOSED"
+    },
+    {
+      "case": "Version gap or unknown resource",
+      "consumer": "No guessed status overwrite; retain diagnostic evidence or fail per agreed contract; reconcile only with documented SMS lookup and authorized execution.",
+      "evidence": "CONTRACT_UNKNOWN"
+    },
+    {
+      "case": "429 and outbound timeouts/retries",
+      "consumer": "No outbound request in receive path; outbound payment Retry-After/by-key rules not assumed to be SMS webhook sender rules. Any future authorized reconciliation uses documented quota, bounded retry/time budgets and no nested retry multiplication.",
+      "evidence": "NOT_APPLICABLE to current receive operation; future SMS lookup contract unknown"
+    }
+  ],
+  "authorization_handling": {
+    "effective_mode": "READ_ONLY",
+    "allowed": [
+      "Read S06 governance/catalog, selected skill bodies, relevant S06 source/contracts/docs and scoped git status.",
+      "Write only approved delegated-results/S06.json artifact."
+    ],
+    "forbidden_actions_not_performed": [
+      "No source edits, dependency install, tests/services/workers, migrations, database persistence, network/provider calls, production, Cron, commits or pushes."
+    ],
+    "output_path_resolution": "Parent clarified ../delegated-results is relative to S06; authoritative absolute artifact path is agent-fixtures/delegated-results/S06.json.",
+    "confirmation": "No ceremonial approval requested for safe inspection. READ_ONLY contract itself blocks implementation; missing provider details block dependent final contract choices, not safe discovery."
+  },
+  "persian_response": "بررسی و طرح اولیه کامل شد؛ webhook پیاده‌سازی نشده است. در `app/urls.py:3` فقط مسیر پروفایل وجود دارد و `app/models.py` فقط مدل `User` را دارد. قرارداد `contracts/provider.md:2`، امضای HMAC روی بدنهٔ خام، `event_id` و `version` را مشخص می‌کند.\n\nبررسی طراحی: قید یکتایی پایدار و تراکنش محلی، هم تکرار هم‌زمان و هم گم‌شدن پاسخ پس از commit را پوشش می‌دهد؛ بررسی وجود رویداد در حافظه یا الگوی check-then-insert به‌تنهایی کافی نیست. فعلاً شواهدی برای نیاز به صف یا سرویس تازه وجود ندارد.\n\nطرح API و سناریوها:\n\n۱. **endpoint پیشنهادی:** `POST /api/webhooks/sms/`؛ دسترسی Provider با امضای معتبر، بدون اتکا به نشست کاربر. این مسیر فعلاً وجود ندارد.\n\n| ورودی پیشنهادی | نوع و الزام | نمونه و اعتبارسنجی |\n|---|---|---|\n| `event_id` | رشته، اجباری | `evt_123`؛ غیرخالی، شناسهٔ پایدار Provider |\n| `resource_id` | رشته، اجباری | `sms_123`؛ اتصال به پیام محلی نیازمند قرارداد |\n| `version` | عدد صحیح، اجباری | `2`؛ نمونهٔ پیشنهادی، دامنه و ترتیب نیازمند تأیید قرارداد |\n| `state` | رشته، اجباری | `delivered` صرفاً نمونه؛ فهرست مجاز و انتقال وضعیت نامشخص |\n| امضا و timestamp | اجباری | نام header، قالب، الگوریتم، واحد زمان و پنجرهٔ اعتبار نامشخص؛ نباید حدس زده شود |\n\n۲. **رفتار پیشنهادی:** ابتدا اصالت بدنهٔ خام و زمان امضا، سپس ورودی بررسی شود. ثبت رویداد با قید یکتایی `(provider, event_id)` و تغییر وضعیت پیام در یک `transaction.atomic()` انجام شود؛ تغییر نسخه با قفل یا مقایسهٔ اتمی محافظت شود. تکرار یکسان هیچ اثر جدیدی نداشته باشد؛ رویداد قدیمی وضعیت جدیدتر یا نهایی را برنگرداند. استفادهٔ مجدد از شناسه با بدنهٔ متفاوت، تعارض است. پاسخ موفق فقط پس از commit ارسال شود.\n\n۳. **خروجی پیشنهادی:** برای رویداد پذیرفته‌شده، تکرار یکسان و نسخهٔ قدیمیِ بی‌اثر: `200 {\"received\":true}`؛ `received` بولی و به معنای پذیرش پایدار است. خطاهای پیشنهادی: `400 {\"error\":\"invalid_payload\"}`، `401 {\"error\":\"invalid_signature\"}`، `503 {\"error\":\"temporarily_unavailable\"}`. `error` رشتهٔ علت است. قالب ACK، کد تعارض و رفتار پیام ناشناخته باید با قرارداد واقعی Provider تطبیق داده شوند؛ این‌ها قرارداد فعلی پروژه نیستند.\n\nسناریوها: Provider رویداد معتبر می‌فرستد → ثبت و اثر محلی اتمی → ACK؛ ارسال دوباره یا گم‌شدن ACK → همان پاسخ و بدون اثر دوم؛ شکست DB پیش از commit → rollback و بدون ACK موفق. برای نسخهٔ مفقود، روش استعلام و بازیابی باید از قرارداد واقعی مشخص شود. این handler پیامک خروجی ارسال نمی‌کند؛ قواعد پرداخت قرارداد به دریافت webhook تعمیم داده نمی‌شوند.\n\nمعیار پذیرش آینده: تست جداشدهٔ تکرار ترتیبی و هم‌زمان، امضای نامعتبر/منقضی، نسخهٔ قدیمی، شناسهٔ متعارض، rollback، و تکرار پس از commit با پاسخ ازدست‌رفته؛ بدون تماس واقعی Provider. تغییر مدل، migration و مستندات `spec/api` فقط در مرحلهٔ مجاز پیاده‌سازی انجام می‌شوند.\n\nمحدودیت: README نصب‌نبودن چارچوب و محیط اجرا را اعلام می‌کند؛ `dependencies=[]` و تنها تست موجود مربوط به شمارهٔ تکراری است. تست یا سرویس اجرا نشد و هیچ فایل منبعی تغییر نکرد. نام Provider، قرارداد کامل امضا/ACK، مدل پیام و قواعد وضعیت برای پیاده‌سازی نهایی موجود نیست.",
+  "limitations": [
+    "Read-only plan; original requested feature remains unimplemented.",
+    "Only source inspection ran; no Django/API/database/concurrency/provider runtime result is available.",
+    "README-reported environment absence was not independently verified.",
+    "Provider account, secret, full wire/signature/ACK/retry contract, SMS resource model and state machine are absent.",
+    "One read-only nl command failed due to macOS CLI operand support; successful Python line enumeration supplied source evidence.",
+    "No other scenarios, expectation banks or parent release requirements were read."
+  ],
+  "skill_body_sha256": {
+    "steps": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+    "integration-reliability": "3aa1ab82e840e4d7c2671bc329d67c2ca03d3ed06f8a4d6343ef52968c772b5b",
+    "multiple-pov": "d6d553b07466efcaeabd7a2b5dc19634f8efe05bd6948eced9a7ed924bb7a85e",
+    "full-plan": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7",
+    "natural-persian-writing": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+    "compatible-response": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+  }
+}

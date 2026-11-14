@@ -1,0 +1,189 @@
+{
+  "case_id": "S60",
+  "original_prompt": "در Blade یک فرم سبک پیاده کن، بدون افزودن React.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S60/.agents/skills/steps/SKILL.md",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+      "mode": "IN_PROCESS",
+      "reason": "Coordinate the small implementation request while respecting the imposed read-only phase."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S60/.agents/skills/compatible-response/SKILL.md",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+      "mode": "IN_PROCESS",
+      "reason": "Required presentation standard."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S60/.agents/skills/natural-persian-writing/SKILL.md",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+      "mode": "IN_PROCESS",
+      "reason": "Required for Persian response and proposed Persian form labels."
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "$FIXTURES/S60/.agents/skills/ui-ux-pro-max/SKILL.md",
+      "sha256": "9fcd7a31ae8736647545398ecd331f88a7a0887442e0795be7468d2cecd578ff",
+      "mode": "IN_PROCESS",
+      "reason": "Focused Blade form accessibility, validation feedback and existing-stack guidance."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S60/AGENTS.md",
+    "$FIXTURES/S60/prompt.txt",
+    "$FIXTURES/S60/available_catalog.json",
+    "$FIXTURES/S60/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S60/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S60/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S60/.agents/skills/ui-ux-pro-max/SKILL.md",
+    "$FIXTURES/S60/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S60/composer.json",
+    "$FIXTURES/S60/resources/views/form.blade.php",
+    "$FIXTURES/S60/resources/css/app.css",
+    "$FIXTURES/S60/resources/js/dashboard.js",
+    "$FIXTURES/S60/routes/api.php",
+    "$FIXTURES/S60/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S60/tests/test_contract.py",
+    "$FIXTURES/S60/README.md",
+    "$FIXTURES/S60/spec/api/users.md",
+    "$FIXTURES/S60/.agents/skills/ui-ux-pro-max/scripts/search.py"
+  ],
+  "commands": [
+    {
+      "command": "cat WORKER_CONTRACT.md",
+      "cwd": "$FIXTURES",
+      "exit_code": 0,
+      "result": "Read READ_ONLY contract, isolated case boundary and sole authorized JSON output path."
+    },
+    {
+      "command": "cat AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Read scenario instructions, exact prompt and candidate catalog.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/ui-ux-pro-max/SKILL.md",
+      "exit_code": 0,
+      "result": "Selected four skill bodies; combined tool output was truncated. Steps and writing bodies were reread separately; UI body was visible in the initial result.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!.agents/**' -g '!prompt.txt' -g '!AGENTS.md'",
+      "exit_code": 0,
+      "result": "Located Laravel composer manifest, Blade form, plain CSS, dashboard polling, single API route/controller, docs and test file.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read complete presentation and Persian-writing guidance without truncation.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "sed -n '140,300p' .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read final checklist.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "cat composer.json resources/views/form.blade.php resources/css/app.css resources/js/dashboard.js routes/api.php app/Http/Controllers/UserController.php tests/test_contract.py",
+      "exit_code": 0,
+      "result": "Laravel/PHP >=8.2; form has name field and submit button, label typo, no action/method or validation display; plain CSS; 30-second GET polling; only GET /users route and owner-scoped index; existing Python test covers duplicate-phone precondition rather than forms.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "rg --files --hidden .agents/skills/ui-ux-pro-max/scripts .agents/skills/ui-ux-pro-max/data",
+      "exit_code": 0,
+      "result": "Confirmed local search.py and laravel stack data exist; listing only, unrelated contents were not read.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "sed -n '1,139p' .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read complete remaining steps body, including proportionate routing, authority, stack preservation and reporting.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "cat README.md spec/api/users.md .agents/skills/ui-ux-pro-max/scripts/search.py",
+      "exit_code": 0,
+      "result": "README explicitly says no installed framework or running application; API docs describe GET only. Inspected search CLI and used nonpersisting stack query.",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "python3 --version",
+      "exit_code": 0,
+      "result": "Python 3.14.2",
+      "cwd": "$FIXTURES/S60"
+    },
+    {
+      "command": "python3 -B .agents/skills/ui-ux-pro-max/scripts/search.py 'Blade form validation' --stack laravel --json",
+      "exit_code": 0,
+      "result": "Three results: old() input restoration, @error field messages, Livewire validation. First two fit Blade; rejected Livewire result because no Livewire dependency exists and no new dependency is needed. Dataset labels Laravel 13.x; actual framework version is unpinned.",
+      "cwd": "$FIXTURES/S60"
+    }
+  ],
+  "findings": [
+    {
+      "path": "resources/views/form.blade.php",
+      "observation": "Existing single-field form can be extended directly in Blade; label is نام کاربرر, and form lacks an explicit action/method and field feedback."
+    },
+    {
+      "path": "resources/css/app.css",
+      "observation": "Existing plain CSS uses .primary and .card; no evidence requires a CSS framework or product-wide design system."
+    },
+    {
+      "path": "routes/api.php",
+      "observation": "Only GET /users is declared; no form display or submission handler is supplied in inspected source."
+    },
+    {
+      "path": "resources/js/dashboard.js",
+      "observation": "Existing 30000ms polling should be preserved; this form request does not justify a transport change."
+    },
+    {
+      "path": "README.md",
+      "observation": "Fixture has no installed Laravel runtime or running application; browser rendering and submission behavior cannot be verified here."
+    }
+  ],
+  "intended_actions": [
+    {
+      "phase": "inspection",
+      "state": "completed",
+      "action": "Identify existing Blade/CSS baseline and check available handlers; Task Criticality ★, workload LOW for this read-only phase."
+    },
+    {
+      "phase": "future implementation",
+      "state": "not executed",
+      "action": "Keep the existing name field and use a small responsive Blade/CSS form: correct label to نام کاربر, explicit label association, input type and autocomplete, visible keyboard focus, readable contrast, inline error association and accessible status text where relevant. Use existing CSS without React, Tailwind or Livewire."
+    },
+    {
+      "phase": "future integration",
+      "state": "unresolved contract",
+      "action": "Do not invent a save API or claim persistence. Confirm the intended submission destination and success behavior before wiring an action. For a real existing Laravel web POST handler, use @csrf, escaped old() and @error output with server-side validation; none is implemented in this read-only phase."
+    },
+    {
+      "phase": "future verification",
+      "state": "not run",
+      "action": "On an authorized installed local application, inspect keyboard access, focus, mobile width and mixed Persian/Latin text. Verify invalid input, restored value and success feedback only once a real handler exists; preserve GET users behavior and polling. No service will be started in this phase."
+    }
+  ],
+  "authorization_handling": {
+    "inspection": "ALLOWED",
+    "source_edits": "FORBIDDEN by current READ_ONLY worker contract and fixture AGENTS.md, despite original implementation request.",
+    "sole_write": "$FIXTURES/delegated-results/S60.json",
+    "external_mutations": "None. No network, installation, server start, deploy, provider traffic, production access, Git mutation or Cron changes.",
+    "approval_request": "None. No ceremonial confirmation for reversible UI choices; missing submission semantics are a product-contract limitation rather than permission to create backend scope."
+  },
+  "concise_persian_response": "★\n\n۱. [✓] بررسی فرم و پشته — اسکیل: steps و ui-ux-pro-max؛ اجرا: IN_PROCESS؛ معیار پایان: شناسایی قالب و مسیر ارسال. فرم در resources/views/form.blade.php و استایل‌ها در resources/css/app.css هستند. فقط GET /users تعریف شده و مسیر ثبت فرم در منبع موجود نیست.\n۲. [ ] قدم بعدی — اصلاح برچسب به «نام کاربر»، فرم واکنش‌گرا، فوکوس واضح و خطای کنار فیلد با Blade و CSS فعلی؛ معیار پایان: نمایش درست و استفاده با صفحه‌کلید. برای اتصال ارسال، مقصد و رفتار موفقیت باید مشخص شود؛ قرارداد ذخیره‌سازی تازه‌ای فرض نمی‌کنم.\n\nاین مرحله فقط خواندنی بود؛ هیچ فایل منبعی تغییر نکرد. اجرای Laravel و هدف مرورگر موجود نیست، بنابراین نمایش و ارسال فرم آزمایش نشده‌اند.",
+  "limitations": [
+    "Implementation intentionally not executed under READ_ONLY scope.",
+    "No installed framework, database server or running UI target; no runtime or browser evidence.",
+    "No declared web display/submission route or write handler; destination, validation contract and persistence behavior remain unspecified.",
+    "Only composer wildcard dependency is present; Laravel 13.x dataset recommendations were not treated as a verified installed version.",
+    "Existing Python duplicate-phone test was inspected but not run because it does not establish form behavior."
+  ]
+}

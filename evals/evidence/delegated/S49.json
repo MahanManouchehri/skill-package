@@ -1,0 +1,207 @@
+{
+  "case_id": "S49",
+  "original_prompt": "یک صفحهٔ زیبا بساز؛ از سه‌بعدی استفاده نکن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "execution_state": "read_only_inspection_complete_implementation_not_started",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S49/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+      "reason": "Implementation request requires proportionate engineering coordination."
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "$FIXTURES/S49/.agents/skills/ui-ux-pro-max/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "9fcd7a31ae8736647545398ecd331f88a7a0887442e0795be7468d2cecd578ff",
+      "reason": "Meaningful page layout and visual design within existing Blade/plain CSS stack."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S49/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+      "reason": "Meaningful Persian response and planned UI label correction."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S49/.agents/skills/compatible-response/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+      "reason": "Mandatory concise adaptive presentation."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S49/AGENTS.md",
+    "$FIXTURES/S49/prompt.txt",
+    "$FIXTURES/S49/available_catalog.json",
+    "$FIXTURES/S49/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S49/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S49/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S49/.agents/skills/ui-ux-pro-max/SKILL.md",
+    "$FIXTURES/S49/composer.json",
+    "$FIXTURES/S49/README.md",
+    "$FIXTURES/S49/resources/views/form.blade.php",
+    "$FIXTURES/S49/resources/js/dashboard.js",
+    "$FIXTURES/S49/resources/css/app.css",
+    "$FIXTURES/S49/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S49/.agents/skills/ui-ux-pro-max/scripts/search.py"
+  ],
+  "indirect_search_data_paths": [
+    "$FIXTURES/S49/.agents/skills/ui-ux-pro-max/data/stacks/laravel.csv"
+  ],
+  "commands_actually_run": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Read single-case READ_ONLY contract, governance, exact request and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/ui-ux-pro-max/SKILL.md",
+      "exit_code": 0,
+      "result": "Combined output truncated; steps and ui-ux-pro-max subsequently reread separately in full."
+    },
+    {
+      "command": "rg --files -g '!node_modules' -g '!vendor' -g '!.agents/**' -g '!available_catalog.json' -g '!prompt.txt' -g '!AGENTS.md'",
+      "exit_code": 0,
+      "result": "Located composer manifest, Blade form, dashboard JS and CSS; did not open snapshot.json or unrelated backend/contracts/tests."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read full coordinator body; proportionate low-risk workflow, preserve stack, direct-intent 3D boundary."
+    },
+    {
+      "command": "cat composer.json README.md resources/views/form.blade.php resources/js/dashboard.js resources/css/app.css",
+      "exit_code": 0,
+      "result": "Laravel/PHP >=8.2 manifest; README says synthetic fixture has no installed framework/database/provider/running app. Blade form has name input and primary submit, label typo نام کاربرر. CSS has blue primary and 8px card margin. JS polls /api/users every 30000ms."
+    },
+    {
+      "command": "rg --files .agents/skills/ui-ux-pro-max .agents/skills/natural-persian-writing",
+      "exit_code": 0,
+      "result": "Confirmed actual local search script/data and Persian style reference paths; listing only, not loading other skill bodies."
+    },
+    {
+      "command": "cat .agents/skills/ui-ux-pro-max/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read full UI body and Persian wording reference; reuse current stack/tokens and reject 3D/WebGL here."
+    },
+    {
+      "command": "sed -n '1,220p' .agents/skills/ui-ux-pro-max/scripts/search.py",
+      "exit_code": 0,
+      "result": "Inspected search entry point, non-persist stack mode and JSON result format before executing."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"responsive accessible form\" --stack laravel --max-results 3 --json",
+      "exit_code": 0,
+      "result": {
+        "domain": "stack",
+        "stack": "laravel",
+        "file": "stacks/laravel.csv",
+        "count": 0,
+        "suggestions": [
+          "response",
+          "useform"
+        ]
+      }
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"Blade form\" --stack laravel --max-results 3 --json",
+      "exit_code": 0,
+      "result": {
+        "domain": "stack",
+        "stack": "laravel",
+        "file": "stacks/laravel.csv",
+        "count": 0,
+        "suggestions": [
+          "badge",
+          "badges",
+          "useform"
+        ]
+      }
+    },
+    {
+      "command": "python3 heredoc: read exact prompt and selected skill bytes, compute SHA-256, write only ../delegated-results/S49.json",
+      "result": "Evidence serialization only; no application source changes or external effects."
+    }
+  ],
+  "source_findings": [
+    {
+      "path": "composer.json:1",
+      "finding": "Laravel manifest with PHP >=8.2; no frontend framework inferred."
+    },
+    {
+      "path": "resources/views/form.blade.php:1",
+      "finding": "Single form, explicit label/input association, primary submit; label typo; no layout/direction declaration in this snippet."
+    },
+    {
+      "path": "resources/css/app.css:1",
+      "finding": "Existing blue #2563eb primary and .card margin 8px; reuse these as starting visual cues."
+    },
+    {
+      "path": "resources/js/dashboard.js:1",
+      "finding": "Existing 30-second GET polling; visual work does not justify transport change."
+    },
+    {
+      "path": "README.md:1",
+      "finding": "Synthetic source-only fixture; no installed framework/database/provider account/running application."
+    }
+  ],
+  "intended_actions": [
+    {
+      "phase": "UI implementation after READ_ONLY scope is lifted",
+      "owner": "primary agent IN_PROCESS",
+      "paths": [
+        "resources/views/form.blade.php",
+        "resources/css/app.css"
+      ],
+      "plan": "Assume the existing user form is the page target; use a flat two-dimensional layout, clear title, restrained existing blue accent, readable typography, fluid form/card widths, logical spacing and visible keyboard focus. Correct the Persian label typo. Preserve input identifiers and form behavior. Confirm actual document language/direction before applying page-wide RTL. Use existing Blade/plain CSS; no new framework, library, 3D/WebGL/canvas scene, transport or API."
+    },
+    {
+      "phase": "Focused verification after authorized implementation",
+      "owner": "primary agent IN_PROCESS",
+      "plan": "Review markup/CSS diff for preserved form contracts and no 3D/dependencies. If a separately confirmed safe running target becomes available, inspect mobile/desktop, keyboard focus order, labels, contrast, zoom/overflow and mixed Persian/LTR content; report unobserved behavior explicitly. Do not start a server under this contract."
+    }
+  ],
+  "authorization_handling": {
+    "allowed": [
+      "Inspect this case source and minimum selected local skill bodies",
+      "Run non-persist local search with bytecode writing disabled",
+      "Write this evidence JSON only"
+    ],
+    "forbidden": [
+      "Application edits",
+      "Dependency installation",
+      "Service startup",
+      "Network/provider/production traffic",
+      "Commit/push/deploy/Cron configuration",
+      "Other scenarios/expectations access",
+      "Further agent delegation"
+    ],
+    "decision": "Original implementation request is bounded by explicit READ_ONLY task governance; deliver source-grounded plan without claiming implementation or requesting ceremonial approval. User explicitly prohibits 3D; no specialist result can override it."
+  },
+  "scope_decisions": {
+    "task_criticality": "★",
+    "workload_for_inspection": "LOW",
+    "not_activated": {
+      "apple-design": "No concrete gestures, spring motion or interruptible interaction requested.",
+      "multiple-pov": "Small visual page task does not require material architecture/business design.",
+      "full-plan": "No new workflow/API/business contract; bounded presentation plan suffices.",
+      "practical-test": "No safe running target or implementation; browser execution unavailable within this read-only scope.",
+      "regression-check_and_final-check": "No implementation performed; no completion verdict asserted.",
+      "release_load_security_database_specialists": "No requested release, traffic, security boundary or data change."
+    }
+  },
+  "concise_persian_response": "★\n\n۱. [✓] بررسی ساختار با steps و ui-ux-pro-max، به‌صورت IN_PROCESS؛ معیار پایان: شناسایی قالب و سبک موجود. پروژه از Laravel/Blade و CSS ساده استفاده می‌کند؛ فرم در resources/views/form.blade.php و سبک‌ها در resources/css/app.css هستند.\n۲. [ ] مسیر پیاده‌سازی: صفحه‌ای دوبعدی با پس‌زمینهٔ روشن، رنگ آبی موجود، فاصله‌گذاری منظم، تیتر خوانا و فرم واکنش‌گرا؛ اصلاح «نام کاربرر» به «نام کاربر». معیار پایان: نمایش مناسب موبایل، فوکوس واضح و حفظ رفتار فرم. سه‌بعدی یا وابستگی جدید لازم نیست؛ polling فعلی هر ۳۰ ثانیه حفظ می‌شود.\n\nاین مرحله فقط بررسی بود و هیچ فایل برنامه‌ای تغییر نکرد. هر دو جست‌وجوی محلی Laravel نتیجهٔ مرتبطی نداشتند؛ پیشنهادهای دسترس‌پذیری از راهنمای عمومی اسکیل هستند. محیط اجرایی نصب نیست؛ نمایش، جهت صفحه و رفتار واقعی هنوز در مرورگر بررسی نشده‌اند.",
+  "limitations": [
+    "No implementation is authorized in this execution mode.",
+    "README explicitly reports missing installed runtime and running app; no browser/runtime evidence exists.",
+    "Page purpose beyond زیبایی is unspecified; existing user form is an explicit provisional target assumption.",
+    "Both bounded Laravel-stack local searches returned zero matches; visual/accessibility advice is general skill guidance, not a verified database recommendation.",
+    "Actual document language/direction and CSS/JS inclusion are not shown by the form snippet and remain unverified.",
+    "No tests, services, external calls or production actions were executed."
+  ]
+}

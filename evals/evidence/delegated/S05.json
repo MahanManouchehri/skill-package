@@ -1,0 +1,341 @@
+{
+  "case_id": "S05",
+  "original_prompt": "درگاه پرداخت جدید را به Laravel وصل کن؛ پاسخ پرداخت ممکن است timeout شود.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "READ_ONLY_FIRST_PHASE_COMPLETE_IMPLEMENTATION_NOT_PERFORMED",
+  "task_criticality": {
+    "stars": 2,
+    "rationale": "The authorized task is bounded static first-phase analysis; the future payment feature has financial integrity sensitivity, which does not by itself make this read-only task maximally critical."
+  },
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S05/.agents/skills/steps/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "Coordinate only the authorized read-only first phase and distinguish current source from proposed integration.",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1"
+    },
+    {
+      "name": "integration-reliability",
+      "path": "$FIXTURES/S05/.agents/skills/integration-reliability/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "The requested payment crosses a provider boundary and explicitly has timeout/uncertain-effect risk.",
+      "sha256": "3aa1ab82e840e4d7c2671bc329d67c2ca03d3ed06f8a4d6343ef52968c772b5b"
+    },
+    {
+      "name": "full-plan",
+      "path": "$FIXTURES/S05/.agents/skills/full-plan/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "A new payment workflow needs proposed behavior, API boundaries and acceptance before implementation.",
+      "sha256": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7"
+    },
+    {
+      "name": "multiple-pov",
+      "path": "$FIXTURES/S05/.agents/skills/multiple-pov/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "One bounded design review is warranted for a new payment integration with concurrent/partial effects.",
+      "sha256": "d6d553b07466efcaeabd7a2b5dc19634f8efe05bd6948eced9a7ed924bb7a85e"
+    },
+    {
+      "name": "security-assurance",
+      "path": "$FIXTURES/S05/.agents/skills/security-assurance/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "TARGETED only: payment ownership, server-derived values, signed webhooks, replay protection and secret handling.",
+      "sha256": "3ecc28eac52dd0018163ca1808aec0fb6756dfbd32a0cc156229f060332a0310"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S05/.agents/skills/compatible-response/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "Required presentation policy.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S05/.agents/skills/natural-persian-writing/SKILL.md",
+      "execution": "IN_PROCESS",
+      "reason": "Required standard for meaningful Persian technical response.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S05/AGENTS.md",
+    "$FIXTURES/S05/prompt.txt",
+    "$FIXTURES/S05/available_catalog.json",
+    "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/integration-reliability/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/full-plan/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/multiple-pov/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/security-assurance/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S05/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S05/composer.json",
+    "$FIXTURES/S05/routes/api.php",
+    "$FIXTURES/S05/contracts/provider.md",
+    "$FIXTURES/S05/schema.sql",
+    "$FIXTURES/S05/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S05/app/Models/User.php",
+    "$FIXTURES/S05/README.md",
+    "$FIXTURES/S05/tests/test_contract.py",
+    "$FIXTURES/S05/spec/api/users.md"
+  ],
+  "commands_actually_run": [
+    {
+      "command": "pwd && cat WORKER_CONTRACT.md",
+      "cwd": "$FIXTURES",
+      "exit_code": 0,
+      "result": "Read the single-case READ_ONLY worker contract; only ../delegated-results/S05.json may be written."
+    },
+    {
+      "command": "cat S05/AGENTS.md S05/prompt.txt S05/available_catalog.json",
+      "cwd": "$FIXTURES",
+      "exit_code": 0,
+      "result": "Read case governance, exact Persian request and candidate catalog."
+    },
+    {
+      "command": "cat /Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read session-wide presentation requirements."
+    },
+    {
+      "command": "rg --files -g '!vendor' -g '!node_modules' -g '!.agents/**' -g '!available_catalog.json' -g '!prompt.txt' -g '!AGENTS.md'",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Enumerated case files. Did not open snapshot.json, NOTES.md or unrelated presentation files."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/integration-reliability/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Read coordination, external failure semantics and response/Persian standards."
+    },
+    {
+      "command": "cat composer.json routes/api.php contracts/provider.md schema.sql app/Http/Controllers/UserController.php app/Models/User.php README.md tests/test_contract.py spec/api/users.md",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Laravel declaration only; GET /users owner-scoped controller; users-only schema; no payment code; synthetic provider contract and duplicate-phone-only test."
+    },
+    {
+      "command": "cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Read feature-planning, design-review, targeted security and Persian reference instructions. Tool rendering truncated part of multiple-pov; reread it fully in the next command."
+    },
+    {
+      "command": "cat .agents/skills/multiple-pov/SKILL.md",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Full untruncated body read; one-shot review only, no invented architecture or review loop."
+    },
+    {
+      "command": "find app routes contracts spec tests -name AGENTS.md -print; rg -n 'payment|webhook|Http::|retry|timeout|queue|cron|Idempotency' app routes contracts spec tests composer.json schema.sql README.md",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "No nested AGENTS.md found in relevant source subtrees. All payment/integration keyword matches occur only in contracts/provider.md:1-2."
+    },
+    {
+      "command": "python3 heredoc: pathlib/hashlib read seven selected SKILL.md bodies, print SHA-256/byte counts and repr(prompt.txt)",
+      "cwd": "$FIXTURES/S05",
+      "exit_code": 0,
+      "result": "Computed skill body hashes; confirmed prompt has no trailing newline. No files changed."
+    }
+  ],
+  "source_findings": [
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/composer.json",
+      "finding": "Declares PHP >=8.2 and laravel/framework:*; no exact installed/locked Laravel version established."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/routes/api.php",
+      "finding": "Only GET /users routes to UserController::index; no payment or webhook route."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/app/Http/Controllers/UserController.php",
+      "finding": "Reads users with owner_id equal to request actor id. This demonstrates query scoping, not payment authorization or installed authentication middleware."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/schema.sql",
+      "finding": "Only users table and synthetic duplicate phone values; no payment/order/event persistence."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/contracts/provider.md",
+      "finding": "Synthetic stable-key create semantics, by-key lookup after timeout, bounded Retry-After, timestamped raw-body HMAC, event identity and monotonic version processing; no real secret/account."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/tests/test_contract.py",
+      "finding": "Only duplicate-phone precondition test; no payment coverage. File inspected, not executed."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/README.md",
+      "finding": "States no framework/database server/provider account/running app installed; source contracts are synthetic and not production evidence."
+    },
+    {
+      "evidence": "VERIFIED",
+      "path": "$FIXTURES/S05/spec/api/users.md",
+      "finding": "Existing documentation lives in spec/api; future relevant integration documentation should follow this location."
+    }
+  ],
+  "design_review": {
+    "mode": "One bounded evidence-first multiple-pov review, in process; no independent reviewer claimed.",
+    "known": "No existing payment implementation or persistence; a synthetic provider contract supports stable keys and status reconciliation.",
+    "strength": "Existing documented idempotency plus status lookup can recover lost responses without a second financial operation.",
+    "alternatives": [
+      {
+        "choice": "Blind retry/new key after timeout",
+        "decision": "Reject: unknown external effect can become a second payment."
+      },
+      {
+        "choice": "Laravel-native small adapter + durable operation record + reconciliation",
+        "decision": "Recommend as smallest safe design; exact schema remains future work."
+      },
+      {
+        "choice": "Introduce separate services, queue infrastructure or Cron",
+        "decision": "No evidence this is needed in current fixture; do not add infrastructure as a side effect."
+      }
+    ],
+    "material_risks": [
+      "HIGH implementation risk: provider success followed by lost response or local persistence failure.",
+      "HIGH implementation risk: concurrent requests, replayed webhooks and stale versions double-apply or reverse state without durable uniqueness/atomic transitions.",
+      "Missing information: real provider schema, key scope/lifetime, lookup not-found semantics, HMAC details, monetary units, business ownership and fulfilment rules."
+    ],
+    "decision": "Keep timeout unknown and reconcile by same key; never infer a negative effect from missing response. Final API/money/auth contracts await actual product/provider facts."
+  },
+  "failure_matrix": [
+    {
+      "case": "Success",
+      "proposed_handling": "Validate provider identity/key/amount/currency under real contract; apply allowed state transition atomically and downstream fulfilment at most once locally."
+    },
+    {
+      "case": "Validation/authentication failure",
+      "proposed_handling": "No automatic retry; persist verified error without assuming every provider 4xx is terminal unless documented."
+    },
+    {
+      "case": "429",
+      "proposed_handling": "Parse Retry-After seconds or HTTP-date; bounded delay and total attempts, quotas respected; defer when outside budget, never nested retry multiplication."
+    },
+    {
+      "case": "Transient network/server failure",
+      "proposed_handling": "Only documented retryable failures; finite attempts/backoff/jitter and stable key. Exact error classes and numerical budgets unverified."
+    },
+    {
+      "case": "Timeout before/after possible effect",
+      "proposed_handling": "Persist unknown unless proof request was never sent; query GET /payments/by-key before any further create. Never create a fresh key to escape uncertainty."
+    },
+    {
+      "case": "Unknown lookup or not found",
+      "proposed_handling": "Keep unresolved pending actual provider absence/consistency semantics. Do not interpret unverified not-found as safe permission for a second payment."
+    },
+    {
+      "case": "Duplicate/concurrent creation",
+      "proposed_handling": "Durable business-operation uniqueness and immutable payload binding; replay existing local result/same provider key."
+    },
+    {
+      "case": "Invalid/stale/replayed webhook",
+      "proposed_handling": "Timestamped HMAC over raw bytes; reject invalid/stale signatures before effects; durable unique event_id prevents duplicate processing."
+    },
+    {
+      "case": "Out-of-order/conflicting/missing event",
+      "proposed_handling": "Reject older versions, guard legal/terminal transitions and query authoritative provider state for gaps or conflicts."
+    },
+    {
+      "case": "Partial external/local failure or crash",
+      "proposed_handling": "Persist intent/key before outbound call; reconcile provider success after failed local update; commit event receipt and local state together before acknowledgement. No distributed atomicity claimed."
+    }
+  ],
+  "api_first_phase_proposal": {
+    "status": "PROPOSED_ONLY; first-phase outline, not a finalized or implemented API contract",
+    "existing_payment_endpoints": [],
+    "create": {
+      "method": "POST",
+      "path": "/api/payments",
+      "actor": "Authenticated owner of a payable business object; precise auth mechanism absent in fixture",
+      "input": "Needs decision: order/business-operation identifier and stable client replay token. Never accept an authoritative amount/currency from untrusted client input. No order model exists in fixture.",
+      "behavior": "Validate owner and payable state; derive trusted immutable amount/currency; persist stable business identity, payload binding and provider key before sending. Concurrent same-operation requests return existing operation.",
+      "output": "Needs decision: exact JSON DTO/status codes after real provider/order contract. Distinguish pending, confirmed, failed and unknown; never report timeout alone as failed."
+    },
+    "status_lookup": {
+      "method": "GET",
+      "path": "/api/payments/{payment}",
+      "actor": "Authenticated payment owner",
+      "input": "payment: proposed opaque local payment identifier, required; exact type needs final model",
+      "behavior": "Owner-scoped read and bounded provider reconciliation where required; no create operation.",
+      "output": "Needs decision: exact JSON/status. Expose current state without provider secrets; foreign/absent-resource behavior must be selected and tested."
+    },
+    "webhook": {
+      "method": "POST",
+      "path": "/api/webhooks/payments",
+      "actor": "Provider authenticated by timestamped HMAC, not an end-user session",
+      "input": "Per fixture: event_id, resource_id, version, state, timestamp and HMAC over raw bytes. Exact field types, signature header, encoding, canonicalization and replay window remain unknown.",
+      "behavior": "Validate authenticity before processing; durable unique event receipt, version/terminal-state checks and atomic local transition; reconcile conflicting or missing events.",
+      "output": "Exact acknowledgement body/status and sender retry semantics unknown; only acknowledge accepted processing after durable receipt under confirmed provider rules."
+    }
+  },
+  "intended_actions": [
+    {
+      "order": 1,
+      "executor": "IN_PROCESS",
+      "scope": "Authorized read-only inspection and bounded design",
+      "state": "COMPLETED",
+      "acceptance": "Source, provider contract, trust boundaries and missing facts recorded."
+    },
+    {
+      "order": 2,
+      "executor": "Future ordinary Laravel implementation, not executed",
+      "scope": "Obtain authoritative real provider/order contract; finalize API DTOs, monetary units, authorization, HMAC, time/retry budgets and provider key lifetime.",
+      "acceptance": "No invented guarantee or unknown-dependent retry."
+    },
+    {
+      "order": 3,
+      "executor": "Future ordinary Laravel implementation, not executed",
+      "scope": "Assess persistence impact before schema design/execution; add only needed durable operation/event identities and conditional atomic state transitions, adapter and recovery path.",
+      "acceptance": "Concurrency, replay and crash cannot create a new business operation or fulfil twice."
+    },
+    {
+      "order": 4,
+      "executor": "Future isolated technical tests, not executed",
+      "scope": "Use project-native fakes/contract fixtures for success, timeout-after-effect, local DB failure, concurrency, 429, invalid HMAC, duplicate/old/conflicting event; preserve existing users route behavior.",
+      "acceptance": "Assert durable outcomes and outbound call/key counts without real provider traffic."
+    },
+    {
+      "order": 5,
+      "executor": "Future scoped docs sync, not executed",
+      "scope": "Document confirmed payment endpoints/states/recovery under spec/api. No deploy, Cron or worker-start implied.",
+      "acceptance": "Docs match actual implemented contracts and observed tests."
+    }
+  ],
+  "authorization_handling": {
+    "effective_mode": "READ_ONLY",
+    "basis": [
+      "WORKER_CONTRACT.md restricts task to safe source inspection and first-phase planning.",
+      "S05/AGENTS.md forbids edits/dependencies/services/provider traffic/production/Cron/commits/push/deploy."
+    ],
+    "completed_without_extra_permission": "Safe source/catalog/selected-body reads and reasoning; only delegated result JSON output written.",
+    "not_performed": [
+      "No implementation or migration",
+      "No dependency installation",
+      "No tests/services/workers/Cron",
+      "No network/provider requests or real payment",
+      "No production access, secrets printed, commit, push or deploy"
+    ],
+    "user_questions": "No ceremonial approval requested. Real contract/order/auth unknowns are future implementation inputs, not grounds to stop current safe inspection.",
+    "only_authorized_write": "$WORKSPACE/work/v3-evaluation/delegated-results/S05.json"
+  },
+  "concise_persian_response": "★★\n\nبررسی اولیه تمام شد؛ پیاده‌سازی انجام نشده است. در `routes/api.php` فقط مسیر کاربران وجود دارد و `schema.sql` نیز فقط جدول کاربران را تعریف می‌کند. طبق `README.md`، Laravel، پایگاه داده و حساب درگاه در این محیط نصب یا فراهم نیستند؛ تست پرداخت اجرا نشده است.\n\n1. [✓] بررسی قرارداد — `steps` و `integration-reliability`، اجرا: `IN_PROCESS`؛ معیار پایان: رفتار واقعی قرارداد و نبود کد پرداخت روشن شد. در `contracts/provider.md`، کلید ثابت `Idempotency-Key` برای هر عملیات، استعلام `GET /payments/by-key` پس از timeout و webhook امضاشده تعریف شده است.\n2. [✓] بررسی طراحی و امنیت محدود — `multiple-pov`، `full-plan` و `security-assurance`، اجرا: `IN_PROCESS`؛ معیار پایان: خطاهای اثرگذار و تصمیم‌های باز مشخص شد. استفاده از idempotency موجود از ساخت پرداخت دوم جلوگیری می‌کند؛ timeout باید نتیجهٔ «نامعلوم» بدهد. مسیر پیشنهادی، adapter کوچک در Laravel همراه با ثبت پایدار عملیات است؛ افزودن سرویس، صف یا Cron فعلاً توجیه ندارد.\n\nطرح API و سناریوها: مسیر پرداخت موجود نیست. مسیرهای `POST /api/payments` برای ایجاد، `GET /api/payments/{payment}` برای استعلام مالک و `POST /api/webhooks/payments` برای دریافت رویداد، صرفاً پیشنهادی‌اند. قرارداد نهایی ورودی، پاسخ و وضعیت‌های HTTP به مدل سفارش، منبع مبلغ/واحد پول و قرارداد واقعی درگاه وابسته است. مبلغ باید از منبع معتبر سرور خوانده شود؛ client نباید با تغییر مبلغ یا شناسهٔ سفارش، پرداخت دیگری بسازد.\n\nجریان پیشنهادی: ابتدا عملیات را با هویت کسب‌وکاری و کلید ثابت ذخیره کنیم، سپس درخواست درگاه را بفرستیم. پاسخ قطعی معتبر وضعیت را نهایی کند؛ timeout وضعیت را `unknown` نگه دارد و پیش از هر درخواست ایجاد بعدی، با همان کلید استعلام شود. اگر استعلام هم نامعلوم بماند، عملیات برای تطبیق حفظ شود؛ کلید جدید یا پرداخت مجدد ساخته نشود. موفقیت درگاه و شکست ذخیره‌سازی محلی نیز از طریق همین هویت قابل بازیابی باشد.\n\nبرای 429، هر دو قالب `Retry-After` با سقف تأخیر و بودجهٔ محدود رعایت شود؛ خطای اعتبارسنجی/احراز هویت retry نشود و خطاهای گذرا فقط طبق قرارداد واقعی قابل تکرار باشند. timeout اتصال، خواندن و کل عملیات باید جداگانه و قابل تنظیم باشند؛ مقدار عددی و فهرست خطاهای گذرا هنوز تأیید نشده است.\n\nدر webhook، HMAC روی بدنهٔ خام و timestamp بررسی شود، `event_id` به‌صورت پایدار یکتا باشد و `version` قدیمی وضعیت جدیدتر را تغییر ندهد. ثبت رویداد و اعمال وضعیت باید اتمیک باشد؛ ACK فقط پس از ثبت پایدار و مطابق قرارداد واقعی فرستنده ارسال شود. رویداد متعارض یا گمشده با استعلام تطبیق شود. secret و payload حساس وارد لاگ نشوند.\n\nگام بعدی، تکمیل قرارداد واقعی درگاه و مدل سفارش است؛ سپس طراحی محدود ماندگاری، پیاده‌سازی و تست با fake برای timeout پس از موفقیت، دوبارکلیک هم‌زمان، 429، امضای نامعتبر، رویداد تکراری/قدیمی و شکست محلی انجام شود. مستندات تغییرات در `spec/api` قرار بگیرند. قرارداد این ارزیابی فقط خواندن و برنامه‌ریزی را مجاز کرده است؛ هیچ کد، سرویس، Cron، داده یا درخواست واقعی درگاه تغییر نکرده است.",
+  "limitations": [
+    "No installed Laravel runtime, database server, provider account or running target established; README explicitly describes their absence.",
+    "Provider contract is synthetic. Current real provider documentation, numerical timeout/retry settings, HMAC encoding/header/replay window and key lifetime were not verified; network is prohibited.",
+    "No order/payment models, routes, state-machine implementation, persistence, tests or exact API response schema exist in inspected source.",
+    "Only static observations and proposed design are evidenced; no test pass, persistence success, exactly-once provider delivery, availability or production readiness claimed.",
+    "No source code was changed; full implementation is outside the worker READ_ONLY contract. Future DB impact, tests and docs work are next actions rather than completed specialist work."
+  ]
+}

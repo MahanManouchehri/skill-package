@@ -1,0 +1,7 @@
+interface:
+  display_name: "Load Testing"
+  short_description: "Explicitly requested, bounded load and stress tests"
+  default_prompt: "Use $load-testing to prepare a safe finite load-test profile for the approved target."
+
+policy:
+  allow_implicit_invocation: true

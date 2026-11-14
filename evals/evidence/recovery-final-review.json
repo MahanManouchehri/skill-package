@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "audit_scope": "Final targeted independent review of recovery-lock correction; prior pre-release G0-G4 review retained. Publication/staged published-SHA install/live installation are subsequent root phases.",
+  "observed_utc": "2026-11-14T04:24:41.098361+00:00",
+  "verdict": "PASS",
+  "readiness": "PRE_RELEASE_G0_G4_READY_WITH_DOCUMENTED_VERIFICATION_LIMITS",
+  "findings": [],
+  "snapshot": {
+    "package_tools_sha256": "00aa184dfaa05a8e3fc93386a59a2f3d2d69d345215d8acf7b1cf64e139b6d1c",
+    "tests_sha256": "fa8bbe51bb502e7d8f3f4aebb4db18a5d1748d7b87575852e365166960965934",
+    "package_tree_hash_sha256": "f01f98483421f8d2009e1e5335abdb11f53a839d442661e0eab12707ce962c13",
+    "personal_payload_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97"
+  },
+  "executed_checks": [
+    {
+      "check": "python -B -m unittest discover -s tests -p test_package_tools.py -v",
+      "status": "TOOL_TEST_PASS",
+      "passed": 44,
+      "failed": 0,
+      "runtime_seconds": 7.339,
+      "includes": [
+        "original live-tree recursive-delete guard",
+        "actual rollback crash after atomic displacement and after atomic restore",
+        "actual rollback crash during partial restore-copy",
+        "concurrent recovery admits exactly one process",
+        "multi-root competing-lock preservation",
+        "backup tamper and installed-user-edit refusal",
+        "unsafe-root and unrelated/system preservation guards"
+      ]
+    },
+    {
+      "check": "python -B scripts/package_tools.py verify --package-root /Users/mahan/Desktop/Web/skill-package",
+      "status": "STATIC_PASS",
+      "distribution_files": 647,
+      "personal_skills": 26,
+      "managed_snapshots": 16,
+      "verified_utc": "2026-11-14T04:23:59.269389+00:00"
+    },
+    {
+      "check": "reviewer prior simultaneous-recovery reproduction against final helper",
+      "status": "TOOL_TEST_PASS",
+      "setup": "Actual promotion subprocess exits86 at crash_after26; two simultaneous recovery subprocesses pause before first ROLLING_BACK journal write.",
+      "admitted_recovery_processes": 1,
+      "subprocess_exit_codes": [
+        0,
+        1
+      ],
+      "contender_error": "Another recovery holds the lock",
+      "subsequent_single_recovery": "ROLLED_BACK",
+      "original_files_restored": true,
+      "lock_removed": true,
+      "scratch_removed": true
+    },
+    {
+      "check": "terminate admitted recovery while its kernel claim is held, then recover",
+      "status": "TOOL_TEST_PASS",
+      "terminated_process_exit_code": -15,
+      "subsequent_recovery": "ROLLED_BACK",
+      "original_files_restored": true,
+      "lock_removed": true,
+      "scratch_removed": true
+    }
+  ],
+  "source_review": {
+    "kernel_lock_held_during_state_revalidation_restore_and_scratch_cleanup": true,
+    "validated_same_inode_before_use": true,
+    "failed_acquisition_removes_only_newly_created_same_inode_locks": true,
+    "backup_scope_and_user_edit_guards_retained": true,
+    "live_directories_atomically_displaced_and_restored": true,
+    "no_additional_must_fix_safety_defect_found": true
+  },
+  "earlier_findings": {
+    "live_recursive_delete": "FIXED",
+    "nonexclusive_stale_lock_recovery": "FIXED",
+    "earlier_report_preserved": "rollback-rereview.json"
+  },
+  "verification_limits": [
+    "POSIX flock was actually exercised on macOS; the Windows msvcrt branch and PowerShell were not executed.",
+    "Native model routing/full application/browser/provider behavior remains unverified as already documented.",
+    "No publication, network source download or live skills installation is asserted by this pre-release audit."
+  ],
+  "reviewer_actions": "Read-only source/Git inspection plus isolated temporary filesystem tests; wrote only this new requested report. No source/global/Git/model/harness/network mutations."
+}

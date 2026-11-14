@@ -1,0 +1,113 @@
+{
+  "case_id": "S29",
+  "original_prompt": "یک endpoint را تغییر دادم؛ مستندات API موجود را طبق AGENTS.md sync کن.",
+  "selected_skills": [
+    {
+      "name": "docs-maintenance",
+      "mode": "SYNC",
+      "path": "$FIXTURES/S29/.agents/skills/docs-maintenance/SKILL.md",
+      "reason": "Direct request to synchronize existing API documentation; owns this bounded documentation task."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S29/.agents/skills/compatible-response/SKILL.md",
+      "reason": "Required presentation policy."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S29/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "Meaningful Persian response."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S29/AGENTS.md",
+    "$FIXTURES/S29/prompt.txt",
+    "$FIXTURES/S29/available_catalog.json",
+    "$FIXTURES/S29/.agents/skills/docs-maintenance/SKILL.md",
+    "$FIXTURES/S29/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S29/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S29/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S29/routes/api.php",
+    "$FIXTURES/S29/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S29/app/Models/User.php",
+    "$FIXTURES/S29/spec/api/users.md",
+    "$FIXTURES/S29/README.md",
+    "$FIXTURES/S29/composer.json",
+    "$FIXTURES/S29/tests/test_contract.py"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Read READ_ONLY worker scope, local governance requiring existing docs under spec/api, exact Persian request and task-local skill catalog."
+    },
+    {
+      "command": "cat .agents/skills/docs-maintenance/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read all three selected skill bodies. SYNC permits no-change findings and requires preserving existing documentation paths and unaffected prose."
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!.agents/**' -g '!prompt.txt' -g '!AGENTS.md' -g '!.git/**'",
+      "exit_code": 0,
+      "result": "Located routes/api.php, UserController, User model, spec/api/users.md, README, composer.json and tests/test_contract.py alongside other fixture files. Did not open unrelated source."
+    },
+    {
+      "command": "cat routes/api.php app/Http/Controllers/UserController.php spec/api/users.md README.md composer.json tests/test_contract.py .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "GET /users routes to UserController::index; it filters User by owner_id equal to request user id and calls get(). Existing spec/api/users.md already says GET /api/users returns users belonging to current actor. README identifies synthetic source-only fixture without installed framework, DB or running app. Composer declares PHP >=8.2 and Laravel. Test is an unrelated in-memory SQLite duplicate-phone precondition, not API evidence. Read technical Persian wording reference."
+    },
+    {
+      "command": "rg --files -g AGENTS.md -g '!\\.agents/**'",
+      "exit_code": 0,
+      "result": "Only local AGENTS.md found; no nested documentation governance found."
+    },
+    {
+      "command": "git diff -- routes/api.php app/Http/Controllers/UserController.php spec/api/users.md",
+      "exit_code": 0,
+      "result": "Empty output; no visible working-tree diff for inspected endpoint and existing docs. Cannot establish the claimed before/after change from this diff."
+    },
+    {
+      "command": "cat app/Models/User.php",
+      "exit_code": 0,
+      "result": "User extends Eloquent Model and guards id and owner_id; no additional response or authorization contract is declared in this model."
+    }
+  ],
+  "findings": [
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "finding": "The inspected query scopes returned users to owner_id equal to the current request user id."
+    },
+    {
+      "status": "VERIFIED",
+      "basis": "source/document comparison",
+      "finding": "The existing statement in spec/api/users.md matches that scoped behavior; no invalidated documentation claim was found."
+    },
+    {
+      "status": "UNVERIFIED",
+      "basis": "runtime unavailable",
+      "finding": "Authentication enforcement, actual API path prefix, response serialization/status/errors and live endpoint behavior were not runtime-verified. No new claims about them are justified."
+    }
+  ],
+  "intended_actions": [
+    "Treat docs-maintenance as task owner; do not generate handoff documents or invoke feature planning or broad audits for documentation sync.",
+    "Keep spec/api/users.md unchanged on the present evidence because its existing ownership statement is already consistent with the source.",
+    "If a different changed contract or source diff becomes available, compare only affected claims and plan the smallest update to the existing spec/api document; preserve unaffected prose and do not invent status codes, schemas or auth guarantees."
+  ],
+  "authorization_handling": {
+    "scope": "READ_ONLY source investigation and first-phase documentation findings; only this evidence JSON may be written.",
+    "actions_taken": "Read task-local governance, minimum relevant skill bodies and endpoint/document sources; recorded findings.",
+    "mutations": "No source or documentation edits, installs, service starts, network/provider traffic, commits, pushes, deployment, production access or Cron configuration.",
+    "approval_needed": false,
+    "reason": "No additional authority is needed for the completed read-only comparison; no documentation mismatch warrants an edit on the available evidence."
+  },
+  "concise_persian_response": "در بررسی ایستای کد، توضیح فعلی `spec/api/users.md` با endpoint موجود هماهنگ است: کوئری `UserController::index` فقط کاربران با `owner_id` برابر شناسهٔ کاربر فعلی را برمی‌گرداند. تغییر مستندی لازم پیدا نشد؛ در حالت READ_ONLY نیز فایلی را تغییر ندادم. خروجی `git diff` برای فایل‌های مرتبط خالی بود، بنابراین تغییر موردنظر شما از روی اختلاف نسخه‌ها قابل تشخیص نیست. رفتار واقعی endpoint، احراز هویت و قالب پاسخ در این محیط فاقد برنامهٔ اجرایی بررسی نشده‌اند.",
+  "limitations": [
+    "The inspected endpoint matches existing docs; no visible source diff establishes what the user changed.",
+    "README explicitly declares the fixture lacks installed framework, database server and running application.",
+    "No API runtime, authentication, output schema, status or error evidence was obtained; unrelated SQLite test was read but not executed.",
+    "READ_ONLY evaluation forbids implementing a documentation patch; only delegated-results/S29.json was written."
+  ],
+  "runtime_kind": "fresh_delegated_agent_read_only_plan"
+}

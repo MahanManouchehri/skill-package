@@ -12,6 +12,7 @@ description: Independently stress-test consequential technical decisions, concre
 - Run whenever explicitly invoked as `$devil`, even for a small target; calibrate depth rather than refusing it.
 - Be eligible implicitly only when the request asks for, or materially depends on, evaluating a consequential proposal: a plan, architecture, migration, significant refactor, implementation strategy, operational decision, or a choice between viable alternatives.
 - Do **not** activate implicitly for factual questions, formatting, deterministic small UI/code edits, ordinary debugging, simple CRUD, explanations, or routine implementation with no meaningful design decision. Let a narrower specialist skill lead when it alone fully addresses the task.
+- This is bounded `CONTEXTUAL_AUTO` decision review, not a full review of every task. Reuse a fresh decision review and inspect only a material delta; a specialist name or severe hypothetical alone does not justify another full pass. Do not manufacture disagreement, alternatives or questions when the evidence supports the proposal.
 - Review is read-only unless the user explicitly asks to review **and** implement. A finding is never an authorization to modify code, data, infrastructure, or external systems.
 - Respect current user instructions and repository governance. Before recommending changes to a repository, inspect applicable `AGENTS.md`, `RULES.md`, `CONTRIBUTING.md`, and relevant local guidance. A prohibited action may be described as a theoretical alternative, never as an executable instruction.
 
@@ -58,7 +59,7 @@ Read only the references needed for the review:
 - **Genuine competing choices or Critical reviews:** [decision-debate.md](references/decision-debate.md)
 - **Every review output:** [output-format.md](references/output-format.md)
 
-Use `multiple-pov` for early multi-perspective design exploration, `full-plan` for API endpoint/scenario planning, `architecture-review` for a focused concrete architecture review, `db-impact` for complete database-change blast-radius analysis, `root-cause` for diagnosing an existing defect, and `final-check` or testing skills for completion verification. Devil complements them by stress-testing premises and conclusions.
+Use `multiple-pov` for one-time early design exploration, `full-plan` for behavior/API/scenario planning, `architecture-review` for concrete boundaries, `db-impact` for database-change impact, `integration-reliability` for provider failure semantics, and `security-assurance TARGETED` for relevant security changes. `technical-proposal-discovery` handles specifically requested proposals/research, not ordinary brainstorming. Devil challenges consequential premises across these results without rerunning their entire workflows. Full security audit, load testing, release/deployment and broader recovery remain direct-request-only; a pre-mortem may discuss their need without executing them. `root-cause` diagnoses an existing defect, and tests/`final-check` verify completion.
 
 ## Completion
 

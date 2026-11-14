@@ -1,6 +1,6 @@
 # Portability and managed capability restoration
 
-Copying files preserves instructions; it does not transfer account eligibility, authentication, tools, browser sessions or runtime software. Status below reflects inspected source requirements. No original skill is rewritten.
+Copying files preserves instructions; it does not transfer account eligibility, authentication, tools, browser sessions or runtime software. This v3.1 release intentionally upgrades personal instructions; managed rows describe preserved historical snapshots, not current host activation. Current executed host checks are recorded in VALIDATION.md.
 
 | Catalog entry | Kind/status | Dependencies and limitations | Restore / verify |
 |---|---|---|---|
@@ -19,7 +19,17 @@ Copying files preserves instructions; it does not transfer account eligibility, 
 | `regression-check` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `root-cause` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
 | `steps` | user-global / PORTABLE | Normal Codex skill support | Phase A installer; content/hash verification |
-| `ui-ux-pro-max` | user-global / PARTIALLY_PORTABLE | CLAUDE_PLUGIN_ROOT path mapping or correct physical scripts path; Python 3 | Phase A installer; content/hash verification |
+| `ui-ux-pro-max` | user-global / PORTABLE_WITH_DEPENDENCIES | Python 3 for local search; resolve the actual loaded SKILL.md parent directory | Phase A installer; content/hash verification |
+| `integration-reliability` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `test-engineering` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `security-assurance` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `docs-maintenance` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `maintenance-evolution` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `skill-evals` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `load-testing` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `technical-proposal-discovery` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `release-management` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
+| `backup-recovery` | user-global / PORTABLE | Normal Codex skill support; workflow tools only when requested/available | Verified personal staging/promotion; see skill activation and authority contract |
 | `computer-use:computer-use` | plugin-managed / RUNTIME_MANAGED | Compatible Windows Computer Use tools/runtime | Enable computer-use via proper destination Plugins/runtime mechanism; confirm catalog entry and tools. Candidate identity `computer-use@openai-bundled`. |
 | `visualize:visualize` | plugin-managed / RUNTIME_MANAGED | Codex inline visualization runtime; Browser preview when needed; Python 3 for optional browser preview helper | Enable visualize via proper destination Plugins/runtime mechanism; confirm catalog entry and tools. Candidate identity `visualize@openai-bundled`. |
 | `documents:documents` | plugin-managed / RUNTIME_MANAGED | Bundled document runtime: Python, python-docx, LibreOffice, PDF renderer; Google Drive plugin for native Google Docs; Python 3; Bundled LibreOffice; PDF renderer / Poppler | Enable documents via proper destination Plugins/runtime mechanism; confirm catalog entry and tools. Candidate identity `documents@openai-primary-runtime`. |
@@ -50,3 +60,9 @@ Excel live control additionally requires Microsoft Excel, the ChatGPT add-in, an
 Sites and Pets require their actual tools/service capabilities; source instructions cannot recreate hosted services or account access. Plugin Management requires its tools. Visualize requires compatible inline rendering and, where requested, browser preview. Computer Use requires a supported Windows computer-use runtime.
 
 For every managed entry after activation: verify provider identity, active catalog name, actual SKILL.md metadata and required tools. Record version/content differences from the snapshot separately. If unavailable, report MISSING RUNTIME/PLUGIN DEPENDENCY and keep the managed snapshot inactive.
+
+## v3.1 host boundary
+
+All26 personal folders use portable distribution paths. Optional skill helpers retain their real dependencies: Python3 for UI search/handoff validation and PowerShell for the optional devil validator. Package Python tools require PyYAML. No tool/framework/DB server is installed automatically. SQL engine, browser, provider, advisory and infrastructure evidence must come from an actually available authorized environment. A missing capability is UNVERIFIED/BLOCKED for that operation, not an invented pass.
+
+Current native Codex supports both legacy CODEX_HOME/skills and user .agents/skills on the audited host. Inspect actual discovery elsewhere rather than assuming the same roots. Plugin/system snapshots and their historical versions are not upgraded or installed by this task.

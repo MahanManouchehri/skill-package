@@ -1,0 +1,11 @@
+COMMAND ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3", "-c", "import unittest, pathlib, sys\nsys.path.insert(0, 'scripts/tests')\nexcluded={'test_catalog_refresh','test_relevance_evaluator'}\nnames=[p.stem for p in sorted(pathlib.Path('scripts/tests').glob('test_*.py')) if p.stem not in excluded]\nsuite=unittest.TestLoader().loadTestsFromNames(names)\nresult=unittest.TextTestRunner(verbosity=1).run(suite)\nraise SystemExit(not result.wasSuccessful())"]
+CWD /Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max
+EXIT 0
+STDOUT
+
+STDERR
+..................................................................................................................................
+----------------------------------------------------------------------
+Ran 130 tests in 2.426s
+
+OK

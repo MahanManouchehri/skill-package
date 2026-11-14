@@ -1,9 +1,17 @@
 ---
 name: apple-design
-description: Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.
+description: Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity.
 ---
 
 # Apple Design
+
+## Scope and existing design
+
+Use this as bounded `CONTEXTUAL_AUTO` interaction guidance or a `SUPPORTING` motion specialist, including direct natural-language requests for precise springs and interruption. First inspect the requested interaction, detected stack, existing motion/design tokens and available libraries. Preserve the project's framework, branding, typography and component conventions. A new page, attractive UI, slow bundle or Apple-like adjective alone does not require this skill.
+
+Apply the gesture/spring/reduced-motion sections when they solve the concrete task. Materials, typography and the broader foundations below are optional context only where the approved product design calls for them; do not replace an existing brand with Apple fonts, glass or layout. Do not add a motion package without a justified authorized dependency change. WebGL/3D features and presentable demos require a direct user request. `ui-ux-pro-max` covers broader UI guidance; measured render/bundle diagnosis belongs to `performance-review`.
+
+Before claiming success, observe pointer capture/cancel, reversal from the current position, velocity handoff and boundary behavior where applicable, plus keyboard/single-pointer alternatives, focus and reduced motion. Use real browser evidence when available; report static-only checks as unverified runtime behavior. Keep per-frame work bounded and avoid layout reads/writes that cause thrashing.
 
 How Apple builds interfaces that stop feeling like a computer and start feeling like an extension of you. This knowledge comes from Apple's WWDC design talks — chiefly *Designing Fluid Interfaces* (WWDC 2018) — distilled and translated into the web platform (CSS, Pointer Events, `requestAnimationFrame`, spring libraries like Motion/Framer Motion).
 
@@ -170,7 +178,7 @@ Smoothness is about *what's in the frames*, not just the frame rate.
 
 ## 12. Materials & depth — translucency conveys hierarchy
 
-Apple uses translucent materials as a floating functional layer that brings structure without stealing focus. On the web, approximate with `backdrop-filter`.
+When the existing or explicitly approved visual system uses translucent materials, they can form a floating functional layer. On the web, approximate with `backdrop-filter`; retain solid surfaces when branding, contrast, reduced transparency or performance calls for them. The suggestions in this section are conditional, not a mandate for every navbar or sheet.
 
 - **Build nav/toolbars/sheets as translucent layers** (`backdrop-filter: blur()` + a semi-transparent background) with content scrolling underneath — not opaque bars that consume a fixed strip.
 - **Material weight encodes hierarchy:** darker/heavier materials separate structural regions (sidebars); lighter materials draw attention to interactive elements (buttons). **Never stack a light translucent surface on another** — legibility collapses.
@@ -258,7 +266,7 @@ Tactical rules that serve these:
 
 ## 17. Process
 
-- **Prototype interactively — an interactive demo is worth "a million static designs."** You discover the interface by building and playing with it; a working prototype also sets a concrete bar that prevents a mediocre final implementation.
+- **Verify the requested interaction in context.** Use a focused temporary interaction experiment when it helps and is permitted. Build a separate presentable demo or prototype deliverable only when the user directly requests it.
 - **Design interaction and visuals together.** "You shouldn't be able to tell where one ends and the other begins." Motion is not a layer added after the pixels.
 - **Test with real people in real context**, and review motion with fresh eyes — play it in slow motion / frame-by-frame to catch what's invisible at full speed.
 

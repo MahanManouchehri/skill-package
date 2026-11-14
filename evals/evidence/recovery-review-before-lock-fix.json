@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "audit_scope": "targeted independent rollback re-review; prior G0-G4 review retained except changed helper/tests",
+  "observed_utc": "2026-11-14T04:17:04.936424+00:00",
+  "verdict": "FAIL",
+  "package_root": "/Users/mahan/Desktop/Web/skill-package",
+  "snapshot": {
+    "package_tools_sha256": "3d9d60b649e2bfff6bb7779fd7dd29e32f7234b9d679ecc8f42ae83bac2bf011",
+    "tests_sha256": "477b766513a15cfce0a72cef27396740ad6e13a855d2e827552f1ce8a2b0c82f",
+    "package_tree_hash_sha256": "c00cb7f77385b2b1abbfeea4222945378503bb43e35dfc6778c7546c6a773470",
+    "personal_payload_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97"
+  },
+  "previous_finding": {
+    "status": "FIXED",
+    "description": "Live-tree recursive deletion during rollback replaced by journaled atomic displacement/restoration. Exact prior partial-rmtree injection was not reached; originals restored, repeat rollback idempotent, lock/scratch removed."
+  },
+  "executed_checks": [
+    {
+      "check": "python -B -m unittest discover -s tests -p test_package_tools.py -v",
+      "status": "TOOL_TEST_PASS",
+      "passed": 43,
+      "failed": 0,
+      "runtime_seconds": 6.79,
+      "includes": [
+        "no live rmtree",
+        "actual process crash after both rollback rename boundaries and successful retry",
+        "actual process crash during partial backup restore-copy and successful retry",
+        "tampered backup/user-edit/unsafe-scope/other-lock guards"
+      ]
+    },
+    {
+      "check": "python -B scripts/package_tools.py verify --package-root /Users/mahan/Desktop/Web/skill-package",
+      "status": "STATIC_PASS",
+      "distribution_files": 647,
+      "personal_skills": 26,
+      "managed_snapshots": 16,
+      "verified_utc": "2026-11-14T04:14:30.093569+00:00"
+    },
+    {
+      "check": "exact prior partial live-rmtree failure injection",
+      "status": "TOOL_TEST_PASS",
+      "live_recursive_delete_calls": 0,
+      "original_files_restored": true,
+      "repeat_rollback_status": "ROLLED_BACK",
+      "already_restored": true,
+      "lock_removed": true,
+      "scratch_removed": true
+    },
+    {
+      "check": "two recovery subprocesses contend for same actually crashed promotion",
+      "status": "FAIL",
+      "setup": "Existing ui-ux-pro-max with old custom data; promote subprocess crash_after=26 returns86. Two rollback subprocesses pause immediately before first ROLLING_BACK journal write, after existing lock checks, then resume together.",
+      "admitted_recovery_processes": 2,
+      "subprocess_exit_codes": [
+        1,
+        0
+      ],
+      "observed_error": "Unexpected occupied rollback displacement path",
+      "subsequent_single_recovery": "ROLLED_BACK",
+      "original_files_restored": true,
+      "data_loss_observed": false
+    }
+  ],
+  "findings": [
+    {
+      "severity": "Medium",
+      "must_fix": true,
+      "file": "scripts/package_tools.py",
+      "lines": [
+        843,
+        848
+      ],
+      "title": "Recovery does not exclusively claim a stale installer lock",
+      "explanation": "The original installer lock can remain after a real process crash. Both recovery processes accept the same transaction_id and dead owner pid, then proceed without acquiring exclusive ownership; updating journal.pid afterward is not an atomic lock claim. The confirmed two-process fixture admitted both and produced competing rollback operations.",
+      "recommended_correction": "Hold an actual exclusive recovery claim or OS lock through state validation, restoration and cleanup; preserve explicit allowed-root and backup validation. Test concurrent recoveries from the same stale transaction and require exactly one admitted writer; after killing that writer, a subsequent recovery must still succeed."
+    }
+  ],
+  "authorization_review": {
+    "allowed_roots_required": true,
+    "approved_names_only": true,
+    "backup_hash_checks_retained": true,
+    "manual_owned_skill_edits_refused": true,
+    "unrelated_and_system_preservation_tests_pass": true
+  },
+  "limits": [
+    "No source/global/Git mutation by reviewer; only this requested report and isolated temporary fixtures were written.",
+    "No model/harness/network/publication/live install executed.",
+    "macOS-only execution; Windows/PowerShell and native/full-application limitations remain as documented."
+  ]
+}

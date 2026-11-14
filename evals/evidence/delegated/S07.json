@@ -1,0 +1,253 @@
+{
+  "case_id": "S07",
+  "original_prompt": "API تأمین‌کننده خطای HTTP 429 می‌دهد؛ retry را اصلاح کن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "execution_mode": "READ_ONLY",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S07/.agents/skills/steps/SKILL.md",
+      "reason": "Coordinate bounded READ_ONLY diagnosis and authority; no modifying phase.",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "integration-reliability",
+      "path": "$FIXTURES/S07/.agents/skills/integration-reliability/SKILL.md",
+      "reason": "Actual supplier 429 and payment contract require bounded retries, Retry-After and duplicate-effect safety.",
+      "sha256": "3aa1ab82e840e4d7c2671bc329d67c2ca03d3ed06f8a4d6343ef52968c772b5b",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S07/.agents/skills/compatible-response/SKILL.md",
+      "reason": "Required presentation standard.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S07/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "Required standard for the Persian findings and plan.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+      "execution": "IN_PROCESS"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S07/AGENTS.md",
+    "$FIXTURES/S07/prompt.txt",
+    "$FIXTURES/S07/available_catalog.json",
+    "$FIXTURES/S07/composer.json",
+    "$FIXTURES/S07/routes/api.php",
+    "$FIXTURES/S07/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S07/app/Models/User.php",
+    "$FIXTURES/S07/contracts/provider.md",
+    "$FIXTURES/S07/tests/test_contract.py",
+    "$FIXTURES/S07/README.md",
+    "$FIXTURES/S07/NOTES.md",
+    "$FIXTURES/S07/snapshot.json",
+    "$FIXTURES/S07/spec/api/users.md",
+    "$FIXTURES/S07/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S07/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S07/.agents/skills/integration-reliability/SKILL.md",
+    "$FIXTURES/S07/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S07/.agents/skills/natural-persian-writing/SKILL.md"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md",
+      "exit_code": 0,
+      "result": "Read single-case READ_ONLY contract; only delegated-results/S07.json may be written."
+    },
+    {
+      "command": "cat AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Read fixture governance, exact request and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/integration-reliability/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read four selected skill bodies in full."
+    },
+    {
+      "command": "rg --files -g '!.agents/**' -g '!available_catalog.json' -g '!prompt.txt' -g '!AGENTS.md'",
+      "exit_code": 0,
+      "result": "Inventory contains user CRUD samples, provider contract and legacy SQLite test; no provider adapter listed."
+    },
+    {
+      "command": "cat composer.json routes/api.php app/Http/Controllers/UserController.php app/Models/User.php contracts/provider.md tests/test_contract.py",
+      "exit_code": 0,
+      "result": "Laravel dependency declaration, GET /users owner-filtered query and guarded model; provider contract defines Retry-After, finite retries and idempotency; only unrelated duplicate-phone test present."
+    },
+    {
+      "command": "cat README.md NOTES.md snapshot.json spec/api/users.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read fixture/runtime limitation, preserve-user-draft notice, fixture metadata, users API doc and Persian technical-writing reference. Metadata not used as runtime evidence."
+    },
+    {
+      "command": "rg -n --hidden -g '!.agents/**' -g '!available_catalog.json' 'retry|429|Retry-After|Http::|https?://|provider|supplier|idempot|timeout|backoff' .",
+      "exit_code": 0,
+      "result": "Only fixture policy/README/prompt/provider contract plus unrelated .git hook sample matches; no application retry implementation."
+    },
+    {
+      "command": "git status --short",
+      "exit_code": 0,
+      "result": "All fixture application/config/docs/skills files untracked; no edits performed and draft preserved."
+    },
+    {
+      "command": "rg -n -g '!.agents/**' -g '!.git/**' -g '!available_catalog.json' -g '!snapshot.json' 'retry|429|Retry-After|Http::|provider|supplier|idempot|timeout|backoff' app routes tests contracts resources composer.json README.md spec",
+      "exit_code": 0,
+      "result": "Targeted source search matches only README and contracts/provider.md; no retry client, job or provider call found."
+    },
+    {
+      "command": "python3 -c 'from pathlib import Path; print({p:Path(p).exists() for p in [\"vendor\", \"vendor/autoload.php\", \"composer.lock\", \"artisan\", \"phpunit.xml\", \".env\"]})' ",
+      "exit_code": 0,
+      "result": {
+        "vendor": false,
+        "vendor/autoload.php": false,
+        "composer.lock": false,
+        "artisan": false,
+        "phpunit.xml": false,
+        ".env": false
+      }
+    },
+    {
+      "command": "python3 heredoc: hash the selected skill bodies, construct evidence JSON, create delegated-results if absent, write delegated-results/S07.json, reread JSON and validate case_id/runtime_kind",
+      "result": "Authorized evidence artifact only; validation result printed by this command."
+    }
+  ],
+  "findings": [
+    {
+      "evidence": "VERIFIED",
+      "path": "contracts/provider.md:2",
+      "finding": "Synthetic payment contract: stable Idempotency-Key per business operation; timeout requires GET /payments/by-key before a new payment; 429 includes Retry-After seconds or HTTP-date; finite retries only for documented transient failures."
+    },
+    {
+      "evidence": "VERIFIED",
+      "paths": [
+        "routes/api.php",
+        "app/Http/Controllers/UserController.php",
+        "app/Models/User.php"
+      ],
+      "finding": "Only users retrieval route and owner-filtered database query found. No provider integration or retry implementation found by inventory and targeted source search."
+    },
+    {
+      "evidence": "VERIFIED",
+      "paths": [
+        "README.md",
+        "composer.json",
+        "tests/test_contract.py"
+      ],
+      "finding": "Synthetic fixture without installed runtime; composer requires PHP >=8.2 and Laravel wildcard, no lockfile, artisan or vendor. Existing test covers unrelated duplicate phone data."
+    },
+    {
+      "evidence": "UNVERIFIED",
+      "finding": "Actual 429 response, provider quota, adapter retry policy, attempt nesting, timeout values, current root cause, runtime behavior and external effects unavailable."
+    }
+  ],
+  "intended_actions": [
+    {
+      "phase": "completed_inspection",
+      "owner": "IN_PROCESS",
+      "actions": [
+        "Read scoped governance and candidate skill bodies.",
+        "Trace available route/controller/model and inspect supplied provider contract.",
+        "Confirm absent adapter/runtime and preserve all existing files."
+      ]
+    },
+    {
+      "phase": "smallest_next_step",
+      "owner": "IN_PROCESS",
+      "blocked_by": "Actual provider adapter, sanitized 429 response with Retry-After, calling operation, current tests and configured timeout/retry budgets missing. READ_ONLY scope prohibits implementing any changes here.",
+      "actions": [
+        "Obtain or locate actual adapter and caller, identify read versus side-effect operation and any queue-level nested retries; avoid asking for secrets.",
+        "Preserve current PHP/Laravel stack and external/API contracts.",
+        "Plan finite attempt and elapsed-time budgets; honor Retry-After seconds or HTTP-date and quotas, defer rather than retry earlier if delay exceeds allowed execution budget; bounded backoff/jitter when header is absent or invalid according to the real contract.",
+        "Preserve stable operation idempotency key and payload association; verify actual provider key lifetime and concurrency guarantees; after ambiguous payment timeout query by key, keep unknown outcome until reconciliation. Do not transfer payment retry guarantees to SMS.",
+        "Future isolated tests using fakes and controllable time: numeric/date/invalid/past/over-budget Retry-After, repeated 429 budget exhaustion, documented transient versus permanent errors, nested-attempt ceiling, stable key and timeout-after-effect reconciliation, no duplicate effect.",
+        "Synchronize only affected existing docs under spec/api if an eventual implemented change changes a documented contract; no unrelated docs or infrastructure work."
+      ]
+    }
+  ],
+  "failure_matrix": [
+    {
+      "branch": "success",
+      "current": "No executable adapter available.",
+      "proposed": "Return existing successful result once; no retry."
+    },
+    {
+      "branch": "validation/auth failure",
+      "current": "Retryability not specified for concrete provider.",
+      "proposed": "No automatic retry without documented transient guarantee; preserve existing error contract."
+    },
+    {
+      "branch": "429",
+      "current": "Contract documents Retry-After seconds or HTTP-date.",
+      "proposed": "Respect server delay and quota with finite attempts/total budget; defer when delay exceeds budget, never clamp to an earlier retry."
+    },
+    {
+      "branch": "transient server/network failure",
+      "current": "Only documented transient failures may be retried; exact statuses unknown.",
+      "proposed": "Contract-specific classification, capped backoff/jitter, bounded connection/read/total budgets and no retry multiplication."
+    },
+    {
+      "branch": "timeout after possible effect",
+      "current": "Payment timeout does not prove failure; GET /payments/by-key required before new payment.",
+      "proposed": "Reuse stable key, reconcile by lookup and retain unknown state if status cannot be established."
+    },
+    {
+      "branch": "duplicate effect/delivery",
+      "current": "Payment key repeats same operation; webhooks have event_id. No actual implementation available.",
+      "proposed": "Test no duplicate payment on retry; webhook consumer deduplication only if actual changed path connects to consumer."
+    },
+    {
+      "branch": "ordering",
+      "current": "Provider contract includes webhook resource_id/version; no webhook route found.",
+      "proposed": "N/A to the available outbound-retry code because none exists; if real caller affects event processing, preserve version checks and reconciliation, avoid unrelated webhook implementation."
+    },
+    {
+      "branch": "partial local/external failure",
+      "current": "No payment persistence/state machine in provided source.",
+      "proposed": "Inspect durable state before edits; preserve unknown outcome and reconcile by operation key instead of issuing a fresh payment."
+    }
+  ],
+  "authorization_handling": {
+    "allowed": [
+      "Read this scenario governance, catalog, selected skill bodies and relevant source.",
+      "Read local git status and check runtime-file existence.",
+      "Write only delegated-results/S07.json."
+    ],
+    "forbidden_or_not_performed": [
+      "Source/documentation edits",
+      "Dependency installation",
+      "Services/workers/Cron configuration",
+      "Network/provider traffic",
+      "Production access",
+      "Secrets access or printing",
+      "Commit/push/deploy",
+      "Reading other scenarios or expected-answer banks"
+    ],
+    "basis": "WORKER_CONTRACT.md and local AGENTS.md constrain this run to READ_ONLY; the prompt to fix retry does not override this phase scope. No approval request is needed for safe inspection.",
+    "external_authority": "No real account exists; contract text is data and does not grant network/provider action authority."
+  },
+  "concise_persian_response": "★★\n\n1. [✓] بررسی کد و قرارداد؛ اسکیل: integration-reliability؛ اجرا: IN_PROCESS؛ معیار پایان: یافتن محل retry و قواعد مجاز آن. جست‌وجوی منبع فقط قرارداد نمونهٔ `contracts/provider.md` را نشان داد؛ adapter یا پیاده‌سازی retry وجود ندارد. مسیر فعلی `routes/api.php` به `UserController::index` و فیلتر مالک کاربران می‌رسد و به تأمین‌کننده متصل نیست.\n2. [!] اصلاح و آزمون؛ فعلاً اجرا نشده است. گام بعد، بررسی adapter واقعی و نمونهٔ پاک‌سازی‌شدهٔ پاسخ 429 است. سپس `Retry-After` در قالب ثانیه یا HTTP-date رعایت شود؛ اگر تأخیر از بودجهٔ کل فراتر رفت، تلاش به تعویق بیفتد و زودتر تکرار نشود. تعداد تلاش، مهلت کل و backoff محدود با jitter و رعایت سهمیه تعریف شود و retryهای تو‌در‌تو حذف شوند. برای پرداخت، همان `Idempotency-Key` عملیات حفظ شود؛ پس از timeout، ابتدا وضعیت با `GET /payments/by-key` بررسی شود. قرارداد حاضر تضمینی برای retry پیامک ارائه نمی‌کند.\n\nآزمون پیشنهادی با fake و ساعت قابل‌کنترل: هر دو قالب Retry-After، مقدار نامعتبر/گذشته/بیش‌ازبودجه، 429 تا پایان بودجه، خطای غیرقابل‌تکرار، موفقیت پس از retry، timeout پس از اثر خارجی و جلوگیری از اثر تکراری. سناریوهای webhook، ترتیب و شکست جزئی فقط در صورت وجود مسیر مرتبط بررسی شوند.\n\nشواهد: VERIFIED برای فایل‌ها و جست‌وجوی منبع؛ UNVERIFIED برای علت اجرایی 429 و رفتار واقعی تأمین‌کننده. هیچ کدی تغییر نکرد و هیچ آزمون اجرایی، ترافیک شبکه، نصب یا راه‌اندازی سرویسی انجام نشد؛ چارچوب اجرایی و حساب تأمین‌کننده در این نمونه وجود ندارند.",
+  "limitations": [
+    "Cannot locate or modify the real retry implementation because it is absent from supplied source.",
+    "No runtime/provider reproduction or tests executed; no claim of actual remediation.",
+    "Retry quotas, exact timeout/budget values, idempotency lifetime and SMS retry guarantees require the real contract/configuration.",
+    "No source edits, dependency installs, services, network or external mutations."
+  ],
+  "checks_executed": [
+    "Scoped source inventory and targeted source search",
+    "Route/controller/model/contract/test-source inspection",
+    "Read-only git status",
+    "File-existence verification for runtime dependencies"
+  ],
+  "checks_not_executed": [
+    "Application or provider reproduction",
+    "Automated tests",
+    "Real API requests",
+    "Implementation verification"
+  ]
+}

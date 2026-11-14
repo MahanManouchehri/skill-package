@@ -1,0 +1,7 @@
+interface:
+  display_name: "Technical Proposal Discovery"
+  short_description: "Requested technical proposals and product research"
+  default_prompt: "Use $technical-proposal-discovery to prepare a technical proposal from this brief."
+
+policy:
+  allow_implicit_invocation: true

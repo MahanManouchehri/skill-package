@@ -1,0 +1,19 @@
+test_actual_prepare_keeps_original_prompt_and_26_copies (test_runner.FixtureTests.test_actual_prepare_keeps_original_prompt_and_26_copies) ... ok
+test_output_inside_package_and_ancestor_are_refused (test_runner.FixtureTests.test_output_inside_package_and_ancestor_are_refused) ... ok
+test_owner_bank_has_all_original_ids (test_runner.FixtureTests.test_owner_bank_has_all_original_ids) ... ok
+test_snapshot_detects_tamper_and_sensitive_files (test_runner.FixtureTests.test_snapshot_detects_tamper_and_sensitive_files) ... ok
+test_symlink_payload_and_output_are_refused (test_runner.FixtureTests.test_symlink_payload_and_output_are_refused) ... ok
+test_failed_reads_and_printed_command_mentions_are_not_activations (test_runner.TraceTests.test_failed_reads_and_printed_command_mentions_are_not_activations) ... ok
+test_invalid_json_and_nonobject_events_never_pass (test_runner.TraceTests.test_invalid_json_and_nonobject_events_never_pass) ... ok
+test_missing_output_is_unverified_even_with_zero_exit (test_runner.TraceTests.test_missing_output_is_unverified_even_with_zero_exit) ... ok
+test_model_declaration_is_not_a_tool_read_or_behavior_pass (test_runner.TraceTests.test_model_declaration_is_not_a_tool_read_or_behavior_pass) ... ok
+test_model_unavailable_is_unverified_not_behavior_failure (test_runner.TraceTests.test_model_unavailable_is_unverified_not_behavior_failure) ... ok
+test_overlay_argument_is_actual_toml_including_windows_paths (test_runner.TraceTests.test_overlay_argument_is_actual_toml_including_windows_paths) ... ok
+test_overlay_config_changes_only_matching_external_user_entries (test_runner.TraceTests.test_overlay_config_changes_only_matching_external_user_entries) ... ok
+test_paths_with_spaces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok
+test_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.042s
+
+OK

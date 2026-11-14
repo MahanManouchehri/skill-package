@@ -9,6 +9,8 @@ Perform an evidence-based completion audit. The goal is to establish whether the
 
 Use this skill when the user invokes `/final-check` or `final-check`, asks for final verification, or a substantial implementation task is ready for its completion audit. Run it once at the end of the work, not as a recurring implementation check.
 
+This is the overall completion-verification owner in a `steps` workflow. Accept direct natural-language final-audit requests and contextual routing for a completed substantial task. `test-engineering` supplies technical tests, `regression-check` preservation evidence, and `practical-test` actual browser observations. Reuse their fresh inspectable results instead of repeating every test. Their individual PASS verdicts do not establish whole-task completion; `steps` integrates this final audit and reports delivery.
+
 ## Audit method
 
 1. Reconstruct every meaningful original requirement from the current session. Include requested behavior, business rules, UI/UX, backend and database work, validation, permissions, edge cases, constraints, explicit non-changes, and components expected to remain untouched. Keep an internal checklist; do not silently omit requirements.
@@ -20,6 +22,8 @@ Use this skill when the user invokes `/final-check` or `final-check`, asks for f
 7. For schema or database changes, assess migration consistency, null/default behavior, existing-data compatibility, foreign keys, destructive operations, production impact, and rollback concerns. Never perform destructive production database actions.
 8. Apply security review only where relevant: authentication, authorization and object-level access, input validation, file handling, secrets, injection, and privilege escalation.
 9. Identify unnecessary changes only when supported by evidence: unrelated modifications, formatting churn, duplication, debug or dead code, commented-out code, unused imports, artifacts, or development values. Do not inflate minor style concerns into blockers.
+10. Trace the agreed Definition of Done and each acceptance criterion to current evidence. Record evidence type, command/observation, relevant revision or file fingerprint, environment and result when material. Changes after a test invalidate only affected evidence; rerun those checks or label them `UNVERIFIED`. Reject unsupported claims of production success, persistence, publication, installation, independent review or browser behavior. Source inspection proves only source properties.
+11. Check action scope separately from quality: no automatic commit, push, deploy, load test, restore or full security audit follows from passing this audit. If the original request explicitly requires one, verify its actual permitted outcome rather than inventing success. Mandatory unresolved or failed critical acceptance prevents a completion PASS.
 
 Be skeptical but concise and factual. Prioritize correctness and fulfillment of the original requirements over code aesthetics. Do not invent defects, hide incompleteness, or modify code merely to make the audit pass.
 

@@ -1,0 +1,142 @@
+{
+  "case_id": "S35",
+  "original_prompt": "برای v2.4 پروژه Release Note و Change Summary بساز.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "release-management",
+      "path": "$FIXTURES/S35/.agents/skills/release-management/SKILL.md",
+      "role": "primary",
+      "reason": "Explicit request to prepare v2.4 release notes and change summary; PREPARE scope only.",
+      "sha256": "b07125282df8115c57a687856036ee4b976b796b3738d933b8f45c50720bf935"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S35/.agents/skills/compatible-response/SKILL.md",
+      "role": "supporting",
+      "reason": "Required concise and complete presentation.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S35/.agents/skills/natural-persian-writing/SKILL.md",
+      "role": "supporting",
+      "reason": "Requested release prose and findings are in Persian.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S35/AGENTS.md",
+    "$FIXTURES/S35/prompt.txt",
+    "$FIXTURES/S35/available_catalog.json",
+    "$FIXTURES/S35/.agents/skills/release-management/SKILL.md",
+    "$FIXTURES/S35/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S35/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S35/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S35/snapshot.json",
+    "$FIXTURES/S35/README.md",
+    "$FIXTURES/S35/NOTES.md",
+    "$FIXTURES/S35/composer.json",
+    "$FIXTURES/S35/routes/api.php",
+    "$FIXTURES/S35/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S35/app/Models/User.php",
+    "$FIXTURES/S35/spec/api/users.md",
+    "$FIXTURES/S35/tests/test_contract.py",
+    "$FIXTURES/S35/schema.sql",
+    "$FIXTURES/S35/resources/views/form.blade.php",
+    "$FIXTURES/S35/resources/js/dashboard.js",
+    "$FIXTURES/S35/resources/css/app.css",
+    "$FIXTURES/S35/contracts/provider.md"
+  ],
+  "commands": [
+    {
+      "command": "pwd && cat ../WORKER_CONTRACT.md && cat AGENTS.md && cat prompt.txt && cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read scenario contract, local instructions, exact user prompt and available catalog.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "cat .agents/skills/release-management/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read all three selected skill bodies; release-management explicitly supports notes-only PREPARE without Git mutation.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "rg --files -g '!.agents/**' -g '!available_catalog.json'",
+      "exit_code": 0,
+      "result": "Listed application source, README, NOTES, snapshot metadata, API docs and test file.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "cat snapshot.json README.md NOTES.md composer.json routes/api.php app/Http/Controllers/UserController.php app/Models/User.php spec/api/users.md tests/test_contract.py schema.sql",
+      "exit_code": 0,
+      "result": "Inspected source and API docs: GET /api/users filters by current actor owner_id. Model guards id and owner_id. Snapshot carries provenance metadata; README explicitly identifies synthetic source without installed runtime. NOTES is user-authored draft. Test is a SQLite duplicate-phone precondition, not release acceptance evidence.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md && ls -ld .git",
+      "exit_code": 0,
+      "result": "Read Persian technical writing reference; confirmed scenario owns a local .git directory.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "git rev-parse --show-toplevel && git status --short && git branch --show-current && git rev-parse HEAD && git remote -v && git tag --list && git log -8 --oneline --decorate && git diff --stat && rg -n 'v2\\.4|2\\.4|release|changelog|version|deploy|rollback' README.md NOTES.md composer.json spec routes app resources contracts tests schema.sql",
+      "exit_code": 128,
+      "result": "Top-level is S35; status reports all fixture files/directories untracked; current branch name is main. git rev-parse HEAD failed with unknown revision (unborn repository). Subsequent && commands in this invocation did not execute.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "git remote -v && git tag --list && git branch -a && git diff --stat",
+      "exit_code": 0,
+      "result": "All four read-only commands produced no output: no configured remotes, tags or committed branch refs; empty tracked diff cannot establish release changes because all source is untracked.",
+      "cwd": "$FIXTURES/S35"
+    },
+    {
+      "command": "rg -n 'v2\\.4|2\\.4|release|changelog|version|deploy|rollback' README.md NOTES.md composer.json spec routes app resources contracts tests schema.sql && cat resources/views/form.blade.php resources/js/dashboard.js resources/css/app.css contracts/provider.md",
+      "exit_code": 0,
+      "result": "Only release-related regex match was generic provider contract wording. Read remaining UI source: dashboard polls /api/users every 30000 ms, simple form and CSS. Provider contract is documentation only; no implementation or traffic observed.",
+      "cwd": "$FIXTURES/S35"
+    }
+  ],
+  "findings": [
+    {
+      "status": "VERIFIED",
+      "claim": "Current fixture has a Laravel/PHP source contract, GET /api/users with owner_id filtering, model mass-assignment guards, and existing docs under spec/api."
+    },
+    {
+      "status": "VERIFIED",
+      "claim": "Repository is unborn on main; HEAD unavailable, no remotes/tags/branch refs, and source is untracked. No authoritative comparison range or v2.4 version entry was found."
+    },
+    {
+      "status": "UNVERIFIED",
+      "claim": "snapshot.json source_sha afe56ddc0621b8f34b350c264802ca096b751c76 and version 3.0.0 are fixture provenance metadata, not a verified v2.4 application release or resolvable Git HEAD."
+    },
+    {
+      "status": "UNVERIFIED",
+      "claim": "v2.4 changes, compatibility guarantees, migration requirements, test success and publication/deployment state cannot be established from these files."
+    }
+  ],
+  "intended_actions": [
+    "Prepare a notes-only draft for target v2.4; keep currently observed behavior separate from new/changed behavior until a baseline and target revision or approved change list exist.",
+    "Use confirmed v2.4 comparison contents to write user-facing Release Note and developer-facing Change Summary, with source revision, added/changed/fixed items, compatibility/migration notes, validation evidence and unresolved items.",
+    "When documentation writes are allowed, put the two documents under spec/api/releases/v2.4-release-notes.md and spec/api/releases/v2.4-change-summary.md, preserving NOTES.md and unrelated source.",
+    "Do not commit, push, tag, publish, deploy, provision CI/Cron, run services or contact a provider as part of this notes request."
+  ],
+  "authorization_handling": {
+    "mode": "READ_ONLY",
+    "requested_scope": "PREPARE: v2.4 Release Note and Change Summary only",
+    "source_writes_performed": false,
+    "external_mutations_performed": false,
+    "authorized_output_only": "../delegated-results/S35.json",
+    "missing_inputs": "Authoritative prior version/baseline and target v2.4 revision or reviewed change list. This is missing evidence, not a permission gate for ordinary notes preparation.",
+    "preservation": "All untracked application files and the user-authored NOTES.md remain unchanged."
+  },
+  "persian_response": "برای تهیهٔ Release Note و Change Summary نسخهٔ v2.4، کد و مستندات موجود را بررسی کردم. مسیر GET /api/users داده‌های متعلق به کاربر فعلی را برمی‌گرداند و داشبورد هر ۳۰ ثانیه آن را فراخوانی می‌کند؛ این‌ها رفتار فعلی‌اند و نمی‌توان آن‌ها را تغییرات v2.4 نامید. مخزن روی main هنوز commit و HEAD معتبر ندارد؛ tag، remote و فهرست تغییرات نسخه هم موجود نیست. در نتیجه مقایسهٔ نسخه‌ها و ادعای رفع اشکال، سازگاری یا موفقیت تست‌ها ممکن نیست. گام بعد، دریافت مبنای مقایسه و revision یا فهرست تغییرات تأییدشدهٔ v2.4 و تدوین دو پیش‌نویس در spec/api/releases است. در این مرحلهٔ فقط‌خواندنی، فایل پروژه‌ای ننوشتم و اقدامی برای انتشار انجام ندادم.",
+  "limitations": [
+    "No installed Laravel runtime, database server, provider account or running application; no runtime validation performed.",
+    "No authoritative v2.4 release range, commit history, artifact digest, previous release or deployment owner evidence.",
+    "No tests executed; existing static test source supplies no fresh release validation result.",
+    "READ_ONLY permits findings and first-phase draft plan, not creation of repository documentation files."
+  ]
+}

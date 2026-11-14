@@ -1,0 +1,7 @@
+interface:
+  display_name: "Backup Recovery"
+  short_description: "Requested backup verification and recovery runbooks"
+  default_prompt: "Use $backup-recovery to design a testable restore runbook without executing it."
+
+policy:
+  allow_implicit_invocation: true

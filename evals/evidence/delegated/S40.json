@@ -1,0 +1,268 @@
+{
+  "case_id": "S40",
+  "original_prompt": "API قدیمی را به‌تدریج deprecated کن و مصرف‌کننده‌ها را حفظ کن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "execution_mode": "READ_ONLY",
+  "status": "SOURCE_INSPECTED_PLAN_PREPARED",
+  "task_criticality": "★★",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S40/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "IN_PROCESS coordinator; restrict delivery to source-backed first-phase planning under READ_ONLY governance",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1"
+    },
+    {
+      "name": "maintenance-evolution",
+      "path": "$FIXTURES/S40/.agents/skills/maintenance-evolution/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "DEPRECATION; preserve consumers and define staged coexistence and removal criteria",
+      "sha256": "3f8b3c9be3197ed6c64e5c86a0aec836199f46a6ba177c6175659294078db995"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S40/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "Professional, natural Persian findings and plan",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S40/.agents/skills/compatible-response/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "Concise presentation with required evidence and limitations",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S40/AGENTS.md",
+    "$FIXTURES/S40/prompt.txt",
+    "$FIXTURES/S40/available_catalog.json",
+    "$FIXTURES/S40/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S40/.agents/skills/maintenance-evolution/SKILL.md",
+    "$FIXTURES/S40/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S40/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S40/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S40/routes/api.php",
+    "$FIXTURES/S40/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S40/app/Models/User.php",
+    "$FIXTURES/S40/resources/js/dashboard.js",
+    "$FIXTURES/S40/resources/views/form.blade.php",
+    "$FIXTURES/S40/spec/api/users.md",
+    "$FIXTURES/S40/tests/test_contract.py",
+    "$FIXTURES/S40/README.md",
+    "$FIXTURES/S40/NOTES.md",
+    "$FIXTURES/S40/snapshot.json",
+    "$FIXTURES/S40/composer.json",
+    "$FIXTURES/S40/contracts/provider.md",
+    "$FIXTURES/S40/schema.sql"
+  ],
+  "commands_actually_run": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read the worker contract: single scenario; source-backed READ_ONLY plan; only delegated-results/S40.json may be written."
+    },
+    {
+      "command": "cat AGENTS.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "READ_ONLY; no edits, dependencies, services, network, production, provider traffic, Cron, commits or deploys; API docs belong in spec/api."
+    },
+    {
+      "command": "cat prompt.txt",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read exact original Persian deprecation request."
+    },
+    {
+      "command": "cat available_catalog.json",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read candidate metadata and scenario-local skill paths; selected four minimum applicable skill bodies."
+    },
+    {
+      "command": "cat /Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "cwd": "default workspace",
+      "exit_code": 0,
+      "result": "Read global presentation policy required by the supplied AGENTS instructions."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read governance, contextual routing, proportionate source investigation and verification instructions."
+    },
+    {
+      "command": "cat .agents/skills/maintenance-evolution/SKILL.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read DEPRECATION requirements: consumers, preserved behavior, replacement, notice, migration owner, observability, rollback and removal criteria."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read Persian prose standard; follow technical-writing reference."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read catalog skill body; preserve evidence and authority boundaries while keeping output concise."
+    },
+    {
+      "command": "rg --files -g '!.agents/**' -g '!available_catalog.json' -g '!AGENTS.md' -g '!prompt.txt'",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Listed application files: Laravel source, API docs, JS caller, schema, Python test, README, notes, fixture snapshot and provider contract."
+    },
+    {
+      "command": "cat routes/api.php app/Http/Controllers/UserController.php app/Models/User.php",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "GET /users routes to UserController::index; query filters owner_id by current request actor; User guards id and owner_id."
+    },
+    {
+      "command": "cat resources/js/dashboard.js resources/views/form.blade.php",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Confirmed one internal caller polls /api/users every 30000 ms. Form is unrelated to requested deprecation."
+    },
+    {
+      "command": "cat spec/api/users.md tests/test_contract.py",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Docs describe GET /api/users scoped to current actor. Only test uses in-memory SQLite to assert duplicate-phone fixture precondition; no API contract assertion."
+    },
+    {
+      "command": "cat README.md NOTES.md snapshot.json composer.json contracts/provider.md schema.sql",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "README explicitly reports synthetic source without installed framework, DB server, provider account or running app. Preserve user-authored NOTES. Composer uses PHP >=8.2 and Laravel; schema contains legacy column. Provider contract is unrelated and was not exercised. Snapshot metadata was read as data, not proof of live behavior."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Read technical/API/authorization Persian prose guidance."
+    },
+    {
+      "command": "rg -n -i '(/api/users|/users|UserController|owner_id|legacy|deprecat|sunset|version|replacement)' routes app resources spec tests schema.sql README.md NOTES.md composer.json",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Found route, scoped controller, model guard, schema legacy field, one dashboard caller, API documentation and test class only. No replacement/deprecation/sunset policy in these inspected source paths."
+    },
+    {
+      "command": "rg --files -g AGENTS.md -g '!.agents/**' -g '!vendor/**' -g '!node_modules/**'",
+      "cwd": "$FIXTURES/S40",
+      "exit_code": 0,
+      "result": "Only scenario-root AGENTS.md listed; no additional source-subtree instruction file discovered."
+    }
+  ],
+  "source_findings": [
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "routes/api.php:3",
+      "finding": "Only users route in supplied source: GET /users -> UserController::index. Full /api/users URI is documented and called by dashboard; runtime route registration is unverified."
+    },
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "app/Http/Controllers/UserController.php:4",
+      "finding": "Index returns User::where(owner_id, request user id)->get(); preserve owner isolation and existing observable contract during transition."
+    },
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "resources/js/dashboard.js:1",
+      "finding": "Known internal consumer fetches /api/users every 30000 ms; retain polling while changing its route only after replacement contract is agreed."
+    },
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "spec/api/users.md:1",
+      "finding": "Existing docs describe actor-scoped users. No deprecation, replacement or sunset policy found in inspected paths."
+    },
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "tests/test_contract.py:3",
+      "finding": "Existing test covers SQLite duplicate-phone precondition, not API compatibility or caller migration."
+    },
+    {
+      "evidence": "VERIFIED_STATIC",
+      "path": "README.md:1",
+      "finding": "Fixture has no installed framework or running app; code is not production/runtime evidence."
+    }
+  ],
+  "intended_actions": [
+    {
+      "order": 1,
+      "scope": "Planning only",
+      "action": "Agree replacement endpoint and input/output/error/auth contracts, migration owner, notice channel, support window and removal policy; do not invent dates or version routes."
+    },
+    {
+      "order": 2,
+      "scope": "Future authorized implementation",
+      "action": "Keep legacy route behavior and actor scoping, introduce a compatible replacement or thin adapter once its contract is defined; keep an independently revertible fallback and avoid redirects or 410 responses during coexistence."
+    },
+    {
+      "order": 3,
+      "scope": "Future authorized implementation",
+      "action": "Migrate dashboard caller while preserving 30000-ms polling; inventory external clients from permitted records and aggregate usage evidence rather than assuming none."
+    },
+    {
+      "order": 4,
+      "scope": "Future authorized verification and documentation",
+      "action": "Update existing spec/api/users.md with notice, replacement, migration instructions and agreed dates; add old/new contract, permissions, empty result and error-case checks in the existing project stack when an executable environment exists."
+    },
+    {
+      "order": 5,
+      "scope": "Future removal gate",
+      "action": "Use privacy-preserving aggregate usage and client migration confirmation; remove old route only when agreed observation window covers real client cycles, consumers have migrated, contract checks support compatibility and removal authority is confirmed."
+    }
+  ],
+  "authorization_handling": {
+    "effective_authority": "Only read-only local inspection and this JSON output write are allowed.",
+    "original_request_handling": "The prompt asks for gradual deprecation; worker contract and local AGENTS restrict this run to findings and the smallest concrete next plan.",
+    "allowed_actions_performed": [
+      "Read named scenario instructions and catalog",
+      "Read selected candidate skill bodies and required Persian reference",
+      "Inspect local source, caller, docs, dependency declarations and test source",
+      "Search bounded application source for consumers, replacement and deprecation policy",
+      "Write delegated-results/S40.json"
+    ],
+    "not_performed": [
+      "Source or documentation edits",
+      "Dependency installation",
+      "Tests or services",
+      "Network or provider calls",
+      "Production access",
+      "Schema/data changes",
+      "Cron or worker configuration",
+      "Commit, push, publish or deploy",
+      "Further delegation"
+    ],
+    "future_material_decisions": [
+      "Replacement endpoint and compatibility contract",
+      "Migration owner and consumer inventory",
+      "Support window, notice policy and removal evidence criteria"
+    ],
+    "permission_request": "No permission request made; safe inspection and plan completed within the explicit contract."
+  },
+  "routing_decisions": {
+    "used": "steps coordinates bounded read-only work; maintenance-evolution owns DEPRECATION; Persian and presentation standards support the report.",
+    "deferred": "No substantial replacement design is specified yet, so no independent architecture/design review was performed. Test engineering, regression verification and docs sync belong to a future implementation phase, not claims of work done here.",
+    "not_applicable": "No database migration, provider integration, performance problem, browser target, release, backup, full audit or load test is requested by the scoped evidence."
+  },
+  "persian_response": "★★\n\n1. [✓] بررسی قرارداد و مصرف‌کننده‌ها — `steps` و `maintenance-evolution`، حالت `IN_PROCESS`؛ معیار پایان: مسیر فعلی، مصرف‌کنندهٔ شناخته‌شده و محدودیت شواهد مشخص شد. `GET /api/users` در مستندات و داشبورد وجود دارد؛ داشبورد هر ۳۰ ثانیه آن را فراخوانی می‌کند. `UserController::index` کاربران را بر اساس `owner_id` کاربر فعلی محدود می‌کند. API جایگزین یا سیاست حذف در سورس بررسی‌شده پیدا نشد؛ نبود مصرف‌کنندهٔ بیرونی اثبات نشده است.\n2. [ ] گذار تدریجی — `maintenance-evolution`، حالت `IN_PROCESS`؛ معیار پایان: جایگزین و قراردادش، مسئول مهاجرت، کانال اطلاع‌رسانی و بازهٔ پشتیبانی مشخص شوند. تا آن زمان مسیر فعلی و رفتار پاسخ، خطاها و محدودیت مالکیت حفظ شوند. سپس جایگزین با لایهٔ سازگاری معرفی و داشبورد بدون تغییر تناوب polling مهاجرت داده شود؛ راه برگشت به مسیر قبلی باقی بماند.\n3. [ ] آماده‌سازی حذف — معیار پایان: مستندات `spec/api/users.md` شامل جایگزین و روش مهاجرت شوند؛ آزمون‌های قرارداد قدیم و جدید و جداسازی دادهٔ مالکان اجرا شوند؛ استفاده از مسیر قدیمی با آمار تجمیعی و بدون ثبت دادهٔ حساس پایش شود. حذف فقط پس از تکمیل مهاجرت مصرف‌کننده‌ها و تحقق بازه و معیارهای مورد توافق انجام شود؛ تاریخ حذف از پیش فرض نشود.\n\nاین خروجی صرفاً بررسی و برنامه است؛ هیچ فایل منبعی تغییر نکرد. طبق `AGENTS.md` و قرارداد این بررسی، اجرا فقط‌خواندنی است. محیط برنامهٔ قابل اجرا ندارد و تست موجود فقط پیش‌شرط دادهٔ تکراری را بررسی می‌کند؛ تست HTTP، سازگاری پاسخ و رفتار واقعی احراز هویت اجرا یا تأیید نشده‌اند.",
+  "limitations": [
+    "This is first-phase static inspection, not implemented deprecation.",
+    "No replacement contract, support/removal policy or responsible migration owner is present in inspected source.",
+    "One internal caller is known; unknown external consumers cannot be declared absent or migrated.",
+    "No installed framework or running target is provided; HTTP output, status codes, middleware/authentication and wire compatibility remain unverified.",
+    "Existing test does not cover the API contract; no tests were run.",
+    "No schema change or removal of the legacy column is justified by deprecating this endpoint."
+  ]
+}

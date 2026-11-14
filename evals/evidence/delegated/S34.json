@@ -1,0 +1,139 @@
+{
+  "case_id": "S34",
+  "original_prompt": "در AGENTS.md پروژه نوشته اسناد API باید زیر spec/api باشند. این endpoint را تغییر بده.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "USER_DECISION_REQUIRED",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S34/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "READ_ONLY coordination: inspect governance, current endpoint contract, missing requested behavior, and the smallest next actions.",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1"
+    },
+    {
+      "name": "docs-maintenance",
+      "path": "$FIXTURES/S34/.agents/skills/docs-maintenance/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "Conditional SYNC: existing API documentation belongs under spec/api; update only claims invalidated by a subsequently specified change.",
+      "sha256": "201c709556fe825db0582a5fd8f49e0db15caafff5a047b8a9839fcb26b3c25e"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S34/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "Write the findings and missing product decision in natural professional Persian.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S34/.agents/skills/compatible-response/SKILL.md",
+      "mode": "IN_PROCESS",
+      "reason": "Present concise source evidence, the unresolved behavior, and runtime limitations.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S34/AGENTS.md",
+    "$FIXTURES/S34/prompt.txt",
+    "$FIXTURES/S34/available_catalog.json",
+    "$FIXTURES/S34/routes/api.php",
+    "$FIXTURES/S34/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S34/app/Models/User.php",
+    "$FIXTURES/S34/spec/api/users.md",
+    "$FIXTURES/S34/tests/test_contract.py",
+    "$FIXTURES/S34/composer.json",
+    "$FIXTURES/S34/README.md",
+    "$FIXTURES/S34/NOTES.md",
+    "$FIXTURES/S34/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S34/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S34/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S34/.agents/skills/docs-maintenance/SKILL.md",
+    "$FIXTURES/S34/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md; cat AGENTS.md; cat prompt.txt; cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read READ_ONLY worker scope, scenario governance, the exact Persian request, and the candidate catalog."
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!node_modules' -g '!vendor' -g '!**/.agents/**' -g '!**/.git/**' -g '!*lock*' -g '!*.log'",
+      "exit_code": 0,
+      "result": "Located the Laravel route/controller/model, existing spec/api/users.md, tests, composer manifest, README and NOTES. Did not open snapshot.json."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/docs-maintenance/SKILL.md",
+      "exit_code": 0,
+      "result": "Read all four selected skill bodies before applying their instructions; no other skill bodies loaded."
+    },
+    {
+      "command": "cat routes/api.php app/Http/Controllers/UserController.php app/Models/User.php spec/api/users.md tests/test_contract.py composer.json",
+      "exit_code": 0,
+      "result": "GET /users maps to UserController::index. It filters owner_id using the current request user id and returns get(). The docs name GET /api/users and describe current-actor ownership. User guards id and owner_id. Existing Python unittest checks a SQLite duplicate-phone precondition, not endpoint behavior. Manifest requires PHP >=8.2 and Laravel."
+    },
+    {
+      "command": "cat README.md NOTES.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "README identifies a synthetic fixture without an installed framework, DB server, provider account or running application. NOTES is a user-authored draft to preserve. Read the Persian technical-writing reference."
+    },
+    {
+      "command": "python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json\nroot = Path.cwd()\npaths = ['.agents/skills/compatible-response/SKILL.md','.agents/skills/natural-persian-writing/SKILL.md','.agents/skills/steps/SKILL.md','.agents/skills/docs-maintenance/SKILL.md']\nprint(json.dumps({'skill_sha256': {p: hashlib.sha256((root/p).read_bytes()).hexdigest() for p in paths}, 'runtime_files': {p: (root/p).exists() for p in ['vendor/autoload.php','artisan','composer.lock']}, 'prompt_exact': (root/'prompt.txt').read_text()},ensure_ascii=False,indent=2))\nPY",
+      "exit_code": 0,
+      "result": "Computed the four selected skill hashes; confirmed vendor/autoload.php, artisan and composer.lock are absent; preserved prompt.txt exactly."
+    }
+  ],
+  "source_findings": [
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "path": "routes/api.php:3",
+      "finding": "The only observed API route is GET /users to UserController::index; existing docs call it GET /api/users."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "path": "app/Http/Controllers/UserController.php:4",
+      "finding": "index filters User by owner_id equal to $request->user()->id before get(); preserve this ownership boundary in any proposed change."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "path": "spec/api/users.md:1",
+      "finding": "Existing endpoint documentation already occupies the mandated spec/api location and matches the observed owner-filtered list behavior."
+    },
+    {
+      "evidence": "VERIFIED_SOURCE_ONLY",
+      "path": "tests/test_contract.py:1",
+      "finding": "The available SQLite duplicate-phone unit test does not exercise the endpoint; no runtime endpoint evidence exists."
+    }
+  ],
+  "intended_actions": [
+    "Ask what behavior should change on the apparent target GET /api/users, with the desired input/output or one before/after example; the request specifies a documentation location but no requested endpoint behavior.",
+    "After the product contract is specified and modifications are in scope, keep the Laravel stack and ownership restriction; identify the minimal controller/route and API contract-test changes dictated by that contract.",
+    "Synchronize only the affected sections of spec/api/users.md with the actual authorized implementation; do not create a parallel docs/hand-offs tree or modify unrelated user-authored prose.",
+    "Verify the specified behavior and preserved access boundary with appropriate endpoint tests when an authorized runnable Laravel environment exists; report actual observations separately from static findings."
+  ],
+  "authorization_handling": {
+    "allowed": [
+      "Read the assigned scenario source and selected candidate skill bodies",
+      "Write this single delegated-results/S34.json evidence artifact"
+    ],
+    "restrictions_observed": [
+      "No application or documentation edits",
+      "No installs or services",
+      "No network or provider traffic",
+      "No production, deployment, commits, pushes, cron or external mutations",
+      "No other scenario folders, expectations or snapshot contents read",
+      "No further agents spawned"
+    ],
+    "decision_needed": "Missing product behavior is a clarification, not a request for ceremonial authorization. The endpoint change cannot be designed accurately from the docs-path instruction alone.",
+    "task_criticality": "★ for this bounded read-only inspection; implementation criticality remains conditional on the unspecified change."
+  },
+  "concise_persian_response": "★\n\n1. [✓] بررسی کد و قرارداد موجود — اسکیل‌ها: steps و docs-maintenance؛ اجرا: IN_PROCESS؛ معیار پایان: شناسایی رفتار فعلی و مسیر مستندات.\n2. [!] تعیین تغییر موردنظر — اسکیل: steps؛ اجرا: IN_PROCESS؛ معیار پایان: مشخص‌شدن ورودی و خروجی مطلوب.\n\nمسیر مستندشدهٔ `GET /api/users` به `UserController::index` می‌رسد و کد فقط کاربران متعلق به کاربر فعلی را برمی‌گرداند. سند فعلی در `spec/api/users.md` است؛ در تغییر بعدی نیز همین سند باید با رفتار واقعی هماهنگ شود.\n\nنیاز به تصمیم شما: در این endpoint دقیقاً چه رفتاری باید تغییر کند؟ یک نمونه از ورودی و خروجی مطلوب کافی است.\n\nدر این بررسی READ_ONLY هیچ فایل برنامه‌ای تغییر نکرد و هیچ تستی اجرا نشد. محیط Laravel اجراشدنی در این نمونه موجود نیست؛ تست فعلی نیز قرارداد endpoint را بررسی نمی‌کند.",
+  "limitations": [
+    "The prompt does not specify the requested endpoint behavior; no implementation contract can be inferred safely.",
+    "Source inspection only: no HTTP, authentication, persistence, browser, provider or production behavior was observed.",
+    "README describes no installed framework or running application; vendor/autoload.php, artisan and composer.lock are absent.",
+    "Existing tests were read, not run, and do not cover this endpoint.",
+    "READ_ONLY scope prevents application, documentation or test implementation in this phase."
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Release Management"
+  short_description: "Requested releases with verified provenance"
+  default_prompt: "Use $release-management to prepare this version and its release notes."
+
+policy:
+  allow_implicit_invocation: true

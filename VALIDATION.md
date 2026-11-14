@@ -1,156 +1,43 @@
-# Validation evidence
+# Validation evidence —3.1.0
 
-## Version 3.0 structural checks
+Observed 2026-11-14T04:22:28.230382+00:00 on macOS26.2 / Python3.14.2 / PyYAML6.0.3; Codex CLI0.142.5.
 
-- Manifest schema, catalog uniqueness, safe install mappings, per-file hashes, tree hashes, local Markdown references and package-integrity coverage were rechecked after the v2 delta.
-- The copied `steps`, `hand-off`, and `compatible-response` trees match their selected installed source files byte-for-byte: 13 files in total.
-- `skills-manifest.json` declares 16 unique `installable: true` paths under `skills/`; every path exists and contains `SKILL.md`. The former Plugin/Marketplace wrapper is absent.
-- The preinstalled Codex `skill-installer` was run with all 16 manifest paths against this GitHub repository into an isolated temporary destination using its `git` transport. All 16 skills were installed and no `managed/` directory was created in the destination.
-- `hand-off/scripts/validate_handoff.py` compiles successfully. Its optional runtime check needs a real generated handoff folder, so it is not treated as package-install evidence.
-- The bundled `skill-creator` quick validator could not run because the available Python lacks `PyYAML`; frontmatter was instead checked by the same `name`/`description` extraction contract used by `scripts/common.ps1`.
-- PowerShell is unavailable on the v2 build host, so the Windows-only installer and isolated-restore suite must be rerun on a Windows PowerShell 5.1+ host before claiming a new runtime restore test.
-- A live multi-skill install into the build host's real Codex skill root was not run. The installation contract is documented in `README.md` and `INSTALL_FOR_CODEX.md`; the direct installer was tested only with an isolated destination.
+## Current structural and executed checks
 
-## Version 1 baseline evidence
+-26/26 personal skills pass strict YAML/name/resource checks and the current bundled quick validator. All16 original names/resources remain;10 new specialists are added. The build verifies exact manifest/files/tree hashes, full distribution coverage, safe paths/references and common secret patterns.
+-44/44 Python package-tool tests pass: clean install, collision refusal, exact backups/permissions, partial failure, actual subprocess crash/recovery, idempotence, multi-root duplicate removal/rollback, journal/path/symlink guards, tamper/omission and unrelated/system preservation.
+-14/14 runner helper tests pass: actual fixture preparation, immutable payloads/prompts, path guards, real-read vs self-declaration and unavailable/malformed trace handling.
+-130 preserved UI runtime/data tests pass;12 domains/22 stacks/reasoning validation and actual absolute-path UX/Laravel searches pass. Full132-module discovery has two pre-existing import errors because refresh-google-fonts.py, refresh-icon-catalog.py and evaluate-relevance.py are upstream authoring helpers absent from this payload. Tests/assertions were not weakened.
+-An actual in-memory SQLite fixture identifies duplicate phones, rejects an unsafe unique index and preserves both rows. It is not MySQL or production evidence.
 
-The following 52 checks are retained as baseline evidence for the unchanged installer and managed snapshots. They are not a claim that v2's new user-global trees were exercised by the Windows suite.
+Commands executed (with an external Python environment containing PyYAML):
 
-## Scope
+```sh
+python -B scripts/package_tools.py build --package-root /absolute/path/to/skill-package
+python -B scripts/package_tools.py verify --package-root /absolute/path/to/skill-package
+python -B -m unittest discover -s tests -p test_package_tools.py -v
+python -B -m unittest discover -s evals -p test_runner.py -v
+```
 
-This report verifies backup/distribution preparation and isolated restore logic. It does not claim that another account has been restored or that entitlement-dependent capabilities work on that account. All restore mutations used isolated work/test directories, never the source skill root. Source verification was read-only.
+Logs, exact helper commands/times/code hashes and the complete case table are under [evals/evidence](evals/evidence/README.md). The final distribution aggregate is in package-integrity.json; it is not embedded here to avoid a checksum cycle.
 
-## Results
+## Behavioral observations
 
-- 52 executed checks passed.
-- 14/14 personal skill entries restored and hash-verified in isolated destinations.
-- 16 managed entries snapshot/hash-verified; zero managed skill copies installed in the default user root.
-- 24 complete snapshot roots (14 personal + 10 plugins) compared with source selected-file trees; all 541 included source/support files identical.
-- Source catalog/disk corroboration: personal 14, managed 16, systems 5, unexpected duplicates 0. Required runtime capabilities were not independently exercised.
-- full-plan has exactly one discoverable entry. No merge or rewrite performed.
-- devil validator passed in the packaged/restored copies; all nine files preserved.
-- steps SKILL.md and deep-workflow reference preserved; references and hashes passed.
-- 0 broken Markdown relative links, 0 agent YAML parse issues, 0 original payload hardcoded source-user paths, 0 common secret-pattern candidates.
-- The pre-existing natural-persian-writing strict YAML issue and ui-ux-pro-max platform path assumption remain documented.
+All60 original owner cases are unchanged and prepared. Thirty fresh delegated agents received candidate metadata, source and governance without expected answers. Their actual source investigation/plan records were reviewed; candidate body hashes match the same final personal payload snapshot. No forbidden workflow or critical safety violation was observed in that bounded slice.
+-Observed cases: S01, S05, S06, S07, S09, S12, S16, S17, S21, S23, S26, S27, S28, S29, S30, S34, S35, S37, S38, S40, S43, S46, S47, S49, S51, S53, S54, S55, S59, S60.
+-Expected read sets: 18 MATCH; 12 PARTIAL/UNVERIFIED. A missing expected read is disclosed, not converted into a pass.
+-The model sometimes selects a directly relevant specialist without steps. Installation provides model-driven discovery, not guaranteed interception. For a mandatory coordinator, an appropriate project rule must explicitly route it; no global AGENTS.md is edited.
+-Every full application case remains UNVERIFIED. Planning does not prove code changes, tests, browser actions, provider effects or operational deployment. Native automatic routing is not established by delegated records.
+-Native skills/list works and discovers all26 fixture-local entries. The configured native model gpt-6.1-sol again returned HTTP400/model_not_found on2026-11-14; earlier default gpt-5.5 and listed gpt-5.4 probes also failed. These are availability gaps, not model pass statistics. No account/config/credential repair or further fallback was performed.
 
-| Test | Result |
-|---|---|
-| package validation PowerShell 5.1 | PASS |
-| dry run new user | PASS |
-| dry run has zero filesystem mutations | PASS |
-| isolated restore | PASS |
-| personal restore verification | PASS |
-| managed snapshots not installed | PASS |
-| strict managed verification without evidence fails | PASS |
-| repeat install is idempotent | PASS |
-| tampered destination fails hash verification | PASS |
-| replacement dry run | PASS |
-| replacement dry run zero mutation | PASS |
-| replacement with backup | PASS |
-| original destination bytes backed up | PASS |
-| unrelated and system content preserved | PASS |
-| inventory source and extras | PASS |
-| inventory extra detection | PASS |
-| full-plan duplicate verifier refusal | PASS |
-| duplicate dry run refusal | PASS |
-| managed manual copy refusal | PASS |
-| protected system destination refusal | PASS |
-| protected package destination refusal | PASS |
-| path traversal refusal | PASS |
-| reparse point refusal | PASS |
-| concurrent installer lock refusal | PASS |
-| other installer lock preserved | PASS |
-| managed cache alone never means available | PASS |
-| synthetic managed catalog evidence success | PASS |
-| managed user-root evidence refused | PASS |
-| tampered distribution refused | PASS |
-| tampered package zero destination writes | PASS |
-| secret scanner negative fixture | PASS |
-| final scripts package validation | PASS |
-| final scripts clean restore | PASS |
-| final scripts dry run | PASS |
-| final scripts clean verification | PASS |
-| nested excluded git reparse refusal | PASS |
-| installer refuses nested git junction | PASS |
-| nested junction rejection preserves external data | PASS |
-| create backup junction fixture | PASS |
-| backup junction refused in dry run | PASS |
-| backup junction refused in install | PASS |
-| backup junction rejection no writes | PASS |
-| forced post-install failure | PASS |
-| rollback restores original exact bytes | PASS |
-| rollback retains verified backup | PASS |
-| rollback cleans staging and owned lock | PASS |
-| stale runtime catalog refused | PASS |
-| final inventory physical file audit | PASS |
-| inventory all 14 hashes and physical file records match | PASS |
-| inventory cannot overwrite package payload | PASS |
-| inventory cannot overwrite skill payload | PASS |
-| inventory protection preserves payload bytes | PASS |
+## Provenance, regression and release boundary
 
-Managed-catalog success in synthetic fixtures tests the verifier logic only. It is not second-account evidence. Default Phase A verification intentionally reports unavailable managed dependencies without declaring full environment restoration complete; -RequireManaged fails until all required catalog and capability evidence is provided. Runtime evidence must be observed within the last 24 hours and refreshed when the environment changes.
+-Entry baseline: main at afe56ddc0621b8f34b350c264802ca096b751c76, VERSION3.0.0, clean. Tests use dirty candidate files bound by personal payload digest485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97 and helper file hashes. Final network publication/source-SHA installation is verified afterward in the external owner report.
+-All16 managed entries/full snapshot records and five historical system exclusions are unchanged. Source comparison confirms UI data/scripts/assets and unmodified supporting resources retain their bytes. Personal behavior changes are intentional; original source hashes remain historical provenance.
+-PowerShell is unavailable: no new Windows/PowerShell PASS is claimed. The old52-check Windows suite is retained only as historical evidence in validation-results.json and baseline Git history.
+-Live upgrades must use the exact published ref, official installer into isolated staging, verified named backups and the tested promotion/rollback tool. The pre-publication artifact does not claim a future install already happened.
+-Quality statement: BOUNDED_VERIFICATION_WITH_LIMITATIONS. No complete native-routing, cross-platform, full-application or managed-capability certificate is issued.
 
-# Regression Check: Version 1 baseline
+## Independent recovery correction
 
-## Verdict
-
-PASS
-
-This verdict applies only to regression safety within the verified scope.
-
-## Change Summary
-
-Created a separate distribution folder and restore tools; original skill content and source environment were preserved.
-
-## Regression Risk
-
-LOW — source files were only read; installer mutations were exercised in isolated fixtures.
-
-## Regression Surface
-
-Personal skill bytes and progressive-disclosure structure; full-plan uniqueness; system/unrelated destination preservation; managed/user separation; backup/rollback.
-
-## Dependency Findings
-
-Runtime tools/plugins are separate dependencies. ui-ux-pro-max retains its existing platform assumption. natural-persian-writing retains its pre-existing strict YAML defect.
-
-## Protected Existing Behaviors
-
-No source rewrites, merges, moves or deletions. Full original relative structure retained except explicit Git/generated-cache exclusions.
-
-## Checks Performed
-
-| Area | Verification | Result | Evidence |
-|---|---|---|---|
-| Source preservation | Selected-file hashes for all roots | PASS | Manifest snapshot_trees |
-| Restore preservation | 14 personal trees and references | PASS | Isolated restore tests |
-| System/unrelated skills | Sentinel fixtures unchanged | PASS | Tests |
-| Backup and rollback | Original bytes recovered after forced failure | PASS | Tests |
-| Managed separation | No snapshot installed as user skill | PASS | Tests |
-
-## Confirmed Regressions
-
-No confirmed regressions found within the verified scope.
-
-## Potential Risks
-
-Destination runtime discovery or capability behavior may differ. Existing source YAML/path issues can affect a different runtime and are explicitly preserved.
-
-## Pre-Existing / Unrelated Failures
-
-natural-persian-writing strict YAML parsing issue; ui-ux-pro-max CLAUDE_PLUGIN_ROOT assumption.
-
-## Unverified Areas
-
-Actual second-account live catalog/tool behavior and account eligibility.
-
-## Residual Risk
-
-LOW for distribution integrity and Phase A file restoration; runtime activation must be verified at the destination.
-
-## Governance
-
-Original source and AGENTS.md untouched. Tests never installed into the real skill root. Publication is separately authorized by the user and private-only.
-
-## Final Assessment
-
-No regressions were found within the verified scope. Critical and high-risk affected behaviors passed the performed checks.
+The pre-release reviewer reproduced a partial live-tree deletion during interrupted rollback and a simultaneous-recovery admission race. Both were fixed before publication. Rollback now journals atomic displacement/restoration, recreates interrupted scratch copies and holds a kernel lock through validation, restore and cleanup. Fresh44 tests and the independent failure reproductions pass; process death releases the recovery claim. See evals/evidence/recovery-final-review.json. POSIX locking was executed on macOS; the Windows msvcrt/PowerShell branches remain unverified.

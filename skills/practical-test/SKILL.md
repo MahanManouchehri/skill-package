@@ -1,11 +1,11 @@
 ---
 name: practical-test
-description: "Perform strict browser-based acceptance testing for all work implemented in the current Codex conversation. Activate when the user explicitly types /practical-test; do not use for code review or for implementing fixes."
+description: "Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes."
 ---
 
 # Practical acceptance testing
 
-When the user invokes `/practical-test`, act as an independent, strict QA and acceptance-testing agent for **all work implemented during the current conversation**. This is a verification phase: do not modify application source, dependencies, project configuration, database schema/data, Git history, commits, deployment, or server state.
+When directly requested in natural language or via `$practical-test` / `/practical-test`, or contextually routed by `steps` for a meaningful implemented UI flow with a confirmed safe running target, perform strict browser acceptance testing. A skill is an `IN_PROCESS` workflow unless a genuinely separate supported worker performs it; do not claim independence merely from loading it. Default an explicit whole-conversation request to **all implemented work in this conversation**; a scoped `steps` assignment may test only its identified requirements. Do not modify application source, dependencies, project configuration, database schema, Git history, deployment, or server state; test-data changes through authorized safe UI flows are governed below.
 
 ## Reconstruct the acceptance scope
 
@@ -15,15 +15,15 @@ Create an internal requirement ledger for every item that was both requested and
 
 ## Obtain the target
 
-After reconstructing the ledger, first inspect the **same invocation message** for one explicit, valid `http://` or `https://` application URL. This includes a plain URL, a Markdown link, or a URL supplied alongside `$practical-test` or `/practical-test`. If exactly one is supplied, use it as the target immediately and continue the practical-test workflow; do **not** ask for the URL again. Treat it as user-provided, not guessed.
+After reconstructing the ledger, find a valid `http://` or `https://` application URL from the current request, a previously confirmed target in this conversation, or the verified target passed by `steps`. Confirm that it still belongs to the requested application, is running, and permits the intended tests. Use a single unambiguous confirmed target without asking again. If several targets conflict, resolve only that ambiguity. A historical URL without confirmed project/environment ownership is insufficient.
 
-Only when the invocation message contains no usable URL, ask the user exactly for the URL of the already-running application, in Persian:
+Only when no usable confirmed target can be found, ask for the URL of the already-running application, in Persian:
 
 `آدرس پروژه‌ای که الان ران است را بده تا تست عملی را شروع کنم. خودم پروژه را مجدداً ران یا ری‌استارت نمی‌کنم.`
 
-Do not guess a URL, hostname, or port—even if one appeared earlier. Once the user supplies the URL, whether in the initial invocation or a follow-up, do not ask them to invoke this skill again.
+Do not guess a URL, hostname, or port. Once the user supplies or confirms the URL, do not ask them to invoke this skill again. Browser access alone does not authorize writes on a production target; use read-only flows or obtain the specifically missing permission for meaningful side effects.
 
-Never start, stop, restart, kill, replace, or deploy the application server. In particular, never run `manage.py runserver`, `flask run`, `uvicorn`, Node package dev/start commands, Docker Compose startup, IIS/PHP development servers, or equivalents. Never run migrations for this test.
+Never start, stop, restart, kill, replace, or deploy the application server as a side effect of this test. In particular, never run `manage.py runserver`, `flask run`, `uvicorn`, Node package dev/start commands, Docker Compose startup, IIS/PHP development servers, or equivalents. Never run migrations for this test. If service management is separately requested and permitted, leave this verification phase and have `steps` handle that distinct operation before confirming a fresh target.
 
 ## Perform real browser acceptance tests
 
@@ -51,7 +51,7 @@ Do not fix failures during this run and do not weaken a requirement to match the
 - `NEEDS_APPROVAL`: testing needs a potentially destructive or externally impactful action.
 - `NOT_APPLICABLE`: only when the requirement genuinely cannot apply to the implemented result.
 
-Continue with independent scenarios when another one is blocked. Distinguish implementation failures from environment problems and pre-existing/unrelated runtime issues when possible.
+Continue with independent scenarios when another one is blocked. Distinguish implementation failures from environment problems and pre-existing/unrelated runtime issues when possible. Reuse fresh test-engineering/regression evidence for context, but only actual browser observations count as practical verification; send the observed results to `final-check` for the overall completion judgment.
 
 For every `FAIL`, preserve enough evidence to reproduce it: requirement ID and wording, exact test, expected and actual behavior, reproduction steps, affected URL/page, relevant console/network evidence, screenshot/evidence reference when available, and practical severity (`Critical`, `High`, `Medium`, or `Low`).
 

@@ -1,0 +1,136 @@
+{
+  "observed_utc": "2026-11-14T03:50:09.667000+00:00",
+  "validator_sha256": "ee6dba90f44d37171c5a6edb8095979c54919ff6822c1a907afca2e78c48738c",
+  "checks": [
+    {
+      "name": "apple-design",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "architecture-review",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "backup-recovery",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "compatible-response",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "db-impact",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "devil",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "docs-maintenance",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "final-check",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "full-plan",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "hand-off",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "integration-reliability",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "load-testing",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "maintenance-evolution",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "multiple-pov",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "natural-persian-writing",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "performance-review",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "practical-test",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "regression-check",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "release-management",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "root-cause",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "security-assurance",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "skill-evals",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "steps",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "technical-proposal-discovery",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "test-engineering",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Security Assurance"
+  short_description: "Targeted security checks and requested full audits"
+  default_prompt: "Use $security-assurance to review the security surfaces affected by this change."
+
+policy:
+  allow_implicit_invocation: true

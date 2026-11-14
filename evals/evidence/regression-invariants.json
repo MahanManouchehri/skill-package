@@ -1,0 +1,9 @@
+{
+  "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+  "files_match_prepared": true,
+  "owner_case_bank_exact": true,
+  "case_count": 60,
+  "managed_entries_unchanged": true,
+  "managed_trees_unchanged": true,
+  "system_exclusions_unchanged": true
+}

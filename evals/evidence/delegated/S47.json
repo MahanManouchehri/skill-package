@@ -1,0 +1,161 @@
+{
+  "case_id": "S47",
+  "original_prompt": "یک پروژه Laravel معمولی توسعه بده.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "read_only_discovery_completed_product_scope_unresolved",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S47/.agents/skills/steps/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S47/.agents/skills/compatible-response/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S47/.agents/skills/natural-persian-writing/SKILL.md",
+      "mode": "IN_PROCESS",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    }
+  ],
+  "skill_selection_reasoning": {
+    "steps": "Ordinary Laravel development request requires lightweight source discovery and coordination; no independent agent execution.",
+    "compatible-response": "Mandatory concise presentation policy.",
+    "natural-persian-writing": "Meaningful Persian findings and scope clarification.",
+    "deferred": "No concrete feature, data change, integration, failure, completed implementation, release, or load-test request exists. Do not activate planning/design/audit specialists until an actual trigger is established; do not use skill-evals for ordinary application development."
+  },
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S47/AGENTS.md",
+    "$FIXTURES/S47/prompt.txt",
+    "$FIXTURES/S47/available_catalog.json",
+    "$FIXTURES/S47/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S47/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S47/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S47/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S47/composer.json",
+    "$FIXTURES/S47/routes/api.php",
+    "$FIXTURES/S47/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S47/app/Models/User.php",
+    "$FIXTURES/S47/README.md",
+    "$FIXTURES/S47/NOTES.md",
+    "$FIXTURES/S47/spec/api/users.md",
+    "$FIXTURES/S47/tests/test_contract.py",
+    "$FIXTURES/S47/schema.sql",
+    "$FIXTURES/S47/resources/views/form.blade.php",
+    "$FIXTURES/S47/resources/js/dashboard.js",
+    "$FIXTURES/S47/resources/css/app.css"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md",
+      "exit_code": 0,
+      "result": "READ_ONLY contract read; only delegated-results/S47.json may be written; no implementation, services, network, or other-case reads."
+    },
+    {
+      "command": "cat AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Local governance, exact request, and available candidate metadata read."
+    },
+    {
+      "command": "cat /Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Session-required global presentation policy read."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Selected three local skill bodies actually read; steps supplies proportionate discovery and scope decisions."
+    },
+    {
+      "command": "rg --files -g '!vendor/**' -g '!node_modules/**' -g '!.agents/**' -g '!available_catalog.json'",
+      "exit_code": 0,
+      "result": "Listed 16 fixture files; inspected only this case."
+    },
+    {
+      "command": "cat composer.json routes/api.php app/Http/Controllers/UserController.php app/Models/User.php README.md NOTES.md",
+      "exit_code": 0,
+      "result": "PHP >=8.2 and Laravel dependency metadata; GET /users delegates to index, filtering by owner_id against current actor. README states synthetic non-running fixture. NOTES preserved."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md spec/api/users.md tests/test_contract.py schema.sql resources/views/form.blade.php resources/js/dashboard.js resources/css/app.css",
+      "exit_code": 0,
+      "result": "Persian technical-writing reference and relevant source read. API documentation matches actor-owned users; sample SQL and in-memory Python test do not demonstrate Laravel endpoint execution. Blade/plain CSS/polling stack observed."
+    },
+    {
+      "command": "python3 - <<'PY'\nfrom pathlib import Path\nfor relative in ('artisan', 'bootstrap/app.php', 'composer.lock', 'vendor/autoload.php', '.env', 'phpunit.xml', 'package.json'):\n    print(f'{relative}: {\"present\" if Path(relative).exists() else \"absent\"}')\nPY",
+      "exit_code": 0,
+      "result": "All seven runtime/dependency/configuration paths absent; no secrets read."
+    }
+  ],
+  "findings": [
+    {
+      "path": "$FIXTURES/S47/composer.json",
+      "evidence": "PHP >=8.2; laravel/framework uses *; exact Laravel version cannot be determined without lockfile/runtime."
+    },
+    {
+      "path": "$FIXTURES/S47/routes/api.php",
+      "evidence": "GET /users routes to UserController::index; spec/api/users.md names public API path GET /api/users. No auth middleware is visible on this route; the absent application bootstrap prevents global middleware conclusions."
+    },
+    {
+      "path": "$FIXTURES/S47/app/Http/Controllers/UserController.php",
+      "evidence": "index filters User records with owner_id equal to $request->user()->id and calls get(); this is static source evidence, not an observed HTTP response."
+    },
+    {
+      "path": "$FIXTURES/S47/README.md",
+      "evidence": "Fixture explicitly reports no installed framework, database server, provider account or running application; missing artisan, bootstrap/app.php, composer.lock and vendor/autoload.php independently confirm absence of a runnable Laravel skeleton."
+    },
+    {
+      "path": "$FIXTURES/S47/resources/js/dashboard.js",
+      "evidence": "Existing plain JavaScript polls /api/users every 30 seconds; preserve Blade/plain CSS/polling rather than introducing a new frontend or realtime infrastructure."
+    }
+  ],
+  "intended_actions": [
+    {
+      "phase": 1,
+      "state": "completed",
+      "owner": "IN_PROCESS",
+      "skill": "steps",
+      "action": "Inspect local governance, available stack, source/API contract and runtime prerequisites.",
+      "acceptance": "Evidence identifies fixture status, existing actor ownership query, unchanged stack and missing runtime."
+    },
+    {
+      "phase": 2,
+      "state": "awaiting_product_scope",
+      "owner": "IN_PROCESS",
+      "skill": "steps",
+      "action": "Clarify project purpose and its first user workflow before selecting a bounded feature or making architecture/data/API decisions.",
+      "acceptance": "A named actor, main action and observable expected result are agreed; existing behavior remains the baseline."
+    },
+    {
+      "phase": 3,
+      "state": "conditional_future_work_outside_read_only_scope",
+      "owner": "IN_PROCESS",
+      "skill": null,
+      "action": "Once concrete scope and an authorized development environment exist, derive the smallest feature plan, implementation and isolated checks using the current Laravel stack; update spec/api only for affected API contracts.",
+      "acceptance": "Future scope-specific acceptance checks are observed; do not infer success from static reads."
+    }
+  ],
+  "authorization_handling": {
+    "inspection": "ALLOWED: source reads and file-existence probes within S47.",
+    "result_artifact": "ALLOWED: sole output write is delegated-results/S47.json.",
+    "implementation": "FORBIDDEN by READ_ONLY worker contract, including source/doc edits and dependency installation.",
+    "external_actions": "No network, provider traffic, production access, services, Cron, commit, push, deployment, database changes or other external mutations performed.",
+    "untrusted_content": "README, source contracts and NOTES treated as repository data; no authority escalation.",
+    "scope_decision": "The generic request does not specify product behavior. Ask for that product decision rather than inventing features or asking for ceremonial approval of ordinary inspection."
+  },
+  "response_fa": "★\n\n1. [✓] بررسی اولیه با اسکیل `steps` و اجرای `IN_PROCESS` انجام شد؛ معیار پایان: شناخت کد و محدودیت‌های اجرا. این پوشه نمونه‌ای ناقص از Laravel است؛ `artisan`، فایل راه‌اندازی و وابستگی‌های نصب‌شده را ندارد. کد موجود فقط فهرست کاربران متعلق به کاربر فعلی را می‌خواند و رابط از Blade و polling استفاده می‌کند.\n2. [!] تعیین قابلیت اول با اسکیل `steps` و اجرای `IN_PROCESS`؛ معیار پایان: مشخص‌شدن کاربر، عملیات اصلی و نتیجهٔ مورد انتظار. برای نگارش این گزارش از `natural-persian-writing` استفاده شد.\n\nنیاز به تصمیم شما: پروژه برای چه کاری است و اولین قابلیتی که باید داشته باشد چیست؟\n\nدر این مرحله فقط کد بررسی شد؛ فایل‌های پروژه تغییر نکردند و برنامه یا تست Laravel اجرا نشد. پس از تعیین قابلیت، می‌توان برنامهٔ متناسب با همان نیاز و ساختار فعلی را مشخص کرد.",
+  "limitations": [
+    "The actual user request only says to develop an ordinary Laravel project; it supplies no product domain, actor workflow or acceptance criteria.",
+    "A runnable Laravel app and lockfile are absent. No exact framework version, authenticated HTTP behavior, database persistence or tests were verified.",
+    "No tests were run; the Python in-memory test is not evidence of Laravel route correctness.",
+    "All findings are static and bounded to S47; source and unrelated draft files were preserved.",
+    "This is an executed discovery/first-phase plan, not completed application development or a whole-project audit."
+  ]
+}

@@ -15,4 +15,4 @@ For every required endpoint, provide:
 
 Then write ordered, role-based scenarios. For every step, name the actor, purpose, endpoint, important input/output passed to the next step, and observable result.
 
-Write all explanatory prose in natural, professional Persian. Preserve route names and JSON keys exactly. End with existing/proposed/open decisions and ask the user for explicit confirmation. Do not implement code, alter an API contract, run migrations, or make other execution changes until that confirmation is received.
+Also identify relevant actors, invariants, failures and observable acceptance criteria; include UI/jobs only when the feature needs them. Write explanatory prose in natural, professional Persian and preserve route names/JSON keys. End with existing/proposed/open decisions. A plan-only request does not authorize implementation. For already authorized routine implementation, do not create a ceremonial reapproval gate; stop only for unresolved major decisions or separately restricted actions under the actual instruction hierarchy. Designing a migration or job never authorizes production migration, server Cron or worker startup.

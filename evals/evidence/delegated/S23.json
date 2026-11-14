@@ -1,0 +1,299 @@
+{
+  "case_id": "S23",
+  "original_prompt": "API داخلی Laravel کند شده؛ علت N+1 و Query Plan را بررسی کن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "performance-review",
+      "path": "$FIXTURES/S23/.agents/skills/performance-review/SKILL.md",
+      "sha256": "00aa8da834b8be3fc0244a8d2a9411ba233b19a3b4d018c651250166a960966e",
+      "reason": "Direct request to diagnose an internal Laravel API, N+1 and query plans; bounded ENDPOINT_REVIEW of the only visible API route with QUERY_PLAN_INDEX technique, no FIX_MODE."
+    },
+    {
+      "name": "root-cause",
+      "path": "$FIXTURES/S23/.agents/skills/root-cause/SKILL.md",
+      "sha256": "b8822956da7ec1b0def65047ccac583089789c21fc3630d3d3012c23e29a8b2e",
+      "reason": "Reported unexplained slowness requires hypotheses and honest cause confirmation before recommending a fix."
+    },
+    {
+      "name": "hand-off",
+      "path": "$FIXTURES/S23/.agents/skills/hand-off/SKILL.md",
+      "sha256": "c6a3248bcd8994a653a603920c867a77d24b24a0051fff37f2dad35ce15be373",
+      "reason": "Applicable session AGENTS.md auto-routes conceptual debugging of existing repository code; bounded EXPLORE, no documentation artifacts."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S23/.agents/skills/compatible-response/SKILL.md",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+      "reason": "Global presentation instruction; supporting skill only."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S23/.agents/skills/natural-persian-writing/SKILL.md",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+      "reason": "Required standard for the meaningful Persian findings and response."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S23/AGENTS.md",
+    "$FIXTURES/S23/prompt.txt",
+    "$FIXTURES/S23/available_catalog.json",
+    "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/performance-review/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/root-cause/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/hand-off/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S23/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S23/.agents/skills/hand-off/references/evidence-coverage.md",
+    "$FIXTURES/S23/composer.json",
+    "$FIXTURES/S23/routes/api.php",
+    "$FIXTURES/S23/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S23/app/Models/User.php",
+    "$FIXTURES/S23/schema.sql",
+    "$FIXTURES/S23/README.md",
+    "$FIXTURES/S23/NOTES.md",
+    "$FIXTURES/S23/spec/api/users.md",
+    "$FIXTURES/S23/tests/test_contract.py",
+    "$FIXTURES/S23/snapshot.json",
+    "$FIXTURES/S23/resources/js/dashboard.js",
+    "$FIXTURES/S23/resources/views/form.blade.php",
+    "$FIXTURES/S23/resources/css/app.css"
+  ],
+  "commands": [
+    {
+      "command": "pwd && rg --files -g 'WORKER_CONTRACT.md' -g 'AGENTS.md' -g 'prompt.txt' -g 'available_catalog.json'",
+      "cwd": "$FIXTURES",
+      "exit_code": 0,
+      "result": "Located worker contract and S23 instruction files. This first inventory also printed sibling case file names; no sibling contents were opened."
+    },
+    {
+      "command": "cat WORKER_CONTRACT.md",
+      "cwd": "$FIXTURES",
+      "exit_code": 0,
+      "result": "Read READ_ONLY scope and execution-evidence output contract."
+    },
+    {
+      "command": "cat AGENTS.md prompt.txt available_catalog.json",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read local restrictions, exact request and candidate skill catalog."
+    },
+    {
+      "command": "cat /Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read session-mandated global presentation policy."
+    },
+    {
+      "command": "cat .agents/skills/performance-review/SKILL.md .agents/skills/root-cause/SKILL.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read diagnostic specialist bodies; combined tool output was truncated at root-cause, so root-cause was reread separately."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/hand-off/SKILL.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read local presentation, Persian and bounded source-investigation bodies."
+    },
+    {
+      "command": "rg --files -g '!vendor/**' -g '!node_modules/**' -g '!.agents/**'",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Scoped inventory located the small Laravel source fixture, schema, API contract and a Python test."
+    },
+    {
+      "command": "cat .agents/skills/root-cause/SKILL.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read complete root-cause body; diagnosis authority does not permit modifications."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read technical Persian reference."
+    },
+    {
+      "command": "nl -ba composer.json && nl -ba routes/api.php && nl -ba app/Http/Controllers/UserController.php && nl -ba app/Models/User.php && nl -ba schema.sql",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Verified route-to-controller-to-model chain, owner filter and unbounded get; model has no visible relations; supplied schema has only primary-key index."
+    },
+    {
+      "command": "nl -ba README.md && nl -ba NOTES.md && nl -ba spec/api/users.md && nl -ba tests/test_contract.py && cat snapshot.json",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "README explicitly says no runtime/framework/database server is installed. API contract is actor ownership; Python test concerns duplicate phones, not API performance. Snapshot is metadata, not runtime proof."
+    },
+    {
+      "command": "rg -n 'UserController|User::|owner_id|with\\(|load\\(|belongsTo|hasMany|hasOne|paginate|/users|DB::|query|foreach|->get\\(' app routes resources tests spec schema.sql composer.json README.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Found one visible retrieval site and client polling every 30000 ms; no per-row relation loading found in examined scope."
+    },
+    {
+      "command": "nl -ba resources/js/dashboard.js && nl -ba resources/views/form.blade.php && nl -ba resources/css/app.css && ls -ld vendor artisan composer.lock database config storage 2>/dev/null",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 1,
+      "result": "Read resources; polling is present in source, not proven active in runtime. Listed runtime/dependency paths were absent; ls diagnostics were suppressed by this command."
+    },
+    {
+      "command": "cat .agents/skills/performance-review/SKILL.md && shasum -a 256 .agents/skills/performance-review/SKILL.md .agents/skills/root-cause/SKILL.md .agents/skills/hand-off/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Reread complete performance body and recorded selected skill hashes."
+    },
+    {
+      "command": "cat .agents/skills/hand-off/references/evidence-coverage.md",
+      "cwd": "$FIXTURES/S23",
+      "exit_code": 0,
+      "result": "Read evidence labels and source-versus-runtime coverage limits."
+    }
+  ],
+  "scope": {
+    "mode": "ENDPOINT_REVIEW",
+    "technique": "QUERY_PLAN_INDEX",
+    "target": "Only visible /users route; spec/api/users.md documents GET /api/users. Runtime route prefix/registration is not verifiable.",
+    "source_chain": [
+      "routes/api.php:3",
+      "app/Http/Controllers/UserController.php:4",
+      "app/Models/User.php:3"
+    ],
+    "fix_mode": false
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "INFO",
+      "confidence": "STRONG_EVIDENCE",
+      "evidence_label": "SOURCE_VERIFIED",
+      "category": "N_PLUS_ONE",
+      "finding": "No N+1 pattern found in examined source. UserController::index contains one Eloquent retrieval, and User has no visible relationship definitions or per-row serializer access. Runtime query count is unverified; authentication or missing framework wiring could add queries.",
+      "sources": [
+        "routes/api.php:2-3",
+        "app/Http/Controllers/UserController.php:3-4",
+        "app/Models/User.php:2-3"
+      ],
+      "hypothesis_status": "UNCONFIRMED"
+    },
+    {
+      "id": "F2",
+      "severity": "MEDIUM",
+      "confidence": "STRONG_EVIDENCE",
+      "evidence_label": "SOURCE_VERIFIED",
+      "category": "PAGINATION",
+      "finding": "The actor-owned collection is fetched with get() and no limit/projection. Cost in rows, hydration, memory and response size may grow with the actor dataset; actual dataset and impact are unknown.",
+      "sources": [
+        "app/Http/Controllers/UserController.php:4",
+        "spec/api/users.md:1"
+      ],
+      "hypothesis_status": "UNCONFIRMED"
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "confidence": "POTENTIAL",
+      "evidence_label": "INFERRED",
+      "category": "INDEX",
+      "finding": "Supplied users schema declares no owner_id index while the visible query filters on owner_id. A scan is plausible at scale, but there is no actual plan, live index inventory, selectivity or database engine evidence. Do not treat an index as a decided fix.",
+      "sources": [
+        "schema.sql:1",
+        "app/Http/Controllers/UserController.php:4"
+      ],
+      "hypothesis_status": "UNCONFIRMED"
+    },
+    {
+      "id": "F4",
+      "severity": "INFO",
+      "confidence": "POTENTIAL",
+      "evidence_label": "SOURCE_VERIFIED",
+      "category": "QUERY_SHAPE",
+      "finding": "dashboard.js contains polling every 30 seconds. Actual inclusion, concurrent clients and contribution to latency are unverified; preserve existing polling during diagnosis.",
+      "sources": [
+        "resources/js/dashboard.js:1"
+      ],
+      "hypothesis_status": "UNCONFIRMED"
+    }
+  ],
+  "root_cause": {
+    "status": "NOT CONFIRMED",
+    "fix_status": "FIX_PROHIBITED",
+    "basis": "Static code risks exist, but no runtime SQL, query count, timing, real index inventory or query plan is available."
+  },
+  "baseline": {
+    "status": "Not sufficiently measured",
+    "latency": null,
+    "query_count": null,
+    "query_plan": null,
+    "row_count": null,
+    "database_engine": null,
+    "runtime_environment": "Unavailable synthetic fixture",
+    "laravel_version": "Unknown; composer uses wildcard framework requirement"
+  },
+  "intended_actions": [
+    {
+      "order": 1,
+      "action": "Obtain a specific slow request and a permitted isolated/test runtime using the actual target database engine and representative non-sensitive data; establish comparable input, tenant/owner, cache state and dataset.",
+      "execution": "Deferred; runtime absent and worker scope forbids service starts/network."
+    },
+    {
+      "order": 2,
+      "action": "Capture actual SQL, safe bindings, per-request query count/times, response latency and size, and memory for a small representative request. Inspect serializer/relations/authentication for per-row queries if real code differs.",
+      "execution": "Not run; no synthetic performance claims."
+    },
+    {
+      "order": 3,
+      "action": "Read actual index inventory, cardinality/selectivity and normal estimated EXPLAIN for the same SQL; distinguish estimated plan from EXPLAIN ANALYZE, which executes the query.",
+      "execution": "Not run; actual database and query evidence unavailable."
+    },
+    {
+      "order": 4,
+      "action": "Choose the smallest measured remedy only after diagnosis. If an owner_id index becomes justified, perform db-impact before any schema execution; if pagination/projection changes the response contract, plan it explicitly while preserving owner isolation and polling behavior.",
+      "execution": "Conditional recommendation only; no index, cache, worker or pagination introduced.",
+      "expected_benefit": "Unknown until measured",
+      "implementation_cost": "MEDIUM",
+      "regression_risk": "MEDIUM",
+      "tradeoff": "Index write/storage costs or pagination response-contract changes must be assessed."
+    },
+    {
+      "order": 5,
+      "action": "If a later fix is separately authorized, compare the identical workload before/after and verify owner isolation and response compatibility with focused regression checks.",
+      "execution": "Future verification plan; no tests executed now."
+    }
+  ],
+  "authorization_handling": {
+    "effective_mode": "READ_ONLY",
+    "allowed": [
+      "Inspect S23 source and candidate skill bodies",
+      "Write this execution evidence JSON only"
+    ],
+    "prohibited": [
+      "Application/config/test/schema edits",
+      "Dependency installs",
+      "Network/provider/production access",
+      "Services, Cron, load generation",
+      "Commit, push or deploy"
+    ],
+    "actions_taken": "Read local files and hashed selected skill bodies. No external mutations, queries, tests or service starts. Only authorized evidence file written.",
+    "scope_note": "Initial file-name inventory was broader than needed and printed sibling case paths. No sibling contents or expectation-bank contents were accessed.",
+    "not_selected": {
+      "steps": "A directly requested diagnostic specialist owns this read-only investigation; no implementation orchestration needed.",
+      "load-testing": "No explicit request for load/stress/concurrent traffic.",
+      "db-impact": "No concrete schema change selected or executed; conditional route before any future index execution.",
+      "full-plan": "No feature or API behavior change authorized.",
+      "test-engineering": "No changed application behavior and no runnable Laravel runtime.",
+      "release-management": "No release action requested."
+    }
+  },
+  "response_persian": "بررسی ایستای مسیر موجود API انجام شد؛ علت کندی هنوز تأیید نشده است (`Root Cause: NOT CONFIRMED`، نتیجهٔ بررسی: `INCOMPLETE`).\n\nمسیر قابل مشاهده `routes/api.php:3 → UserController::index → User` است. متد در `app/Http/Controllers/UserController.php:4` کاربران متعلق به کاربر فعلی را با `get()` می‌خواند. در مدل و مسیر بررسی‌شده رابطه یا دسترسی تکراری به رابطه دیده نشد؛ بنابراین فعلاً شاهدی برای N+1 نداریم و شمار واقعی کوئری‌ها اندازه‌گیری نشده است.\n\nدو فرضیه باقی است: دریافت همهٔ رکوردهای مالک بدون محدودیت (`STRONG_EVIDENCE` برای الگوی کد، اثر عملی نامشخص) و احتمال اسکن جدول به‌دلیل نبود ایندکس `owner_id` در `schema.sql:1` (`POTENTIAL`؛ ایندکس‌های محیط واقعی و Query Plan موجود نیست). polling سی‌ثانیه‌ای نیز در `resources/js/dashboard.js:1` دیده می‌شود، اما فعال‌بودن و سهم آن در بار تأیید نشده است.\n\nقدم بعدی، در محیط آزمایشی مجاز با موتور و دادهٔ نماینده، ثبت SQL و پارامترهای بی‌خطر، تعداد و زمان کوئری‌ها، زمان پاسخ، اندازهٔ خروجی و حافظه برای یک درخواست مشخص است. سپس باید ایندکس‌ها، تعداد رکوردها و selectivity بررسی و `EXPLAIN` معمولی همان SQL تحلیل شود؛ `EXPLAIN ANALYZE` اجرای واقعی کوئری است و اینجا اجرا نشده است. فقط پس از این شواهد می‌توان اصلاح کوئری یا پیشنهاد ایندکس را انتخاب کرد؛ تغییر ایندکس به بررسی `db-impact` و تغییر قرارداد صفحه‌بندی به برنامهٔ جداگانه نیاز دارد. شرط مالکیت باید حفظ شود.\n\nطبق `README.md:1` این نمونه runtime و پایگاه دادهٔ اجرایی ندارد؛ نسخهٔ Laravel نیز در composer ثابت نشده است. هیچ تست، کوئری، سرویس یا ترافیکی اجرا نشد و فایل‌های برنامه تغییر نکردند (`FIX_PROHIBITED` در محدودهٔ READ_ONLY). ریسک باقی‌مانده: `MEDIUM`، چون اثر حجم داده و علت واقعی کندی نامعلوم است؛ صرفه‌جویی یا بهبود سرعت قابل ادعا نیست.",
+  "limitations": [
+    "No framework, running application or database server installed per README; vendor, artisan, composer.lock, database, config and storage paths were absent in the explicit check.",
+    "No slow-request sample, SLA, real data volume, query log, latency baseline, plan or index inventory available.",
+    "Supplied schema and seed rows do not establish production engine, cardinality or performance.",
+    "No N+1 pattern found only in examined scope; runtime middleware, dynamic wiring and absent code remain unverified.",
+    "No tests or EXPLAIN executed. Existing Python duplicate-phone test cannot substantiate Laravel performance.",
+    "No source or docs artifacts written; only this execution evidence file."
+  ]
+}

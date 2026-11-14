@@ -1,0 +1,7 @@
+interface:
+  display_name: "Test Engineering"
+  short_description: "Behavior-driven unit, integration and contract tests"
+  default_prompt: "Use $test-engineering to implement and run focused tests for the requested behavior."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,144 @@
+{
+  "case_id": "S01",
+  "original_prompt": "توی یک صفحه Blade رنگ یک دکمه را عوض کن.",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S01/.agents/skills/steps/SKILL.md",
+      "reason": "Coordinate a trivial cosmetic implementation request with one inspection phase and no specialist audit."
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S01/.agents/skills/compatible-response/SKILL.md",
+      "reason": "Mandatory concise, adaptive presentation."
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S01/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "Required for the Persian response."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/S01/AGENTS.md",
+    "$FIXTURES/S01/prompt.txt",
+    "$FIXTURES/S01/available_catalog.json",
+    "$FIXTURES/S01/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S01/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S01/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S01/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S01/resources/views/form.blade.php",
+    "$FIXTURES/S01/resources/css/app.css",
+    "$FIXTURES/S01/composer.json",
+    "$FIXTURES/S01/resources/js/dashboard.js"
+  ],
+  "commands": [
+    {
+      "command": "pwd",
+      "exit_code": 0,
+      "result": "$FIXTURES/S01"
+    },
+    {
+      "command": "cat AGENTS.md",
+      "exit_code": 0,
+      "result": "Read READ_ONLY restrictions; no source edits, dependencies, services, external traffic or production actions."
+    },
+    {
+      "command": "cat prompt.txt",
+      "exit_code": 0,
+      "result": "توی یک صفحه Blade رنگ یک دکمه را عوض کن."
+    },
+    {
+      "command": "cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read supplied candidate descriptions and paths; selected three relevant skills."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md",
+      "exit_code": 0,
+      "result": "Read full presentation skill body."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read full Persian-writing skill body."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "exit_code": 0,
+      "result": "Read full coordinator body; trivial color changes skip ui-ux-pro-max, full-plan and broad audits."
+    },
+    {
+      "command": "rg --files -g '!.agents/**'",
+      "exit_code": 0,
+      "result": "Listed fixture-local application files; located resources/views/form.blade.php and resources/css/app.css."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read technical Persian guidance."
+    },
+    {
+      "command": "nl -ba resources/views/form.blade.php",
+      "exit_code": 0,
+      "result": "Line 1 contains a form with <button class=\"primary\">ثبت</button>."
+    },
+    {
+      "command": "nl -ba resources/css/app.css",
+      "exit_code": 0,
+      "result": "Line 1: .primary{background:#2563eb}.card{margin:8px}"
+    },
+    {
+      "command": "cat composer.json",
+      "exit_code": 0,
+      "result": "{\"name\":\"fixture/app\",\"require\":{\"php\":\">=8.2\",\"laravel/framework\":\"*\"}}"
+    },
+    {
+      "command": "rg --files --hidden -g AGENTS.md -g '!.agents/**' -g '!.git/**' resources",
+      "exit_code": 1,
+      "result": "No additional AGENTS.md files under resources."
+    },
+    {
+      "command": "rg -n 'primary|app\\.css|@vite|mix\\(' resources",
+      "exit_code": 0,
+      "result": "Matched only the Blade button and its CSS declaration; no other primary usage or asset-loading reference found within resources."
+    },
+    {
+      "command": "rg --files --hidden -g 'package.json' -g 'vite.config.*' -g 'webpack.mix.js' -g 'artisan' -g 'phpunit.xml*' -g '!.agents/**' -g '!.git/**' .",
+      "exit_code": 1,
+      "result": "No matching local Laravel entry point, frontend build configuration or PHPUnit configuration found."
+    },
+    {
+      "command": "python3 -c (execution-record writer and read-back validation)",
+      "exit_code": 0,
+      "result": "Created only ../delegated-results/S01.json; re-read JSON and checked exact original_prompt against prompt.txt."
+    }
+  ],
+  "intended_actions": [
+    "First-phase READ_ONLY investigation is complete: the single observed Blade submit button uses .primary with background #2563eb.",
+    "Resolve the target color before a later authorized modifying phase; the original request does not specify it.",
+    "In that later phase, replace only .primary's background value in resources/css/app.css, preserving Blade/Laravel and all form behavior; no framework, dependency or design-system changes.",
+    "Review the narrow diff and, on a confirmed safe existing runtime, visually check the intended color, text contrast and existing focus/hover behavior. Do not start a service as part of this read-only phase."
+  ],
+  "authorization_handling": {
+    "effective_mode": "READ_ONLY",
+    "allowed": "Local file inspection and the explicitly authorized execution record only.",
+    "source_edits": "Not performed; deferred because the current phase prohibits them.",
+    "external_state": "No network, provider calls, services, Cron, production access, installs, commits, push or deploy.",
+    "approval": "No ceremonial approval requested. The unresolved target color is a product detail, not an approval requirement invented by a skill.",
+    "record_exception": "Only ../delegated-results/S01.json is written."
+  },
+  "concise_persian_response": "بررسی انجام شد؛ فایلی از برنامه تغییر نکرد. دکمهٔ «ثبت» در resources/views/form.blade.php:1 کلاس primary دارد و رنگ آن در resources/css/app.css:1 برابر #2563eb است. رنگ مقصد در درخواست مشخص نشده است. پس از تعیین آن، کوچک‌ترین تغییر جایگزینی همین مقدار رنگ و بررسی نمایش و کنتراست دکمه در محیط موجود است. این مرحله فقط‌خواندنی بود و بررسی مرورگری انجام نشد.",
+  "limitations": [
+    "No target color is specified in the original prompt.",
+    "No application source was modified, so the requested visual change has not been implemented.",
+    "No browser/runtime verification or tests were run; no confirmed running target exists in the supplied evidence.",
+    "Within the supplied fixture, no artisan, package.json, Vite/Mix configuration or PHPUnit configuration was found; asset loading and rendered appearance remain unverified."
+  ],
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "scope_assessment": {
+    "task_criticality": "★",
+    "workload": "LOW",
+    "execution_owner": "IN_PROCESS",
+    "phase": "READ_ONLY inspection and proportionate next actions"
+  }
+}

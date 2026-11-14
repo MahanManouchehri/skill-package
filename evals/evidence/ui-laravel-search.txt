@@ -1,0 +1,57 @@
+COMMAND ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3", "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py", "form validation errors", "--stack", "laravel", "--json"]
+CWD $WORKSPACE/work/v3-evaluation/existing-upgrades
+EXIT 0
+STDOUT
+{
+  "domain": "stack",
+  "stack": "laravel",
+  "query": "form validation errors",
+  "file": "stacks/laravel.csv",
+  "count": 3,
+  "results": [
+    {
+      "Category": "Forms",
+      "Guideline": "Display validation errors with @error",
+      "Description": "Use the @error directive for inline field-level error messages",
+      "Do": "@error('field') to show per-field messages",
+      "Don't": "Dump $errors->all() in one block at top of form",
+      "Code Good": "@error('email') <p class=\"text-red-500\">{{ $message }}</p> @enderror",
+      "Code Bad": "@foreach($errors->all() as $e) {{ $e }} @endforeach",
+      "Severity": "Medium",
+      "Docs URL": "https://laravel.com/docs/validation#quick-displaying-the-validation-errors",
+      "Applies To": "laravel 13.x",
+      "Status": "active",
+      "Verified At": "2026-08-13"
+    },
+    {
+      "Category": "Forms",
+      "Guideline": "Preserve old input on validation failure",
+      "Description": "Use old() to repopulate form fields after server-side error redirect",
+      "Do": "old('field') as default value on all form inputs",
+      "Don't": "Empty form fields when validation fails",
+      "Code Good": "<input name=\"email\" value=\"{{ old('email') }}\">",
+      "Code Bad": "<input name=\"email\">",
+      "Severity": "High",
+      "Docs URL": "https://laravel.com/docs/validation#repopulating-forms",
+      "Applies To": "laravel 13.x",
+      "Status": "active",
+      "Verified At": "2026-08-13"
+    },
+    {
+      "Category": "Inertia.js",
+      "Guideline": "Use useForm for form state and submission",
+      "Description": "Inertia's useForm manages progress errors and transforms",
+      "Do": "useForm for all page-level forms, form.post() for submit",
+      "Don't": "Axios/fetch for form submissions on Inertia pages",
+      "Code Good": "const form = useForm({ name: '' }); form.post('/users');",
+      "Code Bad": "axios.post('/users', { name });",
+      "Severity": "High",
+      "Docs URL": "https://laravel.com/docs/13.x/starter-kits#inertia",
+      "Applies To": "laravel 13.x",
+      "Status": "active",
+      "Verified At": "2026-08-13"
+    }
+  ]
+}
+
+STDERR

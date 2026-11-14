@@ -1,74 +1,79 @@
-# skill-package v3.0
+# skill-package v3.1
 
-Private, verifiable snapshot of the current Codex skill environment. The source skills are preserved without behavioral rewrites. This is a file backup and restore bundle, not an account clone.
+A verifiable collection of **26 personal Codex skills** for freelance and in-house software development: Laravel/PHP, Django/Python, server templates, React/Next.js and SQLite/MySQL/SQL Server are examples, not mandated frameworks. Skills supply instructions; Codex performs coding and real tools supply capabilities.
 
-## Contents
+## Distribution
 
-- **16 personal skills** in `skills/<skill-name>/`: installable, content-preserving copies.
-- **16 active plugin-managed skill entries** in `managed/plugin-skills/<provider>/<plugin>/<version>/`: audit/reference snapshots only. Full plugin-relative supporting resources are preserved, including resources outside the individual skill folder.
-- **5 system skills excluded**: imagegen, openai-docs, review-agent, skill-creator, skill-installer. The destination Codex runtime supplies system skills.
-- `skills-manifest.json`: per-file hashes, deterministic skill tree hashes, metadata, dependencies, original physical sources and documented exclusions.
-- `package-integrity.json`: hashes for every distribution file except itself. `.git/` is excluded. Hashes detect accidental changes; they are not signatures or independent proof of authenticity.
-- `AUDIT.md`, `PORTABILITY.md`, `RESTORE.md`, `VALIDATION.md`: findings, dependencies, practical restore steps and test evidence.
+- `skills/`: **16 retained/upgraded + 10 new** installable personal skills.
+- `managed/plugin-skills/`: **16 original audit-only entries** and full plugin-relative supporting resources. Never install these into personal roots or plugin caches.
+- `skills-manifest.json`: compatible schema version 1; metadata, exact files and deterministic SHA-256 tree hashes. Historical source paths/hashes are provenance, not destinations or claims of equality after this upgrade.
+- `package-integrity.json`: hashes every distribution file except itself and `.git/`. These are change detectors, not signatures or independent authentication.
+- Five historical system-skill exclusions remain recorded. The destination runtime supplies system skills; this installer never modifies system or plugin content.
 
-Version 3.0 supersedes the previous 30-entry package: 16 personal + 16 managed = 32. It updates `steps` from the installed source and adds `hand-off` plus `compatible-response`, without rewriting the 14 retained personal skills or the managed snapshots. A new Codex installs every portable skill through its built-in `skill-installer`; the package is not a Plugin or Marketplace. Cached inactive plugins, including artifact-template examples, are not treated as active skills. Original machine paths in manifest provenance identify the audited source; they are never used as installation destinations.
+## Skills
 
-## Portable skills installed in Phase A
-
-The following 16 personal skills are installed into the destination user's global skill directory. The 16 entries under `managed/plugin-skills/` are deliberately excluded from this list because they require their own Plugin or runtime provider.
-
-| Skill | What it does |
+| Skill | Purpose and activation boundary |
 |---|---|
-| `apple-design` | Guides Apple-inspired interface design, including motion, spatial hierarchy, typography and reduced-motion behavior. Use it for gesture-driven or polished, physical-feeling UI work. |
-| `architecture-review` | Independently reviews a concrete system design or implementation plan before coding. It focuses on boundaries, coupling, maintainability and realistic structural risk. |
-| `compatible-response` | Shapes user-facing Codex responses for the task at hand and keeps them concise without losing needed information. It applies across projects and other skills. |
-| `db-impact` | Maps the full impact of a proposed database or migration change before execution. It covers compatibility, existing data, rollback and downstream dependencies. |
-| `devil` | Stress-tests important technical decisions and plans by challenging assumptions, failure modes and reversibility. It is an evidence-based adversarial review, not an implementation skill. |
-| `final-check` | Audits completed work against the original request before it is declared finished. It checks requirements, evidence, scope and remaining limitations. |
-| `full-plan` | Documents API endpoints and ordered user scenarios in natural Persian before implementing an API-driven feature. It requires explicit confirmation before API-contract changes. |
-| `hand-off` | Explains real source code, call paths and feature behavior for developers taking over a project. A full handoff can generate a developer guide and standalone LLM context. |
-| `multiple-pov` | Runs a one-time, evidence-first design review before substantial new systems or changes. It surfaces trade-offs and decisions before planning or implementation begins. |
-| `natural-persian-writing` | Produces and reviews clear, natural Persian while preserving technical facts and the intended tone. Use it for meaningful Persian prose, documentation and support text. |
-| `performance-review` | Reviews recent changes or known workloads for real performance bottlenecks and scalable improvements. It avoids speculative micro-optimization. |
-| `practical-test` | Performs strict browser-based acceptance testing for work implemented in the current conversation. It activates only when explicitly requested with `/practical-test`. |
-| `regression-check` | Verifies that completed changes preserved important existing behavior within their realistic blast radius. It identifies what must be tested and reports residual uncertainty. |
-| `root-cause` | Investigates the actual cause of a bug or unexpected behavior before proposing a fix. It prevents symptom-driven or speculative patching. |
-| `steps` | Leads development work by applying governance, setting proportionate workflow and coordinating relevant specialist skills. It tracks criticality, evidence, verification and handoff. |
-| `ui-ux-pro-max` | Supplies UI/UX guidance, searchable design data and stack-specific patterns for web, mobile and desktop interfaces. It covers interaction, accessibility, layout, typography and visual systems. |
+| `apple-design` | Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity. |
+| `architecture-review` | Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation. |
+| `backup-recovery` **new** | Design backup and recovery runbooks, verify backup integrity or rehearse/execute a restore only on direct request with appropriate scope. Ordinary database changes, migrations, application jobs and feature delivery do not trigger a backup service or production restore. |
+| `compatible-response` | Apply to every Codex user-facing response and output from any skill, across all projects. Adapt presentation to the content and maximize information density without losing essential details. |
+| `db-impact` | Analyze the complete blast radius of a proposed database change before it is executed. Use for migrations, schema/data changes, and production-impact reviews; do not use for ordinary read-only data queries. |
+| `devil` | Independently stress-test consequential technical decisions, concrete plans, architectures, migrations, refactors, and implementation strategies. Use when adversarial review would materially improve a decision by challenging assumptions, evidence, failure modes, reversibility, blast radius, or alternatives; do not use for routine coding, factual questions, trivial edits, or ordinary low-risk implementation. |
+| `docs-maintenance` **new** | Synchronize existing project documentation with real code, API or configuration changes, and write end-user guides when directly requested. Follow project documentation paths; skip unaffected docs and delegate source-code explanation or developer handoff to hand-off. |
+| `final-check` | Audit an apparently completed implementation against the user's original request before declaring it finished. Use for explicit final verification and substantial implementation tasks; do not use as a generic code review or repeatedly during development. |
+| `full-plan` | Plan meaningful feature behavior, actors, invariants, failure modes and acceptance before implementation, including precise API contracts when needed. Use for new or changed workflows or explicit planning requests; skip trivial internal or cosmetic edits. |
+| `hand-off` | Explain actual repository source, callers, architecture and behavior in Persian or English. Use EXPLAIN/EXPLORE for source questions; create developer and LLM handoff documents only for an explicit invocation or clear request for complete knowledge transfer. Skip generic theory, documentation sync and implementation-only work. |
+| `integration-reliability` **new** | Design, implement or diagnose reliable third-party API and webhook integrations, including timeouts, retries, 429s, duplicates and uncertain external effects. Use for a real provider dependency, not internal CRUD or an ordinary local REST endpoint. |
+| `load-testing` **new** | Plan and run bounded load, stress or concurrent-traffic benchmarks only when directly requested, with a validated target, authority and finite traffic profile. A slow endpoint or routine performance review does not request load generation. |
+| `maintenance-evolution` **new** | Plan or implement bounded compatibility-preserving evolution, substantial refactors, deprecations, removals and major framework upgrades; assess scoped technical debt when requested. Skip routine implementation, small TODO cleanup and speculative future-proofing. |
+| `multiple-pov` | Run a one-time, evidence-first brainstorming and multi-perspective design review before planning or implementing materially new systems, features, substantial workflows, architecture changes, major business logic, integrations, data-model changes, significant or risky refactors, migrations, or other substantial product/engineering work. Do not repeat the full review for the same materially unchanged task, user clarifications, approved implementation follow-ups, simple fixes, or small UI/content changes; use a focused delta review only after a material scope pivot or an explicit request to review again.
+ |
+| `natural-persian-writing` | Produce, rewrite, translate, review, or summarize meaningful Persian prose that sounds natural, preserves meaning, and matches its audience and purpose. Use for any Persian content: personal and formal letters, email, business, marketing, academic, legal and policy text, creative writing, translation, support, UI, technical documentation, and conversation. Do not activate merely because Persian appears in source code, data, an identifier, or text that is not being changed. |
+| `performance-review` | Evidence-driven software performance review for recent changes, endpoints, imports/exports, and explicitly requested audits. Use to identify real bottlenecks and scalable improvements; do not use for speculative micro-optimization. |
+| `practical-test` | Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes. |
+| `regression-check` | Verify that a completed change preserved important existing behavior within its realistic blast radius. Use after implementation, refactoring, bug fixes, database changes, or dependency updates; do not use for pure planning work. |
+| `release-management` **new** | Prepare versions, release notes, provenance and deployment or rollback plans when directly requested, and execute specifically authorized release actions. Passing tests, a finished feature or a routine commit does not request publication, CI changes or deployment. |
+| `root-cause` | Diagnose the actual cause of a bug, failure, or unexpected behavior before proposing or applying a fix. Use for explicit root-cause analysis, deep debugging, and recurring or unclear failures; do not replace ordinary implementation work without a reported problem. |
+| `security-assurance` **new** | Review the relevant security surfaces of material auth, permissions, upload, secrets, payment, trust-boundary or dependency changes. A full feature or project security audit requires a direct request; routine CSS and unrelated local changes do not trigger it. |
+| `skill-evals` **new** | Evaluate Codex skill structure and observed routing or workflow behavior when the user explicitly creates, upgrades, tests or audits a skill, package or steps. Do not use for ordinary application development or comparisons between AI models. |
+| `steps` | Coordinate software development, bugs, refactors and engineering verification with proportionate governance, risk assessment and the minimum relevant specialists. Use for implementation work unless bypassed or a directly requested specialist owns the task. Exclude general IT support, commercial/legal advice and multi-model benchmarks; routine changes must not trigger full audits, release or load testing. |
+| `technical-proposal-discovery` **new** | Produce a technical proposal or an evidence-backed competitor software comparison only on direct request. Distinguish proposal scope and deliverables from ordinary feature brainstorming; exclude commercial pricing, contracts and financial management. |
+| `test-engineering` **new** | Design and implement meaningful unit, integration and contract tests for changed application behavior, APIs, business rules, permissions and data operations. Use existing project tooling; skip descriptive read-only work and trivial cosmetics without a behavior change. |
+| `ui-ux-pro-max` | Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits. |
 
-## Install in Codex
+## Routing and authority
 
-Give a new Codex this exact prompt:
+`steps` coordinates the minimum sufficient workflow. `CONTEXTUAL_AUTO` needs a concrete scope/risk/contract; `SUPPORTING` is a narrow complement; `EXPLICIT_ONLY` needs unambiguous direct natural-language intent or invocation; `OUT_OF_SCOPE` has no custom workflow. Activation and execution authority are independent.
+
+Full audits, load tests, release/deploy/CI infrastructure, backup/recovery, technical proposals/competitor research, full teaching handoffs, WebSocket/SSE, WebGL/3D and presentable demos require direct intent. Implementing application jobs does not authorize server cron or starting workers. Source edits, Git writes, deployment and production data operations remain separate scopes.
+
+Metadata remains discoverable, including explicit-only workflows, so natural-language requests can find them. This is an instruction-level policy, not runtime enforcement. Installation alone does not guarantee every request passes through `steps`. An optional project rule can make coordination deliberate:
 
 ```text
-Install every portable skill from https://github.com/MahanManouchehri/skill-package. Use your preinstalled skill-installer: read skills-manifest.json, select every entry with installable: true, and install every physical_path_in_package in one invocation. Verify the installed count equals expected_user_global. Do not install managed/plugin-skills, system skills, credentials, account settings, or plugin caches.
+For software implementation tasks, use the steps skill to coordinate proportionate work and verification.
 ```
 
-Codex will install the 16 directories under `skills/` into its user skill root. It must not install the 16 `managed/plugin-skills` snapshots: those are audit-only and require their original runtime/plugin providers. See [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md) for the exact contract and current path list. Start a new chat if newly installed skills do not appear immediately.
+Add such a rule only under your project's governance; the installer never edits AGENTS.md. General IT/hardware support, personal finance/contracts, commercial estimates, logo ideation and multi-model comparisons are outside this package. Existing approved branding and technical workload estimates remain usable.
 
-## Manual restore fallback (Windows)
+## Install or upgrade
 
-PowerShell 5.1+ is required. These scripts do not require Python, Git or a GitHub account when using a ZIP. Close any other restore process first. Review the package and choose a trusted snapshot before running code.
+Give Codex this prompt:
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -PackageOnly
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Install
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
+```text
+Install all 26 personal skills from MahanManouchehri/skill-package v3.1.0. Read the manifest, resolve and verify the published commit SHA, use skill-installer at that exact ref into clean staging, verify every hash, and promote only approved names. For an upgrade, inspect active user roots and duplicates, make verified backups and use the tested journal/rollback tool. Preserve unrelated/system/plugin files and AGENTS.md. Report actual discovery and refresh requirements.
 ```
 
-Destination resolves to `$env:CODEX_HOME\skills` when CODEX_HOME is set, otherwise `$env:USERPROFILE\.codex\skills`. `-DestinationRoot` supports an isolated restore test or a deliberately selected user skill root. Source provenance paths are informational only.
+See [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md) for staging/promotion and [RESTORE.md](RESTORE.md) for rollback/Windows fallback. The official installer refuses collisions and must not directly overwrite old skills. Python tooling requires Python 3 and [PyYAML](scripts/requirements.txt). Existing PowerShell 5.1 scripts remain compatible; fresh Windows execution is separately identified in validation.
 
-The installer validates the entire bundle and scans for common secret patterns before any install. It defaults to a mutation-free dry-run. Existing different versions are copied to a timestamped sibling `skills-backup/` and verified before replacement. Only manifest-listed personal skill directories can be replaced. Unknown directories, duplicate names, reparse points and system/plugin destinations cause a refusal. Unrelated skills, `.system`, account config and AGENTS.md are untouched. A failed install attempts rollback from verified local backups; backups remain available for manual recovery. An exclusive installation lock prevents concurrent bundle installers.
+## Verification
 
-Managed snapshots are **never** installed into user skills or plugin cache. Runtime and plugin activation use their proper destination mechanisms. Folder existence is not proof of plugin activation or tool availability. `verify.ps1` reports Phase A and Phase B separately; default success covers Phase A only. `-RequireManaged` requires all managed catalog entries and capabilities to be confirmed using fresh external evidence.
+```sh
+python3 -B scripts/package_tools.py verify --package-root .
+python3 -B -m unittest discover -s tests -p test_package_tools.py -v
+python3 -B -m unittest discover -s evals -p test_runner.py -v
+```
 
-## What is excluded
+Keep environments/reports outside the distribution and remove owned generated caches before building. [VALIDATION.md](VALIDATION.md) and `validation-results.json` distinguish current checks from historical evidence, discovery from behavior, and unavailable checks from passes. The complete [60-case bank](evals/cases.json), [matrix](evals/MATRIX.md) and [runner](evals/README.md) are included. Routing/planning checks are not full framework/browser or production acceptance.
 
-System skills; full-plan's internal `.git` history; generated caches; credentials; auth state; account config; chat/session histories; machine runtime binaries; subscription entitlements. All actual source exclusions are itemized in the manifest. Skill files, relative structure, agents, references, scripts, templates and assets are copied byte for byte. No installer fetches dependencies or enables plugins automatically.
-
-The source `natural-persian-writing` has a pre-existing strict YAML frontmatter defect; its discovered name/description and bytes are preserved. `ui-ux-pro-max` has an existing CLAUDE_PLUGIN_ROOT assumption. See AUDIT.md before expecting identical operation on a new runtime.
-
-For another account or Windows user, use the same Phase A installer followed by Phase B plugin/runtime restoration. Authentication, account permissions, tools and entitlement must be supplied separately. GitHub access is needed only to clone the private repository; an authorized ZIP copy works offline for Phase A.
-
-Sources for the runtime/skill distinction: [OpenAI plugin architecture](https://developers.openai.com/plugins/concepts/plugins), [Build skills](https://learn.chatgpt.com/docs/build-skills).
+See [CHANGELOG.md](CHANGELOG.md), [AUDIT.md](AUDIT.md) and [PORTABILITY.md](PORTABILITY.md) for compatibility, provenance, dependencies and limitations.

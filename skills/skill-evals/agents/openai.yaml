@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill Evals"
+  short_description: "Structural checks and observed skill behavior"
+  default_prompt: "Use $skill-evals to evaluate this skill package with reproducible evidence."
+
+policy:
+  allow_implicit_invocation: true

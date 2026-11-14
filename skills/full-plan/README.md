@@ -2,19 +2,19 @@
 
 <div dir="rtl">
 
-`full-plan` یک Skill سراسری برای Codex است که پیش از پیاده‌سازی فیچرهای APIمحور، قرارداد endpointها و سناریوهای واقعی استفاده از آن‌ها را به فارسی روشن و فنی آماده می‌کند.
+`full-plan` یک Skill برای Codex است که پیش از پیاده‌سازی رفتار معنادار، بازیگرها، قواعد، حالت‌های خطا، معیار پذیرش و سناریوهای واقعی را به فارسی روشن و فنی آماده می‌کند؛ اگر API لازم باشد، قرارداد دقیق endpointها را هم می‌نویسد.
 
 هدف این است که پیش از تغییر کد، همهٔ افراد درگیر بدانند هر endpoint چه ورودی می‌گیرد، چه رفتاری دارد، چه پاسخی برمی‌گرداند و در کدام گام از جریان کار استفاده می‌شود.
 
 ## قابلیت‌ها
 
-- اجرای خودکار برای طراحی یا پیاده‌سازی فیچرهای APIمحور
+- انتخاب متناسب با نیاز برای طراحی رفتار، جریان کار و فیچرهای APIمحور
 - اجرای صریح با عبارت `/full-plan`
 - تفکیک endpointهای موجود، پیشنهادی و نیازمند تصمیم
 - نمایش دقیق ورودی‌ها، اعتبارسنجی، مجوزها، رفتار، پاسخ موفق و خطاهای قابل انتظار
 - تبدیل endpointها به سناریوهای مرتب و قابل اجرا برای هر نقش کاربری
 - نگارش فارسی رسمی، طبیعی و مناسب مستندات فنی
-- توقف پیش از پیاده‌سازی تا دریافت تأیید صریح کاربر
+- توقف فقط برای تصمیم مهم حل‌نشده یا عملیات نیازمند تأیید طبق قواعد پروژه؛ ادامهٔ تغییر معمول و مجاز بدون تأیید تکراری
 
 ## ساختار مخزن
 
@@ -57,24 +57,24 @@ git clone https://github.com/MahanManouchehri/full-plan.git "C:\Users\<your-user
 $full-plan
 ```
 
-برای اینکه این جریان در یک پروژه اجباری شود، دستورالعمل نمونهٔ زیر را در `AGENTS.md` پروژه یا فایل سراسری Codex اضافه کنید:
+انتخاب خودکار اسکیل با مدل انجام می‌شود و نصب به‌تنهایی تضمین اجرای همیشگی نیست. در صورت نیاز و با تصمیم خودتان، این قطعهٔ اختیاری را با حفظ دستورهای قبلی در `AGENTS.md` ادغام کنید؛ نصب‌کننده آن فایل را تغییر نمی‌دهد:
 
 ```markdown
-Before designing or implementing an API-backed feature, load and follow the
-global `full-plan` skill. Treat `/full-plan` as an explicit request to
-run the complete planning flow, and do not start implementation until the user
-has confirmed the plan.
+For meaningful feature/workflow contracts, use `full-plan` proportionately
+under `steps`. Respect current user authorization and project governance.
+Wait only for unresolved major decisions or separately restricted actions;
+do not request ceremonial reapproval of a routine authorized change.
 ```
 
 راهنمای کامل و نمونهٔ خروجی در [راهنمای استفاده](docs/USAGE.md) و [قالب خروجی](docs/OUTPUT-FORMAT.md) قرار دارد.
 
 ## ChatGPT و Claude
 
-این مخزن adapterهای جداگانه برای ChatGPT Skills، ChatGPT Custom GPT، Claude Code و Claude Web دارد. روش درست نصب و محدودیت هر پلتفرم در [راهنمای سازگاری پلتفرم‌ها](docs/PLATFORM-COMPATIBILITY.md) توضیح داده شده است.
+adapterهای قدیمی Custom GPT، Claude Code و Claude Web برای حفظ منابع قبلی باقی مانده‌اند. هدف این نسخه و مسیر نصب این پکیج Codex است؛ این فایل‌ها مدرک دسترسی یا سازگاری فعلی سرویس‌های دیگر نیستند. جزئیات منابع موجود در [راهنمای سازگاری](docs/PLATFORM-COMPATIBILITY.md) آمده است.
 
 ## دامنه
 
-این Skill برای فیچرهایی مناسب است که endpoint، قرارداد request/response یا جریان API دارند. برای refactor داخلیِ کوچک یا تغییری که هیچ رفتار API ندارد، نباید به‌صورت بی‌دلیل اجرا شود.
+این Skill برای قرارداد رفتار و جریان‌های معنادار مناسب است، چه API داشته باشند و چه از UI یا job شروع شوند. برای refactor داخلی کوچک، اصلاح تایپی یا تغییر ظاهری محدود، طرح کامل بی‌دلیل نسازید.
 
 ## مشارکت
 

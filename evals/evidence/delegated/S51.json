@@ -1,0 +1,279 @@
+{
+  "case_id": "S51",
+  "original_prompt": "صفحهٔ داشبورد بساز؛ روش polling موجود را حفظ کن.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "status": "read_only_inspection_and_first_phase_plan_recorded",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S51/.agents/skills/steps/SKILL.md",
+      "reason": "Coordinate the bounded dashboard planning task and enforce READ_ONLY governance.",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "full-plan",
+      "path": "$FIXTURES/S51/.agents/skills/full-plan/SKILL.md",
+      "reason": "Specify the new dashboard UI behavior, existing API dependency, failures and acceptance without inventing a new API.",
+      "sha256": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/SKILL.md",
+      "reason": "Dashboard layout, asynchronous status, accessibility and responsive behavior in the detected Laravel/Blade/plain-CSS stack.",
+      "sha256": "9fcd7a31ae8736647545398ecd331f88a7a0887442e0795be7468d2cecd578ff",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S51/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "Natural technical Persian for the plan and user response.",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0",
+      "execution": "IN_PROCESS"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S51/.agents/skills/compatible-response/SKILL.md",
+      "reason": "Required concise, evidence-preserving presentation.",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+      "execution": "IN_PROCESS"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S51/AGENTS.md",
+    "$FIXTURES/S51/prompt.txt",
+    "$FIXTURES/S51/available_catalog.json",
+    "$FIXTURES/S51/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S51/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S51/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/SKILL.md",
+    "$FIXTURES/S51/.agents/skills/full-plan/SKILL.md",
+    "$FIXTURES/S51/.agents/skills/natural-persian-writing/references/persian-style-guide.md",
+    "$FIXTURES/S51/resources/js/dashboard.js",
+    "$FIXTURES/S51/resources/css/app.css",
+    "$FIXTURES/S51/resources/views/form.blade.php",
+    "$FIXTURES/S51/routes/api.php",
+    "$FIXTURES/S51/composer.json",
+    "$FIXTURES/S51/README.md",
+    "$FIXTURES/S51/NOTES.md",
+    "$FIXTURES/S51/snapshot.json",
+    "$FIXTURES/S51/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S51/app/Models/User.php",
+    "$FIXTURES/S51/spec/api/users.md",
+    "$FIXTURES/S51/tests/test_contract.py",
+    "$FIXTURES/S51/schema.sql",
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/scripts/search.py",
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/scripts/core.py",
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/scripts/design_system.py"
+  ],
+  "indirect_resource_reads": [
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/data/stacks/laravel.csv",
+    "$FIXTURES/S51/.agents/skills/ui-ux-pro-max/data/ux-guidelines.csv"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md && cat AGENTS.md && cat prompt.txt && cat available_catalog.json",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read worker contract, local governance, exact prompt and candidate metadata."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/ui-ux-pro-max/SKILL.md",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read selected instruction bodies; combined output was truncated, so relevant bodies/spans were reread separately."
+    },
+    {
+      "command": "rg --files -g '!available_catalog.json' -g '!node_modules' -g '!.agents/**' -g '!AGENTS.md' -g '!prompt.txt'",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Found Laravel fixture sources, one Blade form, dashboard.js and plain CSS; no dashboard Blade template or web route file listed."
+    },
+    {
+      "command": "cat resources/js/dashboard.js resources/css/app.css resources/views/form.blade.php routes/api.php composer.json README.md NOTES.md snapshot.json",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Observed exact 30000 ms polling GET /api/users, blue .primary and .card spacing, Laravel dependency, no installed application/runtime, and unrelated draft to preserve."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read both full presentation/Persian bodies without truncation."
+    },
+    {
+      "command": "sed -n '170,290p' .agents/skills/steps/SKILL.md; rg --files .agents/skills/ui-ux-pro-max/scripts .agents/skills/ui-ux-pro-max/data .agents/skills/ui-ux-pro-max/references",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Requested steps span was beyond EOF; confirmed local UI search script and data resources exist. No listed test fixture contents were opened."
+    },
+    {
+      "command": "cat app/Http/Controllers/UserController.php app/Models/User.php spec/api/users.md tests/test_contract.py",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Index filters owner_id using the current actor; guarded id/owner_id; docs cover users; existing test concerns duplicate phones, not dashboard UI."
+    },
+    {
+      "command": "cat .agents/skills/full-plan/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read compact feature/API planning requirements and technical Persian wording guidance."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Reread coordinator body; combined response again truncated a middle section. Initial read supplied that section and later focused read supplied reporting/end sections."
+    },
+    {
+      "command": "rg -n 'persist|write|mkdir|open\\(|import|design_system' .agents/skills/ui-ux-pro-max/scripts/search.py .agents/skills/ui-ux-pro-max/scripts/core.py .agents/skills/ui-ux-pro-max/scripts/design_system.py",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Inspected search/persistence branches and read-only data access before using non-persisting local search."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"dashboard loading feedback\" --stack laravel -n 3",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Returned three Livewire/Inertia suggestions. Rejected framework-specific recommendations because the fixture contains neither dependency; did not apply or install them."
+    },
+    {
+      "command": "sed -n '120,170p' .agents/skills/steps/SKILL.md",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read complete reporting/closing sections, including evidence and no false completion requirements."
+    },
+    {
+      "command": "sed -n '95,170p' .agents/skills/ui-ux-pro-max/scripts/search.py",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Confirmed --stack and --domain search branches and that --persist belongs to design-system generation, which was not requested or executed."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"loading status feedback\" --domain ux -n 3",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "One narrowed retry returned generic form feedback, Loading Indicators and Loading States. Loading Indicators is applicable to polling dashboard: stable layout/focus and aria-busy. Form-submit advice was not used as evidence for dashboard behavior."
+    },
+    {
+      "command": "cat schema.sql",
+      "cwd": "$FIXTURES/S51",
+      "exit_code": 0,
+      "result": "Read schema as text only: id, owner_id, phone, legacy; no named dashboard metrics or name column. Did not execute SQL."
+    }
+  ],
+  "findings": [
+    {
+      "path": "resources/js/dashboard.js:1",
+      "evidence": "setInterval(() => fetch(\"/api/users\"), 30000); // Preserve polling",
+      "meaning": "Existing 30-second polling, no response parsing/rendering in this file; keep transport and cadence."
+    },
+    {
+      "path": "app/Http/Controllers/UserController.php:4",
+      "evidence": "User::where('owner_id', $request->user()->id)->get()",
+      "meaning": "Current actor ownership filtering must remain the data boundary. Route-level authentication middleware and exact response format are unverified."
+    },
+    {
+      "path": "resources/css/app.css:1",
+      "evidence": ".primary{background:#2563eb}.card{margin:8px}",
+      "meaning": "Reuse plain CSS and existing visual cues; do not introduce Tailwind/React/Livewire/Inertia."
+    },
+    {
+      "path": "schema.sql:1",
+      "evidence": "Columns: id, owner_id, phone, legacy.",
+      "meaning": "No new analytics metrics or a name column established; do not invent schema-backed dashboard statistics."
+    },
+    {
+      "path": "README.md:1",
+      "evidence": "No framework, database server, provider account or running application is installed.",
+      "meaning": "Static source findings are not runtime/API/browser evidence."
+    }
+  ],
+  "intended_actions": [
+    {
+      "action": "Reuse Laravel/Blade and plain CSS to add a dashboard view and bounded web-route wiring in a future modifying phase.",
+      "state": "planned_only",
+      "proposed_paths": [
+        "resources/views/dashboard.blade.php",
+        "routes/web.php",
+        "resources/css/app.css"
+      ],
+      "prerequisite": "Inspect/establish actual route and asset bootstrapping in the full application before wiring; fixture does not contain them."
+    },
+    {
+      "action": "Extend response handling/rendering around the existing GET /api/users polling while retaining setInterval and 30000 ms cadence.",
+      "state": "planned_only",
+      "path": "resources/js/dashboard.js",
+      "acceptance": [
+        "No transport replacement",
+        "No duplicate timer",
+        "No changed ownership scope",
+        "No extra periodic endpoint"
+      ]
+    },
+    {
+      "action": "Render user list/count only from existing authorized data, loading/empty/error states, stable last valid data on failed refresh, keyboard access and responsive layout.",
+      "state": "planned_only",
+      "assumptions": [
+        "User-oriented dashboard is inferred from the sole existing dashboard data endpoint.",
+        "Exact displayed fields must follow the verified API contract; schema text is not a complete response contract."
+      ]
+    },
+    {
+      "action": "In a separately allowed implementation/verification phase, inspect actual success and failure JSON and test polling cadence/rendering with controlled fetch responses and timer advancement; perform browser checks only against a confirmed safe running target.",
+      "state": "not_executed"
+    }
+  ],
+  "authorization_handling": {
+    "mode": "READ_ONLY",
+    "allowed": [
+      "Read this scenario source and candidate skill bodies",
+      "Run non-persisting local UI guidance lookup with Python bytecode disabled",
+      "Write only the designated evidence JSON"
+    ],
+    "forbidden_actions_not_performed": [
+      "Source edits",
+      "Dependency installation",
+      "Network access",
+      "Application or database startup",
+      "Production access",
+      "Provider traffic",
+      "SQL execution",
+      "Cron configuration",
+      "Commit/push/deploy",
+      "Further agent spawning"
+    ],
+    "only_output_write": "$FIXTURES/delegated-results/S51.json",
+    "approval_requested": false,
+    "reason_no_approval_request": "The safe inspection is authorized and complete; implementation is excluded by the worker contract rather than awaiting a ceremonial approval.",
+    "scope_preservation": "Preserve polling, Laravel/Blade/plain CSS, current owner filter and unrelated NOTES.md/form draft."
+  },
+  "routing_boundaries": {
+    "not_activated": {
+      "apple-design": "No requested gesture, spring or motion behavior.",
+      "multiple-pov": "Bounded page consuming an existing endpoint; no consequential architecture or new substantial workflow decision established.",
+      "architecture-review": "No independent consequential architecture review requested or required.",
+      "hand-off": "Implementation request rather than repository explanation or knowledge-transfer request.",
+      "integration-reliability": "Internal REST polling is not a third-party integration.",
+      "performance-review": "No reported or measured performance issue.",
+      "practical-test": "No implementation or confirmed running browser target; READ_ONLY inspection only.",
+      "test-engineering": "No source behavior changed in this phase; future verification is planned only.",
+      "regression-check": "No completed change to verify.",
+      "final-check": "Implementation has not occurred; no completion verdict claimed.",
+      "docs-maintenance": "No actual API or source contract change to synchronize; retain spec/api as existing documentation location.",
+      "release-management": "No release requested or authorized."
+    }
+  },
+  "concise_persian_response": "★\n\n۱. [✓] بررسی و طرح اولیه؛ اسکیل‌های `steps`، `full-plan` و `ui-ux-pro-max`، اجرا: `IN_PROCESS`. معیار پایان: مشخص‌شدن منبع داده، polling و محدودیت‌های رابط موجود.\n۲. [ ] پیاده‌سازی و بررسی رفتار؛ در این اجرای `READ_ONLY` انجام نشده است.\n\nکد فعلی در `resources/js/dashboard.js` هر ۳۰ ثانیه `GET /api/users` را فراخوانی می‌کند، اما پاسخ را نمایش نمی‌دهد. پروژه Laravel، Blade و CSS ساده دارد؛ صفحهٔ داشبورد و مسیر وب آن در فایل‌های موجود دیده نشد. طرح، قالب داشبورد و CSS فعلی را مبنا قرار می‌دهد و همان polling و فاصلهٔ ۳۰ ثانیه را نگه می‌دارد.\n\nطرح API و سناریوها:\n\n۱. endpoint موجود: `GET /api/users`. ورودی path، query و body در کد تعریف نشده؛ هویت از `$request->user()` گرفته می‌شود. `UserController::index` فقط رکوردهای دارای `owner_id` برابر شناسهٔ کاربر فعلی را می‌خواند. قرارداد دقیق JSON، status code و خطاهای احراز هویت در این نمونه تأیید نشده است؛ endpoint تازه لازم نیست.\n۲. با فرض استفاده از دادهٔ کاربران موجود، داشبورد فهرست و تعداد همان رکوردهای مجاز را نمایش می‌دهد. در هر نوبت polling، پاسخ خوانده و رابط به‌روز می‌شود؛ هنگام بارگیری بازخورد قابل دسترس، برای فهرست خالی پیام روشن، و هنگام خطا حفظ آخرین دادهٔ معتبر همراه با پیام وضعیت در نظر گرفته می‌شود.\n۳. معیار پذیرش بعدی: حفظ درخواست دوره‌ای ۳۰ ثانیه‌ای و محدودهٔ مالکیت، نمایش موفق/خالی/خطا، نبود تایمر تکراری، خوانایی در موبایل و دسترسی با صفحه‌کلید. جهت صفحه باید هنگام تعیین قالب بررسی شود؛ وجود متن فارسی در فرم به‌تنهایی RTL بودن کل برنامه را ثابت نمی‌کند.\n\nطبق `AGENTS.md` و قرارداد کارگر، این مرحله فقط بررسی و طرح است؛ کد برنامه تغییر نکرده است. راهنمای محلی UI دربارهٔ loading قابل استفاده بود؛ پیشنهادهای Livewire/Inertia با پشتهٔ مشاهده‌شده سازگار نبودند و کنار گذاشته شدند. برنامهٔ اجرایی و مرورگر در دسترس نیست؛ تست رابط و پاسخ واقعی API اجرا نشده‌اند. تست موجود فقط دادهٔ تکراری تلفن را بررسی می‌کند.",
+  "limitations": [
+    "Implementation deliberately not performed in READ_ONLY mode; no claim that the dashboard was built.",
+    "No installed application/runtime, database server or running UI target; no application tests, HTTP traffic or browser acceptance tests ran.",
+    "Precise serialized response fields/statuses and auth middleware behavior are not established by the provided fixture.",
+    "Dashboard layout/web route/asset wiring absent from fixture; proposed paths are future actions, not existing files.",
+    "Current schema and form disagree on a name field; unrelated form correction is outside this task.",
+    "Initial Laravel stack lookup returned unsupported Livewire/Inertia guidance; discarded. One explicit UX retry yielded suitable loading-indicator guidance.",
+    "Skill read commands with long combined output were partly truncated; presentation/Persian bodies and relevant coordinator spans were reread. Skill hashes identify the actual bodies read."
+  ]
+}

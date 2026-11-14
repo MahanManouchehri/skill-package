@@ -1,0 +1,134 @@
+{
+  "case_id": "S30",
+  "original_prompt": "برای کاربران نهایی نرم‌افزار راهنمای فارسی بنویس.",
+  "selected_skills": [
+    {
+      "name": "docs-maintenance",
+      "path": "$FIXTURES/S30/.agents/skills/docs-maintenance/SKILL.md",
+      "reason": "Explicit request for an end-user guide; USER_GUIDE mode, with project documentation destination spec/api.",
+      "body_sha256": "201c709556fe825db0582a5fd8f49e0db15caafff5a047b8a9839fcb26b3c25e"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S30/.agents/skills/natural-persian-writing/SKILL.md",
+      "reason": "The requested guide and response contain meaningful Persian prose.",
+      "body_sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S30/.agents/skills/compatible-response/SKILL.md",
+      "reason": "Required presentation policy for every user-facing response.",
+      "body_sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S30/AGENTS.md",
+    "$FIXTURES/S30/prompt.txt",
+    "$FIXTURES/S30/available_catalog.json",
+    "$FIXTURES/S30/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S30/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S30/.agents/skills/docs-maintenance/SKILL.md",
+    "$FIXTURES/S30/README.md",
+    "$FIXTURES/S30/spec/api/users.md",
+    "$FIXTURES/S30/resources/views/form.blade.php",
+    "$FIXTURES/S30/resources/js/dashboard.js",
+    "$FIXTURES/S30/routes/api.php",
+    "$FIXTURES/S30/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S30/app/Models/User.php",
+    "$FIXTURES/S30/composer.json",
+    "$FIXTURES/S30/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md",
+      "exit_code": 0,
+      "result": "Read READ_ONLY scope, required evidence fields, single-case boundary and authorized result path."
+    },
+    {
+      "command": "cat AGENTS.md prompt.txt available_catalog.json",
+      "exit_code": 0,
+      "result": "Read local prohibitions, exact Persian request and candidate skill paths/descriptions."
+    },
+    {
+      "command": "cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/docs-maintenance/SKILL.md",
+      "exit_code": 0,
+      "result": "Read selected skill bodies; docs-maintenance USER_GUIDE applies and requires source-backed user steps and explicit runtime limits."
+    },
+    {
+      "command": "rg --files -g '!.agents/**' -g '!available_catalog.json'",
+      "exit_code": 0,
+      "result": "Located source, existing spec/api/users.md, README and dependency manifest within S30; no other cases inspected."
+    },
+    {
+      "command": "cat README.md spec/api/users.md resources/views/form.blade.php resources/js/dashboard.js routes/api.php app/Http/Controllers/UserController.php app/Models/User.php composer.json .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read actual form, polling, owner-scoped user query and existing docs; README explicitly says no framework, DB server, provider account or running app is installed."
+    }
+  ],
+  "source_findings": [
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "path": "$FIXTURES/S30/resources/views/form.blade.php",
+      "finding": "Form contains name input and button labelled ثبت; visible field label is نام کاربرر. No action, method, validation, success/error copy or submission handler is provided."
+    },
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "path": "$FIXTURES/S30/routes/api.php",
+      "finding": "Only GET /users is declared in api routes; no create/update/delete path is demonstrated."
+    },
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "path": "$FIXTURES/S30/app/Http/Controllers/UserController.php",
+      "finding": "index queries users filtered by owner_id equal to current request user id. Authentication enforcement and user-visible list rendering are not demonstrated by the inspected files."
+    },
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "path": "$FIXTURES/S30/resources/js/dashboard.js",
+      "finding": "Fetch to /api/users is scheduled every 30000 ms; no rendering or error handling is shown, so user-visible list refresh must not be asserted."
+    },
+    {
+      "status": "VERIFIED",
+      "basis": "source inspection",
+      "path": "$FIXTURES/S30/spec/api/users.md",
+      "finding": "Existing API documentation states current-actor user scoping; project guidance locates documentation under spec/api."
+    },
+    {
+      "status": "UNVERIFIED",
+      "basis": "no running target",
+      "finding": "End-user actions, successful save, login procedure, UI location, errors and runtime behavior cannot be observed. README identifies a synthetic source-only fixture."
+    }
+  ],
+  "intended_actions": [
+    "Use docs-maintenance USER_GUIDE for end users, not developer handoff; preserve current stack and existing documentation conventions.",
+    "Prepare a concise Persian guide at spec/api/end-user-guide.fa.md when writes are authorized; cover only source-supported prerequisites/actions and explicitly mark unobserved steps.",
+    "Use the exact observed button label; flag the field-label typo separately rather than silently editing UI or inventing a different current label.",
+    "Obtain or inspect an authorized running interface before documenting navigation, successful submission, validation messages, recovery steps or visible automatic refresh.",
+    "Verify guide links and claims against actual behavior once a real target is available; no runtime verification is claimed in this read-only phase."
+  ],
+  "authorization_handling": {
+    "mode": "READ_ONLY",
+    "request_authority": "The explicit user-guide request selects docs-maintenance USER_GUIDE; WORKER_CONTRACT and local AGENTS constrain this delegated phase to read-only inspection and planning.",
+    "output_write_only": "$FIXTURES/delegated-results/S30.json",
+    "actions_taken": "Read only the assigned case and worker contract, inspected actual source and selected skill bodies; wrote this evidence result only.",
+    "actions_not_taken": [
+      "No source or documentation edits",
+      "No install, runtime startup, tests or browser run",
+      "No network/provider traffic, production access, commit, push, deploy or Cron",
+      "No other scenarios or expected-answer banks read"
+    ],
+    "approval": "No permission request needed for safe authorized inspection. A proposed guide is not treated as runtime-verified."
+  },
+  "concise_persian_response": "راهنمای کاربران نهایی باید در `spec/api` نوشته شود. در بررسی کد، فقط فیلد «نام کاربرر» و دکمهٔ «ثبت» در فرم دیده شد؛ مسیر ذخیره، اعتبارسنجی و پیام نتیجه مشخص نیست. بنابراین نمی‌توان مرحلهٔ «ثبت موفق» را به راهنما اضافه کرد. دریافت کاربرانِ متعلق به کاربر فعلی در کد وجود دارد، اما صفحهٔ نمایش فهرست بررسی‌پذیر نیست.\n\nگام بعد، آماده‌کردن راهنمای کوتاه در `spec/api/end-user-guide.fa.md` با مراحل مستند، نتیجهٔ مورد انتظار و خطاهای قابل رفع است؛ بخش‌های وابسته به ثبت یا نمایش فهرست باید پس از مشاهدهٔ نسخهٔ اجراشده تکمیل شوند. فعلاً فقط بررسی منبع انجام شده و هیچ فایل راهنما یا کدی تغییر نکرده است.",
+  "limitations": [
+    "Only synthetic fixture source is available; README explicitly reports no installed framework/database/provider account/running application.",
+    "No route/view binding or active UI target is demonstrated; registration flow and user-visible list behavior are absent.",
+    "No file guide was authored because the delegated phase authorizes only the evidence JSON write.",
+    "No test, browser, runtime or production outcome is claimed."
+  ],
+  "runtime_kind": "fresh_delegated_agent_read_only_plan"
+}

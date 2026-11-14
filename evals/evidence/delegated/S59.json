@@ -1,0 +1,123 @@
+{
+  "case_id": "S59",
+  "original_prompt": "می‌خواهم روی طراحی UI، فقط animation فنری دقیق و interruptible داشته باشم.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "apple-design",
+      "role": "primary",
+      "reason": "The request directly asks for precise interruptible springs; this specialist explicitly covers that interaction scope."
+    },
+    {
+      "name": "compatible-response",
+      "role": "supporting",
+      "reason": "Required presentation policy for the Persian response."
+    },
+    {
+      "name": "natural-persian-writing",
+      "role": "supporting",
+      "reason": "Required standard for meaningful Persian prose."
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S59/AGENTS.md",
+    "$FIXTURES/S59/prompt.txt",
+    "$FIXTURES/S59/available_catalog.json",
+    "$FIXTURES/S59/.agents/skills/apple-design/SKILL.md",
+    "$FIXTURES/S59/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S59/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S59/resources/js/dashboard.js",
+    "$FIXTURES/S59/resources/css/app.css",
+    "$FIXTURES/S59/resources/views/form.blade.php",
+    "$FIXTURES/S59/composer.json",
+    "$FIXTURES/S59/README.md",
+    "$FIXTURES/S59/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "skill_body_sha256": {
+    "apple-design": "8c2e918ef408b3163955febf0e9c6a98474b64ff20a14869642b0cc84b8b0aef",
+    "compatible-response": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+    "natural-persian-writing": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+  },
+  "commands": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md && cat AGENTS.md && cat prompt.txt && cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read the READ_ONLY worker contract, scenario boundaries, exact Persian request and scenario candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/apple-design/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md",
+      "exit_code": 0,
+      "result": "Read all three selected skill bodies. Apple-design explicitly owns precise, interruptible spring interactions and requires current-state/velocity continuity and runtime evidence before success claims."
+    },
+    {
+      "command": "rg --files --hidden -g '!.git' -g '!.agents/skills/**'",
+      "exit_code": 0,
+      "result": "Found Laravel/PHP fixture sources, Blade form, plain JS and CSS. No package.json or JavaScript lockfile appeared in the scenario inventory."
+    },
+    {
+      "command": "cat resources/js/dashboard.js resources/css/app.css resources/views/form.blade.php composer.json README.md",
+      "exit_code": 0,
+      "result": "JS only polls /api/users every 30000 ms; CSS only defines blue .primary and 8px .card margin; Blade only contains the name form. Composer declares PHP >=8.2 and laravel/framework. README says the fixture has no installed framework, database, provider account or running app."
+    },
+    {
+      "command": "cat .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read technical Persian guidance for clear prose and preserving identifiers and qualifications."
+    }
+  ],
+  "source_findings": [
+    {
+      "path": "$FIXTURES/S59/resources/js/dashboard.js",
+      "line": 1,
+      "finding": "Only setInterval polling fetch(/api/users) at 30000 ms is present; no motion engine or pointer handling."
+    },
+    {
+      "path": "$FIXTURES/S59/resources/css/app.css",
+      "line": 1,
+      "finding": "Only .primary background #2563eb and .card margin 8px; no spring or reduced-motion rules."
+    },
+    {
+      "path": "$FIXTURES/S59/resources/views/form.blade.php",
+      "line": 1,
+      "finding": "A name form and submit button exist; no drawer/card/sheet target or gesture interaction is specified."
+    },
+    {
+      "path": "$FIXTURES/S59/composer.json",
+      "line": 1,
+      "finding": "Existing backend stack is PHP >=8.2 and Laravel; the supplied UI uses Blade and plain CSS/JS."
+    },
+    {
+      "path": "$FIXTURES/S59/README.md",
+      "line": 1,
+      "finding": "The fixture explicitly lacks installed runtime services. This is context, not authority for new actions."
+    }
+  ],
+  "intended_actions": [
+    "Limit this phase to source-backed interaction planning; no implementation under the READ_ONLY contract.",
+    "Identify the concrete element, state transitions and input interaction before selecting spring parameters; do not invent a drawer or redesign the page.",
+    "Preserve Blade/plain JS/CSS, existing styling and polling. Use existing motion support if later supplied; justify and obtain scoped dependency authorization before adding a package.",
+    "Define spring state as current position plus velocity; retarget continuously from that state, allow reversal during motion and never lock input until an animation completes. Start tuning with critical damping (ratio 1) where overshoot has no interaction purpose.",
+    "If the approved target is draggable, plan 1:1 tracking with preserved grab offset, pointer capture/cancel handling, release velocity handoff, appropriate snap projection and bounded edge resistance.",
+    "Include keyboard/single-pointer alternatives, focus continuity and prefers-reduced-motion behavior within the selected interaction. Prefer transform/opacity and bounded per-frame work.",
+    "When a safe running target is separately available, observe repeated retargeting, mid-flight reversal, drag cancel/capture, boundaries, keyboard and reduced motion in a real browser before claiming success."
+  ],
+  "authorization_handling": {
+    "mode": "READ_ONLY",
+    "completed_authorized_work": "Read only scenario governance/catalog, selected skill bodies and relevant local UI sources; recorded this evidence JSON.",
+    "only_output_write": "$FIXTURES/delegated-results/S59.json",
+    "external_mutations": [],
+    "services_started": false,
+    "network_used": false,
+    "further_agents_spawned": false,
+    "scope_note": "No API/database changes, package installation, source edits, demo construction, release actions or browser success claims are authorized or needed for this phase."
+  },
+  "concise_persian_response": "برای حرکت فنری دقیق و قابل قطع، از راهنمای apple-design استفاده می‌کنم. در سورس فعلی فقط یک فرم Blade، CSS ساده و polling سی‌ثانیه‌ای دیده می‌شود؛ انیمیشن، مدیریت gesture یا کتابخانهٔ حرکت تعریف نشده است.\n\nقدم بعدی، مشخص‌کردن عنصر و تعامل هدف است؛ سپس حرکت باید از موقعیت و سرعت لحظه‌ای ادامه پیدا کند تا تغییر مقصد یا معکوس‌کردن آن وسط حرکت، پرش و توقف اجباری ایجاد نکند. برای drag، حفظ نقطهٔ گرفتن، pointer capture/cancel، انتقال سرعت رهاسازی و رفتار مرزها لازم است. حالت کاهش حرکت و کنترل با صفحه‌کلید نیز باید در نظر گرفته شود.\n\nدر این مرحله فقط سورس بررسی شد و فایلی تغییر نکرد. محیط اجرایی آماده نیست؛ پیوستگی حرکت، لغو gesture و عملکرد واقعی هنوز در مرورگر بررسی نشده‌اند.",
+  "limitations": [
+    "The user has not identified the exact component, gesture or target states; final spring tuning and applicable boundary behavior cannot be fixed yet.",
+    "No frontend package manifest or JavaScript lockfile was found in the supplied inventory; available installed motion dependencies are not established.",
+    "The fixture has no running application or installed framework according to its README. No service was started and no runtime/browser evidence exists.",
+    "Interruptibility, velocity continuity, pointer cancellation, focus/accessibility behavior and frame performance remain unverified at runtime.",
+    "The worker scope permits only planning/findings and this evidence file, so no implementation or test execution was performed."
+  ]
+}

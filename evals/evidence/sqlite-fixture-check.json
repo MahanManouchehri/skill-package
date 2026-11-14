@@ -1,0 +1,10 @@
+{
+  "status": "TOOL_TEST_PASS",
+  "scope": "SQLite in-memory duplicate-precondition query and negative unique-index attempt; no framework or production assertion",
+  "sqlite_version": "3.50.4",
+  "duplicates_detected": true,
+  "unsafe_constraint_rejected": true,
+  "rows_preserved": 2,
+  "fixture_sha256": "00ca6e53083d44965647ff90034f844175ea4adbfda6259a5f79f4eb6c3d97e3",
+  "observed_utc": "2026-11-14T03:50:09.668015+00:00"
+}

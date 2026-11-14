@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks."
+description: "Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits."
 ---
 
 # UI/UX Pro Max - Design Intelligence
@@ -12,6 +12,10 @@ Searchable local UI/UX guidance: 79 searchable styles (50 active), 192 product p
 Use this Skill when the task involves **UI structure, visual design decisions, interaction patterns, or user experience quality control**: designing new pages, creating/refactoring UI components, choosing color/typography/spacing/layout systems, reviewing UI for UX/accessibility/consistency, implementing navigation/animation/responsive behavior, or improving perceived quality and usability.
 
 Skip it for pure backend logic, API/database design, non-visual performance work, infrastructure/DevOps, or non-visual scripts — unless the task changes how something **looks, feels, moves, or is interacted with**.
+
+This is bounded `CONTEXTUAL_AUTO` UI guidance, not authority to replace the current framework, brand or component library. Reuse existing design tokens/components first; for a small cosmetic edit apply the known rule and focused verification rather than generating a whole design system. Do not introduce React into Blade/Django Templates, Tailwind into a plain CSS project, or any dependency without a concrete authorized need. WebGL/3D features require a direct natural-language request or explicit invocation naming that feature; dataset matches and a request for an attractive page do not suffice. Realtime transport and presentable demos likewise remain direct-request-only.
+
+Detect language and direction from project configuration and rendered context. For Persian/RTL preserve correct reading/focus order, logical spacing and icon direction, keep code/URLs/identifiers LTR when needed, and verify mixed-language text, zoom, keyboard access and overflow. Do not infer RTL solely from a Persian string in source.
 
 ## Rule Categories by Priority
 
@@ -36,13 +40,13 @@ For the full rule list per category (all 119 UX guidelines with rationale), read
 
 ## Running the search tool
 
-The search script lives inside this skill's own directory, not the project directory. Always invoke it by its full path — do not assume a particular working directory:
+The search script and `data/` live inside this installed skill directory, not the project directory. Resolve the **actual loaded SKILL.md path** from Codex's skill catalog/context and take its parent as `<resolved-skill-dir>`; inspect that `scripts/search.py` and `data/` exist there. Replace the placeholder below with that real absolute path before execution. Do not assume the project cwd, a plugin environment variable, an operating system, or a particular per-user root. If the catalog path is unavailable, inspect the configured Codex/user skill roots and select the confirmed active copy; report an unresolved/ambiguous path instead of inventing one.
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<query>" --domain <domain>
+python3 "<resolved-skill-dir>/scripts/search.py" "<query>" --domain <domain>
 ```
 
-If `python` is not found, try `python3`, then `py -3`. Requires Python 3.x, no external dependencies (see README for install instructions if Python is missing).
+Use a detected working Python 3 interpreter: `python3`, `python`, or Windows `py -3`. The examples use `python3`; substitute the verified command for the current shell. Requires Python 3.x and the bundled stdlib-only scripts/data; no third-party dependencies. If Python or a resource is unavailable, report that tool limitation and distinguish general guidance from executed search results. This skill never installs a runtime itself.
 
 ## Workflow
 
@@ -70,19 +74,19 @@ Extract from the user request:
 - **Style keywords**: playful, vibrant, minimal, dark mode, content-first, immersive, etc.
 - **Stack**: detect from the project — check `package.json` deps (react/next/vue/svelte/nuxt/@angular), `pubspec.yaml` (Flutter), `*.xcodeproj`/`Package.swift` (SwiftUI), `composer.json` (Laravel), or React Native markers (`app.json` + `react-native` dep). If nothing is detectable and stack guidance matters, ask the user. **Never assume a stack** — a hardcoded default silently misroutes every recommendation.
 
-### Step 2: Generate Design System (REQUIRED for new pages/projects)
+### Step 2: Generate Design System (when a new visual direction is needed)
 
-Use `--design-system` when the task needs a coherent product-wide visual direction:
+Read existing project tokens, components and approved visual direction first. Use `--design-system` when the task genuinely needs a coherent new product-wide direction; a new page in an established application should reuse its current system. Keep local search suggestions subordinate to the user's approved design:
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
+python3 "<resolved-skill-dir>/scripts/search.py" "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
 ```
 
 This aggregates product/style/color/landing/typography matches, applies reasoning rules from `ui-reasoning.csv`, and returns pattern, style, colors, typography, effects, and anti-patterns to avoid.
 
 **Example:**
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "beauty spa wellness service" --design-system -p "Serenity Spa"
+python3 "<resolved-skill-dir>/scripts/search.py" "beauty spa wellness service" --design-system -p "Serenity Spa"
 ```
 
 ### Step 2b: Persist Design System (Master + Overrides Pattern)
@@ -90,7 +94,7 @@ python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "b
 To save the design system for retrieval across sessions, add `--persist` **and always pass `--output-dir` pointed at the project root** — without it, files are written relative to whatever directory the tool happens to run from:
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<query>" --design-system --persist -p "Project Name" --output-dir "<project-root>"
+python3 "<resolved-skill-dir>/scripts/search.py" "<query>" --design-system --persist -p "Project Name" --output-dir "<project-root>"
 ```
 
 This creates:
@@ -113,7 +117,7 @@ Read an existing `MASTER.md` before deciding whether `--force` is justified. Nev
 Three optional 1-10 sliders that tune `--design-system` output without changing your query. Add any combination of them to the same command:
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<query>" --design-system --variance <1-10> --motion <1-10> --density <1-10>
+python3 "<resolved-skill-dir>/scripts/search.py" "<query>" --design-system --variance <1-10> --motion <1-10> --density <1-10>
 ```
 
 | Dial | Low (1-3) | Mid (4-7) | High (8-10) |
@@ -128,13 +132,13 @@ python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<
 
 **Example:**
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "internal analytics dashboard" --design-system --variance 8 --motion 7 --density 8 -p "Ops Console"
+python3 "<resolved-skill-dir>/scripts/search.py" "internal analytics dashboard" --design-system --variance 8 --motion 7 --density 8 -p "Ops Console"
 ```
 
 ### Step 3: Supplement with Detailed Searches (as needed)
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<keyword>" --domain <domain> [-n <max_results>]
+python3 "<resolved-skill-dir>/scripts/search.py" "<keyword>" --domain <domain> [-n <max_results>]
 ```
 
 | Need | Domain | Example |
@@ -157,7 +161,7 @@ Domain is auto-detected from the query if `--domain` is omitted — but auto-det
 ### Step 4: Stack Guidelines
 
 ```bash
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "<keyword>" --stack <stack>
+python3 "<resolved-skill-dir>/scripts/search.py" "<keyword>" --stack <stack>
 ```
 
 **Available stacks:** `react`, `nextjs`, `vue`, `svelte`, `astro`, `nuxtjs`, `nuxt-ui`, `angular`, `laravel`, `swiftui`, `react-native`, `flutter`, `jetpack-compose`, `html-tailwind`, `shadcn`, `threejs`, `javafx`, `wpf`, `winui`, `avalonia`, `uno`, `uwp`. Use the stack detected in Step 1.
@@ -177,13 +181,13 @@ Do not fabricate output. Instead:
 
 ```bash
 # Step 2: design system
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "AI search tool modern minimal" --design-system -p "AI Search"
+python3 "<resolved-skill-dir>/scripts/search.py" "AI search tool modern minimal" --design-system -p "AI Search"
 
 # Step 3: supplement
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "keyboard focus modal" --domain ux
+python3 "<resolved-skill-dir>/scripts/search.py" "keyboard focus modal" --domain ux
 
 # Step 4: stack guidelines
-python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py" "suspense streaming bundle" --stack nextjs
+python3 "<resolved-skill-dir>/scripts/search.py" "suspense streaming bundle" --stack nextjs
 ```
 
 Then synthesize the design system + detailed searches and implement.
@@ -196,7 +200,7 @@ Then synthesize the design system + detailed searches and implement.
 
 - Keep one dominant intent and 2–5 meaningful terms per query: `"keyboard focus modal"`, not a full audit checklist
 - Retry once with a narrower phrase or explicit domain/stack; do not cycle through unrelated keywords
-- Use `--design-system` for a new project/page and `--domain` for a focused concern
+- Use `--design-system` for a needed new visual direction and `--domain` for a focused concern; reuse existing project decisions
 - Pass the detected stack explicitly for implementation-specific guidance
 
 | Problem | What to Do |

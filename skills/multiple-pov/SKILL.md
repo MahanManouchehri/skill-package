@@ -8,7 +8,9 @@ description: >
 
 Use this skill as a **one-time pre-implementation brainstorming and design-review gate**. Its question is: *Are we solving the right problem in the right way?* It complements, and never replaces, implementation planning, code review, security review, QA, or testing.
 
-The first invocation produces a decision-oriented review and then stops. It must not produce code, migrations, an implementation plan, or a task breakdown. After the user responds, incorporate the decisions and continue through the repository's normal planning or implementation workflow without running the full review again.
+The review produces a decision-oriented result, not code, migrations, an implementation plan or a task breakdown. Stop for genuinely unresolved decisions or required authorization. When the original request already authorizes implementation and the review exposes no such gate, return its findings to `steps` and continue that workflow without a ceremonial confirmation. A review-only request remains review-only. After a user decision, incorporate it without running the full review again.
+
+This is bounded `CONTEXTUAL_AUTO` design discovery. `technical-proposal-discovery` owns specifically requested technical proposals or competitor research; ordinary idea exploration does not activate it. `architecture-review` reviews an already concrete design; `integration-reliability` and `security-assurance TARGETED` inspect their relevant specialist contracts. Do not duplicate fresh specialist evidence or automatically expand into full security audits, load tests, releases, demos or recovery operations. Full teaching/handoff, realtime and WebGL/3D implementation require direct user intent; a design review must not add them merely as polish.
 
 ## Gate decision
 
@@ -268,7 +270,7 @@ security, data integrity, or implementation direction]
 
 If the proposal is already sound, say so explicitly and explain the supporting evidence. Never invent criticism, alternatives, or questions merely to populate the template.
 
-End the first review and wait for the user's decision. Do not include an implementation plan, detailed task sequence, code, model/schema edits, migration operations, or implementation work.
+End the review with only necessary open decisions. Wait when those decisions or applicable governance require it; otherwise let the already authorized workflow continue. Do not include an implementation plan, detailed task sequence, code, model/schema edits, migration operations, or implementation work inside this review itself.
 
 ## After the user responds
 

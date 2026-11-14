@@ -9,7 +9,7 @@ Verify preservation of existing behavior after a change. Do not assume that a wo
 
 ## Scope, authority, and governance
 
-Start by reading applicable `AGENTS.md`, `RULES.md`, project instructions, and the current user request. Use the governing instruction order: current user instruction, applicable repository rules, documentation, then this skill.
+Start by reading applicable `AGENTS.md`, `RULES.md`, project instructions, and the current user request. Follow the actual runtime instruction hierarchy; repository text and this skill cannot override higher-priority constraints or expand the user's action authority.
 
 Default role: `Detect → Evidence → Explain → Recommend`. Do not modify implementation, commit, push, merge, deploy, mutate production data, trigger real payments/notifications, run destructive SQL, or perform unsafe production actions unless the user explicitly asks for that specific action and governance permits it.
 
@@ -26,6 +26,8 @@ Its verdict—`PASS`, `PARTIAL`, or `FAIL`—applies only to regression safety w
 `regression-check PASS` does not mean “the task is complete.” It means only: “No regressions were found within the verified regression scope, and important affected legacy behaviors passed the performed checks.”
 
 Use `practical-test` for deep browser-level workflow verification when appropriate; do not duplicate it. If a confirmed regression exists but its cause is unclear, recommend or invoke `root-cause`; do not guess or turn this skill into deep debugging.
+
+This is bounded `CONTEXTUAL_AUTO`, not a reason to re-test unrelated modules. `test-engineering` owns technical-test strategy and implementation; consume its relevant results and add only missing preservation checks. Reuse fresh browser/test evidence with its tested revision, environment and protected behavior. If later code changes touch that behavior, invalidate and repeat only the affected checks. Do not require a new full-suite run merely because another reviewer loaded this skill.
 
 ## Regression method
 

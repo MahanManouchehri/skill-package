@@ -1,0 +1,131 @@
+{
+  "case_id": "S53",
+  "original_prompt": "فقط این API را بساز؛ نیاز به Demo یا پرزنت ندارم.",
+  "runtime_kind": "fresh_delegated_agent_read_only_plan",
+  "selected_skills": [
+    {
+      "name": "steps",
+      "path": "$FIXTURES/S53/.agents/skills/steps/SKILL.md",
+      "sha256": "f03939145759a7f5e3869b7ee137b6df1215d329abb42e23e9306094806852d1"
+    },
+    {
+      "name": "compatible-response",
+      "path": "$FIXTURES/S53/.agents/skills/compatible-response/SKILL.md",
+      "sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183"
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "$FIXTURES/S53/.agents/skills/natural-persian-writing/SKILL.md",
+      "sha256": "b08ce5d6bd31c0bda749a84e2d315e581b2c7ee0f50b71da7647256ba26314f0"
+    },
+    {
+      "name": "full-plan",
+      "path": "$FIXTURES/S53/.agents/skills/full-plan/SKILL.md",
+      "sha256": "db36168191e2a0440ae91feba5d806ee8855b5e0bc6256a31ccf9dff0cba4ea7"
+    }
+  ],
+  "actual_read_paths": [
+    "$FIXTURES/WORKER_CONTRACT.md",
+    "$FIXTURES/S53/AGENTS.md",
+    "$FIXTURES/S53/prompt.txt",
+    "$FIXTURES/S53/available_catalog.json",
+    "$FIXTURES/S53/.agents/skills/steps/SKILL.md",
+    "$FIXTURES/S53/.agents/skills/compatible-response/SKILL.md",
+    "$FIXTURES/S53/.agents/skills/natural-persian-writing/SKILL.md",
+    "$FIXTURES/S53/README.md",
+    "$FIXTURES/S53/NOTES.md",
+    "$FIXTURES/S53/composer.json",
+    "$FIXTURES/S53/routes/api.php",
+    "$FIXTURES/S53/app/Http/Controllers/UserController.php",
+    "$FIXTURES/S53/app/Models/User.php",
+    "$FIXTURES/S53/spec/api/users.md",
+    "$FIXTURES/S53/tests/test_contract.py",
+    "$FIXTURES/S53/schema.sql",
+    "$FIXTURES/S53/snapshot.json",
+    "$FIXTURES/S53/.agents/skills/full-plan/SKILL.md",
+    "$FIXTURES/S53/.agents/skills/natural-persian-writing/references/persian-style-guide.md"
+  ],
+  "commands_actually_run": [
+    {
+      "command": "cat ../WORKER_CONTRACT.md && cat AGENTS.md && cat prompt.txt && cat available_catalog.json",
+      "exit_code": 0,
+      "result": "Read the READ_ONLY worker contract, local governance, exact Persian request, and candidate catalog."
+    },
+    {
+      "command": "cat .agents/skills/steps/SKILL.md .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md\nrg --files -g '!node_modules/**' -g '!.agents/**' -g '!vendor/**'",
+      "exit_code": 0,
+      "result": "Read coordinator and presentation/Persian bodies; located Laravel-style API, model, schema, existing API doc, and one SQLite test."
+    },
+    {
+      "command": "cat README.md NOTES.md composer.json routes/api.php app/Http/Controllers/UserController.php app/Models/User.php spec/api/users.md tests/test_contract.py schema.sql snapshot.json",
+      "exit_code": 0,
+      "result": "Observed synthetic fixture with no framework/runtime; existing users route filters by owner_id; docs in spec/api; test covers duplicate-phone fixture only. No new requested API contract identified."
+    },
+    {
+      "command": "cat .agents/skills/full-plan/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md",
+      "exit_code": 0,
+      "result": "Read API-planning instructions and Persian technical guidance. Missing methods, inputs, status and response contracts must remain unresolved rather than invented."
+    }
+  ],
+  "findings": [
+    {
+      "path": "routes/api.php",
+      "evidence": "Route::get /users maps to UserController::index; spec/api/users.md names public-facing GET /api/users."
+    },
+    {
+      "path": "app/Http/Controllers/UserController.php",
+      "evidence": "index uses request user id to filter owner_id and returns get(); no explicit output resource, status or auth failure contract."
+    },
+    {
+      "path": "app/Models/User.php",
+      "evidence": "guarded protects id and owner_id from mass assignment; does not specify response field visibility."
+    },
+    {
+      "path": "README.md",
+      "evidence": "Synthetic fixture explicitly lacks framework, database server, provider account and running application."
+    },
+    {
+      "path": "tests/test_contract.py",
+      "evidence": "Only test creates in-memory duplicate phone values; does not verify API authentication, ownership or serialization."
+    },
+    {
+      "path": "NOTES.md",
+      "evidence": "User-authored draft must be preserved."
+    }
+  ],
+  "intended_actions": [
+    "Clarify which API operation or change is meant, using the observed existing GET /api/users as context; do not invent an unrelated API.",
+    "Keep the first-phase plan backend-only and preserve the Laravel stack; no demo, presentation, UI, realtime or provider workflow.",
+    "After requirements and an execution-authorized context exist, implement only the defined API contract; add focused API/auth/ownership tests and synchronize affected existing spec/api docs.",
+    "No database change, load test, deployment, independent architecture review, broad security audit, handoff docs or additional specialists are presently justified."
+  ],
+  "authorization_handling": {
+    "effective_mode": "READ_ONLY",
+    "allowed": "Read only assigned case and selected candidate bodies; create only delegated-results/S53.json.",
+    "forbidden_actions_avoided": [
+      "implementation",
+      "dependency installation",
+      "service start",
+      "network",
+      "provider traffic",
+      "production",
+      "cron configuration",
+      "commit",
+      "push",
+      "deploy",
+      "subagent spawning"
+    ],
+    "approval_requests": [],
+    "product_decision_needed": "Meaning of this API: requested method/path, behavior and request/response/error contract are absent. This is a specification question, not an approval gate.",
+    "file_preservation": "No application, docs, tests, schema, NOTES.md or unrelated files were modified."
+  },
+  "concise_persian_response": "★★\n\n1. [✓] بررسی مسیر موجود؛ اسکیل: steps، اجرا: IN_PROCESS. معیار پایان: مشخص‌شدن رفتار فعلی و محدودیت اجرا.\n2. [!] تعیین قرارداد API؛ اسکیل: full-plan، اجرا: IN_PROCESS. معیار پایان: روشن‌شدن عملیات، ورودی، خروجی و خطاهای API موردنظر.\n\nطرح API و سناریوها\n\n۱. نام endpoint: فهرست کاربران، `GET /api/users`، موجود؛ مطابق `routes/api.php` و `spec/api/users.md`. کنترلر کاربر فعلی را لازم دارد، اما روش احراز هویت و middleware در منابع بررسی‌شده مشخص نیست.\n۲. پارامترهای ورودی: در کد فعلی path، query یا body خوانده نمی‌شود. هویت کاربر از `$request->user()` دریافت می‌شود؛ قرارداد header احراز هویت نیازمند تعیین است.\n۳. رفتار: `UserController::index` فقط رکوردهای دارای `owner_id` برابر شناسهٔ کاربر فعلی را می‌خواند.\n۴. خروجی: مجموعهٔ مدل‌های `User` مستقیماً برگردانده می‌شود. فرمت قطعی JSON، فیلدهای مجاز، status code و پاسخ خطا با اجرای واقعی تأیید نشده‌اند؛ این موارد نیازمند تعیین‌اند.\n\nسناریو: کاربر احرازشده فهرست را درخواست می‌کند و باید فقط کاربران متعلق به خودش را ببیند. معیار پذیرش پیشنهادی: جداسازی دادهٔ دو مالک و رد درخواست فاقد هویت، مطابق قرارداد خطایی که تعیین می‌شود.\n\nنیاز به تصمیم شما: عبارت «این API» عملیات تازه یا تغییر موردنظر را مشخص نمی‌کند. لطفاً بگویید کدام عملیات و چه ورودی و خروجی‌ای باید ساخته شود؛ تنها قرارداد قابل مشاهده، فهرست کاربران است.\n\nدر این مرحله هیچ کدی تغییر نکرد و تستی اجرا نشد. README نبود framework و برنامهٔ در حال اجرا را اعلام می‌کند؛ تست موجود فقط دادهٔ تکراری شماره تلفن را بررسی می‌کند. پس از تعیین قرارداد، گام بعد پیاده‌سازی محدود در همین Laravel، آزمون قرارداد و همگام‌سازی `spec/api/users.md` است. Demo، پرزنت و رابط تازه خارج از درخواست‌اند.",
+  "limitations": [
+    "No implementation authorized by this execution mode.",
+    "Actual desired API contract is unspecified.",
+    "Framework/runtime/database and running endpoint are absent according to README; no live behavior or persistence evidence.",
+    "Tests were inspected, not executed; no test-success claim.",
+    "The snapshot file was read as local metadata only; its hash is not a runtime-verification result."
+  ],
+  "output_path": "$FIXTURES/delegated-results/S53.json"
+}

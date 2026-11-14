@@ -7,16 +7,13 @@
 | پلتفرم | فایل یا پوشهٔ موردنیاز | روش استفاده | محدودیت مهم |
 | --- | --- | --- | --- |
 | Codex | `SKILL.md` ریشه | نصب سراسری و استفادهٔ خودکار یا `$full-plan` | برای ظاهرشدن در فهرست، task جدید باز کنید |
-| ChatGPT Skills | `platforms/chatgpt-skill/` | از Skills، یک Skill بسازید و این پوشه را upload کنید | قابلیت Skills فقط در حساب‌ها و workspaceهای واجد شرایط در دسترس است |
 | ChatGPT Web عمومی | `platforms/chatgpt-custom-gpt/INSTRUCTIONS.md` | متن را در Instructions یک Custom GPT paste کنید | ساخت Custom GPT به پلن و مجوز حساب وابسته است |
 | Claude Code | `platforms/claude-code/commands/full-plan.md` | فایل را در `.claude/commands/full-plan.md` پروژه کپی کنید و سپس `/full-plan` را اجرا کنید | فرمان در همان پروژه فعال است |
 | Claude Web | `platforms/claude-web/PROJECT-INSTRUCTIONS.md` | متن را در Project Instructions paste کنید | به همهٔ گفتگوهای همان Project اعمال می‌شود، نه کل حساب |
 
-## ChatGPT Skills
+## دامنهٔ این بسته
 
-ChatGPT در workspaceهای واجد شرایط می‌تواند Skillهای uploadشده را نصب و به‌صورت خودکار استفاده کند. اگر در رابط ChatGPT شما بخش **Plugins → Skills** یا گزینهٔ upload وجود ندارد، این محدودیت محصول یا workspace است و با تغییر ساختار مخزن برطرف نمی‌شود. در این حالت از adapter مربوط به Custom GPT استفاده کنید.
-
-برای upload، پوشهٔ `platforms/chatgpt-skill` را به‌صورت یک archive نگه دارید تا `SKILL.md` در ریشهٔ archive قرار بگیرد. archive آماده در GitHub Releases این مخزن منتشر می‌شود. پیش از نصب، محتوای Skill را بررسی کنید و پس از upload، یک گفت‌وگوی آزمایشی با `/full-plan` اجرا کنید.
+این نسخه برای Codex ارزیابی می‌شود. پوشهٔ `platforms/chatgpt-skill/` در این snapshot موجود نیست و archive آماده یا سازگاری فعلی محصولات دیگر تأیید نشده است. adapterهای باقی‌مانده برای حفظ منابع قبلی نگه داشته شده‌اند؛ استفاده در سرویس دیگر به بررسی مستندات و امکانات همان محیط نیاز دارد.
 
 ## ChatGPT Custom GPT
 
@@ -37,6 +34,6 @@ ChatGPT در workspaceهای واجد شرایط می‌تواند Skillهای u
 1. ابتدا شواهد مرتبط را بررسی کنند و قرارداد API را حدس نزنند.
 2. هر endpoint را با ورودی، رفتار و خروجی دقیق توضیح دهند.
 3. سناریوها را به‌ترتیب و بر اساس نقش بنویسند.
-4. تا تأیید صریح کاربر، وارد پیاده‌سازی نشوند.
+4. اختیار فعلی کاربر و دستورهای معتبر را حفظ کنند؛ فقط برای تصمیم مهم حل‌نشده یا اقدام محدودشده توقف کنند، نه برای تأیید دوبارهٔ تغییر معمول و مجاز.
 
 </div>
