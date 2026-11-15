@@ -5,7 +5,7 @@
     ".git/",
     "package-integrity.json"
   ],
-  "package_tree_hash_sha256": "d99c9c52c0dd334356df52d6aece7824da1e8400a862544291c1172df4f595aa",
+  "package_tree_hash_sha256": "c41b42f8f01264bf9953fe51d45c24951da7c9559a546a776850d7aceaaaa954",
   "files": [
     {
       "path": ".gitattributes",
@@ -14,8 +14,8 @@
     },
     {
       "path": ".github/workflows/windows-validation.yml",
-      "sha256": "eeefc23b5164b8c05f5f427eb1d7c692da988977d542e171b44c5734534826f5",
-      "bytes": 2170
+      "sha256": "1dfd44c7b51b66139d001ec9e9a2b140a1ac045f3c44acf9e3a33f7fec9f6337",
+      "bytes": 2508
     },
     {
       "path": ".gitignore",
@@ -1256,6 +1256,11 @@
       "path": "evals/evidence/v3.1.1/ui/upstream-selected.json",
       "sha256": "bcdb8626b704ba4c723171bb63bacc6b94b356fb465497f18f208784fbc439c5",
       "bytes": 1265
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-first-attempt.json",
+      "sha256": "6eb6f77bdf410519936b5766179e683e9d86320b66e167c6f2433e18cba81bac",
+      "bytes": 515
     },
     {
       "path": "evals/evidence/v3.1.1/windows/ci-status.json",
@@ -3484,7 +3489,7 @@
     },
     {
       "path": "skills-manifest.json",
-      "sha256": "56d9dc1312bbe0c5d783061acf16688959dfd01bacc5f281b20f0e8e506ef64e",
+      "sha256": "37d63948dd931e0a2ac1d06450e1fde5100bb3d66ca5c1adcec1e65528634af8",
       "bytes": 469060
     },
     {

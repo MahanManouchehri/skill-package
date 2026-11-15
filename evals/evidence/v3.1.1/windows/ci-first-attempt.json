@@ -1,0 +1,11 @@
+{
+  "run_id": 43761024219,
+  "head_sha": "a0141b095ef0fda011b221b8fa9483482f1abc7e",
+  "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43761024219",
+  "status": "FAIL_BEFORE_RUNNER",
+  "jobs": 0,
+  "logs": "not found; no job started",
+  "cause": "runner context is unavailable in job-level env expressions (lines21-24).",
+  "correction": "Resolve RUNNER_TEMP in the first pwsh step and export fixture-only variables through GITHUB_ENV for later steps.",
+  "windows_execution": "UNVERIFIED"
+}
