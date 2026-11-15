@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/sandbox-exec -f /Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/protect-user-state.sb /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex "$@"

@@ -31,7 +31,7 @@ Primary auth/config/skill/plugin files were not manually edited or copied. An ea
 
 ## Windows evidence
 
-Source review and 57 cross-platform package tests are green on macOS. Local PowerShell 5.1/7 are unavailable. The authorized `windows-latest` workflow exercises actual Windows locking/liveness, junctions/locked files, UTF-8/raw hashes, package/runner/UI suites and both PowerShell parsers/temp-only transactions. [Current hosted status](evals/evidence/v3.1.1/windows/ci-status.json) is authoritative; a workflow file is not WINDOWS_CI_PASS. [Restrictions and safe commands](WINDOWS_COMPATIBILITY.md) distinguish the Python installer from the standalone PowerShell fixed-drive-only fallback.
+Source review and 57 cross-platform package tests are green on macOS. Local PowerShell 5.1/7 are unavailable. The authorized `windows-latest` workflow exercises actual Windows locking/liveness, junctions/locked files, UTF-8/raw hashes, package/runner/UI suites and both PowerShell parsers/temp-only transactions. [Completed hosted run](https://github.com/MahanManouchehri/skill-package/actions/runs/43763532217) is WINDOWS_CI_PASS on Windows Server 2025 / Python 3.12.10: 57 package, 27 runner, 153 UI, 5 launcher and 4 real filesystem tests pass, and both PowerShell 5.1/7 parse six scripts and pass full temp-profile transactions. [Snapshot-bound status](evals/evidence/v3.1.1/windows/ci-status.json) preserves the exact tested SHA, markers and all four earlier failures. The final published SHA is independently checked after the evidence commit. [Restrictions and safe commands](WINDOWS_COMPATIBILITY.md) distinguish the Python installer from the standalone PowerShell fixed-drive-only fallback.
 
 ## Historical routing and publication
 

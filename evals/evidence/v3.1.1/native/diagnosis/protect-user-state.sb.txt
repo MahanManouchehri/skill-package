@@ -1,0 +1,3 @@
+(version 1)
+(allow default)
+(deny file-write* (subpath "/Users/mahan/.codex/skills") (subpath "/Users/mahan/.agents/skills") (subpath "/Users/mahan/.codex/plugins") (subpath "/Users/mahan/.codex/.tmp/plugins") (literal "/Users/mahan/.codex/config.toml") (literal "/Users/mahan/.codex/models_cache.json") (literal "/Users/mahan/.codex/auth.json") (literal "/Users/mahan/.codex/AGENTS.md") (literal "/Users/mahan/.agents/AGENTS.md"))

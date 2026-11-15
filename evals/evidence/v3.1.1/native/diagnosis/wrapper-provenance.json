@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "name": "protected-codex",
+      "sha256": "ddddc773f5ce9099b885ded4a835cd9e374473716306bb103f55b3aeafeaa28f",
+      "mtime_utc_epoch": 1794757378.7373488
+    },
+    {
+      "name": "catalog-pinned-codex",
+      "sha256": "5f4fb0ef0c87cb805b86e22bf61cb37b2d3b5ee06c426bd19b0102d16a3655a2",
+      "mtime_utc_epoch": 1794757978.031854
+    },
+    {
+      "name": "protect-user-state.sb",
+      "sha256": "874da603c09f52178b738feff269203022bdb08df1b0907e83e497b0988e2b94",
+      "mtime_utc_epoch": 1794757136.8261123
+    }
+  ],
+  "note": "Final wrapper bytes archived. catalog-pinned-codex had its experimental skip_host_skill_discovery flag removed before preflight-final and all12 currentbankattempts; earlier tool/catalog probes used the previous wrapper version, as shown by raw warning events. Recreate the unmodified bundled model JSON with the recorded binary debug models --bundled; its hash is recorded in the catalog summary. Invocation-only catalog override is not a model entitlement repair."
+}

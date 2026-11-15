@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex -c 'model_catalog_json="/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/app-bundled-models.json"' "$@"

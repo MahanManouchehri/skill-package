@@ -219,7 +219,7 @@ def discover(cwd, executable="codex", config=None):
         raise TimeoutError(method)
 
     try:
-        request(1, "initialize", {"clientInfo": {"name": "skill-package-evals", "version": "3.1.0"}})
+        request(1, "initialize", {"clientInfo": {"name": "skill-package-evals", "version": (PACKAGE / "VERSION").read_text(encoding="utf-8").strip()}})
         proc.stdin.write(json.dumps({"jsonrpc": "2.0", "method": "initialized", "params": {}}) + "\n")
         proc.stdin.flush()
         return request(2, "skills/list", {"cwds": [str(cwd)], "forceReload": True})

@@ -9,8 +9,8 @@ support for every Windows filesystem.
 |---|---|
 | STATIC_REVIEWED | Python transaction/recovery code; PowerShell installer, verifier, inventory and shared helpers; path, encoding, reparse and exclusion boundaries |
 | CROSS_PLATFORM_TESTED | 57 package-tool tests executed on macOS, including 13 added tests; Windows lexical decisions use the same production guard through PureWindowsPath |
-| POWERSHELL_PARSED | Not executed locally: pwsh and Windows PowerShell are absent on the macOS host; the workflow runs each actual parser separately |
-| WINDOWS_RUNTIME_UNVERIFIED | Until a completed hosted Windows run is recorded in the version-specific validation evidence; a workflow file is not execution evidence |
+| POWERSHELL_PARSED | Hosted Windows PowerShell 5.1.26100.33648 and PowerShell 7.6.9 each parsed all six scripts and passed the full disposable-profile driver; neither is locally installed on macOS |
+| WINDOWS_CI_PASS | [Completed Windows Server 2025 run](https://github.com/MahanManouchehri/skill-package/actions/runs/43763532217): all five Python groups and both real PowerShell fixture drivers pass; scope bound to the recorded SHA/environment |
 
 The [Windows validation workflow](.github/workflows/windows-validation.yml)
 runs on windows-latest with contents:read permission and pinned official
@@ -174,3 +174,5 @@ PureWindowsPath tests prove lexical decisions only. A successful Windows run
 supports its specific Python/PowerShell/runner configuration, not universal
 Windows compatibility. Model/account eligibility and plugin capabilities require
 separate native evidence.
+
+Hosted evidence, exact counts and the earlier real failures are retained in [v3.1.1 CI status](evals/evidence/v3.1.1/windows/ci-status.json). Git read-only fixture cleanup, descendant cwd sharing, preserved legacy path spelling and backup-report fixture expectations were corrected without skipping or weakening assertions. Independent test groups still fail the job on any failure and run only after package verification succeeds.

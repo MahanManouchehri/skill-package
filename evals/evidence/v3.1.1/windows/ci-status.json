@@ -1,7 +1,41 @@
 {
-  "status": "WINDOWS_RUNTIME_UNVERIFIED",
-  "reason": "Awaiting actual Windows Actions run after authorized candidate push. Local PowerShell unavailable.",
-  "actions_enabled": true,
-  "main_protected": false,
-  "workflow": ".github/workflows/windows-validation.yml"
+  "status": "WINDOWS_CI_PASS",
+  "observed_utc": "2026-11-15T21:33:21.101273+00:00",
+  "run_id": 43763532217,
+  "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43763532217",
+  "tested_sha": "f26054b74cc9e2afebff0873fa2ea437cbec621b",
+  "runner": "windows-latest",
+  "os": "Microsoft Windows Server 2025 10.0.26100 Datacenter",
+  "python": "3.12.10",
+  "counts": {
+    "package": 57,
+    "runner": 27,
+    "full_ui": 153,
+    "ui_launcher": 5,
+    "windows_native_filesystem": 4
+  },
+  "PowerShell": [
+    "5.1.26100.33648",
+    "7.6.9"
+  ],
+  "parsed_scripts_per_host": 6,
+  "fixtures": "Both PS hosts passed complete isolated installation/idempotence/backup/caught-error rollback/inventory/SUBST rejection checks. No actual user profiles used.",
+  "markers": [
+    "windows\tPackage transactions and cross-platform regression tests\t2026-11-15T21:25:42.8269001Z Ran 57 tests in 37.173s",
+    "windows\tEvaluation runner regression tests\t2026-11-15T21:25:43.9286686Z Ran 27 tests in 0.448s",
+    "windows\tFull UI authoring and runtime discovery\t2026-11-15T21:25:53.5861705Z Ran 153 tests in 8.904s",
+    "windows\tPortable UI authoring launchers\t2026-11-15T21:26:20.9778339Z Ran 5 tests in 26.833s",
+    "windows\tActual Windows junctions, locked files, and long paths\t2026-11-15T21:26:31.4562307Z Ran 4 tests in 9.815s",
+    "windows\tWindows PowerShell 5.1 parser and temporary profile transactions\t2026-11-15T21:26:32.3801079Z POWERSHELL_PARSED: 6 scripts on 5.1.26100.33648",
+    "windows\tWindows PowerShell 5.1 parser and temporary profile transactions\t2026-11-15T21:28:10.8104245Z WINDOWS_POWERSHELL_FIXTURES_PASS: host=5.1.26100.33648; parsed=6; temporary profile only",
+    "windows\tPowerShell 7 parser and temporary profile transactions\t2026-11-15T21:28:11.4432725Z POWERSHELL_PARSED: 6 scripts on 7.6.9",
+    "windows\tPowerShell 7 parser and temporary profile transactions\t2026-11-15T21:29:32.4549026Z WINDOWS_POWERSHELL_FIXTURES_PASS: host=7.6.9; parsed=6; temporary profile only"
+  ],
+  "earlier_failed_runs": [
+    43761024219,
+    43761194096,
+    43761602741,
+    43762283383
+  ],
+  "final_snapshot_note": "This completed run is snapshot-bound. The final published commit/tag check and its own CI result are recorded externally after publication to avoid a self-referential source SHA/checksum."
 }

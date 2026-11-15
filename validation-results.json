@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "package_version": "3.1.1",
-  "observed_utc": "2026-11-15T20:54:27.578415+00:00",
+  "observed_utc": "2026-11-15T21:35:58.872932+00:00",
   "base_commit": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
   "tested_source_dirty": true,
   "personal_payload_snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
@@ -47,9 +47,9 @@
       "cwd": "/Users/mahan/Desktop/Web/skill-package",
       "exit_code": 0,
       "executed": 27,
-      "summary": "ces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok\ntest_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.240s\n\nOK\n",
-      "note": "Final27 macOS tests after preserving legacy catalog path spelling and correcting descendant fixture cwd, plus source-isolation/post-turn hash guards. Original14 assertions intact.",
-      "observed_utc": "2026-11-15T21:22:52.043926+00:00"
+      "summary": "ces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok\ntest_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.253s\n\nOK\n",
+      "note": "27 final helper tests pass; app-server client version is read from VERSION to preserve release provenance. Source-isolation correction still has no model rerun after account cap.",
+      "observed_utc": "2026-11-15T21:34:49.029440+00:00"
     },
     {
       "name": "ui",
@@ -138,7 +138,19 @@
     "S07/S12 read byte-identical host compatible-response bodies outside fixture-only scope; preserved as isolation failures. Runner correction has unit coverage, no subsequent native behavior claim.",
     "Catalog overlays control discovery, not filesystem read confinement; dynamic/compound reads require raw review.",
     "Full Laravel/Django/browser/provider/production implementation acceptance remains UNVERIFIED.",
-    "Default Homebrew CLI remains old; newer app CLI selected explicitly. Native cache hash changed during normal runtime use; harness did not manually edit/delete/restore primary cache or auth.",
-    "Windows CI initially pending; actual status is recorded separately."
-  ]
+    "Default Homebrew CLI remains old; newer app CLI selected explicitly. Native cache hash changed during normal runtime use; harness did not manually edit/delete/restore primary cache or auth."
+  ],
+  "windows": {
+    "STATIC_REVIEWED": true,
+    "CROSS_PLATFORM_TESTED": true,
+    "POWERSHELL_PARSED": [
+      "5.1",
+      "7"
+    ],
+    "WINDOWS_CI_PASS": true,
+    "evidence": "evals/evidence/v3.1.1/windows/ci-status.json",
+    "tested_sha": "f26054b74cc9e2afebff0873fa2ea437cbec621b",
+    "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43763532217"
+  },
+  "release_certification": "BOUNDED_VERIFICATION_WITH_NATIVE_LIMITATIONS"
 }
