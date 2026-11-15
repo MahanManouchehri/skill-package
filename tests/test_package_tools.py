@@ -68,6 +68,26 @@ def make_package(path):
     return manifest
 
 
+def remove_fixture_tree(root):
+    """Clean owned test data, including Git's read-only Windows pack objects."""
+    root = Path(root).absolute()
+    if not root.name.startswith("skill-tools-"):
+        raise ValueError("Refusing cleanup outside an owned package-tool fixture")
+    def retry(function, path, error):
+        info = os.lstat(path)
+        if (os.name == "nt" and isinstance(error[1], PermissionError)
+                and function in {os.unlink, os.remove}
+                and Path(path).absolute().is_relative_to(root)
+                and stat.S_ISREG(info.st_mode)
+                and not getattr(info, "st_file_attributes", 0) & 0x400
+                and not info.st_mode & stat.S_IWRITE):
+            os.chmod(path, info.st_mode | stat.S_IWRITE)
+            function(path)
+        else:
+            raise error[1]
+    shutil.rmtree(root, onerror=retry)
+
+
 class PackageToolTests(unittest.TestCase):
     def test_windows_spelling_guard_allows_dot_navigation_for_bounded_references(self):
         from pathlib import PureWindowsPath
@@ -86,7 +106,7 @@ class PackageToolTests(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        shutil.rmtree(cls.shared)
+        remove_fixture_tree(cls.shared)
 
     def setUp(self):
         self.temp = Path(tempfile.mkdtemp(prefix="skill-tools-test-")).resolve()
@@ -98,7 +118,7 @@ class PackageToolTests(unittest.TestCase):
         self.backups = self.temp / "backups"
 
     def tearDown(self):
-        shutil.rmtree(self.temp)
+        remove_fixture_tree(self.temp)
 
     def promote(self, **kwargs):
         return tools.promote(self.package, self.stage, self.destination, self.backups, **kwargs)

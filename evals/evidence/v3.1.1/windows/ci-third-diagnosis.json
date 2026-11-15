@@ -1,0 +1,9 @@
+{
+  "run_id": 43761602741,
+  "result": "FAIL_TEST_FIXTURE_TEARDOWN",
+  "actual_executed": 57,
+  "errors": 1,
+  "cause": "Git pack idx in the disposable cloned repository is read-only on Windows; fixture tearDown shutil.rmtree failed.",
+  "correction": "Owned fixture cleanup retries only contained non-reparse regular read-only file deletion after clearing its write-protection; all assertions preserved. Other errors remain failures.",
+  "workflow_note": "Run independent test groups after verified package even when a sibling group fails; no continue-on-error."
+}

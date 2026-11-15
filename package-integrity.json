@@ -5,7 +5,7 @@
     ".git/",
     "package-integrity.json"
   ],
-  "package_tree_hash_sha256": "9cf0a5e0c667b0075af5f4192d110db435a3002c500a746f47bde802a7b2c762",
+  "package_tree_hash_sha256": "bdacefc89ad016116f5f53952e216f36f1964cc0297cf4b60d338b3fb93008df",
   "files": [
     {
       "path": ".gitattributes",
@@ -14,8 +14,8 @@
     },
     {
       "path": ".github/workflows/windows-validation.yml",
-      "sha256": "1dfd44c7b51b66139d001ec9e9a2b140a1ac045f3c44acf9e3a33f7fec9f6337",
-      "bytes": 2508
+      "sha256": "bcc2a525bda3e47d84380c92f12287b2cde0d9e3d0a85267c2e010bfe4f1122d",
+      "bytes": 3010
     },
     {
       "path": ".gitignore",
@@ -363,19 +363,24 @@
       "bytes": 4316
     },
     {
+      "path": "evals/evidence/v3.1.1/local/package-before-git-cleanup-correction.txt",
+      "sha256": "9b31a166dd212c54bf511d7e94a5f18593cd7fb52b9340f747633fdd968acf44",
+      "bytes": 98
+    },
+    {
       "path": "evals/evidence/v3.1.1/local/package-before-windows-link-correction.txt",
       "sha256": "8995e17bfa6dc198316fab00aba62f3492b51e0d3286dee18a72cff92a6465cd",
       "bytes": 8571
     },
     {
       "path": "evals/evidence/v3.1.1/local/package.txt",
-      "sha256": "9b31a166dd212c54bf511d7e94a5f18593cd7fb52b9340f747633fdd968acf44",
+      "sha256": "d5bfbdc90b49845a2408fe4be7ab8ae6a4e2a8773f954c59c86f36999158a950",
       "bytes": 98
     },
     {
       "path": "evals/evidence/v3.1.1/local/results.json",
-      "sha256": "982c9ad4ded9c705494ce438131ef0a30ec65dcf80c0475128711eba25f571c0",
-      "bytes": 3350
+      "sha256": "63e96e89f00dde1eda6e458186946442289a8f769ce9ff1975d3ae5baacefdb9",
+      "bytes": 3338
     },
     {
       "path": "evals/evidence/v3.1.1/local/runner.txt",
@@ -1218,6 +1223,11 @@
       "bytes": 8660
     },
     {
+      "path": "evals/evidence/v3.1.1/pre-release-review.md",
+      "sha256": "b7898d22f81188486966881f1acfbd32d8ca8b31e2e9e7e6a1c8b4f4380f919f",
+      "bytes": 8627
+    },
+    {
       "path": "evals/evidence/v3.1.1/preservation.json",
       "sha256": "e622d505e6e011c4d1206d221749e323f6b786888c083d85dcb9d9f152d5f67d",
       "bytes": 492
@@ -1269,8 +1279,8 @@
     },
     {
       "path": "evals/evidence/v3.1.1/windows/ci-second-attempt.json",
-      "sha256": "b57d8f499af1ec7c5e31b4730c870efe74fbdef2b69c438679b2dcc1fb79cf05",
-      "bytes": 3270
+      "sha256": "5fb57cf1ff0520363ed7d39ba65c9885185a72a4793a7271292aa11c87b90b60",
+      "bytes": 3269
     },
     {
       "path": "evals/evidence/v3.1.1/windows/ci-second-attempt.log.json",
@@ -1286,6 +1296,21 @@
       "path": "evals/evidence/v3.1.1/windows/ci-status.json",
       "sha256": "cca898b212c9eceef75f8e4fefddbbe5af63d4c84b07486f5b5fb38a6d53cc0b",
       "bytes": 271
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-third-attempt.json",
+      "sha256": "54a25977463e900e02c0f2c68b9dbba3a97547aa32adcefdcfe0556ed22afbac",
+      "bytes": 3269
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-third-attempt.log.json",
+      "sha256": "f49b4e152ee02a318da78b08fddbcc32a7dcb1548c9537edd91997839f57be91",
+      "bytes": 52864
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-third-diagnosis.json",
+      "sha256": "3a580f3f35d587c2a1dfc9f7ee5f18bb66c67422831331c3a5df0cfe1f0fec9f",
+      "bytes": 566
     },
     {
       "path": "evals/evidence/v3.1.1/windows/final-powershell-static.json",
@@ -3509,7 +3534,7 @@
     },
     {
       "path": "skills-manifest.json",
-      "sha256": "f54e7b56c18f53c26c3cb9f2364c86ac35d8ae32fdd0ca33645f37a3b728e6ac",
+      "sha256": "1d45aec65bd942c211177aa2f46838c55d6c18741833c3a793aa548d0617edcf",
       "bytes": 469060
     },
     {
@@ -4249,8 +4274,8 @@
     },
     {
       "path": "tests/test_package_tools.py",
-      "sha256": "6a917d97f54a0a5ee67529b621fc32544805b00f37c33d92239972a64ff3bb21",
-      "bytes": 47151
+      "sha256": "e35749d58ab65e95dae27b4c18cd04cdbedbfd7d5b844fe297c4f58db3907755",
+      "bytes": 48035
     },
     {
       "path": "tests/test_ui_authoring.py",
@@ -4269,8 +4294,8 @@
     },
     {
       "path": "validation-results.json",
-      "sha256": "9e49c18187e025fbf1edd57ebeb9ffdc09bba077cc750b75341b320275fb8da2",
-      "bytes": 6271
+      "sha256": "8b3fb24b5d5e9ebd9364b175f4a9f1de1e06d7dd1ced626a58f404f193f77e8b",
+      "bytes": 6259
     }
   ]
 }

@@ -40,20 +40,28 @@ jobs:
       - name: Install Python validation dependency
         run: python -m pip install -r scripts/requirements.txt
       - name: Verify package and immutable snapshots
+        id: verify
         run: python -B scripts/package_tools.py verify --package-root .
       - name: Package transactions and cross-platform regression tests
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         run: python -B -m unittest discover -s tests -p test_package_tools.py -v
       - name: Evaluation runner regression tests
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         run: python -B -m unittest discover -s evals -p test_runner.py -v
       - name: Full UI authoring and runtime discovery
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         run: python -B -m unittest discover -s skills/ui-ux-pro-max/scripts/tests -p 'test_*.py' -v
       - name: Portable UI authoring launchers
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         run: python -B -m unittest discover -s tests -p test_ui_authoring.py -v
       - name: Actual Windows junctions, locked files, and long paths
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         run: python -B tests/windows_native_checks.py -v
       - name: Windows PowerShell 5.1 parser and temporary profile transactions
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         shell: powershell
         run: .\tests\windows_powershell_checks.ps1 -ScratchParent $env:RUNNER_TEMP -Python python
       - name: PowerShell 7 parser and temporary profile transactions
+        if: ${{ !cancelled() && steps.verify.outcome == 'success' }}
         shell: pwsh
         run: .\tests\windows_powershell_checks.ps1 -ScratchParent $env:RUNNER_TEMP -Python python

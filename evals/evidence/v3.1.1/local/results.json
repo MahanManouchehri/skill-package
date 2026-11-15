@@ -16,9 +16,9 @@
     "cwd": "/Users/mahan/Desktop/Web/skill-package",
     "exit_code": 0,
     "executed": 57,
-    "summary": "----------------------------------------------------------------------\nRan 57 tests in 8.759s\n\nOK\n",
-    "observed_utc": "2026-11-15T21:03:33.081181+00:00",
-    "note": "Windows CI2 caught valid parent-reference rejection; raw lexical guard fixed and added regression. Earlier56 log retained."
+    "summary": "----------------------------------------------------------------------\nRan 57 tests in 8.758s\n\nOK\n",
+    "observed_utc": "2026-11-15T21:11:11.495544+00:00",
+    "note": "Final57 macOS suite includes owned Windows Git fixture cleanup correction; nativeWindows rerun still required."
   },
   {
     "name": "runner",
