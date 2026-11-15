@@ -1,0 +1,175 @@
+{
+  "command": [
+    "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/catalog-pinned-codex",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--json",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "features.plugins=false",
+    "-c",
+    "features.apps=false",
+    "-c",
+    "features.remote_plugin=false",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-c",
+    "skills.config=[{path=\"/Users/mahan/.agents/skills/compatible-response/SKILL.md\",enabled=false},{path=\"/Users/mahan/.agents/skills/hand-off/SKILL.md\",enabled=false},{path=\"/Users/mahan/.agents/skills/natural-persian-writing/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/.system/imagegen/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/.system/openai-docs/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/.system/review-agent/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/.system/skill-creator/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/.system/skill-installer/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/apple-design/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/architecture-review/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/backup-recovery/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/banner-design/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/brand/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/db-impact/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/design-system/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/design/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/devil/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/docs-maintenance/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/final-check/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/full-plan/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/integration-reliability/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/load-testing/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/maintenance-evolution/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/multiple-pov/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/performance-review/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/practical-test/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/regression-check/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/release-management/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/root-cause/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/security-assurance/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/skill-evals/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/steps/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/technical-proposal-discovery/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/test-engineering/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/ui-styling/SKILL.md\",enabled=false},{path=\"/Users/mahan/.codex/skills/ui-ux-pro-max/SKILL.md\",enabled=false}]",
+    "-C",
+    "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S01",
+    "-"
+  ],
+  "stdin": "Availability smoke only. Do not use tools, read or write files. Return exactly NATIVE_SMOKE_OK.",
+  "disabled_overlays": [
+    {
+      "path": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.agents/skills/hand-off/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.agents/skills/natural-persian-writing/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/.system/imagegen/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/.system/openai-docs/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/.system/review-agent/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/.system/skill-creator/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/.system/skill-installer/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/apple-design/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/architecture-review/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/backup-recovery/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/banner-design/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/brand/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/db-impact/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/design-system/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/design/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/devil/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/docs-maintenance/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/final-check/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/full-plan/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/integration-reliability/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/load-testing/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/maintenance-evolution/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/multiple-pov/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/performance-review/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/practical-test/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/regression-check/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/release-management/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/root-cause/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/security-assurance/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/skill-evals/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/steps/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/technical-proposal-discovery/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/test-engineering/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/ui-styling/SKILL.md",
+      "enabled": false
+    },
+    {
+      "path": "/Users/mahan/.codex/skills/ui-ux-pro-max/SKILL.md",
+      "enabled": false
+    }
+  ]
+}

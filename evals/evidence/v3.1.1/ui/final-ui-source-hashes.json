@@ -1,0 +1,50 @@
+[
+  {
+    "path": "scripts/refresh-google-fonts.py",
+    "bytes": 26900,
+    "sha256": "e29e9b19ec69e73214ebe22b2488e1da42e7e30ba75e882e7a7aca336f006a77",
+    "crlf_count": 0
+  },
+  {
+    "path": "scripts/refresh-icon-catalog.py",
+    "bytes": 10378,
+    "sha256": "18b51278d8c2236692aa117325f83d2d1c4b82d513e48a2d9e614d376e033235",
+    "crlf_count": 0
+  },
+  {
+    "path": "scripts/evaluate-relevance.py",
+    "bytes": 4004,
+    "sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+    "crlf_count": 0
+  },
+  {
+    "path": "scripts/relevance_metrics.py",
+    "bytes": 8536,
+    "sha256": "a5126f734365380b3f3390453f25d2f504a6488c6af0fc88256a9529c02e1547",
+    "crlf_count": 0
+  },
+  {
+    "path": "scripts/vendor/ui-ux-pro-max/evaluate-relevance.py",
+    "bytes": 12374,
+    "sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e",
+    "crlf_count": 0
+  },
+  {
+    "path": "tests/test_ui_authoring.py",
+    "bytes": 6220,
+    "sha256": "939f0ee198e99ebfbb89ed7081ea521e25a66341aecb17303c3b3e502f6d0dec",
+    "crlf_count": 0
+  },
+  {
+    "path": "UI_AUTHORING_PROVENANCE.md",
+    "bytes": 6854,
+    "sha256": "f2e213116b0c759d6b98224bb34457313fb0509f64133bb0a5ae5d5611ec8f81",
+    "crlf_count": 0
+  },
+  {
+    "path": "LICENSES/ui-ux-pro-max-MIT.txt",
+    "bytes": 1075,
+    "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+    "crlf_count": 0
+  }
+]

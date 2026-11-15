@@ -14,7 +14,7 @@ import datetime as dt
 import hashlib
 import json
 import os
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import shutil
 import stat
@@ -58,10 +58,29 @@ def require(condition, message):
 
 def absolute(path):
     # Do not resolve symlinks: their spelling must remain visible to the guard.
-    return Path(os.path.abspath(os.fspath(path)))
+    value = ordinary_windows_path(Path(path))
+    return ordinary_windows_path(Path(os.path.abspath(value)))
+
+
+def ordinary_windows_path(path):
+    # Device namespaces can spell the same tree differently from normal drive/
+    # UNC paths, defeating lexical overlap checks. Refuse rather than guess.
+    require(not path.drive.startswith(("\\\\?\\", "\\\\.\\")),
+            f"Windows device/extended namespace paths are unsupported: {path}")
+    if isinstance(path, PureWindowsPath):
+        for part in path.parts:
+            if part == path.anchor:
+                continue
+            require(not part.endswith((" ", ".")) and not re.search(r"~[0-9]", part),
+                    f"Use ordinary long Windows path components without trailing dots/spaces or short aliases: {path}")
+    return path
 
 
 def inside(path, root):
+    if os.name == "nt":
+        # Windows realpath expands 8.3 and drive aliases. Keep this separate from
+        # no_links: resolving names must never conceal a reparse point from it.
+        path, root = Path(os.path.realpath(path)), Path(os.path.realpath(root))
     return path == root or root in path.parents
 
 
@@ -87,9 +106,9 @@ def safe_relative(value):
     require(isinstance(value, str) and value and not any(ord(c) < 32 for c in value), "Invalid relative path")
     require("\\" not in value and ":" not in value and not value.startswith("/"), f"Unsafe relative path: {value}")
     parts = value.split("/")
-    reserved = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)), *(f"LPT{i}" for i in range(1, 10))}
+    reserved = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in "123456789¹²³"), *(f"LPT{i}" for i in "123456789¹²³")}
     for part in parts:
-        require(part not in {"", ".", "..", ".system", ".git"}, f"Unsafe path component: {value}")
+        require(part.casefold() not in {"", ".", "..", ".system", ".git"}, f"Unsafe path component: {value}")
         require(not part.endswith((" ", ".")) and not any(c in part for c in '<>"|?*'), f"Nonportable path: {value}")
         require(part.split(".")[0].upper() not in reserved, f"Reserved Windows path: {value}")
     return PurePosixPath(value)
@@ -496,19 +515,38 @@ def build(root):
     return verify_package(root)
 
 
-def protected_root(path):
-    path = no_links(path)
-    require(path.name == "skills" and path.parent != path.anchor and len(path.parts) >= 3,
+def validate_personal_root_path(path):
+    """Lexical guard shared by native paths and PureWindowsPath fixture tests.
+
+    This is not filesystem validation: protected_root also checks every existing
+    ancestor for links/reparse points on the operating system doing the install.
+    """
+    ordinary_windows_path(path)
+    require(path.is_absolute() and path.name.casefold() == "skills" and len(path.parts) >= 3,
             f"Destination must be an explicit personal .../skills root: {path}")
     require(not any(p.casefold() in {".system", "plugins", "cache", "managed", "node_modules"} for p in path.parts),
             f"System/plugin/managed destination is protected: {path}")
     return path
 
 
-def protected_backup(path):
-    path = no_links(path)
+def protected_root(path):
+    path = validate_personal_root_path(no_links(path))
+    if os.name == "nt":
+        validate_personal_root_path(Path(os.path.realpath(path)))
+    return path
+
+
+def validate_backup_path(path):
+    ordinary_windows_path(path)
     require(not any(p.casefold() in {".system", "plugins", "cache", "managed"} for p in path.parts),
             f"Backup must be outside system/plugin/managed paths: {path}")
+    return path
+
+
+def protected_backup(path):
+    path = validate_backup_path(no_links(path))
+    if os.name == "nt":
+        validate_backup_path(Path(os.path.realpath(path)))
     return path
 
 
@@ -545,7 +583,9 @@ def catalog_entries(root):
     found = []
     def visit(folder):
         for item in folder.iterdir():
-            if item.name in {".system", ".git"} or item.is_symlink():
+            info = item.lstat()
+            if (item.name.casefold() in {".system", ".git"} or stat.S_ISLNK(info.st_mode)
+                    or getattr(info, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)):
                 continue
             if item.is_dir():
                 visit(item)
@@ -568,7 +608,8 @@ def preservation_fingerprint(roots, owned_paths):
             return
         info = path.lstat()
         rel = str(path.relative_to(root))
-        if stat.S_ISLNK(info.st_mode):
+        if (stat.S_ISLNK(info.st_mode)
+                or getattr(info, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)):
             output.append((str(root), rel, "symlink", os.readlink(path)))
         elif stat.S_ISDIR(info.st_mode):
             output.append((str(root), rel, "directory"))
@@ -594,12 +635,14 @@ def plan_install(package_root, stage_root, destination_root, mapping=None, repla
     roots, rows = normalize_mapping(destination_root, mapping)
     require(all(disjoint(root, package_root) and disjoint(root, stage_root) for root in roots), "Destination/package/stage overlap")
     authorized = {(r["skill"], Path(r["destination"])) for r in rows}
-    managed_names = {e["skill_name"] for e in manifest["skills"] if not e["installable"]}
+    managed_names = {e["skill_name"].casefold() for e in manifest["skills"] if not e["installable"]}
     for root in roots:
         for name, physical in catalog_entries(root):
-            require(name not in managed_names, f"Managed skill manually copied into personal root: {name}")
-            if name in APPROVED_NAMES:
-                require((name, physical) in authorized, f"Duplicate skill needs an explicit mapping: {name} at {physical}")
+            canonical = name.casefold()
+            require(canonical not in managed_names, f"Managed skill manually copied into personal root: {name}")
+            if canonical in APPROVED_NAMES:
+                require(name == canonical and (name, physical) in authorized,
+                        f"Duplicate skill needs an explicit mapping: {name} at {physical}")
     for row in rows:
         dest = Path(row["destination"])
         if dest.exists():
@@ -656,7 +699,24 @@ def clean_scratch(root, transaction_id):
         marker = scratch / ".owner.json"
         require(marker.is_file() and read_json(marker).get("transaction_id") == transaction_id, f"Scratch ownership missing: {scratch}")
         walk_files(scratch, selected=False)
-        shutil.rmtree(scratch)
+        remove_scratch_tree(scratch)
+
+
+def remove_scratch_tree(path):
+    """Remove validated, transaction-owned scratch, including Windows read-only copies.
+
+    Never use this to erase a live skill or a retained backup. Locked files and
+    other permission failures stay visible instead of being silently ignored.
+    """
+    def readonly_retry(function, target, exc_info):
+        info = no_links(target).stat()
+        if (os.name == "nt" and isinstance(exc_info[1], PermissionError)
+                and function in {os.unlink, os.remove, os.rmdir} and not info.st_mode & stat.S_IWRITE):
+            os.chmod(target, info.st_mode | stat.S_IWRITE)
+            function(target)
+        else:
+            raise exc_info[1]
+    shutil.rmtree(path, onerror=readonly_retry)
 
 
 def current_hash(path):
@@ -802,8 +862,10 @@ def validate_journal(path, allowed_roots):
 
 
 def process_alive(pid):
-    if not isinstance(pid, int) or pid <= 0:
+    if type(pid) is not int or pid <= 0:
         return False
+    if os.name == "nt":
+        return windows_process_alive(pid)
     try:
         os.kill(pid, 0)
         return True
@@ -811,6 +873,32 @@ def process_alive(pid):
         return False
     except PermissionError:
         return True
+
+
+def windows_process_alive(pid):
+    """Read-only Windows probe; os.kill(pid, 0) would terminate the process.
+
+    OpenProcess requests SYNCHRONIZE only. An inaccessible or uncertain process
+    is conservatively considered live, so recovery cannot steal its marker.
+    """
+    import ctypes
+    from ctypes import wintypes
+    if pid > 0xFFFFFFFF:
+        return False
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+    kernel.OpenProcess.restype = wintypes.HANDLE
+    kernel.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+    kernel.WaitForSingleObject.restype = wintypes.DWORD
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    handle = kernel.OpenProcess(0x00100000, False, pid)  # SYNCHRONIZE
+    if not handle:
+        return ctypes.get_last_error() != 87  # ERROR_INVALID_PARAMETER: no PID
+    try:
+        return kernel.WaitForSingleObject(handle, 0) != 0  # WAIT_OBJECT_0: exited
+    finally:
+        kernel.CloseHandle(handle)
 
 
 @contextmanager
@@ -922,7 +1010,7 @@ def _rollback_locked(journal_path, allowed_roots, *, _in_process=False):
                 # verified backup, without touching the live tree.
                 if replacement.exists() and current_hash(replacement) != row["original_hash"]:
                     walk_files(replacement, selected=False)
-                    shutil.rmtree(replacement)
+                    remove_scratch_tree(replacement)
                 if not replacement.exists():
                     shutil.copytree(row["backup"], replacement, copy_function=shutil.copy2)
                 require(current_hash(replacement) == row["original_hash"], "Restore staging hash differs")
@@ -954,6 +1042,11 @@ def _rollback_locked(journal_path, allowed_roots, *, _in_process=False):
 
 
 def main(argv=None):
+    # JSON output includes Unicode paths even under the Windows legacy codepage
+    # or a redirected pipe. Do not depend on a particular console/font setting.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     for name in ("build", "verify", "plan", "promote"):

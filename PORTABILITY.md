@@ -66,3 +66,11 @@ For every managed entry after activation: verify provider identity, active catal
 All26 personal folders use portable distribution paths. Optional skill helpers retain their real dependencies: Python3 for UI search/handoff validation and PowerShell for the optional devil validator. Package Python tools require PyYAML. No tool/framework/DB server is installed automatically. SQL engine, browser, provider, advisory and infrastructure evidence must come from an actually available authorized environment. A missing capability is UNVERIFIED/BLOCKED for that operation, not an invented pass.
 
 Current native Codex supports both legacy CODEX_HOME/skills and user .agents/skills on the audited host. Inspect actual discovery elsewhere rather than assuming the same roots. Plugin/system snapshots and their historical versions are not upgraded or installed by this task.
+
+## v3.1.1 tooling and runtime evidence
+
+The installable 26-skill payload is byte-identical to v3.1.0. Root UI authoring scripts are development-only and are not copied to live skill roots; see [source pins and MIT license](UI_AUTHORING_PROVENANCE.md). Default authoring tests and relevance grading are offline. Unsupported Django stack selection remains an explicit error; UX-domain search is a documented framework-neutral alternative.
+
+Windows restrictions, Python/PowerShell requirements, safe runner-temp dry runs and observed evidence classes are in [WINDOWS_COMPATIBILITY.md](WINDOWS_COMPATIBILITY.md). Normal absolute and UNC paths are supported subject to permissions; extended/device namespace and ambiguous short aliases are refused. Actual hosted Windows results are linked from current validation, separately from macOS simulations.
+
+Native evaluation requires an explicitly selected model confirmed by an actual turn. An installed model catalog alone is not an entitlement check. The app-bundled CLI can differ from the default shell binary; select it with `--codex` without upgrading or replacing the user's default CLI. Invocation-only overlays leave installed skill/config files intact; the native client may refresh its own runtime cache. No credential files are copied or inspected by the harness.

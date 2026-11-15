@@ -1,0 +1,56 @@
+name: Windows validation
+
+on:
+  push:
+    branches: [main]
+    tags: ['v3.*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+      CODEX_HOME: ${{ runner.temp }}/skill-package-ci-codex
+      TEMP: ${{ runner.temp }}
+      TMP: ${{ runner.temp }}
+      TMPDIR: ${{ runner.temp }}
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout immutable source bytes
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.12'
+      - name: Install Python validation dependency
+        run: python -m pip install -r scripts/requirements.txt
+      - name: Verify package and immutable snapshots
+        run: python -B scripts/package_tools.py verify --package-root .
+      - name: Package transactions and cross-platform regression tests
+        run: python -B -m unittest discover -s tests -p test_package_tools.py -v
+      - name: Evaluation runner regression tests
+        run: python -B -m unittest discover -s evals -p test_runner.py -v
+      - name: Full UI authoring and runtime discovery
+        run: python -B -m unittest discover -s skills/ui-ux-pro-max/scripts/tests -p 'test_*.py' -v
+      - name: Portable UI authoring launchers
+        run: python -B -m unittest discover -s tests -p test_ui_authoring.py -v
+      - name: Actual Windows junctions, locked files, and long paths
+        run: python -B tests/windows_native_checks.py -v
+      - name: Windows PowerShell 5.1 parser and temporary profile transactions
+        shell: powershell
+        run: .\tests\windows_powershell_checks.ps1 -ScratchParent $env:RUNNER_TEMP -Python python
+      - name: PowerShell 7 parser and temporary profile transactions
+        shell: pwsh
+        run: .\tests\windows_powershell_checks.ps1 -ScratchParent $env:RUNNER_TEMP -Python python

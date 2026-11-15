@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-11-14T04:25:52.525872+00:00",
+  "created_utc": "2026-11-15T20:58:01.568260+00:00",
   "catalog_basis": "26 personal skills: 16 retained/upgraded and 10 approved specialists; 16 managed audit-only snapshots preserved.",
   "expected_user_global": 26,
   "expected_plugin_managed": 16,
@@ -11583,5 +11583,5 @@
       "provenance_note": "Historical source retained; package is intentionally upgraded in v3.1."
     }
   ],
-  "package_version": "3.1.0"
+  "package_version": "3.1.1"
 }

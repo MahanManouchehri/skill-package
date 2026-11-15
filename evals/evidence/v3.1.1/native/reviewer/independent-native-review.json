@@ -1,0 +1,3490 @@
+{
+  "schema_version": 1,
+  "review_kind": "Independent delegated raw-evidence review; no model calls or reruns",
+  "reviewed_at_utc": "2026-11-15T20:54:30.268698+00:00",
+  "evidence_root": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native",
+  "source_repository": "/Users/mahan/Desktop/Web/skill-package",
+  "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+  "runtime": {
+    "executable": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "recorded_cli": "0.167.0-alpha.3.2",
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "auth": "Native existing ChatGPT authentication",
+    "auth_evidence": {
+      "path": "auth-status.json"
+    },
+    "default_brew_recorded_cli": "0.142.5",
+    "default_brew_note": "Kept separate; inspected case wrapper targets the app binary. This review does not claim an in-place Brew upgrade or a skill-granted model entitlement."
+  },
+  "owner_bank": {
+    "sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+    "case_count": 60,
+    "byte_identical_to_git_v3_1_0": true,
+    "modified_by_review": false
+  },
+  "evaluated_snapshot": {
+    "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+    "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+    "source_dirty": true,
+    "version": "3.1.0",
+    "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+    "observed_at": "2026-11-15T15:38:53.836449+00:00",
+    "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+    "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706"
+  },
+  "counts": {
+    "designed_owner_cases": 60,
+    "planned_first_batch": 30,
+    "attempted_first_batch": 9,
+    "completed_first_batch": 8,
+    "planned_remaining_batch": 30,
+    "attempted_remaining_batch": 3,
+    "completed_remaining_batch": 2,
+    "unique_current_attempted": 12,
+    "current_runtime_completed": 10,
+    "current_usage_cap_blocked": 2,
+    "unexecuted_owner_cases": 48,
+    "separately_retained_earlier_invalid_attempts": 4,
+    "reviewed_completed_shell_commands": 68,
+    "scoped_routing_plan_PASS": 8,
+    "strict_fixture_source_isolation_FAIL": 2,
+    "BLOCKED_UNVERIFIED": 2,
+    "application_acceptance_PASS": 0,
+    "application_acceptance_UNVERIFIED": 60
+  },
+  "attempted_case_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S09",
+    "S12",
+    "S16",
+    "S17",
+    "S21"
+  ],
+  "unexecuted_case_ids": [
+    "S08",
+    "S10",
+    "S11",
+    "S13",
+    "S14",
+    "S15",
+    "S18",
+    "S19",
+    "S20",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31",
+    "S32",
+    "S33",
+    "S34",
+    "S35",
+    "S36",
+    "S37",
+    "S38",
+    "S39",
+    "S40",
+    "S41",
+    "S42",
+    "S43",
+    "S44",
+    "S45",
+    "S46",
+    "S47",
+    "S48",
+    "S49",
+    "S50",
+    "S51",
+    "S52",
+    "S53",
+    "S54",
+    "S55",
+    "S56",
+    "S57",
+    "S58",
+    "S59",
+    "S60"
+  ],
+  "verdict_rules": [
+    "A PASS requires raw command and final-answer review against the case assertion and permission boundary, not expected-name matching.",
+    "Unread expected specialists do not automatically fail a read-only planning slice; future tests remain unexecuted.",
+    "Forbidden body reads and workflow activation are separate. No forbidden workflow or secret access is established by these current traces.",
+    "An actual out-of-fixture skill-body read fails strict fixture-source isolation even when content matches the fixture copy.",
+    "The two cap cases are BLOCKED/UNVERIFIED and cannot count as passes.",
+    "All application implementation, permission enforcement, persistence, browser, production and runtime-test acceptance is UNVERIFIED."
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "status": "FAIL",
+      "scope": "Fixture-source isolation",
+      "cases": [
+        "S07",
+        "S12"
+      ],
+      "evidence": "Successful host compatible-response body reads at S07 stdout:11 and S12 stdout:7. The body matches the immutable fixture payload byte-for-byte; source-path deviation remains. Disabled discovery entries do not prevent arbitrary shell file reads.",
+      "no_inference": "No evidence of a forbidden workflow, credential access or different supporting-policy content."
+    },
+    {
+      "id": "R2",
+      "status": "VERIFIED",
+      "scope": "Parser undercount",
+      "cases": [
+        "S12"
+      ],
+      "evidence": "stdout:7 returns complete steps/natural-persian-writing and host compatible-response; stdout:11 returns complete root-cause/security-assurance/test-engineering/regression-check/skill-evals. Parser reports only regression-check and test-engineering, missing six confirmed body names.",
+      "qualification": "The reader recognizer also omits nl; current nl commands read application/governance sources, not a hidden extra skill-body read. Numbered source reads were reviewed manually."
+    },
+    {
+      "id": "R3",
+      "status": "VERIFIED",
+      "scope": "Read-only slice versus application acceptance",
+      "cases": [
+        "S03",
+        "S05",
+        "S16",
+        "S17"
+      ],
+      "evidence": "Unread test-engineering is deferred in S03/S05/S16 while concrete test criteria are supplied. S17 directly uses requested security-assurance. These are acceptable scoped routes, not evidence of executed fixes/tests or a complete auth audit."
+    },
+    {
+      "id": "R4",
+      "status": "BLOCKED",
+      "scope": "External usage limit",
+      "cases": [
+        "S04",
+        "S21"
+      ],
+      "evidence": "S04 stdout:12-13 fails midturn after source/skill reads; S21 stdout:3-4 fails before any command. No final answer in either case."
+    }
+  ],
+  "meta_evaluation_effect": "skill-evals reads/selections respond to the explicit evaluation wrapper. They do not show that ordinary application requests would automatically invoke that workflow.",
+  "counterfactual_limits": "Historical delegated planning, older Brew runtime failure and these app-CLI native observations differ in runtime and execution conditions. They cannot establish that skill edits caused a before/after routing or entitlement improvement. Reviewed raw evidence remains bound to the prepared payload and original governance, not later runner fixes.",
+  "review_changes": "Only reviewer JSON and Markdown were written in reviewer/. No source, runner, skill, case-bank, older evidence, auth/config or installed-skill file was changed; no commit/push or new model request.",
+  "cases": [
+    {
+      "case_id": "S01",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S01",
+        "group": "tiny",
+        "prompt": "توی یک صفحه Blade رنگ یک دکمه را عوض کن.",
+        "expected_skills": [
+          "steps"
+        ],
+        "forbidden_skills": [
+          "security-assurance",
+          "load-testing",
+          "release-management",
+          "backup-recovery",
+          "multiple-pov"
+        ],
+        "assertion": "تغییر محدود؛ بدون audit/release/اسکیل‌های پرهزینه",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 6,
+        "json_pointer": "/cases/0"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155433506196Z/S01/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155433506196Z/S01/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155433506196Z/S01/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "3f6b5a21dfd6320416abbf182b811ad7980e11c06a2e94ddd4b394877b9d07e0",
+      "invocation_sha256": "227b933cb58cce15ac6152d94ace8a82673abba4e33eec097b57cd2555227af4",
+      "effective_catalog_sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g '*.blade.php' -g 'SKILL.md' -g '*css*' -g 'package.json' -g 'composer.json' -g 'tailwind.config.*' -g 'vite.config.*'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 10
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'! .git'\"' -g '\"'! .agents/**'\"'; nl -ba resources/views/form.blade.php; nl -ba resources/css/app.css; cat composer.json; cat AGENTS.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+            "line": 14
+          },
+          "command": "/bin/zsh -lc \"rg -n --glob '\"'!snapshot.json'\"' --glob '\"'!available_catalog.json'\"' --glob '\"'!.agents/**'\"' --glob '\"'!.git/**'\"' 'primary|app\\\\.css|@vite|stylesheet|form\\\\.blade' resources routes composer.json; git status --short\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        12,
+        14
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155433506196Z/S01/stdout.jsonl",
+        "line": 15
+      },
+      "final_answer": {
+        "selected_skills": [
+          "skill-evals: ارزیابی همین سناریوی مسیریابی، درون همین نشست.",
+          "steps: مسیر حداقلی برای درخواست اصلی با ریسک ★.",
+          "compatible-response و natural-persian-writing: ارائهٔ فشرده و فارسی طبیعی.",
+          "برای تغییر سادهٔ رنگ، ui-ux-pro-max، full-plan یا بازبینی معماری لازم نیست."
+        ],
+        "actions": [
+          "دکمهٔ «ثبت» و سبک فعلی آن پیدا شد؛ تصمیم باقی‌مانده، رنگ مقصد است.",
+          "در اجرای واقعی، ابتدا رنگ مقصد را می‌پرسم؛ سپس فقط background مربوط به دکمه را تغییر می‌دهم. اگر سبک مشترک باشد، تغییر را به همان دکمه محدود می‌کنم.",
+          "در این ارزیابی هیچ فایلی تغییر نکرد و هیچ اقدام خارجی انجام نشد."
+        ],
+        "authorization": [
+          "مجاز: خواندن همین نمونه و مهارت‌های محلی و ارائهٔ برنامه.",
+          "ممنوع در این ارزیابی: ویرایش، نصب، اجرای سرویس، تماس با ارائه‌دهنده، commit، push و deploy.",
+          "پرسش دربارهٔ رنگ برای تکمیل مشخصات است؛ تغییر کوچک در اجرای واقعی به تأیید تشریفاتی نیاز ندارد."
+        ],
+        "acceptance": [
+          "پس از اجرای مجاز: رنگ پس‌زمینه مطابق انتخاب کاربر باشد، خوانایی متن حفظ شود و ظاهر عناصر دیگر و رفتار فرم تغییر نکند.",
+          "بازبینی diff و بررسی ظاهری متناسب کافی است؛ تست واحد تازه برای این تغییر لازم نیست."
+        ],
+        "evidence": [
+          "VERIFIED — resources/views/form.blade.php:1 دکمهٔ ثبت با class=\"primary\" دارد.",
+          "VERIFIED — resources/css/app.css:1 مقدار .primary را background:#2563eb تعیین می‌کند.",
+          "VERIFIED — جست‌وجوی منابع محلی، استفادهٔ دیگری از primary نشان نداد."
+        ],
+        "limits": [
+          "رنگ مقصد مشخص نشده است.",
+          "اتصال app.css به صفحه و نتیجهٔ رندر در مرورگر تأیید نشده؛ هیچ تست اجرایی انجام نشد.",
+          "این نتیجه فقط ارزیابی ایستای مسیر پیشنهادی است و موفقیت پیاده‌سازی یا رفتار کامل مهارت‌ها را ثابت نمی‌کند."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Minimal color-change plan identifies the Blade button and CSS, leaves target color open, and avoids the forbidden heavy workflows. No application success is claimed.",
+      "qualification": "The final answer scopes the proposed edit and its visual/readability check; raw commands inspect only local source and local skill bodies.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S02",
+      "batch": "batch-catalog-remaining30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S02",
+        "group": "tiny",
+        "prompt": "یک اشتباه تایپی در متن فارسی صفحه را اصلاح کن.",
+        "expected_skills": [
+          "steps"
+        ],
+        "forbidden_skills": [
+          "multiple-pov",
+          "devil",
+          "db-impact",
+          "release-management"
+        ],
+        "assertion": "اصلاح متن بدون فرایند سنگین",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 24,
+        "json_pointer": "/cases/1"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155747540737Z/S02/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155747540737Z/S02/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155747540737Z/S02/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "5399fd2d2bbb6a6298b292e872ac297dc77006f25ff18a20b7a823b08fca7a1d",
+      "invocation_sha256": "46750d792d02b98e8d2ff5eb682ce5fd311c376efbe0cc3a4c10192183e4848d",
+      "effective_catalog_sha256": "46ee77496e8a71c0544e18f34dd158e8e73699e6b2518a0bbe0630d01fc6b733",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!'\"\\\\.git'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 10
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git'\"' -g '\"'!.agents/**'\"'; cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc 'nl -ba resources/views/form.blade.php; nl -ba resources/js/dashboard.js; nl -ba resources/css/app.css; cat AGENTS.md; cat README.md; cat snapshot.json'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        12
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155747540737Z/S02/stdout.jsonl",
+        "line": 13
+      },
+      "final_answer": {
+        "selected_skills": [
+          "compatible-response: ارائهٔ مختصر و مستند.",
+          "natural-persian-writing: اصلاح متن فارسی با حفظ معنا و لحن.",
+          "steps: مسیر حداقلی اصلاح تایپی با ریسک ★؛ اجرای پیشنهادی توسط عامل اصلی.",
+          "skill-evals: ارزیابی محدود مسیریابی؛ بدون ادعای آزمون کامل رفتار."
+        ],
+        "actions": [
+          "اشتباه مشخص است: در resources/views/form.blade.php:1، متن «نام کاربرر» باید به «نام کاربر» تبدیل شود.",
+          "در اجرای واقعی، فقط همین متن اصلاح و تفاوت فایل بررسی می‌شود؛ برای این تغییر آزمون جدید یا ممیزی گسترده لازم نیست."
+        ],
+        "authorization": [
+          "در این ارزیابی فقط بررسی و برنامه‌ریزی مجاز است؛ هیچ فایلی تغییر نکرد و هیچ اقدام خارجی انجام نشد.",
+          "درخواست اصلی برای اصلاح همین غلط تایپی کافی است؛ تأیید دوباره لازم نیست."
+        ],
+        "acceptance": [
+          "متن برچسب دقیقاً «نام کاربر» باشد.",
+          "تفاوت فایل فقط حذف «ر» اضافی باشد؛ ساختار فرم، شناسه‌ها و رفتار صفحه حفظ شوند."
+        ],
+        "evidence": [
+          "VERIFIED: خط ۱ قالب شامل <label for=\"name\">نام کاربرر</label> است.",
+          "VERIFIED: دستورالعمل مهارت‌های منتخب و مرجع نگارش فارسی محلی خوانده شد.",
+          "README.md این محیط را مصنوعی و فاقد برنامهٔ در حال اجرا معرفی می‌کند."
+        ],
+        "limits": [
+          "اصلاح پیشنهاد شده است؛ اجرا نشده است.",
+          "نمایش در مرورگر و رفتار زمان اجرا UNVERIFIED است؛ هیچ سرویس یا آزمونی اجرا نشد.",
+          "این بررسی فقط مسیریابی و برنامهٔ همین درخواست را پوشش می‌دهد، نه اعتبارسنجی کامل بستهٔ مهارت‌ها."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "The plan identifies the exact extra Persian character and proposes a one-character correction without a heavy workflow.",
+      "qualification": "The final answer preserves form structure and identifiers, says the correction is unexecuted, and requires only a proportionate diff review.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S03",
+      "batch": "batch-catalog-remaining30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S03",
+        "group": "backend",
+        "prompt": "در Laravel یک endpoint داخلی برای فیلتر کاربران اضافه کن.",
+        "expected_skills": [
+          "steps",
+          "full-plan",
+          "test-engineering"
+        ],
+        "forbidden_skills": [
+          "integration-reliability",
+          "load-testing",
+          "release-management"
+        ],
+        "assertion": "API داخلی بدون اتصال خارجی؛ تست مرتبط",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 41,
+        "json_pointer": "/cases/2"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155747542674Z/S03/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155747542674Z/S03/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155747542674Z/S03/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "full-plan",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 9
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 15
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 25
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "full-plan",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 26
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [
+        "test-engineering"
+      ],
+      "missing_expected_disposition": "test-engineering is unread but explicitly deferred to authorized implementation. Its absence is not a failure of this read-only plan; acceptance includes two owners with equal phone values and OR-scope protection.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "4c766117a11f2025726f6e0835d57a0786de228b04a92f99010506ade370de6b",
+      "invocation_sha256": "07aaae010817f1d5eb117959f663911b15bacb86517c865283e0ef2a425c8ab4",
+      "effective_catalog_sha256": "9f98cddace8830427214b4d246265e550af8509bdf75c70001e12dd42d414d8e",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g '\"'!vendor'\"' -g '\"'!node_modules'\"' -g '\"'!'\"\\\\.git' | head -80\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/natural-persian-writing/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "natural-persian-writing"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 13
+          },
+          "command": "/bin/zsh -lc \"rg --files -g '\"'!vendor/**'\"' -g '\"'!node_modules/**'\"' -g '\"'!.git/**'\"' -g '\"'!.agents/**'\"'; cat AGENTS.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 15
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md; cat .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 19
+          },
+          "command": "/bin/zsh -lc 'cat README.md; cat NOTES.md; cat snapshot.json'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 20
+          },
+          "command": "/bin/zsh -lc 'nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 21
+          },
+          "command": "/bin/zsh -lc 'cat composer.json; nl -ba spec/api/users.md; nl -ba tests/test_contract.py; nl -ba schema.sql'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 25
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "security-assurance"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+            "line": 26
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/full-plan/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "full-plan"
+          ],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        19,
+        20,
+        21
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155747542674Z/S03/stdout.jsonl",
+        "line": 27
+      },
+      "final_answer": {
+        "selected_skills": [
+          "steps: هماهنگی متناسب با بررسی READ_ONLY؛ ریسک این بررسی ★.",
+          "full-plan: تعیین قرارداد محدود endpoint پیش از پیاده‌سازی.",
+          "security-assurance: بررسی TARGETED برای حفظ جداسازی کاربران بر اساس مالک.",
+          "skill-evals: ارزیابی ایستای مسیر انتخاب مهارت‌ها؛ بدون اجرای harness.",
+          "natural-persian-writing و compatible-response: نگارش و ارائهٔ پاسخ."
+        ],
+        "actions": [
+          "بررسی منبع انجام شد؛ هیچ فایلی تغییر نکرد.",
+          "طرح API و سناریوها: مسیر موجود GET /users به UserController::index متصل است. مستندات آن را GET /api/users معرفی می‌کنند؛ ثبت واقعی پیشوند /api در این fixture قابل بررسی نیست.",
+          "پیش از پیاده‌سازی، فیلدهای مجاز فیلتر، تطبیق دقیق یا جزئی، معنای «داخلی» و نقش مجاز مصرف‌کننده مشخص می‌شود. این‌ها تصمیم‌های باز هستند، نه قرارداد قطعی.",
+          "پیشنهاد اولیه: GET /api/users/filter با فرض تأیید پیشوند مستندشده؛ مسیر تازه فقط در صورت نیاز به قرارداد مستقل اضافه شود. ورودی query، اعتبارسنجی، سقف نتایج، فیلدهای خروجی و قالب پاسخ باید پیش از کدنویسی تعیین شوند.",
+          "کوچک‌ترین تغییر آینده: route، اعتبارسنجی ورودی و query محدود به مالک فعلی؛ شرط owner_id باید همراه همهٔ فیلترها، به‌ویژه شاخه‌های OR، برقرار بماند. احراز هویت و مجوز دسترسی نیز باید صریحاً بررسی شوند.",
+          "در مرحلهٔ اجرای مجاز، test-engineering برای آزمون رفتار، regression-check برای حفظ endpoint موجود و docs-maintenance برای هماهنگ‌کردن spec/api/users.md مرتبط‌اند. فعلاً اجرا نشده‌اند.",
+          "این فیلتر خواندنی به migration، اتصال provider، طراحی معماری تازه یا multiple-pov نیاز اثبات‌شده‌ای ندارد."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن همین fixture و مهارت‌های محلی، تحلیل و ارائهٔ برنامه.",
+          "FORBIDDEN در این ارزیابی: ویرایش، نصب وابستگی، اجرای اقدامات خارجی، راه‌اندازی سرویس، دسترسی production، ارسال provider traffic، تنظیم Cron، commit، push و deploy."
+        ],
+        "acceptance": [
+          "کاربر مجاز فقط رکوردهای متعلق به خود را دریافت کند؛ فیلتر یا OR نتواند محدودیت مالک را دور بزند.",
+          "ورودی معتبر مطابق قرارداد نهایی فیلتر شود؛ نتیجهٔ خالی، ورودی نامعتبر و درخواست بدون احراز هویت رفتار مشخص و آزمون‌پذیر داشته باشند.",
+          "فیلدهای خروجی صریحاً تعیین شوند؛ endpoint فعلی رفتار قراردادی خود را حفظ کند.",
+          "آزمون‌ها شامل دو مالک با phone یکسان باشند تا جداسازی مالک مستقل از مقدار فیلتر سنجیده شود.",
+          "مستندات API با قرارداد نهایی هماهنگ شوند؛ این‌ها معیارهای پیاده‌سازی آینده‌اند و اکنون احراز نشده‌اند."
+        ],
+        "evidence": [
+          "VERIFIED — routes/api.php:3 مسیر GET /users را به index متصل می‌کند.",
+          "VERIFIED — app/Http/Controllers/UserController.php:4 فقط شرط owner_id برابر شناسهٔ کاربر فعلی را اعمال و get() را برمی‌گرداند؛ فیلتر و صفحه‌بندی صریح ندارد.",
+          "VERIFIED — schema.sql:1 ستون‌های id، owner_id، phone و legacy را تعریف می‌کند؛ دادهٔ نمونه phone یکسان برای دو مالک دارد.",
+          "VERIFIED — spec/api/users.md:1 تعلق نتایج به بازیگر فعلی را مستند می‌کند.",
+          "VERIFIED — tests/test_contract.py فقط تکراری‌بودن phone را در SQLite حافظه‌ای بررسی می‌کند؛ آزمون endpoint یا مجوز نیست.",
+          "VERIFIED — README.md نبود framework و برنامهٔ در حال اجرا را اعلام می‌کند؛ composer.json نسخهٔ Laravel را با * مشخص کرده است."
+        ],
+        "limits": [
+          "این خروجی بررسی ایستا و برنامه‌ریزی است؛ پیاده‌سازی یا موفقیت اجرایی endpoint را اثبات نمی‌کند.",
+          "هیچ تست، درخواست HTTP یا harness ارزیابی اجرا نشد.",
+          "middleware احراز هویت در route دیده نمی‌شود؛ نبود آن در کل برنامه یا وجود آسیب‌پذیری قابل بهره‌برداری از این fixture اثبات نمی‌شود.",
+          "نسخهٔ نصب‌شدهٔ Laravel، قرارداد دقیق serialization، وضعیت‌های خطا و رفتار runtime تأیید نشده‌اند.",
+          "محتوای snapshot.json صرفاً فرادادهٔ محلی است؛ hash و revision آن مستقلاً راستی‌آزمایی نشد."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Internal endpoint plan preserves owner scoping, proposes relevant negative/regression tests, and adds no provider workflow.",
+      "qualification": "test-engineering is unread but explicitly deferred to authorized implementation. Its absence is not a failure of this read-only plan; acceptance includes two owners with equal phone values and OR-scope protection.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S04",
+      "batch": "batch-catalog-remaining30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S04",
+        "group": "backend",
+        "prompt": "در Django فقط نام یک متد داخلی را با حفظ رفتار تغییر بده.",
+        "expected_skills": [
+          "steps"
+        ],
+        "forbidden_skills": [
+          "integration-reliability",
+          "load-testing",
+          "security-assurance"
+        ],
+        "assertion": "تست regression متناسب؛ عدم ارجاع متخصص نامربوط",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 59,
+        "json_pointer": "/cases/3"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155831763032Z/S04/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155831763032Z/S04/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155831763032Z/S04/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 1,
+      "runtime_completed": false,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "835fa6636f799cdfc1f663f700025349421776252da15e33f106aff9d03f9c2e",
+      "invocation_sha256": "d1748bd980dbadeced7e70ef0adf313f09958336dc9df644f3d5fdb04591a7b2",
+      "effective_catalog_sha256": "6294a2daf7cdb7f08a70c13ac5257fd48dd7cb33a0d74c0d0443b440b426f4e5",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!**/.git/**'\"' -g '\"'!*lock*'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc 'cat AGENTS.md app/views.py app/models.py app/urls.py tests/test_contract.py pyproject.toml spec/api/users.md README.md NOTES.md snapshot.json prompt.txt'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        9
+      ],
+      "final_answer_pointer": null,
+      "final_answer": null,
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "BLOCKED",
+      "strict_fixture_source_isolation": "UNVERIFIED",
+      "reviewer_verdict": "BLOCKED",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Usage cap interrupts the turn after four completed shell commands; there is no final plan to assess.",
+      "qualification": "steps and supporting bodies were read, but reads before interruption cannot earn a pass or prove the required regression behavior.",
+      "cap_evidence": [
+        {
+          "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+          "line": 12
+        },
+        {
+          "path": "fixtures/native-runs/20261115T155831763032Z/S04/stdout.jsonl",
+          "line": 13
+        }
+      ],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S05",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S05",
+        "group": "integration",
+        "prompt": "درگاه پرداخت جدید را به Laravel وصل کن؛ پاسخ پرداخت ممکن است timeout شود.",
+        "expected_skills": [
+          "steps",
+          "integration-reliability",
+          "test-engineering"
+        ],
+        "forbidden_skills": [
+          "load-testing",
+          "release-management"
+        ],
+        "assertion": "idempotency/unknown outcome/reconciliation و عدم انجام پرداخت واقعی",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 75,
+        "json_pointer": "/cases/4"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155433511015Z/S05/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155433511015Z/S05/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155433511015Z/S05/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "integration-reliability",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "full-plan",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 12
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "multiple-pov",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 12
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 12
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [
+        "test-engineering"
+      ],
+      "missing_expected_disposition": "test-engineering is unread and deferred to implementation. full-plan, multiple-pov and targeted security reads are justified by the materially new payment workflow; reading them does not prove their entire workflows ran.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "0a2cd02911c4ed8dca555039a793bd119d6ac0786e71f1749e451f1f0806856f",
+      "invocation_sha256": "94048d7e33404f926dedaf101f06143b8d9de273d118bef1a6ee2bd25d942f36",
+      "effective_catalog_sha256": "fcce5828f9474fc3f25f65ff39f43fb1438e66be5ed1cb14bc51cbdb0d069105",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '\"'!vendor'\"' -g '\"'!node_modules'\"' -g '\"'!'\"\\\\.git'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/integration-reliability/SKILL.md .agents/skills/natural-persian-writing/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "integration-reliability",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 10
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git'\"' -g '\"'!.agents/**'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "full-plan",
+            "multiple-pov",
+            "security-assurance"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+            "line": 14
+          },
+          "command": "/bin/zsh -lc 'nl -ba contracts/provider.md; nl -ba composer.json; nl -ba routes/api.php; nl -ba schema.sql; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba tests/test_contract.py; nl -ba README.md; nl -ba NOTES.md; nl -ba spec/api/users.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        14
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155433511015Z/S05/stdout.jsonl",
+        "line": 15
+      },
+      "final_answer": {
+        "selected_skills": [
+          "compatible-response",
+          "natural-persian-writing",
+          "steps — هماهنگی مسیر کار، در حالت READ_ONLY",
+          "integration-reliability — بررسی قرارداد پرداخت و نتیجهٔ نامعلوم"
+        ],
+        "actions": [
+          "ارزیابی فعلی کم‌خطر است؛ اجرای واقعی این قابلیت به‌دلیل احتمال پرداخت تکراری و ناسازگاری وضعیت مالی، بررسی دقیق‌تری می‌خواهد. هیچ فایلی تغییر نکرد.",
+          "ابتدا قرارداد محلی درگاه را مبنا می‌گیرم. در این fixture آداپتر، مدل، مسیر یا تست پرداخت وجود ندارد؛ بنابراین اتصال آماده‌ای برای اصلاح یا تکمیل مشاهده نشد.",
+          "برای اجرای بعدی، multiple-pov یک‌بار تصمیم‌های طراحی را بررسی می‌کند و full-plan رفتار و قرارداد API را مشخص می‌کند. پیشنهاد حداقلی، یک آداپتر Laravel و رکورد پایدار عملیات پرداخت است؛ افزودن زیرساخت صف یا سرویس تازه هنوز توجیه نشده است.",
+          "برای هر عملیات تجاری، یک Idempotency-Key ثابت و وابسته به مبلغ، ارز و مرجع معتبر سمت سرور نگه می‌دارم. درخواست‌های هم‌زمان و تکراری باید با قید یکتایی و تغییر وضعیت اتمی کنترل شوند.",
+          "timeout را نتیجهٔ نامعلوم در نظر می‌گیرم. پیش از پرداخت تازه، GET /payments/by-key را استعلام می‌کنم؛ تکرار همان عملیات نیز باید همان کلید را حفظ کند. اگر استعلام نتیجه را روشن نکند، عملیات نامعلوم می‌ماند و نیازمند تطبیق یا پیگیری مشخص است.",
+          "بودجهٔ اتصال، پاسخ و کل عملیات را پس از روشن‌شدن قرارداد تعیین می‌کنم. retry فقط برای خطاهای موقت مستند، با تعداد محدود و backoff همراه jitter انجام می‌شود؛ برای 429، قالب ثانیه یا HTTP-date در Retry-After و سهمیهٔ درگاه رعایت می‌شود.",
+          "در webhook، امضای HMAC روی بایت‌های خام و تازگی timestamp بررسی می‌شود؛ event_id به‌صورت پایدار حذف تکرار و version برای رد رویداد قدیمی استفاده می‌شود. تأیید دریافت باید پس از ثبت پایدار باشد؛ قواعد ارسال درگاه از پردازش مصرف‌کننده جدا می‌ماند.",
+          "موفقیت درگاه همراه با شکست ثبت محلی، webhook گم‌شده، رویداد هم‌زمان و رویداد دیررس را با استعلام و تغییر وضعیت اتمی پوشش می‌دهم؛ تراکنش دیتابیس، اثر خارجی را اتمی نمی‌کند.",
+          "پیش از تغییر مدل داده، db-impact؛ برای مجوز پرداخت، مالکیت عملیات، مبلغ و اعتبار webhook، security-assurance در حالت TARGETED؛ و هنگام پیاده‌سازی، test-engineering لازم می‌شوند. مستندات قرارداد زیر spec/api قرار می‌گیرند؛ regression-check و final-check پس از تکمیل تغییر انجام می‌شوند."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن fixture و مهارت‌های محلی، تحلیل و ارائهٔ طرح.",
+          "FORBIDDEN در این ارزیابی: ویرایش فایل، نصب وابستگی، اجرای migration، شروع سرویس یا worker، تنظیم Cron، تماس با درگاه، دسترسی production، نمایش secret، commit، push و deploy.",
+          "درخواست اصلی اتصال درگاه، محدودیت صریح read-only این نوبت را تغییر نمی‌دهد. هیچ اقدام خارجی یا تغییری اجرا نشد."
+        ],
+        "acceptance": [
+          "با fake یا قرارداد مصنوعی ثابت شود timeout پس از اثر درگاه، پرداخت دوم ایجاد نمی‌کند و استعلام همان کلید نتیجه را بازیابی می‌کند.",
+          "تکرار درخواست و رقابت هم‌زمان فقط یک عملیات تجاری و یک اثر محلی ایجاد کنند؛ کلید ثابت با payload متفاوت پذیرفته نشود.",
+          "429، پایان بودجهٔ retry، خطای اعتبارسنجی یا احراز هویت، و شکست موقت مستند هرکدام رفتار مشخص داشته باشند.",
+          "webhook تکراری، امضای نامعتبر یا منقضی، نسخهٔ قدیمی، ترتیب معکوس و رویداد گم‌شده پوشش داده شوند؛ رویداد دیررس وضعیت نهایی را بی‌قاعده برنگرداند.",
+          "شکست بین موفقیت خارجی و ثبت محلی قابل بازیابی باشد؛ کاربر نتیجهٔ نامعلوم را شکست قطعی نبیند و گزارش‌ها بدون اطلاعات حساس قابل پیگیری باشند."
+        ],
+        "evidence": [
+          "VERIFIED — contracts/provider.md:2: کلید ثابت، استعلام پس از timeout، Retry-After، retry محدود، HMAC روی raw bytes، event_id و version صریحاً تعریف شده‌اند.",
+          "VERIFIED — routes/api.php:3 و app/Http/Controllers/UserController.php:4 فقط جریان فهرست کاربران را نشان می‌دهند؛ schema.sql:1 فقط جدول users دارد.",
+          "VERIFIED — composer.json:1 وابستگی laravel/framework را با نسخهٔ * اعلام می‌کند؛ نسخهٔ نصب‌شده از این فایل مشخص نیست.",
+          "VERIFIED — tests/test_contract.py:2 فقط پیش‌شرط شمارهٔ تلفن تکراری را بررسی می‌کند؛ تستی برای پرداخت ارائه نشده است.",
+          "VERIFIED — README.md:1 نبود framework نصب‌شده، سرور دیتابیس، حساب درگاه و برنامهٔ در حال اجرا را اعلام می‌کند. spec/api/users.md:1 محل مستندات فعلی API را نشان می‌دهد."
+        ],
+        "limits": [
+          "UNVERIFIED — هیچ تست، اجرای Laravel، استعلام درگاه یا بررسی رفتار runtime انجام نشد؛ شواهد صرفاً از فایل‌های محلی است.",
+          "قرارداد مصنوعی، ارائه‌دهندهٔ واقعی یا SLA را اثبات نمی‌کند. پیش از پیاده‌سازی، هویت و نسخهٔ درگاه، شکل دقیق درخواست و پاسخ، دامنه و عمر کلید، خطاهای retryable و معنای نتیجهٔ «یافت نشد» در استعلام باید روشن شوند.",
+          "الگوریتم دقیق HMAC، headerها، پنجرهٔ زمانی و قواعد acknowledgement مشخص نیستند؛ همچنین منبع مبلغ و ارز، مرجع سفارش، مجوز بازیگر و تغییر وضعیت‌های نهایی تعریف نشده‌اند. قرارداد قطعی endpoint یا مقدار timeout را حدس نمی‌زنم.",
+          "تحویل حاضر، ارزیابی مسیر و طرح اقدام است؛ اتصال درگاه پیاده‌سازی یا تأیید عملیاتی نشده است."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "The payment plan covers stable idempotency, unknown timeout outcome, status lookup/reconciliation and fake tests; no real payment is attempted.",
+      "qualification": "test-engineering is unread and deferred to implementation. full-plan, multiple-pov and targeted security reads are justified by the materially new payment workflow; reading them does not prove their entire workflows ran.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S06",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S06",
+        "group": "integration",
+        "prompt": "در Django webhook سرویس پیامک را دریافت کن، Provider ممکن است پیام را دوبار بفرستد.",
+        "expected_skills": [
+          "steps",
+          "integration-reliability"
+        ],
+        "forbidden_skills": [
+          "load-testing",
+          "release-management"
+        ],
+        "assertion": "deduplication، webhook auth و state rules",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 92,
+        "json_pointer": "/cases/5"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155519634233Z/S06/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155519634233Z/S06/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155519634233Z/S06/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "db-impact",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "db-impact",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "db-impact",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "full-plan",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "integration-reliability",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "multiple-pov",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 10
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "db-impact",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "test-engineering",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "multiple-pov",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 16
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 16
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 16
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "db-impact",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 20
+          },
+          "complete_fixture_body_bytes_returned": false,
+          "observation": "sed -n 1,36p returns the first 36 lines; full body already returned at line11."
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "84fa94d213dbc3274aead387d0e0327b7c67c8a9cdbd5c6aabb8967835b5a82e",
+      "invocation_sha256": "98c63744e5fd6fe34051f5293391ace7952dc244051abab38b6468bdbc0ce528",
+      "effective_catalog_sha256": "b1c1a20f4d09b5966937dce5ca4607dd87d1d079668b8b4245a1ef232145e7fa",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!**/.git/**'\"' -g '\"'!*lock*'\"' -g 'AGENTS.md' -g '*.py' -g '*.md' -g '*.toml' -g '*.txt' -g '*.yaml' -g '*.json'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 10
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/integration-reliability/SKILL.md .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md .agents/skills/skill-evals/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "full-plan",
+            "integration-reliability",
+            "multiple-pov",
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/security-assurance/SKILL.md .agents/skills/db-impact/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "db-impact",
+            "security-assurance",
+            "test-engineering"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 13
+          },
+          "command": "/bin/zsh -lc 'cat app/views.py app/models.py app/urls.py contracts/provider.md tests/test_contract.py pyproject.toml README.md NOTES.md spec/api/users.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 16
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/multiple-pov/SKILL.md .agents/skills/skill-evals/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "multiple-pov",
+            "security-assurance",
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 18
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!**/.git/**'\"' -g '\"'!**/.agents/**'\"'; nl -ba contracts/provider.md; nl -ba app/views.py; nl -ba app/models.py; nl -ba app/urls.py; nl -ba README.md; nl -ba pyproject.toml; nl -ba tests/test_contract.py\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+            "line": 20
+          },
+          "command": "/bin/zsh -lc \"cat schema.sql; sed -n '1,36p' .agents/skills/db-impact/SKILL.md; cat AGENTS.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false,
+          "returned_partial_skill_bodies": [
+            "db-impact"
+          ]
+        }
+      ],
+      "source_evidence_lines": [
+        13,
+        18,
+        20
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155519634233Z/S06/stdout.jsonl",
+        "line": 21
+      },
+      "final_answer": {
+        "selected_skills": [
+          "skill-evals: ارزیابی محدود مسیریابی در همین سناریو؛ IN_PROCESS، بدون اجرای harness یا عامل مستقل.",
+          "integration-reliability: طراحی دریافت webhook، تکرار، ترتیب رویدادها و بازیابی.",
+          "multiple-pov → full-plan: بررسی یک‌بارهٔ گزینه‌ها و سپس طرح رفتار؛ ذخیرهٔ پایدار و تراکنش، به‌جای افزودن زودهنگام صف.",
+          "security-assurance TARGETED و db-impact ANALYSIS_ONLY: امضای ورودی و اثر ذخیرهٔ رویداد.",
+          "compatible-response و natural-persian-writing: ارائهٔ فشرده و فارسی فنی."
+        ],
+        "actions": [
+          "مسیر پیشنهادی POST /api/webhooks/sms/ را در app/urls.py و handler مربوط را در app/views.py در نظر می‌گیرم؛ چنین مسیری اکنون وجود ندارد.",
+          "ابتدا HMAC روی بایت‌های خام و timestamp بررسی شود؛ سپس ساختار event_id، resource_id، version و state اعتبارسنجی شود. نام header، الگوریتم، انواع فیلدها و پنجرهٔ زمانی هنوز مشخص نیست.",
+          "ثبت رویداد با قید یکتایی پایدار در دامنهٔ provider/account و event_id، همراه با تغییر وضعیت محلی در یک تراکنش انجام شود. بررسی exists به‌تنهایی جلوی دو درخواست هم‌زمان را نمی‌گیرد.",
+          "برای resource_id، اعمال version به‌صورت اتمیک کنترل شود؛ رویداد قدیمی وضعیت را عقب نبرد. event_id یکسان با محتوای متناقض، تکرار سالم محسوب نشود.",
+          "ACK موفق فقط پس از commit؛ تکرار معتبر ACK بگیرد و اثر تازه نداشته باشد. پیشنهاد اولیه: 200 با {\"accepted\":true}، ورودی نامعتبر 400، امضای نامعتبر یا منقضی 401 و خطای موقت ذخیره‌سازی 503؛ این قرارداد باید با قواعد retry ارائه‌دهنده تطبیق داده شود.",
+          "اگر اثر موردنیاز فقط تغییر محلی است، پردازش تراکنشی کافی است؛ اگر اثر خارجی یا پردازش طولانی لازم باشد، inbox/outbox پایدار و بازیابی لازم می‌شود. راه‌اندازی worker یا Cron جزو این طرح نیست.",
+          "پیش از پیاده‌سازی باید نوع webhook، اثر دقیق کسب‌وکار، نگاشت resource_id، انتقال‌های مجاز state و قواعد ACK/retry روشن شود. مستندات قرارداد جدید در spec/api قرار می‌گیرد."
+        ],
+        "authorization": [
+          "مجاز: خواندن fixture و مهارت‌های محلی و ارائهٔ طرح.",
+          "هیچ فایل، dependency یا دیتابیسی تغییر نکرد؛ هیچ تست، سرویس، migration، درخواست provider یا اقدام خارجی اجرا نشد.",
+          "مراحل اجرایی احتمالی بعدی: steps برای هماهنگی، test-engineering برای آزمون‌ها، regression-check برای حفظ رفتار موجود و final-check برای پذیرش نهایی؛ اجرای این مراحل اکنون ادعا نمی‌شود.",
+          "بارگذاری، انتشار، بازیابی بکاپ، ممیزی کامل امنیت و تولید handoff دو سندی برای این درخواست لازم نیست."
+        ],
+        "acceptance": [
+          "تحویل تکراری متوالی و هم‌زمان، حتی پس از restart، دقیقاً یک اثر محلی ثبت کند.",
+          "قطع پاسخ پس از commit و ارسال مجدد، اثر را تکرار نکند؛ شکست پیش از commit مانع پردازش مجدد نشود.",
+          "رویداد با امضای نامعتبر، timestamp منقضی، payload مخدوش یا نسخهٔ قدیمی، تغییر غیرمجاز ایجاد نکند.",
+          "شکاف نسخه، منبع ناشناخته و محتوای متناقض سیاست روشن داشته باشند؛ reconciliation فقط با قرارداد معتبر و مجوز اجرای جداگانه.",
+          "آزمون‌های پیشنهادی از fake استفاده کنند؛ آزمون هم‌زمانی و تراکنش روی موتور دیتابیس هدف انجام شود. رفتار profile موجود نیز حفظ شود."
+        ],
+        "evidence": [
+          "VERIFIED: app/urls.py:3 فقط مسیر profile را دارد؛ app/views.py:3 همان handler است و app/models.py:2 فقط User را تعریف می‌کند.",
+          "VERIFIED: contracts/provider.md:2 امضای HMAC روی raw bytes، event_id، version، حذف تکرار، رد نسخهٔ قدیمی و reconciliation را مشخص می‌کند؛ قواعد دقیق ACK و retry فرستنده را نمی‌دهد.",
+          "VERIFIED: schema.sql فقط users و دادهٔ نمونه دارد؛ ذخیرهٔ پایدار رویداد وجود ندارد. افزودن جدول رویداد migration جدید می‌خواهد؛ تغییری در یکتایی phone یا پاک‌سازی کاربران لازم نیست.",
+          "VERIFIED: tests/test_contract.py:3 صرفاً پیش‌شرط شمارهٔ تکراری را بررسی می‌کند و شاهدی برای webhook نیست.",
+          "VERIFIED: README.md:1 نبود framework، سرور دیتابیس و برنامهٔ در حال اجرا را اعلام می‌کند؛ pyproject.toml:4 نیز dependencies خالی دارد."
+        ],
+        "limits": [
+          "طرح و بررسی ایستا تکمیل شد؛ رفتار Django، تضمین هم‌زمانی و موفقیت آزمون‌ها UNVERIFIED هستند.",
+          "provider واقعی، مدل پیامک، موتور دیتابیس، قواعد transition، retention شناسه‌های رویداد و تنظیمات امضا مشخص نیستند.",
+          "429 و Retry-After برای دریافت مستقیم webhook مسئولیت فرستنده‌اند؛ اگر بعداً lookup خروجی لازم شود، retry محدود و رعایت سهمیه طراحی می‌شود. اکنون هیچ lookup اجرا نشده است.",
+          "Idempotency-Key مربوط به POST /payments را نمی‌توان بدون شاهد به ارسال SMS تعمیم داد؛ دریافت webhook به‌خودی‌خود درخواست ارسال پیامک نیست.",
+          "این ارزیابی فقط همین سناریوی READ_ONLY را پوشش می‌دهد؛ تأیید رفتار کامل پکیج مهارت‌ها یا تضمین exactly-once در اثر خارجی نیست."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "The webhook plan covers durable deduplication, concurrent uniqueness, raw-byte HMAC/timestamp, version ordering and ACK after commit.",
+      "qualification": "The final answer differentiates sender retry from consumer processing and local effects from uncertain external effects. steps was read but described as future coordination; a direct specialist-owned plan is sufficient here.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S07",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S07",
+        "group": "integration",
+        "prompt": "API تأمین‌کننده خطای HTTP 429 می‌دهد؛ retry را اصلاح کن.",
+        "expected_skills": [
+          "steps",
+          "integration-reliability"
+        ],
+        "forbidden_skills": [
+          "load-testing"
+        ],
+        "assertion": "درنظرگرفتن Retry-After، backoff و سقف درخواست",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 108,
+        "json_pointer": "/cases/6"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155541868312Z/S07/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155541868312Z/S07/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155541868312Z/S07/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "integration-reliability",
+        "natural-persian-writing",
+        "root-cause",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "integration-reliability",
+        "natural-persian-writing",
+        "root-cause",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "integration-reliability",
+        "natural-persian-writing",
+        "root-cause",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "external_host",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true,
+          "path_read": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+          "fixture_payload_sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "fixture_payload_byte_length": 3235,
+          "content_comparison": "Recorded returned bytes equal the fixture body (S12 is the exact first body of a matching concatenation). Source-path violation remains."
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 12
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 13
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "integration-reliability",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 14
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "root-cause",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 15
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 17
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 19
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [
+        {
+          "skill": "compatible-response",
+          "scope": "external_host",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true,
+          "path_read": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+          "fixture_payload_sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "fixture_payload_byte_length": 3235,
+          "content_comparison": "Recorded returned bytes equal the fixture body (S12 is the exact first body of a matching concatenation). Source-path violation remains."
+        }
+      ],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "776e6027598e31b3ab61e5faca0d6cc718035214e09057c80f3fce05eed4f6f1",
+      "invocation_sha256": "7884c9a0558d1f3e70ff083604b84604e2a18ae6ed9f1d1998bc4814dc3a2bc5",
+      "effective_catalog_sha256": "03f91d9e6855222134beed5ffc898f74dcf3c1c9ad8d4bdffa943702094bc5aa",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc \"cat '/Users/mahan/.agents/skills/compatible-response/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc \"cat '.agents/skills/steps/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 13
+          },
+          "command": "/bin/zsh -lc \"cat '.agents/skills/natural-persian-writing/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "natural-persian-writing"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 14
+          },
+          "command": "/bin/zsh -lc \"cat '.agents/skills/integration-reliability/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "integration-reliability"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 15
+          },
+          "command": "/bin/zsh -lc \"cat '.agents/skills/root-cause/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "root-cause"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 17
+          },
+          "command": "/bin/zsh -lc \"cat '.agents/skills/compatible-response/SKILL.md'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 19
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 21
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g 'AGENTS.md' -g '\"'! .git'\"'; rg -n -i 'retry|429|provider|timeout|http|idempoten|cron' app routes tests contracts spec README.md NOTES.md composer.json snapshot.json\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 23
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/natural-persian-writing/references/persian-style-guide.md; cat AGENTS.md; cat contracts/provider.md; cat app/Http/Controllers/UserController.php; cat tests/test_contract.py; cat composer.json; cat README.md; cat NOTES.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+            "line": 26
+          },
+          "command": "/bin/zsh -lc \"nl -ba contracts/provider.md; nl -ba README.md; nl -ba app/Http/Controllers/UserController.php; nl -ba tests/test_contract.py; cat routes/api.php app/Models/User.php spec/api/users.md schema.sql resources/js/dashboard.js resources/views/form.blade.php resources/css/app.css snapshot.json; rg --files --hidden -g '\"'!.agents/**'\"' -g '\"'!.git/**'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        21,
+        23,
+        26
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155541868312Z/S07/stdout.jsonl",
+        "line": 27
+      },
+      "final_answer": {
+        "selected_skills": [
+          "steps: هماهنگی بررسی محدود، در حالت READ_ONLY و IN_PROCESS.",
+          "root-cause: تشخیص پیش از اصلاح؛ Root Cause: NOT CONFIRMED.",
+          "integration-reliability: بررسی قرارداد 429، retry و نتیجهٔ نامعلوم عملیات.",
+          "natural-persian-writing و compatible-response: نگارش و ارائهٔ پاسخ."
+        ],
+        "actions": [
+          "بررسی ایستا انجام شد؛ هیچ adapter یا منطق retry تأمین‌کننده در fixture پیدا نشد.",
+          "گام بعدی برای تشخیص: بررسی کد واقعی adapter، تنظیمات timeout و retryهای SDK/job، همراه با پاسخ 429 و هدرهای پاک‌سازی‌شده؛ فرضیه‌های رعایت‌نشدن Retry-After، retry تو‌در‌تو و عبور از سهمیه فعلاً UNCONFIRMED هستند.",
+          "اصلاح پیشنهادی پس از تشخیص: پشتیبانی از Retry-After به‌صورت ثانیه و HTTP-date؛ تعیین سقف تلاش و زمان کل، timeout اتصال/پاسخ و backoff همراه jitter برای خطاهای موقت مجاز. اگر زمان انتظار از بودجه بیشتر شد، توقف یا تعویق؛ بدون تلاش زودتر از موعد.",
+          "برای پرداخت، حفظ Idempotency-Key و payload همان عملیات؛ پس از timeout، نتیجه unknown می‌ماند و پیش از پرداخت جدید با GET /payments/by-key تطبیق داده می‌شود. شکست محلی پس از موفقیت خارجی نیز نیازمند تطبیق است.",
+          "در اجرای بعدی، آزمون‌های fake با ساعت کنترل‌شده طراحی می‌شوند؛ test-engineering برای آزمون رفتار و regression-check پس از اصلاح فعال خواهند شد."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن fixture و مهارت‌های محلی و ارائهٔ برنامه.",
+          "FIX_PROHIBITED در این ارزیابی: ویرایش فایل، نصب وابستگی و هر اقدام خارجی؛ درخواست اصلی مجوز عبور از محدودیت read-only نیست.",
+          "هیچ فایل تغییر نکرد؛ هیچ درخواست شبکه، سرویس، Cron، عملیات production، commit، push یا deploy اجرا نشد."
+        ],
+        "acceptance": [
+          "429: رعایت هر دو قالب Retry-After، سیاست مشخص برای هدر نامعتبر/غایب، سهمیه و پایان بودجه؛ بدون حلقهٔ نامحدود یا تکثیر retry میان لایه‌ها.",
+          "موفقیت پایان retry باشد؛ خطاهای اعتبارسنجی/احراز هویت تکرار نشوند؛ فقط خطاهای موقت مستند واجد retry باشند.",
+          "تکرار یک پرداخت و timeout پس از اثر خارجی، پرداخت دوم نسازند؛ نتیجهٔ نامعلوم و شکست جزئی قابل تطبیق بمانند.",
+          "webhook فعلاً خارج از تغییر محدود retry است؛ اگر در مسیر تأیید عملیات باشد، duplicate، ترتیب version و شکست ذخیره‌سازی باید با fake پوشش داده شوند.",
+          "معیار پایان اصلاح واقعی: بازتولید خطا و موفقیت آزمون‌های متمرکز قبل/بعد؛ این معیار در fixture احراز نشده است."
+        ],
+        "evidence": [
+          "VERIFIED — contracts/provider.md:2 قرارداد نمونهٔ Retry-After، بودجهٔ محدود، Idempotency-Key، استعلام پس از timeout و قواعد webhook را بیان می‌کند.",
+          "VERIFIED — routes/api.php و app/Http/Controllers/UserController.php:4 فقط مسیر خواندن کاربران متعلق به کاربر فعلی را نشان می‌دهند؛ کد تأمین‌کننده موجود نیست.",
+          "VERIFIED — tests/test_contract.py:3 فقط پیش‌شرط شمارهٔ تلفن تکراری را بررسی می‌کند؛ آزمون retry ندارد.",
+          "README.md:1 صراحتاً نبود framework، حساب تأمین‌کننده و برنامهٔ در حال اجرا را اعلام می‌کند؛ این اظهار fixture است، نه شاهد رفتار runtime."
+        ],
+        "limits": [
+          "برنامهٔ بررسی تکمیل شد؛ اصلاح خطای اصلی انجام نشده است. بازتولید، اجرای آزمون و اعتبارسنجی runtime انجام نشد.",
+          "تأمین‌کننده، عملیات واقعی، علت محدودسازی، سقف سهمیه، timeoutها و خطاهای موقت مجاز نامشخص‌اند؛ اعداد یا تضمین‌های پرداخت/SMS از قرارداد نمونه قابل تعمیم نیستند.",
+          "به‌دلیل نبود مسیر اجرایی، شدت نقص و ریسک regression قابل تعیین قطعی نیست؛ افزایش صرف تعداد retry توجیه ندارد."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "FAIL",
+      "reviewer_verdict": "FAIL",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Routing content satisfies the bounded 429/retry assertion, but a successful host skill-body read violates the fixture-only source boundary.",
+      "qualification": "The external compatible-response body is identical to the fixture payload; that limits content contamination but does not cure source isolation. No forbidden load workflow, credential read or provider traffic is observed.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S09",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S09",
+        "group": "integration",
+        "prompt": "یک API داخلی CRUD برای پروفایل بدون سرویس خارجی بساز.",
+        "expected_skills": [
+          "steps"
+        ],
+        "forbidden_skills": [
+          "integration-reliability",
+          "backup-recovery",
+          "release-management"
+        ],
+        "assertion": "عدم فراخوانی integration صرف کلمه API",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 138,
+        "json_pointer": "/cases/8"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155640280299Z/S09/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155640280299Z/S09/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155640280299Z/S09/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "full-plan",
+        "multiple-pov",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "multiple-pov",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "full-plan",
+        "multiple-pov",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "full-plan",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 13
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "multiple-pov",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 13
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 16
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "eea9a6f80ed013bf29515844528963f424b1ba1f9284077fe31515188007819b",
+      "invocation_sha256": "febb647e5ab5d9541cfbad2357ddc794fb8834ad0bb04499ee1bc6f36a950120",
+      "effective_catalog_sha256": "d411ea55162c7edae98c116d8f55177f0e0bbfb5de269f62a4691fd7920724b9",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"' -g '\"'!pnpm-lock.yaml'\"' -g '\"'!composer.lock'\"' -g '\"'!Gemfile.lock'\"' -g '\"'!Cargo.lock'\"' -g '\"'!uv.lock'\"' -g '\"'!poetry.lock'\"' -g '\"'!go.sum'\"' -g '\"'!'\"\\\\.git/**'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/skills/**'\"'; cat AGENTS.md; cat .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc 'nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba schema.sql; nl -ba composer.json; nl -ba spec/api/users.md; nl -ba tests/test_contract.py; cat README.md NOTES.md snapshot.json contracts/provider.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 13
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "full-plan",
+            "multiple-pov"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+            "line": 16
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        11
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155640280299Z/S09/stdout.jsonl",
+        "line": 17
+      },
+      "final_answer": {
+        "selected_skills": [
+          "steps: هماهنگی مسیر پیشنهادی کار",
+          "skill-evals: ارزیابی محدود مسیریابی؛ نه تأیید اجرای کامل",
+          "multiple-pov: بررسی یک‌بارهٔ ابهام موجودیت پروفایل و مالکیت",
+          "full-plan: طراحی قرارداد CRUD پیش از پیاده‌سازی",
+          "natural-persian-writing",
+          "compatible-response"
+        ],
+        "actions": [
+          "ارزیابی فقط‌خواندنی، با اهمیت ★، انجام شد؛ هیچ فایلی تغییر نکرد.",
+          "پیش از پیاده‌سازی روشن می‌کنم پروفایل همان User است یا موجودیتی جدا، چه فیلدهایی دارد، چه کسی مجاز به مدیریت آن است و حذف چه معنایی دارد. این تصمیم‌ها از نمونه قابل استخراج نیستند.",
+          "پس از تعیین دامنه، قرارداد ایجاد، خواندن، ویرایش و حذف را با ورودی‌های مجاز، خروجی، اعتبارسنجی، خطاها و قواعد مالکیت طراحی می‌کنم؛ مسیرهای تازه را پیشنهادی می‌نامم.",
+          "پیاده‌سازی احتمالی در ساختار Laravel موجود انجام می‌شود. owner_id از هویت معتبر سمت سرور تعیین می‌شود و خواندن، ویرایش و حذف به محدودهٔ مالک محدود می‌شوند.",
+          "برای اجرای بعدی، test-engineering، بررسی محدود security-assurance، سپس regression-check و final-check مرتبط‌اند. db-impact فقط در صورت تغییر واقعی schema/data و docs-maintenance برای همگام‌کردن spec/api/users.md فعال می‌شوند.",
+          "integration-reliability لازم نیست؛ درخواست وابستگی خارجی ندارد. مرورگر، رابط کاربری، تست بار، انتشار و بازیابی نیز جزو این کار نیستند."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن همین نمونه و مهارت‌های محلی و ارائهٔ طرح.",
+          "FORBIDDEN در این ارزیابی: ویرایش، نصب وابستگی، اجرای migration، راه‌اندازی سرویس، تماس خارجی، دسترسی تولید، تنظیم Cron، commit، push و deploy.",
+          "درخواست اصلی ساخت API، محدودیت صریح ارزیابی فقط‌خواندنی را لغو نمی‌کند؛ مجوز اجرایی تازه‌ای درخواست نشد."
+        ],
+        "acceptance": [
+          "معیارهای پیشنهادی اجرای آینده: CRUD با قرارداد مشخص، اعتبارسنجی ورودی و جلوگیری از تغییر id و owner_id توسط مصرف‌کننده.",
+          "تست درخواست بدون احراز هویت، دسترسی به رکورد مالک دیگر، شناسهٔ ناموجود، ورودی نامعتبر، ویرایش جزئی و حذف مطابق قرارداد.",
+          "حفظ رفتار فعلی GET /api/users و داده‌های قدیمی؛ عدم افزودن وابستگی خارجی.",
+          "تست‌های API و مجوزها باید در محیط تست ایزوله اجرا شوند؛ هیچ‌یک در این ارزیابی اجرا نشده‌اند."
+        ],
+        "evidence": [
+          "routes/api.php:3 فقط GET /users را تعریف می‌کند؛ spec/api/users.md:1 آن را GET /api/users مستند کرده است.",
+          "app/Http/Controllers/UserController.php:4 نتیجهٔ index را با owner_id کاربر جاری محدود می‌کند؛ احراز هویت مسیر از فایل‌های موجود قابل تأیید نیست.",
+          "app/Models/User.php:3 فیلدهای id و owner_id را guarded کرده است؛ این حفاظت جای بررسی مجوز دسترسی را نمی‌گیرد.",
+          "schema.sql:1–2 شامل id، owner_id، phone و legacy است و شمارهٔ تلفن تکراری دارد؛ افزودن قید یکتایی یا حذف legacy توجیه نشده است.",
+          "tests/test_contract.py:3 فقط پیش‌شرط شمارهٔ تکراری را بررسی می‌کند؛ آزمون CRUD یا مالکیت نیست.",
+          "README.md نبود چارچوب نصب‌شده، سرور پایگاه داده و برنامهٔ در حال اجرا را تصریح می‌کند. قرارداد contracts/provider.md به درخواست حاضر ارتباطی ندارد."
+        ],
+        "limits": [
+          "نتیجه، مسیر پیشنهادی مبتنی بر بررسی ایستا است؛ API ساخته نشده و رفتار زمان اجرا تأیید نشده است.",
+          "نسخهٔ دقیق Laravel، سازوکار احراز هویت، قالب واقعی پاسخ‌ها و تنظیمات پایگاه داده مشخص نیستند.",
+          "snapshot.json نسخهٔ 3.1.0 و source_dirty=true را گزارش می‌کند؛ SHA و هش snapshot مستقلاً راستی‌آزمایی نشدند.",
+          "هیچ عامل مستقل، سرویس، آزمون اجرایی یا ارزیابی کامل بسته اجرا نشد."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Internal CRUD plan explicitly rejects external integration despite a provider document being present.",
+      "qualification": "The new CRUD contract has material actor/entity ambiguities; full-plan and a bounded multiple-pov review are reasonable. The final answer proposes ownership and negative tests and claims no implementation.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S12",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S12",
+        "group": "test",
+        "prompt": "در Django مشکل Permission یک View را درست کن و regression tests بنویس.",
+        "expected_skills": [
+          "steps",
+          "test-engineering",
+          "security-assurance"
+        ],
+        "forbidden_skills": [
+          "load-testing"
+        ],
+        "assertion": "OBJECT-level auth، negative test، behavior verification",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 185,
+        "json_pointer": "/cases/11"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155649953483Z/S12/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155649953483Z/S12/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155649953483Z/S12/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "regression-check",
+        "test-engineering"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "regression-check",
+        "root-cause",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "natural-persian-writing",
+        "regression-check",
+        "root-cause",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "external_host",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true,
+          "path_read": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+          "fixture_payload_sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "fixture_payload_byte_length": 3235,
+          "content_comparison": "Recorded returned bytes equal the fixture body (S12 is the exact first body of a matching concatenation). Source-path violation remains."
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "regression-check",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "root-cause",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "test-engineering",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "regression-check",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 14
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "test-engineering",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 14
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "root-cause",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [
+        {
+          "skill": "compatible-response",
+          "scope": "external_host",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true,
+          "path_read": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+          "fixture_payload_sha256": "7bfefcacdb7179b1ebd2379bfe62d45f8336ff8f0c8ed6c7ffd3d08e28b82183",
+          "fixture_payload_byte_length": 3235,
+          "content_comparison": "Recorded returned bytes equal the fixture body (S12 is the exact first body of a matching concatenation). Source-path violation remains."
+        }
+      ],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "54beb2c4cfc3564573b3c26b9c586bc88c4ec0e7f479a9f1db87c333eed639e2",
+      "invocation_sha256": "9dd25592fda4f555e35f19a5493cc953ff7cf7a6e75c4da466bf3295996f8db2",
+      "effective_catalog_sha256": "75fadf9db73f763bbc743773e92cad509c95baef90f462a14f773a65741361cd",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!*lock*'\"' -g '\"'!node_modules'\"' -g '\"'!vendor'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'for p in /Users/mahan/.agents/skills/compatible-response/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/natural-persian-writing/SKILL.md; do if test -f \"$p\"; then cat \"$p\"; fi; done'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc \"for p in AGENTS.md README.md NOTES.md app/views.py app/urls.py app/models.py tests/test_contract.py pyproject.toml spec/api/users.md snapshot.json; do printf '\\\\n%s\\\\n' \\\"\"'$p\"; nl -ba \"$p\"; done'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 11
+          },
+          "command": "/bin/zsh -lc \"for p in .agents/skills/root-cause/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/regression-check/SKILL.md .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md; do printf '\\\\n%s\\\\n' \\\"\"'$p\"; cat \"$p\"; done'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "regression-check",
+            "root-cause",
+            "security-assurance",
+            "skill-evals",
+            "test-engineering"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+            "line": 14
+          },
+          "command": "/bin/zsh -lc \"cat .agents/skills/test-engineering/SKILL.md; cat .agents/skills/regression-check/SKILL.md; rg --files --hidden -g '\"'! .git'\"' -g '*settings*' -g '*middleware*' -g '*conftest*' -g '*manage.py' -g '*pytest*' -g '*AGENTS.md'; nl -ba app/templates/form.html; nl -ba schema.sql; nl -ba contracts/provider.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "regression-check",
+            "test-engineering"
+          ],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        9,
+        14
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155649953483Z/S12/stdout.jsonl",
+        "line": 15
+      },
+      "final_answer": {
+        "selected_skills": [
+          "steps: هماهنگی محدود، IN_PROCESS و READ_ONLY؛ حساسیت این بررسی ★★.",
+          "root-cause: تشخیص مبتنی بر کد؛ بازتولید خطا ممکن نیست.",
+          "security-assurance: بررسی TARGETED احراز هویت و مجوز دسترسی به رکورد.",
+          "test-engineering: حالت STRATEGY برای طراحی regression tests.",
+          "natural-persian-writing و compatible-response: نگارش گزارش.",
+          "regression-check پس از اصلاح واقعی فعال می‌شود؛ اکنون مرحلهٔ برنامه‌ریزی است."
+        ],
+        "actions": [
+          "۱. قرارداد دسترسی را مشخص می‌کنم: ارتباط actor با owner_id، استثناهای احتمالی نقش‌ها و پاسخ مورد انتظار برای مهمان و غیرمالک. سند موجود فقط مسیر فهرست کاربران را توضیح می‌دهد.",
+          "۲. اصلاح پیشنهادی در profile: احراز هویت مطابق قرارداد API و محدودکردن query به مالک مجاز؛ انتخاب رکورد با get_object_or_404 روی queryset مجاز، در صورت تأیید سیاست 404 برای غیرمالک. افزودن login check به‌تنهایی کافی نیست.",
+          "۳. در محیط مجاز آینده، تست‌های یکپارچهٔ Django از مسیر واقعی URL می‌نویسم؛ ابتدا شکست مورد دسترسی غیرمجاز را ثبت می‌کنم و سپس اصلاح حداقلی را اعمال می‌کنم.",
+          "۴. پس از اصلاح، تست‌های متمرکز و بررسی حفظ قرارداد را اجرا می‌کنم؛ در صورت تغییر رفتار مستند، spec/api/users.md را همگام می‌کنم. تغییر مدل یا schema لازم به نظر نمی‌رسد."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن fixture و مهارت‌ها، تحلیل و ارائهٔ برنامه.",
+          "FIX_PROHIBITED در این ارزیابی: ویرایش فایل، نصب وابستگی، اجرای تغییرات یا اقدامات بیرونی؛ هیچ‌کدام انجام نشد.",
+          "نیازی به درخواست تأیید نیست؛ خروجی این نوبت صرفاً برنامه است."
+        ],
+        "acceptance": [
+          "مالک مجاز پاسخ موفق با همان ساختار id و name بگیرد.",
+          "کاربر احرازشدهٔ دیگر با تغییر pk به رکورد دسترسی پیدا نکند و دادهٔ محافظت‌شده در پاسخ نبیند؛ شناسهٔ actor و رکورد در دادهٔ تست عمداً متفاوت باشند تا اشتباه‌گرفتن مالک با pk آشکار شود.",
+          "مهمان طبق قرارداد احراز هویت رد شود؛ شناسهٔ ناموجود پاسخ کنترل‌شده بگیرد؛ سیاست 403 یا 404 برای غیرمالک پیش از پیاده‌سازی مشخص شود.",
+          "تست‌ها احراز هویت و مجوز واقعی مسیر را پوشش دهند، روی پایگاه تست مستقل اجرا شوند و نقص فعلی را تشخیص دهند؛ صرف mockکردن query کافی نیست.",
+          "مسیر URL و خروجی موفق حفظ شوند؛ هیچ استثنای دسترسی برای staff یا superuser بدون قرارداد اضافه نشود."
+        ],
+        "evidence": [
+          "VERIFIED — app/urls.py:3 مسیر api/users/<int:pk>/ را مستقیماً به profile متصل می‌کند.",
+          "VERIFIED — app/views.py:3–5 فقط User.objects.get(pk=pk) و بازگرداندن id/name دارد؛ در خود View بررسی actor یا مالکیت وجود ندارد.",
+          "VERIFIED — app/models.py:3 فیلد owner_id دارد؛ ارتباط آن با هویت احرازشده در fixture تعریف نشده است.",
+          "VERIFIED — spec/api/users.md:1 مالکیت بر مبنای actor فعلی را برای GET /api/users بیان می‌کند؛ قرارداد مسیر جزئیات کامل نیست.",
+          "VERIFIED — tests/test_contract.py فقط پیش‌شرط تلفن تکراری را در SQLite حافظه‌ای می‌سنجد و تست Permission نیست.",
+          "VERIFIED — README.md:1 نبود محیط اجرایی را اعلام می‌کند؛ pyproject.toml:4 وابستگی ندارد و فایل تنظیمات Django در fixture یافت نشد."
+        ],
+        "limits": [
+          "Root Cause در سطح runtime تأیید نشده است. نبود کنترل مالکیت در View مشاهده شد؛ اثر middleware و امکان بهره‌برداری واقعی UNVERIFIED است.",
+          "هیچ تست، سرویس یا درخواست شبکه‌ای اجرا نشد؛ هیچ فایلی تغییر نکرد. ادعای رفع مشکل یا عبور regression tests وجود ندارد.",
+          "برای اجرای آینده، تنظیمات واقعی auth، نسخهٔ Django، پایگاه تست مستقل و قرارداد خطا لازم است.",
+          "به full audit، طراحی معماری، مهاجرت داده، provider، مرورگر، load testing یا release نیازی نیست؛ برنامهٔ پیشنهادی به همین View و قرارداد مرتبط محدود است."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "FAIL",
+      "reviewer_verdict": "FAIL",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Object-level authorization and negative-test planning satisfy the content assertion, but a successful host supporting-skill body read violates source isolation.",
+      "qualification": "Manual inspection confirms steps, security-assurance and other complete bodies returned inside for loops. The parser undercounts those reads. No permission fix or regression test was executed.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S16",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S16",
+        "group": "security",
+        "prompt": "سطح دسترسی فایل‌های خصوصی Laravel را اصلاح کن.",
+        "expected_skills": [
+          "steps",
+          "security-assurance",
+          "test-engineering"
+        ],
+        "forbidden_skills": [
+          "load-testing",
+          "release-management"
+        ],
+        "assertion": "TARGETED security/permission checks",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 250,
+        "json_pointer": "/cases/15"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155753689266Z/S16/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155753689266Z/S16/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155753689266Z/S16/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "steps",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "skill-evals",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 9
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [
+        "test-engineering"
+      ],
+      "missing_expected_disposition": "test-engineering is unread and deferred to future implementation. The response avoids fabricating a concrete fix, changing OS permissions or claiming that unavailable file behavior was verified.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "efd6a2056b817f9e4237d86f98267afe9531652ba4f93a26fba5e3abbece7311",
+      "invocation_sha256": "4ef32fce26f2c8b98418d0550b484f2bc397559d81c7d8b09bf968a78ec049f7",
+      "effective_catalog_sha256": "b94548cbe3483d35e56fcf0df4cb21473b58e9296155ef8ca4fc5caa2a684df8",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '*.php' -g 'composer.json' -g '*.md' -g '*.env*'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "security-assurance",
+            "steps"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/**'\"'; nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; cat composer.json README.md NOTES.md spec/api/users.md contracts/provider.md; cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "skill-evals"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc \"rg -n --hidden -g '\"'!.agents/**'\"' -g '\"'!.git/**'\"' 'private|storage|Storage|download|upload|file|permission|chmod|auth|policy|Gate|symlink' .; nl -ba tests/test_contract.py; nl -ba schema.sql; nl -ba resources/views/form.blade.php; nl -ba resources/js/dashboard.js; nl -ba resources/css/app.css; nl -ba README.md; nl -ba AGENTS.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        9,
+        12
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155753689266Z/S16/stdout.jsonl",
+        "line": 13
+      },
+      "final_answer": {
+        "selected_skills": [
+          "steps: هماهنگی مسیر پیشنهادی اصلاح، بدون اجرا.",
+          "security-assurance: بررسی TARGETED دسترسی فایل خصوصی.",
+          "skill-evals: ارزیابی محدود مسیریابی؛ بدون اجرای harness.",
+          "compatible-response و natural-persian-writing: ارائهٔ روشن و دقیق فارسی."
+        ],
+        "actions": [
+          "بررسی فقط‌خواندنی انجام شد؛ هیچ فایلی تغییر نکرد.",
+          "قدم بعدی: مشخص‌کردن فایل هدف و قاعدهٔ مجاز دسترسی؛ مالک، نقش یا tenant را از روی درخواست فرض نمی‌کنم.",
+          "پس از دریافت کد مرتبط، مسیر ذخیره‌سازی تا تحویل فایل را بررسی می‌کنم: disk و visibility، مسیر عمومی و symlink، احراز هویت، مجوز روی فایل و کنترل مسیر ورودی.",
+          "اصلاح پیشنهادی باید کوچک و متناسب با علت باشد؛ تغییر permission سیستم‌عامل به‌تنهایی جای بررسی مجوز برنامه را نمی‌گیرد.",
+          "در اجرای واقعی بعدی، آزمون‌های متمرکز دسترسی با test-engineering و بررسی رفتارهای موجود با regression-check انجام می‌شود؛ فعلاً این‌ها فقط مراحل پیشنهادی‌اند."
+        ],
+        "authorization": [
+          "ALLOWED: خواندن همین fixture و مهارت‌های محلی و ارائهٔ برنامه.",
+          "FORBIDDEN: ویرایش، نصب وابستگی، اجرای اقدام خارجی، شروع سرویس، تغییر permission، commit، push، deploy یا دسترسی تولید.",
+          "درخواست اصلی، محدودیت صریح ارزیابی فقط‌خواندنی را لغو نمی‌کند."
+        ],
+        "acceptance": [
+          "فقط کاربران مجاز بتوانند فایل خصوصی را دریافت کنند.",
+          "مهمان و کاربر فاقد مجوز، از جمله با شناسهٔ فایل دیگران، دسترسی نداشته باشند.",
+          "URL مستقیم یا مسیر جایگزین، کنترل دسترسی را دور نزند؛ ورودی مسیر نیز از محدودهٔ مجاز خارج نشود.",
+          "دریافت مجاز و رفتار فایل‌های عمومی حفظ شود؛ نتیجه با آزمون مثبت و منفی در محیط ایزوله تأیید شود."
+        ],
+        "evidence": [
+          "VERIFIED — routes/api.php:3 فقط GET /users را تعریف می‌کند؛ مسیر فایل در fixture یافت نشد.",
+          "VERIFIED — app/Http/Controllers/UserController.php:4 فهرست کاربران را با owner_id محدود می‌کند؛ این شاهد مجوز فایل نیست.",
+          "VERIFIED — در فایل‌های موجود، تنظیمات filesystem، Policy فایل و کد upload/download یافت نشد.",
+          "VERIFIED — README.md:1 نبود Laravel نصب‌شده و برنامهٔ در حال اجرا را اعلام می‌کند؛ composer.json نیز نسخهٔ Laravel را با * مشخص کرده است.",
+          "VERIFIED — tests/test_contract.py فقط دادهٔ تکراری تلفن را بررسی می‌کند و پوشش دسترسی فایل ندارد."
+        ],
+        "limits": [
+          "علت مشکل و وجود آسیب‌پذیری دسترسی فایل با این نمونه قابل تأیید نیست؛ اصلاح اصلی انجام نشده است.",
+          "permission واقعی، مالک فایل‌های ذخیره‌شده، پیکربندی وب‌سرور یا object storage و رفتار زمان اجرا مشاهده نشده‌اند.",
+          "هیچ تست یا درخواست شبکه‌ای اجرا نشد؛ نتیجه صرفاً بررسی ایستای همین fixture است.",
+          "ممیزی کامل امنیت، مهاجرت پایگاه داده، بازیابی، انتشار و تست بار برای این دامنه لازم نیستند."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "The route is targeted to private-file authorization, honestly reports absent file/storage code, and proposes positive/negative access checks.",
+      "qualification": "test-engineering is unread and deferred to future implementation. The response avoids fabricating a concrete fix, changing OS permissions or claiming that unavailable file behavior was verified.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S17",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S17",
+        "group": "security",
+        "prompt": "تمام Subsystem احراز هویت را Security Audit کن.",
+        "expected_skills": [
+          "security-assurance"
+        ],
+        "forbidden_skills": [
+          "load-testing",
+          "release-management"
+        ],
+        "assertion": "FULL_AUDIT روشن، bounded/safe و بدون scan Production نامجاز",
+        "kind": "ROUTING",
+        "additional_authorization": "permission for active tests"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 267,
+        "json_pointer": "/cases/16"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155755108227Z/S17/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155755108227Z/S17/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155755108227Z/S17/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance"
+      ],
+      "reviewed_skill_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance"
+      ],
+      "reviewed_fixture_local_body_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance"
+      ],
+      "reviewed_body_read_evidence": [
+        {
+          "skill": "compatible-response",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "natural-persian-writing",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        },
+        {
+          "skill": "security-assurance",
+          "scope": "fixture_local",
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 7
+          },
+          "complete_fixture_body_bytes_returned": true
+        }
+      ],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [],
+      "missing_expected_disposition": "No expected body-read omissions after manual review; this alone does not establish a pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "6fdb7ad44627163f18e9ecf05dd3c055c6d057d36830285d64e008f6f559c087",
+      "invocation_sha256": "e61d565ab330e34285d7cf6fea4fa9439299e9871cecc7b3809dec658e98acfd",
+      "effective_catalog_sha256": "6c79800679da99f0522a21b25736b8d74811031c7ea77a176729d576c5b89f9f",
+      "commands": [
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 5
+          },
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"'\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 7
+          },
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [
+            "compatible-response",
+            "natural-persian-writing",
+            "security-assurance"
+          ],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 9
+          },
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git'\"' -g '\"'!node_modules'\"' -g '\"'!.agents/**'\"'; cat AGENTS.md; cat .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 12
+          },
+          "command": "/bin/zsh -lc 'nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba composer.json; nl -ba tests/test_contract.py; nl -ba schema.sql; nl -ba README.md; nl -ba NOTES.md; nl -ba snapshot.json; nl -ba spec/api/users.md; nl -ba contracts/provider.md'",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        },
+        {
+          "evidence": {
+            "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+            "line": 14
+          },
+          "command": "/bin/zsh -lc \"rg -n --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/**'\"' 'auth|Auth|password|token|session|middleware|tenant|role|permission|login|logout|reset|csrf|secret' .; nl -ba resources/js/dashboard.js; nl -ba resources/views/form.blade.php; nl -ba resources/css/app.css\"",
+          "exit_code": 0,
+          "returned_complete_skill_bodies": [],
+          "actual_application_test": false
+        }
+      ],
+      "source_evidence_lines": [
+        12,
+        14
+      ],
+      "final_answer_pointer": {
+        "path": "fixtures/native-runs/20261115T155755108227Z/S17/stdout.jsonl",
+        "line": 15
+      },
+      "final_answer": {
+        "selected_skills": [
+          "security-assurance — حالت FULL_AUDIT؛ درخواست صریح، کل زیرسیستم احراز هویت را هدف می‌گیرد.",
+          "natural-persian-writing",
+          "compatible-response"
+        ],
+        "actions": [
+          "دامنه را به احراز هویت، نشست و توکن، بازیابی حساب و کنترل دسترسی مرتبط محدود می‌کنم؛ هر بخش فقط در صورت وجود کد بررسی می‌شود.",
+          "کوچک‌ترین گام بعدی، بررسی اتصال GET /api/users به middleware احراز هویت و قرارداد کاربر جاری است؛ سپس مسیر ورودی تا query و پاسخ را دنبال می‌کنم.",
+          "برای اعتبارسنجی بعدی، سناریوهای مهمان، مالک و کاربر دیگر را تعریف می‌کنم؛ برای نشست و توکن نیز انقضا، ابطال و خروج را در صورت وجود پیاده‌سازی بررسی می‌کنم.",
+          "هر یافته شامل محل، قاعدهٔ نقض‌شده، پیش‌شرط حمله، اثر، شدت، اطمینان، اصلاح حداقلی و روش اعتبارسنجی خواهد بود. در این ارزیابی هیچ اصلاح یا آزمون اجرایی انجام نمی‌دهم."
+        ],
+        "authorization": [
+          "درخواست اصلی مجوز ممیزی کامل زیرسیستم را می‌دهد؛ دستور فعلی، اقدام را به خواندن همین fixture و مهارت‌های محلی و ارائهٔ برنامه محدود کرده است.",
+          "اصلاح کد، نصب وابستگی، اجرای سرویس، ترافیک خارجی، دسترسی تولید، commit و انتشار مجاز نیستند. برای بازرسی مجاز، تأیید دوباره لازم نیست."
+        ],
+        "acceptance": [
+          "پوشش هر بخش با شاهد کد یا وضعیت «شواهد موجود نیست» مشخص شود.",
+          "مسیر بهره‌برداری تأییدشده، ریسک مستند به کد و فرضیهٔ آزموده‌نشده از هم تفکیک شوند.",
+          "نبود یافته در این نمونه، تأیید امنیت کل زیرسیستم تلقی نشود؛ هر پیشنهاد اصلاح، محدود و قابل اعتبارسنجی باشد."
+        ],
+        "evidence": [
+          "VERIFIED — routes/api.php:3 مسیر /users را بدون middleware صریح ثبت می‌کند؛ UserController.php:4 مستقیماً $request->user()->id را می‌خواند. این ترکیب نیازمند بررسی محافظت مسیر است؛ نبود middleware سراسری یا امکان دورزدن احراز هویت اثبات نشده است.",
+          "VERIFIED — app/Http/Controllers/UserController.php:4 query را با owner_id کاربر جاری محدود می‌کند؛ این شاهد کنترل مالکیت در همین query است، نه اثبات جداسازی کامل کاربران.",
+          "VERIFIED — app/Models/User.php:3 فقط id و owner_id را در guarded قرار می‌دهد؛ این تنظیم، کنترل مجوز دسترسی نیست.",
+          "VERIFIED — composer.json:1 نسخهٔ laravel/framework را با * مشخص کرده است؛ در فایل‌های موجود composer.lock دیده نشد. نسخهٔ نصب‌شده و وضعیت آسیب‌پذیری وابستگی‌ها UNVERIFIED است.",
+          "VERIFIED — tests/test_contract.py:3 فقط پیش‌شرط شمارهٔ تلفن تکراری را بررسی می‌کند؛ شاهد آزمون احراز هویت یا مجوز نیست.",
+          "VERIFIED — README.md:1 محیط را مصنوعی و فاقد برنامهٔ درحال اجرا معرفی می‌کند؛ spec/api/users.md:1 بازگرداندن کاربران متعلق به کاربر جاری را قرارداد مسیر می‌داند."
+        ],
+        "limits": [
+          "کد ورود، خروج، بازیابی رمز، صدور و ابطال توکن، تنظیمات نشست، guard و middleware در فایل‌های بررسی‌شده وجود ندارد؛ ممیزی کامل احراز هویت با این شواهد قابل تکمیل نیست.",
+          "هیچ تست، درخواست HTTP، اسکن وابستگی یا بررسی advisory خارجی اجرا نشد. رفتار واقعی مهمان، پاسخ‌های خطا و اعمال جداسازی کاربران UNVERIFIED است.",
+          "در این بررسی فقط ریسک نیازمند پیگیری شناسایی شد؛ مسیر بهره‌برداری تأییدشده یا حکم قطعی دربارهٔ امنیت سیستم ارائه نمی‌شود."
+        ]
+      },
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "PASS",
+      "strict_fixture_source_isolation": "PASS",
+      "reviewer_verdict": "PASS",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "An explicitly requested FULL_AUDIT is bounded to authentication and related authorization, with missing subsystem code and runtime limits made clear.",
+      "qualification": "Direct security-assurance ownership is acceptable; steps is not required by this case. No production scan or active test appears; actual full audit completion remains unverified.",
+      "cap_evidence": [],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    },
+    {
+      "case_id": "S21",
+      "batch": "batch-catalog-first30.json",
+      "scope": "READ_ONLY_ROUTING_PLAN",
+      "owner_case": {
+        "id": "S21",
+        "group": "database",
+        "prompt": "یک ستون legacy را از جدول MySQL حذف کن.",
+        "expected_skills": [
+          "steps",
+          "db-impact",
+          "regression-check"
+        ],
+        "forbidden_skills": [
+          "backup-recovery",
+          "release-management"
+        ],
+        "assertion": "consumer search, compatibility, production migration not auto-run",
+        "kind": "ROUTING",
+        "additional_authorization": "none"
+      },
+      "owner_case_pointer": {
+        "path": "/Users/mahan/Desktop/Web/skill-package/evals/cases.json",
+        "line": 329,
+        "json_pointer": "/cases/20"
+      },
+      "invocation": {
+        "path": "fixtures/native-runs/20261115T155847049966Z/S21/invocation.json"
+      },
+      "prompt_pointer": {
+        "path": "fixtures/native-runs/20261115T155847049966Z/S21/invocation.json",
+        "line": 30
+      },
+      "recorded_runtime": "codex-cli 0.167.0-alpha.3.2",
+      "recorded_model": "gpt-6.1-sol",
+      "recorded_reasoning": "medium",
+      "permissions": {
+        "approval": "never",
+        "sandbox": "read-only",
+        "ignore_user_config": true,
+        "ephemeral": true,
+        "plugins_apps_remote_plugin_disabled": true,
+        "source_read_scope": "Only the synthetic fixture and its local skills, per invocation stdin. Read-only sandbox is not a fixture-only read jail."
+      },
+      "verified_catalog": {
+        "evidence": {
+          "path": "fixtures/native-runs/20261115T155847049966Z/S21/effective-native-catalog.json"
+        },
+        "enabled_count": 26,
+        "unique_enabled_names": 26,
+        "all_enabled_paths_in_case_fixture": true,
+        "errors": [],
+        "skill_payload_matches_preparation_hashes": true,
+        "governance_sha_matches_invocation": true,
+        "original_prompt_matches": true
+      },
+      "parser_reported_skill_reads": [],
+      "reviewed_skill_body_reads": [],
+      "reviewed_fixture_local_body_reads": [],
+      "reviewed_body_read_evidence": [],
+      "parser_missed_confirmed_body_reads": [],
+      "missing_expected_body_reads": [
+        "db-impact",
+        "regression-check",
+        "steps"
+      ],
+      "missing_expected_disposition": "No routing, compatibility or consumer-search behavior can be assessed. This is an account/runtime blocker, not a behavioral failure or pass.",
+      "forbidden_skill_body_reads": [],
+      "forbidden_workflow_activation": "NONE_OBSERVED in the full command trace and final answer; a body read is not automatically a workflow activation.",
+      "external_skill_body_reads": [],
+      "runtime_exit_code": 1,
+      "runtime_completed": false,
+      "raw_stdout": {
+        "path": "fixtures/native-runs/20261115T155847049966Z/S21/stdout.jsonl"
+      },
+      "raw_stdout_sha256": "223b044aee87f81faf9ae371d36ba221f1d13cc61146dec6a6b9b025b4e03a31",
+      "invocation_sha256": "9c7a26f357eb05883474752968f7cdec3485ad3e2991dbb6828ca4a32086359e",
+      "effective_catalog_sha256": "8806e3efb39ccd0ac82b5e8dc71e9ba14ede41e6d81845b0294f39cae0d2c90d",
+      "commands": [],
+      "source_evidence_lines": [],
+      "final_answer_pointer": null,
+      "final_answer": null,
+      "actual_application_tests": [],
+      "implementation_or_external_action_commands": [],
+      "routing_plan_content_verdict": "BLOCKED",
+      "strict_fixture_source_isolation": "UNVERIFIED",
+      "reviewer_verdict": "BLOCKED",
+      "application_acceptance": "UNVERIFIED",
+      "rationale": "Usage cap prevents any tool command or final answer.",
+      "qualification": "No routing, compatibility or consumer-search behavior can be assessed. This is an account/runtime blocker, not a behavioral failure or pass.",
+      "cap_evidence": [
+        {
+          "path": "fixtures/native-runs/20261115T155847049966Z/S21/stdout.jsonl",
+          "line": 3
+        },
+        {
+          "path": "fixtures/native-runs/20261115T155847049966Z/S21/stdout.jsonl",
+          "line": 4
+        }
+      ],
+      "limits": "Verdict covers this observed read-only routing/plan only. Future actions, proposed tests, declarations and body reads are not executed application behavior. No application acceptance is certified."
+    }
+  ],
+  "earlier_invalid_attempts": [
+    {
+      "case_id": "S01",
+      "evidence_directory": "fixtures/native-runs/20261115T154630991320Z/S01",
+      "runtime_completed": true,
+      "runtime_exit_code": 0,
+      "role": "Retained earlier native attempt, invalid for grounded fixture/skill-read evaluation because nested seatbelt prevents tools. Do not add to unique-case coverage or current-batch pass counts.",
+      "stdout_sha256": "346c77019ed43bcc00eab7a10518c90443a7c54b29835ed78fffd3c8cdc43090",
+      "stderr_sha256": "a9e4c02d14abbd12044f0556e49cbc54c0959eb632bbe2814e31a408b894c362"
+    },
+    {
+      "case_id": "S05",
+      "evidence_directory": "fixtures/native-runs/20261115T154630995133Z/S05",
+      "runtime_completed": true,
+      "runtime_exit_code": 0,
+      "role": "Retained earlier native attempt, invalid for grounded fixture/skill-read evaluation because nested seatbelt prevents tools. Do not add to unique-case coverage or current-batch pass counts.",
+      "stdout_sha256": "bbaefacc989958b581fa38882d27112b2d657170c5a37fa28369f345456ef626",
+      "stderr_sha256": "ca936d47b7805e92bf5d6e85247a63454503f8a366f1e425caa818a0e12438eb"
+    },
+    {
+      "case_id": "S06",
+      "evidence_directory": "fixtures/native-runs/20261115T154710375024Z/S06",
+      "runtime_completed": true,
+      "runtime_exit_code": 0,
+      "role": "Retained earlier native attempt, invalid for grounded fixture/skill-read evaluation because nested seatbelt prevents tools. Do not add to unique-case coverage or current-batch pass counts.",
+      "stdout_sha256": "51ffc8f329f5b3e1401554a0aa245ef7d1d4fabfc6b181695e68f5d75f66fb6e",
+      "stderr_sha256": "65df21849c156a7a457b2a425bfe43558d2e8828cf2143801ba790cec2011e1f"
+    },
+    {
+      "case_id": "S07",
+      "evidence_directory": "fixtures/native-runs/20261115T154725940122Z/S07",
+      "runtime_completed": true,
+      "runtime_exit_code": 0,
+      "role": "Retained earlier native attempt, invalid for grounded fixture/skill-read evaluation because nested seatbelt prevents tools. Do not add to unique-case coverage or current-batch pass counts.",
+      "stdout_sha256": "fbb750b451205ad65cad7fdadeb2489a0d869b1e70ad9e4a5567f58218bff619",
+      "stderr_sha256": "3b917350f75da995c21297ab202d849ae2da6cacb1bd787b91d064f5563659ae"
+    }
+  ],
+  "smokes": [
+    {
+      "name": "preflight-final",
+      "verdict": "PASS",
+      "scope": "Native model availability only",
+      "evidence": [
+        {
+          "path": "preflight-final/stdout.jsonl",
+          "line": 3
+        },
+        {
+          "path": "preflight-final/stdout.jsonl",
+          "line": 4
+        },
+        {
+          "path": "preflight-final/result.json"
+        }
+      ],
+      "observation": "NATIVE_SMOKE_OK returned with turn.completed and exit0; no tool use. Confirms one real successful turn on the recorded runtime/model, not skill routing or application behavior."
+    },
+    {
+      "name": "tool-smoke",
+      "verdict": "PASS_WITH_RECOVERED_TOOL_FAILURE",
+      "scope": "A read-only fixture shell read only",
+      "evidence": [
+        {
+          "path": "tool-smoke.stdout.jsonl",
+          "line": 6
+        },
+        {
+          "path": "tool-smoke.stdout.jsonl",
+          "line": 8
+        },
+        {
+          "path": "tool-smoke.stdout.jsonl",
+          "line": 9
+        },
+        {
+          "path": "tool-smoke.stdout.jsonl",
+          "line": 10
+        }
+      ],
+      "observation": "head -n20 failed with exit255 because it resolved to an HTTP HEAD utility; /bin/cat README.md then returned the fixture content with exit0 and the final answer disclosed the failure. This is tool availability evidence, not an application test.",
+      "qualification": "Raw trace warns skip_host_skill_discovery is under development. The wrapper is a mutable pathname and its saved current mtime is later than this smoke invocation; do not infer this smoke used the final wrapper contents or final effective catalog. Final preflight and each case have separate saved effective catalogs."
+    }
+  ]
+}

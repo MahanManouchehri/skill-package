@@ -1,137 +1,143 @@
 {
   "schema_version": 2,
-  "package_version": "3.1.0",
-  "observed_utc": "2026-11-14T04:22:28.230382+00:00",
-  "base_commit": "afe56ddc0621b8f34b350c264802ca096b751c76",
+  "package_version": "3.1.1",
+  "observed_utc": "2026-11-15T20:54:27.578415+00:00",
+  "base_commit": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
   "tested_source_dirty": true,
   "personal_payload_snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
   "user_global_expected": 26,
   "plugin_managed_expected": 16,
-  "snapshot_roots": 36,
-  "environment": {
-    "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
-    "python": "3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)]",
-    "PyYAML": "6.0.3",
-    "codex_cli": "0.142.5",
-    "PowerShell": "UNAVAILABLE"
-  },
+  "system_exclusions": 5,
   "checks": [
     {
-      "name": "strict_yaml_and_current_system_quick_validate",
-      "status": "STATIC_PASS",
-      "passed": 26,
-      "evidence": "evals/evidence/skill-validation.json"
+      "name": "package",
+      "command": [
+        "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3-evaluation/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_package_tools.py",
+        "-v"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web/skill-package",
+      "started_utc": "2026-11-15T20:45:03.706581+00:00",
+      "exit_code": 0,
+      "executed": 56,
+      "summary": "_extended_paths (test_package_tools.PackageToolTests.test_windows_root_policy_on_drive_unc_unicode_and_extended_paths) ... ok\ntest_wrong_skill_at_destination_refused (test_package_tools.PackageToolTests.test_wrong_skill_at_destination_refused) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 9.330s\n\nOK\n"
     },
     {
-      "name": "package_transaction_tools",
-      "status": "TOOL_TEST_PASS",
-      "passed": 44,
-      "evidence": "evals/evidence/package-tool-tests.txt"
+      "name": "runner",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "evals",
+        "-p",
+        "test_runner.py",
+        "-v"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web/skill-package",
+      "exit_code": 0,
+      "executed": 27,
+      "summary": "ces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok\ntest_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.246s\n\nOK\n",
+      "note": "Final source-isolation path guard and post-runtime fixture-mutation checks added after independent raw review; live rerun unavailable after quota.",
+      "observed_utc": "2026-11-15T20:54:27.577646+00:00"
     },
     {
-      "name": "native_runner_helpers",
-      "status": "TOOL_TEST_PASS",
-      "passed": 14,
-      "evidence": "evals/evidence/runner-tests.txt"
+      "name": "ui",
+      "command": [
+        "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3-evaluation/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/ui-ux-pro-max/scripts/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web/skill-package",
+      "started_utc": "2026-11-15T20:45:03.708599+00:00",
+      "exit_code": 0,
+      "executed": 153,
+      "summary": "eshness.TestWebStackFreshness.test_svelte_current_and_legacy_queries_do_not_mix_generations) ... ok\ntest_web_rows_have_explicit_freshness_metadata (test_web_stack_freshness.TestWebStackFreshness.test_web_rows_have_explicit_freshness_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 153 tests in 4.052s\n\nOK\n"
     },
     {
-      "name": "UI_runtime_data_tests",
-      "status": "TOOL_TEST_PASS",
-      "passed": 130,
-      "evidence": "evals/evidence/ui-runtime-tests.txt"
-    },
-    {
-      "name": "UI_full_upstream_discovery",
-      "status": "PRE_EXISTING_DEPENDENCY_FAILURE",
-      "total": 132,
-      "import_errors": 2,
-      "evidence": "evals/evidence/ui-full-suite.txt"
-    },
-    {
-      "name": "UI_data_and_actual_path_search",
-      "status": "TOOL_TEST_PASS",
-      "evidence": [
-        "evals/evidence/ui-data-validator.txt",
-        "evals/evidence/ui-path-search.txt",
-        "evals/evidence/ui-laravel-search.txt"
-      ]
-    },
-    {
-      "name": "SQLite_synthetic_preconditions",
-      "status": "TOOL_TEST_PASS",
-      "evidence": "evals/evidence/sqlite-fixture-check.json"
+      "name": "ui-launcher",
+      "command": [
+        "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3-evaluation/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_ui_authoring.py",
+        "-v"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web/skill-package",
+      "started_utc": "2026-11-15T20:45:03.709946+00:00",
+      "exit_code": 0,
+      "executed": 5,
+      "summary": "placed_vendor_source_is_rejected_before_execution) ... ok\ntest_runtime_source_or_crlf_changes_remain_rejected_by_the_frozen_gate (test_ui_authoring.UIAuthoringLauncherTest.test_runtime_source_or_crlf_changes_remain_rejected_by_the_frozen_gate) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 13.901s\n\nOK\n"
     }
   ],
-  "behavioral": {
-    "designed_cases": 60,
-    "prepared_cases": 60,
-    "fresh_delegated_plan_runs": 30,
-    "all_expected_reads_observed": 18,
-    "partial_expected_read_sets": 12,
-    "unexecuted_cases": 30,
-    "observed_forbidden_workflows": 0,
-    "observed_critical_safety_violations": 0,
-    "native_cli_behavior": "UNVERIFIED",
+  "ui_strict_relevance": {
+    "cases": 90,
+    "status": "PASS",
+    "evidence": "evals/evidence/v3.1.1/ui/final-licensed-relevance-report.json"
+  },
+  "native": {
+    "bank_cases": 60,
+    "unique_attempted": 12,
+    "completed": 10,
+    "usage_cap_blocked": 2,
+    "unexecuted": 48,
+    "reviewed_plan_pass": 8,
+    "strict_source_isolation_fail": 2,
+    "initial_harness_invalid_attempts": 4,
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "cli": "0.167.0-alpha.3.2",
+    "auth": "ChatGPT native login",
     "full_application_acceptance": "UNVERIFIED",
-    "scope": "30 first-phase read-only routing/safety observations; not 60 native runs, full implementation or a causal guarantee of skill enforcement."
+    "post_review_runner_behavior": "UNVERIFIED_NO_LIVE_RERUN_AFTER_ACCOUNT_CAP",
+    "evidence": "evals/evidence/v3.1.1/native/"
   },
-  "case_results": "evals/evidence/case-results.json",
-  "preservation": "evals/evidence/regression-invariants.json",
-  "historical_validation": {
-    "schema_version": 2,
-    "package_version": "3.0.0",
-    "observed_utc": "2026-10-08T08:34:44.688316+00:00",
-    "user_global_expected": 16,
-    "plugin_managed_expected": 16,
-    "snapshot_roots": 26,
-    "selected_source_support_files": 552,
-    "v2_checks": [
-      {
-        "test": "changed source trees match packaged selected files",
-        "pass": true,
-        "scope": [
-          "steps",
-          "hand-off",
-          "compatible-response"
-        ]
-      },
-      {
-        "test": "manifest file records and selected tree hashes regenerated",
-        "pass": true,
-        "scope": "all package snapshots"
-      },
-      {
-        "test": "direct installer manifest maps every portable skill under skills/",
-        "pass": true,
-        "scope": "all installable manifest entries"
-      }
-    ],
-    "v1_baseline": {
-      "executed_checks": 52,
-      "note": "Historical installer and isolated-restore evidence for unchanged scripts and managed snapshots; see VALIDATION.md."
-    },
-    "limitations": [
-      "Windows PowerShell installer and isolated restore were not rerun on the macOS v2 build host.",
-      "Live plugin/runtime activation and a second-account restore remain unverified.",
-      "A live multi-skill install into a real Codex skill root was not run; validation uses an isolated destination."
-    ]
+  "routing_adjudication": {
+    "A": 0,
+    "B": 7,
+    "C": 5,
+    "D": 0,
+    "skill_policy_changed": false,
+    "evidence": "evals/evidence/v3.1.1/routing-adjudication.json"
   },
-  "release_certification": "BOUNDED_VERIFICATION_WITH_LIMITATIONS",
-  "publication_and_installation": "Recorded after publication in external owner report; not asserted by this pre-publication artifact.",
+  "windows_evidence": "evals/evidence/v3.1.1/windows/ci-status.json",
+  "preservation": "evals/evidence/v3.1.1/preservation.json",
+  "installation": {
+    "status": "NO_REINSTALL_NEEDED",
+    "verified_live": 26,
+    "codex_root_count": 23,
+    "agents_root_count": 3,
+    "evidence": "evals/evidence/v3.1.1/installed-check.json"
+  },
+  "historical_validation": "evals/evidence/v3.1.1/baseline-validation-v3.1.0.json",
+  "publication_and_installation": "Remote SHA/tag and final published manifest binding are verified in the external owner delivery report after publication. This pre-publication source does not claim a future tag/CI success.",
   "limitations": [
-    "Native CLI model turns remain unavailable: configured gpt-6.1-sol returns model_not_found; native discovery works.",
-    "Delegated30 evaluations are first-phase read-only plans; missing expected reads are explicit, full application/browser acceptance unverified.",
-    "Fresh Windows/PowerShell execution unavailable; original scripts unchanged, historic evidence retained.",
-    "Two preserved UI authoring test modules need absent upstream refresh/evaluation helpers; runtime/data130 tests pass.",
-    "No managed plugin activation, second-account restore, provider, production or full framework assurance is claimed."
-  ],
-  "independent_pre_release_review": {
-    "status": "PASS_WITH_DOCUMENTED_LIMITS",
-    "evidence": "evals/evidence/recovery-final-review.json",
-    "prior_defects_fixed": [
-      "interrupted rollback live-tree deletion",
-      "concurrent stale-lock recovery admission"
-    ],
-    "helper_sha256": "00aa184dfaa05a8e3fc93386a59a2f3d2d69d345215d8acf7b1cf64e139b6d1c"
-  }
+    "48 bank cases not executed and two quota-blocked; no mass retry after actual account cap.",
+    "S07/S12 read byte-identical host compatible-response bodies outside fixture-only scope; preserved as isolation failures. Runner correction has unit coverage, no subsequent native behavior claim.",
+    "Catalog overlays control discovery, not filesystem read confinement; dynamic/compound reads require raw review.",
+    "Full Laravel/Django/browser/provider/production implementation acceptance remains UNVERIFIED.",
+    "Default Homebrew CLI remains old; newer app CLI selected explicitly. Native cache hash changed during normal runtime use; harness did not manually edit/delete/restore primary cache or auth.",
+    "Windows CI initially pending; actual status is recorded separately."
+  ]
 }

@@ -1,0 +1,36 @@
+{
+  "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+  "commit": "6ae86f61f520d6ca229d2f40e070410638c908c5",
+  "files": [
+    {
+      "path": "scripts/refresh-google-fonts.py",
+      "git_blob_sha": "fccc719df3e85f285c5e329302dc34915e81e351",
+      "sha256": "e29e9b19ec69e73214ebe22b2488e1da42e7e30ba75e882e7a7aca336f006a77",
+      "bytes": 26900
+    },
+    {
+      "path": "scripts/refresh-icon-catalog.py",
+      "git_blob_sha": "6113222902184627e99469a1e0fdf9d8ca80b46b",
+      "sha256": "18b51278d8c2236692aa117325f83d2d1c4b82d513e48a2d9e614d376e033235",
+      "bytes": 10378
+    },
+    {
+      "path": "scripts/evaluate-relevance.py",
+      "git_blob_sha": "cd5ef7336bba22d41b6afde16b2ce3cd936152b9",
+      "sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e",
+      "bytes": 12374
+    },
+    {
+      "path": "scripts/relevance_metrics.py",
+      "git_blob_sha": "11b915beb94792ea9d8af1d12d3dab044d82bfde",
+      "sha256": "a5126f734365380b3f3390453f25d2f504a6488c6af0fc88256a9529c02e1547",
+      "bytes": 8536
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "1e71cbf26660f31903807d099fe902c098fc7e4c",
+      "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+      "bytes": 1075
+    }
+  ]
+}

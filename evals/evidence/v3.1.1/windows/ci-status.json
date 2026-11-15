@@ -1,0 +1,7 @@
+{
+  "status": "WINDOWS_RUNTIME_UNVERIFIED",
+  "reason": "Awaiting actual Windows Actions run after authorized candidate push. Local PowerShell unavailable.",
+  "actions_enabled": true,
+  "main_protected": false,
+  "workflow": ".github/workflows/windows-validation.yml"
+}

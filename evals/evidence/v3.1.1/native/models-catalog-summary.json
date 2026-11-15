@@ -1,0 +1,84 @@
+{
+  "app": {
+    "raw_sha256": "4e0ba7520d2672d3e4739ab94555760d0bcd37a62b26f2d15dbfe70875cd5fb0",
+    "models": [
+      {
+        "slug": "gpt-6-astra",
+        "display_name": "GPT-6-Astra"
+      },
+      {
+        "slug": "gpt-6.1-sol",
+        "display_name": "GPT-6.1-Sol"
+      },
+      {
+        "slug": "gpt-6.1-terra",
+        "display_name": "GPT-6.1 Terra"
+      },
+      {
+        "slug": "gpt-6-sol",
+        "display_name": "GPT-6-Sol"
+      },
+      {
+        "slug": "gpt-6-luna",
+        "display_name": "GPT-6-Luna"
+      },
+      {
+        "slug": "gpt-5.6-sol",
+        "display_name": "GPT-5.6-Sol"
+      },
+      {
+        "slug": "gpt-5.6-terra",
+        "display_name": "GPT-5.6-Terra"
+      },
+      {
+        "slug": "gpt-5.6-luna",
+        "display_name": "GPT-5.6-Luna"
+      },
+      {
+        "slug": "gpt-daybreak-blue-latest",
+        "display_name": "Daybreak Blue"
+      },
+      {
+        "slug": "gpt-daybreak-red-latest",
+        "display_name": "Daybreak Red"
+      },
+      {
+        "slug": "gpt-5.5",
+        "display_name": "GPT-5.5"
+      },
+      {
+        "slug": "codex-auto-review",
+        "display_name": "Codex Auto Review"
+      }
+    ]
+  },
+  "brew": {
+    "raw_sha256": "21de62c6bfcb3d46ec9683755b16d1c0c64b7b84a2e52c9b2b481fee4fb61321",
+    "models": [
+      {
+        "slug": "gpt-5.5",
+        "display_name": "GPT-5.5"
+      },
+      {
+        "slug": "gpt-5.4",
+        "display_name": "gpt-5.4"
+      },
+      {
+        "slug": "gpt-5.4-mini",
+        "display_name": "GPT-5.4-Mini"
+      },
+      {
+        "slug": "gpt-5.3-codex",
+        "display_name": "gpt-5.3-codex"
+      },
+      {
+        "slug": "gpt-5.2",
+        "display_name": "gpt-5.2"
+      },
+      {
+        "slug": "codex-auto-review",
+        "display_name": "Codex Auto Review"
+      }
+    ]
+  }
+}

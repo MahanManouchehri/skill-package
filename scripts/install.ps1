@@ -8,13 +8,17 @@ param(
 )
 . (Join-Path $PSScriptRoot 'common.ps1')
 $packageRoot=Split-Path -Parent $PSScriptRoot
+$packageIdentity=Get-LocalInstallPathIdentity $packageRoot
+Assert-InstallPathsDisjoint $DestinationRoot $packageIdentity
 $m=Assert-PackageIntegrity $packageRoot
 $DestinationRoot=[IO.Path]::GetFullPath($DestinationRoot).TrimEnd('\','/')
 Assert-NoReparse $DestinationRoot
 # Keep the distribution and destination disjoint; never install into source/snapshot/system paths.
 $packageFull=[IO.Path]::GetFullPath($packageRoot).TrimEnd('\','/')
-if ($DestinationRoot -eq $packageFull -or $DestinationRoot.StartsWith($packageFull+'\',[StringComparison]::OrdinalIgnoreCase) -or $packageFull.StartsWith($DestinationRoot+'\',[StringComparison]::OrdinalIgnoreCase) -or $DestinationRoot -match '[/\\](\.system|plugins|cache)([/\\]|$)') {throw 'Unsafe destination: package, system and plugin cache paths are protected.'}
+if ((Split-Path -Leaf $DestinationRoot) -ine 'skills' -or -not (Split-Path -Parent (Split-Path -Parent $DestinationRoot))) {throw 'Destination must be an explicit personal .../skills root.'}
+if ($DestinationRoot -eq $packageFull -or $DestinationRoot.StartsWith($packageFull+'\',[StringComparison]::OrdinalIgnoreCase) -or $packageFull.StartsWith($DestinationRoot+'\',[StringComparison]::OrdinalIgnoreCase) -or $DestinationRoot -match '[/\\](\.system|plugins|cache|managed|node_modules)([/\\]|$)') {throw 'Unsafe destination: package, system and plugin cache paths are protected.'}
 Assert-NoReparse (Join-Path (Split-Path -Parent $DestinationRoot) 'skills-backup')
+Assert-InstallPathsDisjoint (Join-Path (Split-Path -Parent $DestinationRoot) 'skills-backup') $packageIdentity
 $catalog=@(Get-LocalCatalog $DestinationRoot)
 $expected=@($m.skills | Where-Object installable)
 $conflicts=New-Object Collections.Generic.List[string]
@@ -51,6 +55,8 @@ $parent=Split-Path -Parent $DestinationRoot
 $stamp=[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')+'-'+[Guid]::NewGuid().ToString('N').Substring(0,8)
 $backupRoot=Join-Path (Join-Path $parent 'skills-backup') $stamp
 $stageRoot=Join-Path $parent ('.skill-package-stage-'+$stamp)
+Assert-InstallPathsDisjoint $backupRoot $packageIdentity
+Assert-InstallPathsDisjoint $stageRoot $packageIdentity
 Assert-NoReparse $parent
 Assert-NoReparse $backupRoot
 Assert-NoReparse $stageRoot

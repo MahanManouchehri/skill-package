@@ -1,0 +1,5 @@
+2026-11-15T15:46:31.215843Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-15T15:46:33.075776Z ERROR codex_models_manager::manager: failed to write models cache: Operation not permitted (os error 1)
+2026-11-15T15:46:41.145023Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown
+2026-11-15T15:46:41.173580Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown
+2026-11-15T15:46:48.558070Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown

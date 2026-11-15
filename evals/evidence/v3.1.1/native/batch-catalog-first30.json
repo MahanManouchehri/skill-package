@@ -1,0 +1,1017 @@
+{
+  "planned": [
+    "S01",
+    "S05",
+    "S06",
+    "S07",
+    "S09",
+    "S12",
+    "S16",
+    "S17",
+    "S21",
+    "S23",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S34",
+    "S35",
+    "S37",
+    "S38",
+    "S40",
+    "S43",
+    "S46",
+    "S47",
+    "S49",
+    "S51",
+    "S53",
+    "S54",
+    "S55",
+    "S59",
+    "S60"
+  ],
+  "actual": [
+    {
+      "case_id": "S01",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps"
+      ],
+      "forbidden_skills": [
+        "security-assurance",
+        "load-testing",
+        "release-management",
+        "backup-recovery",
+        "multiple-pov"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "self_declared_skills": [
+        "skill-evals: ارزیابی همین سناریوی مسیریابی، درون همین نشست.",
+        "steps: مسیر حداقلی برای درخواست اصلی با ریسک ★.",
+        "compatible-response و natural-persian-writing: ارائهٔ فشرده و فارسی طبیعی.",
+        "برای تغییر سادهٔ رنگ، ui-ux-pro-max، full-plan یا بازبینی معماری لازم نیست."
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g '*.blade.php' -g 'SKILL.md' -g '*css*' -g 'package.json' -g 'composer.json' -g 'tailwind.config.*' -g 'vite.config.*'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'! .git'\"' -g '\"'! .agents/**'\"'; nl -ba resources/views/form.blade.php; nl -ba resources/css/app.css; cat composer.json; cat AGENTS.md\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg -n --glob '\"'!snapshot.json'\"' --glob '\"'!available_catalog.json'\"' --glob '\"'!.agents/**'\"' --glob '\"'!.git/**'\"' 'primary|app\\\\.css|@vite|stylesheet|form\\\\.blade' resources routes composer.json; git status --short\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:54:33.730875Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:55:19.599567+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155433506196Z/S01"
+    },
+    {
+      "case_id": "S05",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "integration-reliability",
+        "test-engineering"
+      ],
+      "forbidden_skills": [
+        "load-testing",
+        "release-management"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "steps"
+      ],
+      "self_declared_skills": [
+        "compatible-response",
+        "natural-persian-writing",
+        "steps — هماهنگی مسیر کار، در حالت READ_ONLY",
+        "integration-reliability — بررسی قرارداد پرداخت و نتیجهٔ نامعلوم"
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '\"'!vendor'\"' -g '\"'!node_modules'\"' -g '\"'!'\"\\\\.git'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/integration-reliability/SKILL.md .agents/skills/natural-persian-writing/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git'\"' -g '\"'!.agents/**'\"'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'nl -ba contracts/provider.md; nl -ba composer.json; nl -ba routes/api.php; nl -ba schema.sql; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba tests/test_contract.py; nl -ba README.md; nl -ba NOTES.md; nl -ba spec/api/users.md'",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:54:33.730879Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:55:39.553244Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfea-dd79-78b2-9790-f11be004f0d9.1794758073722995000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:55:41.830293+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155433511015Z/S05"
+    },
+    {
+      "case_id": "S06",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "integration-reliability"
+      ],
+      "forbidden_skills": [
+        "load-testing",
+        "release-management"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "db-impact",
+        "full-plan",
+        "integration-reliability",
+        "multiple-pov",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps",
+        "test-engineering"
+      ],
+      "self_declared_skills": [
+        "skill-evals: ارزیابی محدود مسیریابی در همین سناریو؛ IN_PROCESS، بدون اجرای harness یا عامل مستقل.",
+        "integration-reliability: طراحی دریافت webhook، تکرار، ترتیب رویدادها و بازیابی.",
+        "multiple-pov → full-plan: بررسی یک‌بارهٔ گزینه‌ها و سپس طرح رفتار؛ ذخیرهٔ پایدار و تراکنش، به‌جای افزودن زودهنگام صف.",
+        "security-assurance TARGETED و db-impact ANALYSIS_ONLY: امضای ورودی و اثر ذخیرهٔ رویداد.",
+        "compatible-response و natural-persian-writing: ارائهٔ فشرده و فارسی فنی."
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!**/.git/**'\"' -g '\"'!*lock*'\"' -g 'AGENTS.md' -g '*.py' -g '*.md' -g '*.toml' -g '*.txt' -g '*.yaml' -g '*.json'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/integration-reliability/SKILL.md .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md .agents/skills/skill-evals/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/security-assurance/SKILL.md .agents/skills/db-impact/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat app/views.py app/models.py app/urls.py contracts/provider.md tests/test_contract.py pyproject.toml README.md NOTES.md spec/api/users.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/multiple-pov/SKILL.md .agents/skills/skill-evals/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!**/.git/**'\"' -g '\"'!**/.agents/**'\"'; nl -ba contracts/provider.md; nl -ba app/views.py; nl -ba app/models.py; nl -ba app/urls.py; nl -ba README.md; nl -ba pyproject.toml; nl -ba tests/test_contract.py\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat schema.sql; sed -n '1,36p' .agents/skills/db-impact/SKILL.md; cat AGENTS.md\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:55:19.814604Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:56:36.444666Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfeb-9180-75e0-aec4-6bc9cead9d38.1794758119809712000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:56:40.242337+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155519634233Z/S06"
+    },
+    {
+      "case_id": "S07",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "integration-reliability"
+      ],
+      "forbidden_skills": [
+        "load-testing"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "integration-reliability",
+        "natural-persian-writing",
+        "root-cause",
+        "steps"
+      ],
+      "self_declared_skills": [
+        "steps: هماهنگی بررسی محدود، در حالت READ_ONLY و IN_PROCESS.",
+        "root-cause: تشخیص پیش از اصلاح؛ Root Cause: NOT CONFIRMED.",
+        "integration-reliability: بررسی قرارداد 429، retry و نتیجهٔ نامعلوم عملیات.",
+        "natural-persian-writing و compatible-response: نگارش و ارائهٔ پاسخ."
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '/Users/mahan/.agents/skills/compatible-response/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '.agents/skills/steps/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '.agents/skills/natural-persian-writing/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '.agents/skills/integration-reliability/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '.agents/skills/root-cause/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat '.agents/skills/compatible-response/SKILL.md'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/steps/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g 'AGENTS.md' -g '\"'! .git'\"'; rg -n -i 'retry|429|provider|timeout|http|idempoten|cron' app routes tests contracts spec README.md NOTES.md composer.json snapshot.json\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/natural-persian-writing/references/persian-style-guide.md; cat AGENTS.md; cat contracts/provider.md; cat app/Http/Controllers/UserController.php; cat tests/test_contract.py; cat composer.json; cat README.md; cat NOTES.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"nl -ba contracts/provider.md; nl -ba README.md; nl -ba app/Http/Controllers/UserController.php; nl -ba tests/test_contract.py; cat routes/api.php app/Models/User.php spec/api/users.md schema.sql resources/js/dashboard.js resources/views/form.blade.php resources/css/app.css snapshot.json; rg --files --hidden -g '\"'!.agents/**'\"' -g '\"'!.git/**'\"'\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:55:42.064020Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:56:46.235961Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfeb-e86a-72a0-9dee-9bb2c64df4eb.1794758142059376000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:56:49.909733+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155541868312Z/S07"
+    },
+    {
+      "case_id": "S09",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps"
+      ],
+      "forbidden_skills": [
+        "integration-reliability",
+        "backup-recovery",
+        "release-management"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "full-plan",
+        "multiple-pov",
+        "natural-persian-writing",
+        "skill-evals",
+        "steps"
+      ],
+      "self_declared_skills": [
+        "steps: هماهنگی مسیر پیشنهادی کار",
+        "skill-evals: ارزیابی محدود مسیریابی؛ نه تأیید اجرای کامل",
+        "multiple-pov: بررسی یک‌بارهٔ ابهام موجودیت پروفایل و مالکیت",
+        "full-plan: طراحی قرارداد CRUD پیش از پیاده‌سازی",
+        "natural-persian-writing",
+        "compatible-response"
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"' -g '\"'!pnpm-lock.yaml'\"' -g '\"'!composer.lock'\"' -g '\"'!Gemfile.lock'\"' -g '\"'!Cargo.lock'\"' -g '\"'!uv.lock'\"' -g '\"'!poetry.lock'\"' -g '\"'!go.sum'\"' -g '\"'!'\"\\\\.git/**'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/skills/**'\"'; cat AGENTS.md; cat .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba schema.sql; nl -ba composer.json; nl -ba spec/api/users.md; nl -ba tests/test_contract.py; cat README.md NOTES.md snapshot.json contracts/provider.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/full-plan/SKILL.md .agents/skills/multiple-pov/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/skill-evals/SKILL.md'",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:56:40.481057Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:57:50.304131Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfec-cc9b-77e0-a91f-e532952edb51.1794758200476587000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:57:53.654312+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155640280299Z/S09"
+    },
+    {
+      "case_id": "S12",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "test-engineering",
+        "security-assurance"
+      ],
+      "forbidden_skills": [
+        "load-testing"
+      ],
+      "observed_skill_reads": [
+        "regression-check",
+        "test-engineering"
+      ],
+      "self_declared_skills": [
+        "steps: هماهنگی محدود، IN_PROCESS و READ_ONLY؛ حساسیت این بررسی ★★.",
+        "root-cause: تشخیص مبتنی بر کد؛ بازتولید خطا ممکن نیست.",
+        "security-assurance: بررسی TARGETED احراز هویت و مجوز دسترسی به رکورد.",
+        "test-engineering: حالت STRATEGY برای طراحی regression tests.",
+        "natural-persian-writing و compatible-response: نگارش گزارش.",
+        "regression-check پس از اصلاح واقعی فعال می‌شود؛ اکنون مرحلهٔ برنامه‌ریزی است."
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g '\"'!*lock*'\"' -g '\"'!node_modules'\"' -g '\"'!vendor'\"'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'for p in /Users/mahan/.agents/skills/compatible-response/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/natural-persian-writing/SKILL.md; do if test -f \"$p\"; then cat \"$p\"; fi; done'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"for p in AGENTS.md README.md NOTES.md app/views.py app/urls.py app/models.py tests/test_contract.py pyproject.toml spec/api/users.md snapshot.json; do printf '\\\\n%s\\\\n' \\\"\"'$p\"; nl -ba \"$p\"; done'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"for p in .agents/skills/root-cause/SKILL.md .agents/skills/security-assurance/SKILL.md .agents/skills/test-engineering/SKILL.md .agents/skills/regression-check/SKILL.md .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md; do printf '\\\\n%s\\\\n' \\\"\"'$p\"; cat \"$p\"; done'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"cat .agents/skills/test-engineering/SKILL.md; cat .agents/skills/regression-check/SKILL.md; rg --files --hidden -g '\"'! .git'\"' -g '*settings*' -g '*middleware*' -g '*conftest*' -g '*manage.py' -g '*pytest*' -g '*AGENTS.md'; nl -ba app/templates/form.html; nl -ba schema.sql; nl -ba contracts/provider.md\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:56:50.178301Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:57:51.068016Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfec-f262-7762-babb-202b49ed30f1.1794758210147891000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:57:55.085051+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155649953483Z/S12"
+    },
+    {
+      "case_id": "S16",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "security-assurance",
+        "test-engineering"
+      ],
+      "forbidden_skills": [
+        "load-testing",
+        "release-management"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance",
+        "skill-evals",
+        "steps"
+      ],
+      "self_declared_skills": [
+        "steps: هماهنگی مسیر پیشنهادی اصلاح، بدون اجرا.",
+        "security-assurance: بررسی TARGETED دسترسی فایل خصوصی.",
+        "skill-evals: ارزیابی محدود مسیریابی؛ بدون اجرای harness.",
+        "compatible-response و natural-persian-writing: ارائهٔ روشن و دقیق فارسی."
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '*.php' -g 'composer.json' -g '*.md' -g '*.env*'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/steps/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/**'\"'; nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; cat composer.json README.md NOTES.md spec/api/users.md contracts/provider.md; cat .agents/skills/skill-evals/SKILL.md .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg -n --hidden -g '\"'!.agents/**'\"' -g '\"'!.git/**'\"' 'private|storage|Storage|download|upload|file|permission|chmod|auth|policy|Gate|symlink' .; nl -ba tests/test_contract.py; nl -ba schema.sql; nl -ba resources/views/form.blade.php; nl -ba resources/js/dashboard.js; nl -ba resources/css/app.css; nl -ba README.md; nl -ba AGENTS.md\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:57:53.918455Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:58:43.303054Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfed-eb5e-7b80-9fba-f2593b54f556.1794758273887172000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:58:47.012584+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155753689266Z/S16"
+    },
+    {
+      "case_id": "S21",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "steps",
+        "db-impact",
+        "regression-check"
+      ],
+      "forbidden_skills": [
+        "backup-recovery",
+        "release-management"
+      ],
+      "observed_skill_reads": [],
+      "self_declared_skills": [],
+      "forbidden_reads": [],
+      "commands": [],
+      "parse_errors": [],
+      "runtime_exit_code": 1,
+      "runtime_completed": false,
+      "runtime_stderr": "2026-11-15T15:58:47.219052Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:58:49.740421Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 11:57 PM.\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:58:53.842068+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155847049966Z/S21"
+    },
+    {
+      "case_id": "S17",
+      "STATIC_PASS": null,
+      "TOOL_TEST_PASS": true,
+      "LIVE_BEHAVIOR_PASS": null,
+      "UNVERIFIED": true,
+      "FAIL": false,
+      "expected_skills": [
+        "security-assurance"
+      ],
+      "forbidden_skills": [
+        "load-testing",
+        "release-management"
+      ],
+      "observed_skill_reads": [
+        "compatible-response",
+        "natural-persian-writing",
+        "security-assurance"
+      ],
+      "self_declared_skills": [
+        "security-assurance — حالت FULL_AUDIT؛ درخواست صریح، کل زیرسیستم احراز هویت را هدف می‌گیرد.",
+        "natural-persian-writing",
+        "compatible-response"
+      ],
+      "forbidden_reads": [],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' -g '\"'!package-lock.json'\"' -g '\"'!yarn.lock'\"'\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/compatible-response/SKILL.md .agents/skills/natural-persian-writing/SKILL.md .agents/skills/security-assurance/SKILL.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g '\"'!.git'\"' -g '\"'!node_modules'\"' -g '\"'!.agents/**'\"'; cat AGENTS.md; cat .agents/skills/natural-persian-writing/references/persian-style-guide.md\"",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'nl -ba routes/api.php; nl -ba app/Http/Controllers/UserController.php; nl -ba app/Models/User.php; nl -ba composer.json; nl -ba tests/test_contract.py; nl -ba schema.sql; nl -ba README.md; nl -ba NOTES.md; nl -ba snapshot.json; nl -ba spec/api/users.md; nl -ba contracts/provider.md'",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg -n --hidden -g '\"'!.git/**'\"' -g '\"'!.agents/**'\"' 'auth|Auth|password|token|session|middleware|tenant|role|permission|login|logout|reset|csrf|secret' .; nl -ba resources/js/dashboard.js; nl -ba resources/views/form.blade.php; nl -ba resources/css/app.css\"",
+          "exit_code": 0
+        }
+      ],
+      "parse_errors": [],
+      "runtime_exit_code": 0,
+      "runtime_completed": true,
+      "runtime_stderr": "2026-11-15T15:57:55.285274Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-11-15T15:58:56.998669Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf(\"/Users/mahan/.codex/shell_snapshots/01a1dfed-f0cf-7f81-96fa-40693428d54e.1794758275280399000.sh\"): Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n",
+      "limits": "TOOL_TEST_PASS covers fixture/snapshot validation only. STATIC_PASS is supplied by the package verifier. Successful routing reads or self-declarations cannot certify acceptance or permission behavior: inspect the full trace and record a separate reviewer verdict. Native startup/model errors are UNVERIFIED, not behavioral FAIL.",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "isolation": {
+        "enabled_count": 26,
+        "fixture_only": true,
+        "names": [
+          "apple-design",
+          "architecture-review",
+          "backup-recovery",
+          "compatible-response",
+          "db-impact",
+          "devil",
+          "docs-maintenance",
+          "final-check",
+          "full-plan",
+          "hand-off",
+          "integration-reliability",
+          "load-testing",
+          "maintenance-evolution",
+          "multiple-pov",
+          "natural-persian-writing",
+          "performance-review",
+          "practical-test",
+          "regression-check",
+          "release-management",
+          "root-cause",
+          "security-assurance",
+          "skill-evals",
+          "steps",
+          "technical-proposal-discovery",
+          "test-engineering",
+          "ui-ux-pro-max"
+        ]
+      },
+      "snapshot": {
+        "base_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+        "source_sha_role": "base commit; snapshot_sha256 binds the evaluated working tree",
+        "source_dirty": true,
+        "version": "3.1.0",
+        "snapshot_sha256": "485af03ae334b09f1d8646fff62c4af47b1373541a4c14459d09b9c550c82a97",
+        "digest_algorithm": "sha256(canonical sorted path-to-file-sha256 JSON)",
+        "observed_at": "2026-11-15T15:38:53.836449+00:00",
+        "evaluation_scope": "READ_ONLY_ROUTING_PLAN",
+        "bank_sha256": "701e40e161d8f76848b04618857d46ea8f52b6f456eb7be82fa87944c7ee1706",
+        "governance_sha256": "e14f088b9c3073bf4085a09f1aa46cf567a0c47dd2e88f24cd9cf6e6583b2c7a"
+      },
+      "observed_at": "2026-11-15T15:58:59.574230+00:00",
+      "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "evidence": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/native-runs/20261115T155755108227Z/S17"
+    }
+  ],
+  "stopped": true,
+  "concurrency": 2,
+  "model": "gpt-6.1-sol",
+  "reasoning": "medium",
+  "timeout_seconds": 240
+}

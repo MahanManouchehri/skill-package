@@ -1,0 +1,233 @@
+{
+  "observed_utc": "2026-11-15T15:42:50.723565+00:00",
+  "host": "macOS",
+  "checks": [
+    {
+      "id": "smoke-normal-relative",
+      "command": [
+        "python3",
+        "-B",
+        "skills/ui-ux-pro-max/scripts/search.py",
+        "glassmorphism",
+        "--domain",
+        "style",
+        "--json"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web/skill-package",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.725194+00:00"
+    },
+    {
+      "id": "smoke-ux-absolute",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "focus not obscured",
+        "--domain",
+        "ux",
+        "--json"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.759713+00:00"
+    },
+    {
+      "id": "smoke-laravel-relative-other-cwd",
+      "command": [
+        "python3",
+        "-B",
+        "../../../../../../../Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "blade csrf forms",
+        "--stack",
+        "laravel",
+        "--json"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.796263+00:00"
+    },
+    {
+      "id": "smoke-nextjs-absolute",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "suspense streaming bundle",
+        "--stack",
+        "nextjs",
+        "--json"
+      ],
+      "cwd": "/Users/mahan/Desktop/Web",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.830696+00:00"
+    },
+    {
+      "id": "smoke-django-unsupported",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "form validation",
+        "--stack",
+        "django"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.862625+00:00"
+    },
+    {
+      "id": "smoke-django-domain-fallback",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "error summary validation",
+        "--domain",
+        "ux",
+        "--json"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.898351+00:00"
+    },
+    {
+      "id": "smoke-style-no-match",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "zzqxvuiunmatched",
+        "--domain",
+        "style"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.944062+00:00"
+    },
+    {
+      "id": "smoke-stack-no-match",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts/search.py",
+        "zzqxvuiunmatched",
+        "--stack",
+        "laravel"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:46.985071+00:00"
+    },
+    {
+      "id": "smoke-programmatic-fallback",
+      "command": [
+        "python3",
+        "-B",
+        "-c",
+        "import json,sys;sys.path.insert(0,sys.argv[1]);from core import search,search_stack;print(json.dumps({'style_fallback':search('minimalism',domain='unknown',max_results=1),'unknown_stack':search_stack('forms','django',1)}))",
+        "/Users/mahan/Desktop/Web/skill-package/skills/ui-ux-pro-max/scripts"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:47.004997+00:00"
+    },
+    {
+      "id": "smoke-default-strict-other-cwd",
+      "command": [
+        "python3",
+        "-B",
+        "../../../../../../../Users/mahan/Desktop/Web/skill-package/scripts/evaluate-relevance.py",
+        "--write-baseline",
+        "strict report.json"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:50.545083+00:00"
+    },
+    {
+      "id": "smoke-help-refresh-google-fonts",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/scripts/refresh-google-fonts.py",
+        "--help"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:50.591568+00:00"
+    },
+    {
+      "id": "smoke-help-refresh-icon-catalog",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/scripts/refresh-icon-catalog.py",
+        "--help"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:50.623289+00:00"
+    },
+    {
+      "id": "smoke-help-evaluate-relevance",
+      "command": [
+        "python3",
+        "-B",
+        "/Users/mahan/Desktop/Web/skill-package/scripts/evaluate-relevance.py",
+        "--help"
+      ],
+      "cwd": "/private/var/folders/5_/nm1g1whx1pzddxdt7tdym8nw0000gn/T/ui-مسیر-gso0yjrz",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "checks_passed": true,
+      "observed_utc": "2026-11-15T15:42:50.714496+00:00"
+    }
+  ],
+  "executed": 13,
+  "passed": 13,
+  "interpreters": [
+    {
+      "command": "python3",
+      "path": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "available": true,
+      "returncode": 0,
+      "version": "Python 3.14.2"
+    },
+    {
+      "command": "python",
+      "path": null,
+      "available": false
+    },
+    {
+      "command": "py",
+      "path": null,
+      "available": false
+    }
+  ],
+  "django": "No django stack exists in the unchanged 22-stack catalog; unsupported-stack rejection and explicit UX-domain fallback were exercised."
+}

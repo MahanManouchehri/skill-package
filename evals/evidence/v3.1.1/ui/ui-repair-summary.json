@@ -1,0 +1,195 @@
+{
+  "observed_utc": "2026-11-15T15:48:03.041548+00:00",
+  "status": "PASS",
+  "upstream_pin": "6ae86f61f520d6ca229d2f40e070410638c908c5",
+  "upstream_source_metadata": "upstream-selected.json",
+  "baseline": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "skills/ui-ux-pro-max/scripts/tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/Users/mahan/Desktop/Web/skill-package",
+    "observed_utc": "2026-11-15T15:31:41.125403+00:00",
+    "returncode": 1,
+    "python_version": "3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "tests_run": 132,
+    "passed": 130,
+    "failures": 0,
+    "errors": 2,
+    "skipped": 0
+  },
+  "full_ui_suite": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "skills/ui-ux-pro-max/scripts/tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "observed_utc": "2026-11-15T15:46:54.091137+00:00",
+    "returncode": 0,
+    "executed": 153,
+    "passed": 153,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "launcher_regressions": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_ui_authoring.py",
+      "-v"
+    ],
+    "observed_utc": "2026-11-15T15:47:03.583391+00:00",
+    "returncode": 0,
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "offline_catalog_tests": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "skills/ui-ux-pro-max/scripts/tests",
+      "-p",
+      "test_catalog_refresh.py",
+      "-v"
+    ],
+    "observed_utc": "2026-11-15T15:44:57.123470+00:00",
+    "returncode": 0,
+    "executed": 11,
+    "passed": 11,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_policy": "All catalog generation uses bundled local fixtures. The explicit --live missing-key test removes GOOGLE_FONTS_API_KEY and fails before requesting data."
+  },
+  "default_strict_cli": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/evaluate-relevance.py"
+      ],
+      "observed_utc": "2026-11-15T15:46:53.471575+00:00",
+      "returncode": 0,
+      "strict_gate_enabled": true,
+      "relevance_case_count": 90,
+      "launcher_sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+      "vendor_sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/evaluate-relevance.py",
+        "--write-baseline",
+        "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/ui/final-licensed-relevance-report.json"
+      ],
+      "observed_utc": "2026-11-15T15:46:56.819561+00:00",
+      "returncode": 0,
+      "strict_gate_enabled": true,
+      "relevance_case_count": 90,
+      "launcher_sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+      "vendor_sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e",
+      "runtime_fingerprint": "0d096d52499c2dd84ef80b2e45a1793bc4ed7c9be8fe5948b08151790959b376",
+      "oracle_fingerprint": "02e7226428c64a995ec24ae104ce4d186f5f91bf0f062556e90ef9b0fcb6d67a",
+      "actual_case_records": 90
+    }
+  ],
+  "search_and_cwd_smoke": {
+    "artifact": "search-and-cwd-smoke.json",
+    "executed": 13,
+    "passed": 13,
+    "host": "macOS",
+    "django_stack": "unsupported; explicit UX-domain fallback tested"
+  },
+  "installable_ui_payload": {
+    "tracked_files": 70,
+    "all_bytes_identical_to_v3_1_0": true,
+    "changed_files": []
+  },
+  "owned_files": [
+    {
+      "path": "scripts/refresh-google-fonts.py",
+      "bytes": 26900,
+      "sha256": "e29e9b19ec69e73214ebe22b2488e1da42e7e30ba75e882e7a7aca336f006a77",
+      "crlf_count": 0
+    },
+    {
+      "path": "scripts/refresh-icon-catalog.py",
+      "bytes": 10378,
+      "sha256": "18b51278d8c2236692aa117325f83d2d1c4b82d513e48a2d9e614d376e033235",
+      "crlf_count": 0
+    },
+    {
+      "path": "scripts/evaluate-relevance.py",
+      "bytes": 4004,
+      "sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+      "crlf_count": 0
+    },
+    {
+      "path": "scripts/relevance_metrics.py",
+      "bytes": 8536,
+      "sha256": "a5126f734365380b3f3390453f25d2f504a6488c6af0fc88256a9529c02e1547",
+      "crlf_count": 0
+    },
+    {
+      "path": "scripts/vendor/ui-ux-pro-max/evaluate-relevance.py",
+      "bytes": 12374,
+      "sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e",
+      "crlf_count": 0
+    },
+    {
+      "path": "tests/test_ui_authoring.py",
+      "bytes": 6220,
+      "sha256": "939f0ee198e99ebfbb89ed7081ea521e25a66341aecb17303c3b3e502f6d0dec",
+      "crlf_count": 0
+    },
+    {
+      "path": "UI_AUTHORING_PROVENANCE.md",
+      "bytes": 6854,
+      "sha256": "f2e213116b0c759d6b98224bb34457313fb0509f64133bb0a5ae5d5611ec8f81",
+      "crlf_count": 0
+    },
+    {
+      "path": "LICENSES/ui-ux-pro-max-MIT.txt",
+      "bytes": 1075,
+      "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+      "crlf_count": 0
+    }
+  ],
+  "checks": {
+    "python_sources_compile": "PASS",
+    "owned_file_whitespace": "PASS",
+    "git_text_attribute": "unset (-text) on inspected authoring/runtime/data/threshold inputs",
+    "windows_runtime": "UNVERIFIED by this macOS workstream"
+  },
+  "regression_limit": "Frozen thresholds remain provisional-baseline-regression-gate; final proposed relevance targets were not newly approved."
+}

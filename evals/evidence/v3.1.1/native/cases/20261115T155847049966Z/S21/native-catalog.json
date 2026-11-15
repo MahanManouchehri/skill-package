@@ -1,0 +1,962 @@
+{
+  "id": 2,
+  "result": {
+    "data": [
+      {
+        "cwd": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21",
+        "skills": [
+          {
+            "name": "apple-design",
+            "description": "Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/apple-design/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "architecture-review",
+            "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation.",
+            "interface": {
+              "displayName": "Architecture Review",
+              "shortDescription": "Review concrete technical designs before implementation",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/architecture-review/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "backup-recovery",
+            "description": "Design backup and recovery runbooks, verify backup integrity or rehearse/execute a restore only on direct request with appropriate scope. Ordinary database changes, migrations, application jobs and feature delivery do not trigger a backup service or production restore.",
+            "interface": {
+              "displayName": "Backup Recovery",
+              "shortDescription": "Requested backup verification and recovery runbooks",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $backup-recovery to design a testable restore runbook without executing it."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/backup-recovery/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "compatible-response",
+            "description": "Apply to every Codex user-facing response and output from any skill, across all projects. Adapt presentation to the content and maximize information density without losing essential details.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/compatible-response/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "db-impact",
+            "description": "Analyze the complete blast radius of a proposed database change before it is executed. Use for migrations, schema/data changes, and production-impact reviews; do not use for ordinary read-only data queries.",
+            "interface": {
+              "displayName": "Database Impact",
+              "shortDescription": "Analyze database-change blast radius before execution",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/db-impact/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "devil",
+            "description": "Independently stress-test consequential technical decisions, concrete plans, architectures, migrations, refactors, and implementation strategies. Use when adversarial review would materially improve a decision by challenging assumptions, evidence, failure modes, reversibility, blast radius, or alternatives; do not use for routine coding, factual questions, trivial edits, or ordinary low-risk implementation.",
+            "interface": {
+              "displayName": "Devil",
+              "shortDescription": "Stress-test consequential technical decisions",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $devil to challenge this plan before we commit."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/devil/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "docs-maintenance",
+            "description": "Synchronize existing project documentation with real code, API or configuration changes, and write end-user guides when directly requested. Follow project documentation paths; skip unaffected docs and delegate source-code explanation or developer handoff to hand-off.",
+            "interface": {
+              "displayName": "Docs Maintenance",
+              "shortDescription": "Source-backed documentation sync and user guides",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $docs-maintenance to synchronize the affected project documentation."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/docs-maintenance/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "final-check",
+            "description": "Audit an apparently completed implementation against the user's original request before declaring it finished. Use for explicit final verification and substantial implementation tasks; do not use as a generic code review or repeatedly during development.",
+            "interface": {
+              "displayName": "Final Check",
+              "shortDescription": "Audit completed implementation against requirements",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/final-check/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "full-plan",
+            "description": "Plan meaningful feature behavior, actors, invariants, failure modes and acceptance before implementation, including precise API contracts when needed. Use for new or changed workflows or explicit planning requests; skip trivial internal or cosmetic edits.",
+            "interface": {
+              "displayName": "Full Plan",
+              "shortDescription": "طراحی رفتار، قرارداد و سناریو پیش از پیاده‌سازی",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/full-plan/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "hand-off",
+            "description": "Explain actual repository source, callers, architecture and behavior in Persian or English. Use EXPLAIN/EXPLORE for source questions; create developer and LLM handoff documents only for an explicit invocation or clear request for complete knowledge transfer. Skip generic theory, documentation sync and implementation-only work.",
+            "interface": {
+              "displayName": "hand-off",
+              "shortDescription": "Source-grounded explanation and developer handoff",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "$hand-off Explain the selected repository feature with verified source links and practical maintenance guidance."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/hand-off/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "integration-reliability",
+            "description": "Design, implement or diagnose reliable third-party API and webhook integrations, including timeouts, retries, 429s, duplicates and uncertain external effects. Use for a real provider dependency, not internal CRUD or an ordinary local REST endpoint.",
+            "interface": {
+              "displayName": "Integration Reliability",
+              "shortDescription": "Reliable provider APIs and webhook failure handling",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $integration-reliability to handle provider failures without duplicating external effects."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/integration-reliability/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "load-testing",
+            "description": "Plan and run bounded load, stress or concurrent-traffic benchmarks only when directly requested, with a validated target, authority and finite traffic profile. A slow endpoint or routine performance review does not request load generation.",
+            "interface": {
+              "displayName": "Load Testing",
+              "shortDescription": "Explicitly requested, bounded load and stress tests",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $load-testing to prepare a safe finite load-test profile for the approved target."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/load-testing/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "maintenance-evolution",
+            "description": "Plan or implement bounded compatibility-preserving evolution, substantial refactors, deprecations, removals and major framework upgrades; assess scoped technical debt when requested. Skip routine implementation, small TODO cleanup and speculative future-proofing.",
+            "interface": {
+              "displayName": "Maintenance Evolution",
+              "shortDescription": "Compatibility, deprecation and scoped debt decisions",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $maintenance-evolution to plan a compatible transition for this existing feature."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/maintenance-evolution/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "multiple-pov",
+            "description": "Run a one-time, evidence-first brainstorming and multi-perspective design review before planning or implementing materially new systems, features, substantial workflows, architecture changes, major business logic, integrations, data-model changes, significant or risky refactors, migrations, or other substantial product/engineering work. Do not repeat the full review for the same materially unchanged task, user clarifications, approved implementation follow-ups, simple fixes, or small UI/content changes; use a focused delta review only after a material scope pivot or an explicit request to review again.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/multiple-pov/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "natural-persian-writing",
+            "description": "Produce, rewrite, translate, review, or summarize meaningful Persian prose that sounds natural, preserves meaning, and matches its audience and purpose. Use for any Persian content: personal and formal letters, email, business, marketing, academic, legal and policy text, creative writing, translation, support, UI, technical documentation, and conversation. Do not activate merely because Persian appears in source code, data, an identifier, or text that is not being changed.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/natural-persian-writing/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "performance-review",
+            "description": "Evidence-driven software performance review for recent changes, endpoints, imports/exports, and explicitly requested audits. Use to identify real bottlenecks and scalable improvements; do not use for speculative micro-optimization.",
+            "interface": {
+              "displayName": "Performance Review",
+              "shortDescription": "Measure bottlenecks in queries, caches and frontend flows",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/performance-review/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "practical-test",
+            "description": "Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/practical-test/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "regression-check",
+            "description": "Verify that a completed change preserved important existing behavior within its realistic blast radius. Use after implementation, refactoring, bug fixes, database changes, or dependency updates; do not use for pure planning work.",
+            "interface": {
+              "displayName": "Regression Check",
+              "shortDescription": "Verify existing behavior after a change",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/regression-check/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "release-management",
+            "description": "Prepare versions, release notes, provenance and deployment or rollback plans when directly requested, and execute specifically authorized release actions. Passing tests, a finished feature or a routine commit does not request publication, CI changes or deployment.",
+            "interface": {
+              "displayName": "Release Management",
+              "shortDescription": "Requested releases with verified provenance",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $release-management to prepare this version and its release notes."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/release-management/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "root-cause",
+            "description": "Diagnose the actual cause of a bug, failure, or unexpected behavior before proposing or applying a fix. Use for explicit root-cause analysis, deep debugging, and recurring or unclear failures; do not replace ordinary implementation work without a reported problem.",
+            "interface": {
+              "displayName": "Root Cause Analysis",
+              "shortDescription": "Diagnose failures before applying fixes",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/root-cause/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "security-assurance",
+            "description": "Review the relevant security surfaces of material auth, permissions, upload, secrets, payment, trust-boundary or dependency changes. A full feature or project security audit requires a direct request; routine CSS and unrelated local changes do not trigger it.",
+            "interface": {
+              "displayName": "Security Assurance",
+              "shortDescription": "Targeted security checks and requested full audits",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $security-assurance to review the security surfaces affected by this change."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/security-assurance/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "skill-evals",
+            "description": "Evaluate Codex skill structure and observed routing or workflow behavior when the user explicitly creates, upgrades, tests or audits a skill, package or steps. Do not use for ordinary application development or comparisons between AI models.",
+            "interface": {
+              "displayName": "Skill Evals",
+              "shortDescription": "Structural checks and observed skill behavior",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $skill-evals to evaluate this skill package with reproducible evidence."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/skill-evals/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "steps",
+            "description": "Coordinate software development, bugs, refactors and engineering verification with proportionate governance, risk assessment and the minimum relevant specialists. Use for implementation work unless bypassed or a directly requested specialist owns the task. Exclude general IT support, commercial/legal advice and multi-model benchmarks; routine changes must not trigger full audits, release or load testing.",
+            "interface": {
+              "displayName": "Steps — Engineering Lead",
+              "shortDescription": "Coordinate proportionate software engineering workflows",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $steps to implement this software change with appropriate verification."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/steps/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "technical-proposal-discovery",
+            "description": "Produce a technical proposal or an evidence-backed competitor software comparison only on direct request. Distinguish proposal scope and deliverables from ordinary feature brainstorming; exclude commercial pricing, contracts and financial management.",
+            "interface": {
+              "displayName": "Technical Proposal Discovery",
+              "shortDescription": "Requested technical proposals and product research",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $technical-proposal-discovery to prepare a technical proposal from this brief."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/technical-proposal-discovery/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "test-engineering",
+            "description": "Design and implement meaningful unit, integration and contract tests for changed application behavior, APIs, business rules, permissions and data operations. Use existing project tooling; skip descriptive read-only work and trivial cosmetics without a behavior change.",
+            "interface": {
+              "displayName": "Test Engineering",
+              "shortDescription": "Behavior-driven unit, integration and contract tests",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $test-engineering to implement and run focused tests for the requested behavior."
+            },
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/test-engineering/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "ui-ux-pro-max",
+            "description": "Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits.",
+            "path": "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/native/fixtures/S21/.agents/skills/ui-ux-pro-max/SKILL.md",
+            "scope": "repo",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "apple-design",
+            "description": "Design or review fluid gestures, interruptible spring motion, drag/swipe/sheet behavior, velocity handoff and reduced-motion alternatives. Use for concrete interaction and motion work; skip routine page styling, bundle optimization or imposing an Apple visual identity.",
+            "path": "/Users/mahan/.codex/skills/apple-design/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "architecture-review",
+            "description": "Independently review a concrete implementation plan, system design, or defined technical approach before implementation. Use for requested reviews or consequential structural decisions routed by steps; skip early ideation, routine edits, generic code review and implementation.",
+            "interface": {
+              "displayName": "Architecture Review",
+              "shortDescription": "Review concrete technical designs before implementation",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/architecture-review/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "backup-recovery",
+            "description": "Design backup and recovery runbooks, verify backup integrity or rehearse/execute a restore only on direct request with appropriate scope. Ordinary database changes, migrations, application jobs and feature delivery do not trigger a backup service or production restore.",
+            "interface": {
+              "displayName": "Backup Recovery",
+              "shortDescription": "Requested backup verification and recovery runbooks",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $backup-recovery to design a testable restore runbook without executing it."
+            },
+            "path": "/Users/mahan/.codex/skills/backup-recovery/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "banner-design",
+            "description": "Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage. Uses ui-ux-pro-max, frontend-design, ai-artist, ai-multimodal skills.",
+            "path": "/Users/mahan/.codex/skills/banner-design/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "brand",
+            "description": "Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides.",
+            "path": "/Users/mahan/.codex/skills/brand/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "compatible-response",
+            "description": "Apply to every Codex user-facing response and output from any skill, across all projects. Adapt presentation to the content and maximize information density without losing essential details.",
+            "path": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "db-impact",
+            "description": "Analyze the complete blast radius of a proposed database change before it is executed. Use for migrations, schema/data changes, and production-impact reviews; do not use for ordinary read-only data queries.",
+            "interface": {
+              "displayName": "Database Impact",
+              "shortDescription": "Analyze database-change blast radius before execution",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/db-impact/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "design",
+            "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
+            "path": "/Users/mahan/.codex/skills/design/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "design-system",
+            "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.",
+            "path": "/Users/mahan/.codex/skills/design-system/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "devil",
+            "description": "Independently stress-test consequential technical decisions, concrete plans, architectures, migrations, refactors, and implementation strategies. Use when adversarial review would materially improve a decision by challenging assumptions, evidence, failure modes, reversibility, blast radius, or alternatives; do not use for routine coding, factual questions, trivial edits, or ordinary low-risk implementation.",
+            "interface": {
+              "displayName": "Devil",
+              "shortDescription": "Stress-test consequential technical decisions",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $devil to challenge this plan before we commit."
+            },
+            "path": "/Users/mahan/.codex/skills/devil/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "docs-maintenance",
+            "description": "Synchronize existing project documentation with real code, API or configuration changes, and write end-user guides when directly requested. Follow project documentation paths; skip unaffected docs and delegate source-code explanation or developer handoff to hand-off.",
+            "interface": {
+              "displayName": "Docs Maintenance",
+              "shortDescription": "Source-backed documentation sync and user guides",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $docs-maintenance to synchronize the affected project documentation."
+            },
+            "path": "/Users/mahan/.codex/skills/docs-maintenance/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "final-check",
+            "description": "Audit an apparently completed implementation against the user's original request before declaring it finished. Use for explicit final verification and substantial implementation tasks; do not use as a generic code review or repeatedly during development.",
+            "interface": {
+              "displayName": "Final Check",
+              "shortDescription": "Audit completed implementation against requirements",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/final-check/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "full-plan",
+            "description": "Plan meaningful feature behavior, actors, invariants, failure modes and acceptance before implementation, including precise API contracts when needed. Use for new or changed workflows or explicit planning requests; skip trivial internal or cosmetic edits.",
+            "interface": {
+              "displayName": "Full Plan",
+              "shortDescription": "طراحی رفتار، قرارداد و سناریو پیش از پیاده‌سازی",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/full-plan/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "hand-off",
+            "description": "Explain actual repository source, callers, architecture and behavior in Persian or English. Use EXPLAIN/EXPLORE for source questions; create developer and LLM handoff documents only for an explicit invocation or clear request for complete knowledge transfer. Skip generic theory, documentation sync and implementation-only work.",
+            "interface": {
+              "displayName": "hand-off",
+              "shortDescription": "Source-grounded explanation and developer handoff",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "$hand-off Explain the selected repository feature with verified source links and practical maintenance guidance."
+            },
+            "path": "/Users/mahan/.agents/skills/hand-off/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "integration-reliability",
+            "description": "Design, implement or diagnose reliable third-party API and webhook integrations, including timeouts, retries, 429s, duplicates and uncertain external effects. Use for a real provider dependency, not internal CRUD or an ordinary local REST endpoint.",
+            "interface": {
+              "displayName": "Integration Reliability",
+              "shortDescription": "Reliable provider APIs and webhook failure handling",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $integration-reliability to handle provider failures without duplicating external effects."
+            },
+            "path": "/Users/mahan/.codex/skills/integration-reliability/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "load-testing",
+            "description": "Plan and run bounded load, stress or concurrent-traffic benchmarks only when directly requested, with a validated target, authority and finite traffic profile. A slow endpoint or routine performance review does not request load generation.",
+            "interface": {
+              "displayName": "Load Testing",
+              "shortDescription": "Explicitly requested, bounded load and stress tests",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $load-testing to prepare a safe finite load-test profile for the approved target."
+            },
+            "path": "/Users/mahan/.codex/skills/load-testing/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "maintenance-evolution",
+            "description": "Plan or implement bounded compatibility-preserving evolution, substantial refactors, deprecations, removals and major framework upgrades; assess scoped technical debt when requested. Skip routine implementation, small TODO cleanup and speculative future-proofing.",
+            "interface": {
+              "displayName": "Maintenance Evolution",
+              "shortDescription": "Compatibility, deprecation and scoped debt decisions",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $maintenance-evolution to plan a compatible transition for this existing feature."
+            },
+            "path": "/Users/mahan/.codex/skills/maintenance-evolution/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "multiple-pov",
+            "description": "Run a one-time, evidence-first brainstorming and multi-perspective design review before planning or implementing materially new systems, features, substantial workflows, architecture changes, major business logic, integrations, data-model changes, significant or risky refactors, migrations, or other substantial product/engineering work. Do not repeat the full review for the same materially unchanged task, user clarifications, approved implementation follow-ups, simple fixes, or small UI/content changes; use a focused delta review only after a material scope pivot or an explicit request to review again.",
+            "path": "/Users/mahan/.codex/skills/multiple-pov/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "natural-persian-writing",
+            "description": "Produce, rewrite, translate, review, or summarize meaningful Persian prose that sounds natural, preserves meaning, and matches its audience and purpose. Use for any Persian content: personal and formal letters, email, business, marketing, academic, legal and policy text, creative writing, translation, support, UI, technical documentation, and conversation. Do not activate merely because Persian appears in source code, data, an identifier, or text that is not being changed.",
+            "path": "/Users/mahan/.agents/skills/natural-persian-writing/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "performance-review",
+            "description": "Evidence-driven software performance review for recent changes, endpoints, imports/exports, and explicitly requested audits. Use to identify real bottlenecks and scalable improvements; do not use for speculative micro-optimization.",
+            "interface": {
+              "displayName": "Performance Review",
+              "shortDescription": "Measure bottlenecks in queries, caches and frontend flows",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/performance-review/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "practical-test",
+            "description": "Perform real browser acceptance tests for implemented user flows when directly requested or routed by steps with a confirmed safe running target. Use for observable UI behavior; skip static code review and implementation fixes.",
+            "path": "/Users/mahan/.codex/skills/practical-test/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "regression-check",
+            "description": "Verify that a completed change preserved important existing behavior within its realistic blast radius. Use after implementation, refactoring, bug fixes, database changes, or dependency updates; do not use for pure planning work.",
+            "interface": {
+              "displayName": "Regression Check",
+              "shortDescription": "Verify existing behavior after a change",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/regression-check/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "release-management",
+            "description": "Prepare versions, release notes, provenance and deployment or rollback plans when directly requested, and execute specifically authorized release actions. Passing tests, a finished feature or a routine commit does not request publication, CI changes or deployment.",
+            "interface": {
+              "displayName": "Release Management",
+              "shortDescription": "Requested releases with verified provenance",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $release-management to prepare this version and its release notes."
+            },
+            "path": "/Users/mahan/.codex/skills/release-management/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "root-cause",
+            "description": "Diagnose the actual cause of a bug, failure, or unexpected behavior before proposing or applying a fix. Use for explicit root-cause analysis, deep debugging, and recurring or unclear failures; do not replace ordinary implementation work without a reported problem.",
+            "interface": {
+              "displayName": "Root Cause Analysis",
+              "shortDescription": "Diagnose failures before applying fixes",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/root-cause/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "security-assurance",
+            "description": "Review the relevant security surfaces of material auth, permissions, upload, secrets, payment, trust-boundary or dependency changes. A full feature or project security audit requires a direct request; routine CSS and unrelated local changes do not trigger it.",
+            "interface": {
+              "displayName": "Security Assurance",
+              "shortDescription": "Targeted security checks and requested full audits",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $security-assurance to review the security surfaces affected by this change."
+            },
+            "path": "/Users/mahan/.codex/skills/security-assurance/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "skill-evals",
+            "description": "Evaluate Codex skill structure and observed routing or workflow behavior when the user explicitly creates, upgrades, tests or audits a skill, package or steps. Do not use for ordinary application development or comparisons between AI models.",
+            "interface": {
+              "displayName": "Skill Evals",
+              "shortDescription": "Structural checks and observed skill behavior",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $skill-evals to evaluate this skill package with reproducible evidence."
+            },
+            "path": "/Users/mahan/.codex/skills/skill-evals/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "steps",
+            "description": "Coordinate software development, bugs, refactors and engineering verification with proportionate governance, risk assessment and the minimum relevant specialists. Use for implementation work unless bypassed or a directly requested specialist owns the task. Exclude general IT support, commercial/legal advice and multi-model benchmarks; routine changes must not trigger full audits, release or load testing.",
+            "interface": {
+              "displayName": "Steps — Engineering Lead",
+              "shortDescription": "Coordinate proportionate software engineering workflows",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $steps to implement this software change with appropriate verification."
+            },
+            "path": "/Users/mahan/.codex/skills/steps/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "technical-proposal-discovery",
+            "description": "Produce a technical proposal or an evidence-backed competitor software comparison only on direct request. Distinguish proposal scope and deliverables from ordinary feature brainstorming; exclude commercial pricing, contracts and financial management.",
+            "interface": {
+              "displayName": "Technical Proposal Discovery",
+              "shortDescription": "Requested technical proposals and product research",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $technical-proposal-discovery to prepare a technical proposal from this brief."
+            },
+            "path": "/Users/mahan/.codex/skills/technical-proposal-discovery/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "test-engineering",
+            "description": "Design and implement meaningful unit, integration and contract tests for changed application behavior, APIs, business rules, permissions and data operations. Use existing project tooling; skip descriptive read-only work and trivial cosmetics without a behavior change.",
+            "interface": {
+              "displayName": "Test Engineering",
+              "shortDescription": "Behavior-driven unit, integration and contract tests",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $test-engineering to implement and run focused tests for the requested behavior."
+            },
+            "path": "/Users/mahan/.codex/skills/test-engineering/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "ui-styling",
+            "description": "Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user interfaces, implementing design systems, creating responsive layouts, adding accessible components (dialogs, dropdowns, forms, tables), customizing themes and colors, implementing dark mode, generating visual designs and posters, or establishing consistent styling patterns across applications.",
+            "path": "/Users/mahan/.codex/skills/ui-styling/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "ui-ux-pro-max",
+            "description": "Use searchable local UI/UX data for meaningful interface design, accessibility, layout, typography, interaction and stack-specific implementation. Detect and preserve project tokens/frameworks; skip backend-only work and full design-system generation for trivial cosmetic edits.",
+            "path": "/Users/mahan/.codex/skills/ui-ux-pro-max/SKILL.md",
+            "scope": "user",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "imagegen",
+            "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+            "interface": {
+              "displayName": "Image Gen",
+              "shortDescription": "Generate or edit images for websites, games, and more",
+              "iconSmall": "/Users/mahan/.codex/skills/.system/imagegen/assets/imagegen-small.svg",
+              "iconLarge": "/Users/mahan/.codex/skills/.system/imagegen/assets/imagegen.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $imagegen to make or edit an image for this project."
+            },
+            "path": "/Users/mahan/.codex/skills/.system/imagegen/SKILL.md",
+            "scope": "system",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "openai-docs",
+            "description": "Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge—including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex—and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.",
+            "shortDescription": "Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, and self-knowledge; OpenAI APIs and ChatGPT Work. 'You'/'this app' means Codex only.",
+            "interface": {
+              "displayName": "OpenAI Docs",
+              "shortDescription": "OpenAI and Codex docs for models, skills, tasks, and setup",
+              "iconSmall": "/Users/mahan/.codex/skills/.system/openai-docs/assets/openai-small.svg",
+              "iconLarge": "/Users/mahan/.codex/skills/.system/openai-docs/assets/openai.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use OpenAI Docs for official docs lookup, questions about Codex itself or Codex surfaces, model selection, model migration, and prompt-upgrade work."
+            },
+            "path": "/Users/mahan/.codex/skills/.system/openai-docs/SKILL.md",
+            "scope": "system",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "review-agent",
+            "description": "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+            "interface": {
+              "displayName": "Review Agent",
+              "shortDescription": "Find actionable bugs in code changes",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $review-agent to review the requested code changes and return actionable findings."
+            },
+            "path": "/Users/mahan/.codex/skills/.system/review-agent/SKILL.md",
+            "scope": "system",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "skill-creator",
+            "description": "Create or update a Codex skill with appropriately scoped instructions and any needed supporting resources.",
+            "shortDescription": "Create or update a skill",
+            "interface": {
+              "displayName": "Skill Creator",
+              "shortDescription": "Create or update a skill",
+              "iconSmall": "/Users/mahan/.codex/skills/.system/skill-creator/assets/skill-creator-small.svg",
+              "iconLarge": "/Users/mahan/.codex/skills/.system/skill-creator/assets/skill-creator.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/.system/skill-creator/SKILL.md",
+            "scope": "system",
+            "enabled": true,
+            "pluginId": null
+          },
+          {
+            "name": "skill-installer",
+            "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+            "shortDescription": "Install curated skills from openai/skills or other repos",
+            "interface": {
+              "displayName": "Skill Installer",
+              "shortDescription": "Install curated skills from openai/skills or other repos",
+              "iconSmall": "/Users/mahan/.codex/skills/.system/skill-installer/assets/skill-installer-small.svg",
+              "iconLarge": "/Users/mahan/.codex/skills/.system/skill-installer/assets/skill-installer.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "/Users/mahan/.codex/skills/.system/skill-installer/SKILL.md",
+            "scope": "system",
+            "enabled": true,
+            "pluginId": null
+          }
+        ],
+        "errors": []
+      }
+    ]
+  }
+}

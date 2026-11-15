@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-11-15T20:50:42.638168+00:00",
+  "scope": [
+    "scripts/common.ps1",
+    "scripts/install.ps1",
+    "tests/windows_powershell_checks.ps1",
+    "WINDOWS_COMPATIBILITY.md"
+  ],
+  "sha256": {
+    "scripts/common.ps1": "090c12dbe123942217700eb2bd7c56a6732a57ed916bbe6bc72b04f0fc022004",
+    "scripts/install.ps1": "643056e6df7bd1a91fbcf50f12df8117b5e20a34febac3bef303f3e9d50bbc5c",
+    "tests/windows_powershell_checks.ps1": "a1a6b8f6d7fc25b665a8d52a74926f7ab522d32117cfd6352ceb83f08228acad",
+    "WINDOWS_COMPATIBILITY.md": "f6b3ad70eb2365e2bac2528ab2341cb39ab96b9dfeaba97130df7d329418d7c0"
+  },
+  "static_review": "read-only drive mapping with strict local fixed-drive identity; no mandatory Python dependency; raw path spelling checked before normalization; source/destination/backup/stage overlap rejection",
+  "git_diff_check": {
+    "returncode": 0,
+    "output": ""
+  },
+  "protected_tree_git_status": {
+    "returncode": 0,
+    "output": ""
+  },
+  "windows_powershell_5_1": "UNVERIFIED: no local runtime",
+  "powershell_7": "UNVERIFIED: no local runtime",
+  "runtime_next": "Run tests/windows_powershell_checks.ps1 on both Windows PowerShell 5.1 and PowerShell 7 in the existing hosted Windows workflow after package rebuild.",
+  "profile_mutations": "none",
+  "commit_push": "none"
+}

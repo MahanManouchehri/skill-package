@@ -1,6 +1,10 @@
-# skill-package v3.1
+# skill-package v3.1.1
 
 A verifiable collection of **26 personal Codex skills** for freelance and in-house software development: Laravel/PHP, Django/Python, server templates, React/Next.js and SQLite/MySQL/SQL Server are examples, not mandated frameworks. Skills supply instructions; Codex performs coding and real tools supply capabilities.
+
+## Patch scope
+
+Version 3.1.1 preserves every installable skill byte and the 26/16/5 inventory. It restores licensed UI authoring tools outside the runtime payload, strengthens native evaluation isolation/preflight, and fixes Windows liveness/path safety. Full UI discovery now executes 153 tests, including the previously unimportable modules; the default frozen relevance gate runs all 90 cases offline. See [UI provenance](UI_AUTHORING_PROVENANCE.md), [Windows evidence and safe commands](WINDOWS_COMPATIBILITY.md), and [current validation](VALIDATION.md). Historical evidence remains unchanged under `evals/evidence/`; new results live under `evals/evidence/v3.1.1/`.
 
 ## Distribution
 
@@ -61,10 +65,10 @@ Add such a rule only under your project's governance; the installer never edits 
 Give Codex this prompt:
 
 ```text
-Install all 26 personal skills from MahanManouchehri/skill-package v3.1.0. Read the manifest, resolve and verify the published commit SHA, use skill-installer at that exact ref into clean staging, verify every hash, and promote only approved names. For an upgrade, inspect active user roots and duplicates, make verified backups and use the tested journal/rollback tool. Preserve unrelated/system/plugin files and AGENTS.md. Report actual discovery and refresh requirements.
+Install all 26 personal skills from MahanManouchehri/skill-package v3.1.1. Read the manifest, resolve and verify the published commit SHA, use skill-installer at that exact ref into clean staging, verify every hash, and promote only approved names. For an upgrade, inspect active user roots and duplicates, make verified backups and use the tested journal/rollback tool. Preserve unrelated/system/plugin files and AGENTS.md. Report actual discovery and refresh requirements.
 ```
 
-See [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md) for staging/promotion and [RESTORE.md](RESTORE.md) for rollback/Windows fallback. The official installer refuses collisions and must not directly overwrite old skills. Python tooling requires Python 3 and [PyYAML](scripts/requirements.txt). Existing PowerShell 5.1 scripts remain compatible; fresh Windows execution is separately identified in validation.
+See [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md) for staging/promotion and [RESTORE.md](RESTORE.md) for rollback/Windows fallback. The official installer refuses collisions and must not directly overwrite old skills. Python tooling requires Python 3 and [PyYAML](scripts/requirements.txt). PowerShell 5.1/7 execution and Windows-specific limits are separately identified in validation; do not infer runtime support from static review.
 
 ## Verification
 

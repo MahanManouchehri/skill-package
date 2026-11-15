@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "login",
+    "status"
+  ],
+  "exit_code": 0,
+  "auth_status": "Logged in using ChatGPT",
+  "observed_utc": "2026-11-15T20:50:33.200839+00:00",
+  "credential_handling": "Native status command only; no credential files opened/copied by harness"
+}

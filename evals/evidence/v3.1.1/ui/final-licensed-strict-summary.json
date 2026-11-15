@@ -1,0 +1,33 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/evaluate-relevance.py"
+    ],
+    "observed_utc": "2026-11-15T15:46:53.471575+00:00",
+    "returncode": 0,
+    "strict_gate_enabled": true,
+    "relevance_case_count": 90,
+    "launcher_sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+    "vendor_sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/evaluate-relevance.py",
+      "--write-baseline",
+      "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3.1.1/ui/final-licensed-relevance-report.json"
+    ],
+    "observed_utc": "2026-11-15T15:46:56.819561+00:00",
+    "returncode": 0,
+    "strict_gate_enabled": true,
+    "relevance_case_count": 90,
+    "launcher_sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5",
+    "vendor_sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e",
+    "runtime_fingerprint": "0d096d52499c2dd84ef80b2e45a1793bc4ed7c9be8fe5948b08151790959b376",
+    "oracle_fingerprint": "02e7226428c64a995ec24ae104ce4d186f5f91bf0f062556e90ef9b0fcb6d67a",
+    "actual_case_records": 90
+  }
+]

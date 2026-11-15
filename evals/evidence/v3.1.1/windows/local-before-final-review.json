@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-11-15T15:55:20.013176+00:00",
+  "host": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "command": [
+    "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3-evaluation/venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_package_tools.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "test_result": [
+    "Ran 56 tests in 8.680s"
+  ],
+  "powershell_path": null,
+  "powershell_parse": "UNVERIFIED",
+  "windows_runtime": "UNVERIFIED",
+  "workflow_static": "PASS",
+  "python_ast": "PASS",
+  "github_actions_permissions": {
+    "enabled": true,
+    "allowed_actions": "all",
+    "sha_pinning_required": false
+  },
+  "official_action_pins": [
+    "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+    "actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c"
+  ],
+  "source_hashes": {
+    "scripts/package_tools.py": "b0044cac18a7063eec2856aadef1cba7a09ec3b3bd2449e00af118fb284f82c3",
+    "tests/test_package_tools.py": "67a187a6cd5e0b0ed3f2b89d6d33ca77140c1f21dcae4b1beba5704340e340e1",
+    "scripts/common.ps1": "cb89fda446241162acfab0160dc2729d1d62c7087883d1084960ff891526de58",
+    "scripts/install.ps1": "73c10e7b0ee2b089ce90dbf80ee268e77fa18b31bc4ba148e5f69d62b0c07c2d",
+    "tests/windows_native_checks.py": "05de8853b05f9f27dc69213642586c52251c31de126ad855bb1349dbbe6abfdd",
+    "tests/windows_powershell_checks.ps1": "4374654b126863fd7de8191ef89f657690def1380e162efb8c1db0e375d595a0",
+    ".github/workflows/windows-validation.yml": "eeefc23b5164b8c05f5f427eb1d7c692da988977d542e171b44c5734534826f5",
+    "WINDOWS_COMPATIBILITY.md": "8857b6560140cd849d4099cc7353fdde5849f751c675915373971cc06fc133ff"
+  }
+}

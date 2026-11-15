@@ -1,0 +1,164 @@
+{
+  "observed_utc": "2026-11-15T20:52:39.795350+00:00",
+  "personal_names": 26,
+  "unique_enabled": true,
+  "kind": "NATIVE_METADATA_ONLY_NO_MODEL_TURN",
+  "rows": [
+    {
+      "name": "apple-design",
+      "path": "/Users/mahan/.codex/skills/apple-design/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "architecture-review",
+      "path": "/Users/mahan/.codex/skills/architecture-review/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "backup-recovery",
+      "path": "/Users/mahan/.codex/skills/backup-recovery/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "compatible-response",
+      "path": "/Users/mahan/.agents/skills/compatible-response/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "db-impact",
+      "path": "/Users/mahan/.codex/skills/db-impact/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "devil",
+      "path": "/Users/mahan/.codex/skills/devil/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "docs-maintenance",
+      "path": "/Users/mahan/.codex/skills/docs-maintenance/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "final-check",
+      "path": "/Users/mahan/.codex/skills/final-check/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "full-plan",
+      "path": "/Users/mahan/.codex/skills/full-plan/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "hand-off",
+      "path": "/Users/mahan/.agents/skills/hand-off/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "integration-reliability",
+      "path": "/Users/mahan/.codex/skills/integration-reliability/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "load-testing",
+      "path": "/Users/mahan/.codex/skills/load-testing/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "maintenance-evolution",
+      "path": "/Users/mahan/.codex/skills/maintenance-evolution/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "multiple-pov",
+      "path": "/Users/mahan/.codex/skills/multiple-pov/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "natural-persian-writing",
+      "path": "/Users/mahan/.agents/skills/natural-persian-writing/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "performance-review",
+      "path": "/Users/mahan/.codex/skills/performance-review/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "practical-test",
+      "path": "/Users/mahan/.codex/skills/practical-test/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "regression-check",
+      "path": "/Users/mahan/.codex/skills/regression-check/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "release-management",
+      "path": "/Users/mahan/.codex/skills/release-management/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "root-cause",
+      "path": "/Users/mahan/.codex/skills/root-cause/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "security-assurance",
+      "path": "/Users/mahan/.codex/skills/security-assurance/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "skill-evals",
+      "path": "/Users/mahan/.codex/skills/skill-evals/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "steps",
+      "path": "/Users/mahan/.codex/skills/steps/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "technical-proposal-discovery",
+      "path": "/Users/mahan/.codex/skills/technical-proposal-discovery/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "test-engineering",
+      "path": "/Users/mahan/.codex/skills/test-engineering/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "/Users/mahan/.codex/skills/ui-ux-pro-max/SKILL.md",
+      "scope": "user",
+      "enabled": true
+    }
+  ]
+}

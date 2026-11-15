@@ -1,0 +1,10 @@
+test_changed_grading_source_remains_rejected_by_the_frozen_gate (test_ui_authoring.UIAuthoringLauncherTest.test_changed_grading_source_remains_rejected_by_the_frozen_gate) ... ok
+test_default_strict_cli_preserves_frozen_fingerprints_from_another_cwd (test_ui_authoring.UIAuthoringLauncherTest.test_default_strict_cli_preserves_frozen_fingerprints_from_another_cwd) ... ok
+test_projection_preserves_every_input_byte_and_contains_no_runtime_duplicate (test_ui_authoring.UIAuthoringLauncherTest.test_projection_preserves_every_input_byte_and_contains_no_runtime_duplicate) ... ok
+test_replaced_vendor_source_is_rejected_before_execution (test_ui_authoring.UIAuthoringLauncherTest.test_replaced_vendor_source_is_rejected_before_execution) ... ok
+test_runtime_source_or_crlf_changes_remain_rejected_by_the_frozen_gate (test_ui_authoring.UIAuthoringLauncherTest.test_runtime_source_or_crlf_changes_remain_rejected_by_the_frozen_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 13.901s
+
+OK

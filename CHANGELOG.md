@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.1 — 2026-11-16
+
+- Restore authentic, pinned MIT UI authoring tools as development utilities. Run the pristine relevance grader in a byte-verified temporary canonical layout, preserving original tests, fixtures, thresholds and runtime payloads.
+- Add explicit native model preflight, invocation-only service/host-skill isolation and exact enabled-catalog checks. Replace nonportable pipe selection with bounded threaded discovery, keep raw traces and avoid automatic behavioral PASS.
+- Replace unsafe Windows PID probes with read-only process-handle queries. Strengthen device/namespace/path guards, UTF-8 output and read-only recovery coverage; add isolated Windows/PowerShell 5.1 and 7 CI.
+- Adjudicate the 12 historical PARTIAL routing records separately, preserving the owner bank and all old evidence. No policy/skill patch is justified by those read-only planning records.
+- Preserve all 26 personal payloads, 16 managed snapshots, five system exclusions and manifest schema 1. No skill reinstall is needed when current installed hashes match.
+
 ## 3.1.0 — 2026-11-14
 
 - Add integration-reliability, test-engineering, security-assurance, docs-maintenance, maintenance-evolution, skill-evals, load-testing, technical-proposal-discovery, release-management and backup-recovery.

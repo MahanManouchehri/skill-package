@@ -6,8 +6,9 @@ import hashlib
 import importlib.util
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import shutil
+import stat
 import subprocess
 import sys
 import tempfile
@@ -154,9 +155,174 @@ class PackageToolTests(unittest.TestCase):
             tools.verify_package(self.package)
 
     def test_path_traversal_and_windows_paths_refused(self):
-        for value in ["../outside", "a/../outside", "C:/outside", "/etc/passwd", "a\\b", ".system/a", "a//b", "a/CON", "a."]:
+        for value in ["../outside", "a/../outside", "C:/outside", "/etc/passwd", "a\\b", ".system/a", "a//b", "a/CON", "a.",
+                      "..\\outside", "\\\\server\\share\\file", "C:file", "x:stream", "a/aux.txt", "a/COM¹.log",
+                      ".SYSTEM/a", ".GIT/config", "a /file", "a./file", "a/\x00file", "a/file?"]:
             with self.subTest(value=value), self.assertRaises(tools.PackageError):
                 tools.safe_path(self.temp, value)
+
+    def test_windows_root_policy_on_drive_unc_unicode_and_extended_paths(self):
+        for value in [r"C:\Users\sample\.codex\skills", r"C:\Users\sample\.agents\Skills",
+                      "\\\\server\\share\\کاربر\\.codex\\skills", "C:\\Users\\" + "long\\" * 60 + "skills"]:
+            with self.subTest(value=value):
+                path = PureWindowsPath(value)
+                self.assertEqual(tools.validate_personal_root_path(path), path)
+        for value in [r"C:\skills", r"\\server\share\skills", r"C:profile\skills", r"\profile\skills",
+                      r"\\?\C:\Users\sample\.codex\skills", r"\\.\C:\Users\sample\.codex\skills",
+                      r"C:\Users\sample\plugins.\skills", "C:\\Users\\sample\\cache \\skills",
+                      r"C:\Users\sample\PLUGI~1\skills",
+                      r"C:\Users\sample\.SYSTEM\skills", r"C:\Users\sample\Plugins\skills",
+                      r"C:\Users\sample\cache\skills", r"C:\Users\sample\managed\skills"]:
+            with self.subTest(value=value), self.assertRaises(tools.PackageError):
+                tools.validate_personal_root_path(PureWindowsPath(value))
+        # Simulate the OS's alias expansion, then exercise the actual overlap
+        # decision. This does not certify the Win32 resolver on a non-Windows OS.
+        alias = PureWindowsPath(r"C:\TEMPLO~1\package\skills")
+        canonical = PureWindowsPath(r"C:\TempLongName\package\skills")
+        package = PureWindowsPath(r"C:\TempLongName\package")
+        with mock.patch.object(tools, "Path", PureWindowsPath), \
+                mock.patch.object(tools.os.path, "realpath", side_effect=[str(canonical), str(package)]), \
+                mock.patch.object(tools.os, "name", "nt"):
+            self.assertFalse(tools.disjoint(alias, package), "Native alias expansion must prevent source overlap")
+        for value in [r"C:\Users\sample\.system\backup", r"C:\Users\sample\plugins\backup",
+                      r"C:\Users\sample\cache\backup", r"C:\Users\sample\managed\backup",
+                      r"C:\Users\sample\PLUGI~1\backup", r"C:\Users\sample\plugins.\backup",
+                      "C:\\Users\\sample\\cache \\backup"]:
+            with self.subTest(backup=value), self.assertRaises(tools.PackageError):
+                tools.validate_backup_path(PureWindowsPath(value))
+        # A mapped drive can hide a protected component even without '~'.
+        # Stub only native resolution; the production component guard stays real.
+        original = PureWindowsPath(r"X:\profile\skills")
+        protected = PureWindowsPath(r"C:\Users\sample\plugins\profile\skills")
+        with mock.patch.object(tools, "no_links", return_value=original), \
+                mock.patch.object(tools, "Path", PureWindowsPath), \
+                mock.patch.object(tools.os.path, "realpath", return_value=str(protected)), \
+                mock.patch.object(tools.os, "name", "nt"):
+            with self.assertRaisesRegex(tools.PackageError, "protected"):
+                tools.protected_root(original)
+            with self.assertRaisesRegex(tools.PackageError, "outside system/plugin"):
+                tools.protected_backup(original)
+
+    def test_unicode_bom_crlf_metadata_and_raw_hashes(self):
+        folder = self.temp / "پوشه با فاصله"
+        folder.mkdir()
+        file = folder / "SKILL.md"
+        text = "---\r\nname: steps\r\ndescription: Persian مسیر fixture.\r\n---\r\n"
+        file.write_bytes(b"\xef\xbb\xbf" + text.encode("utf-8"))
+        self.assertEqual(tools.metadata(file)["description"], "Persian مسیر fixture.")
+        expected = hashlib.sha256(file.read_bytes()).hexdigest()
+        self.assertEqual(tools.records(folder)[0]["sha256"], expected)
+        before = tools.tree_hash(folder)
+        os.utime(file, (1000000000, 1000000000))
+        self.assertEqual(tools.tree_hash(folder), before, "Timestamps must not affect byte fingerprints")
+        file.write_bytes(text.replace("\r\n", "\n").encode("utf-8"))
+        self.assertNotEqual(tools.tree_hash(folder), before, "BOM/newline changes must remain visible")
+
+    def test_unicode_and_shell_metacharacter_cli_paths_are_literal_and_read_only(self):
+        self.package = self.package.rename(self.temp / "بسته & $(literal) ' [x]")
+        self.stage = self.stage.rename(self.temp / "مرحله با فاصله")
+        self.destination = self.temp / "کاربر & $(literal)" / ".codex" / "skills"
+        before = tools.records(self.temp, selected=False)
+        command = [sys.executable, "-B", str(TOOL_PATH), "plan", "--package-root", str(self.package),
+                   "--stage-root", str(self.stage), "--destination-root", str(self.destination)]
+        process = subprocess.run(command, capture_output=True, encoding="utf-8",
+                                 env={**os.environ, "PYTHONIOENCODING": "ascii", "PYTHONUTF8": "0"}, timeout=30)
+        self.assertEqual(process.returncode, 0, process.stderr)
+        result = json.loads(process.stdout)
+        self.assertEqual(result["roots"], [str(self.destination)])
+        self.assertEqual(result["status"], "PLAN")
+        self.assertEqual(before, tools.records(self.temp, selected=False))
+        self.assertFalse(self.destination.parent.exists())
+
+    def test_mixed_case_duplicate_catalog_is_refused_without_mutation(self):
+        write_skill(self.destination / "nested" / "STEPS", "STEPS")
+        before = tools.records(self.temp, selected=False)
+        with self.assertRaisesRegex(tools.PackageError, "Duplicate skill"):
+            self.promote(replace=True)
+        self.assertEqual(before, tools.records(self.temp, selected=False))
+        self.assertFalse(self.backups.exists())
+
+    def test_mixed_case_managed_catalog_is_refused_without_mutation(self):
+        write_skill(self.destination / "MANAGED-00", "MANAGED-00")
+        before = tools.records(self.temp, selected=False)
+        with self.assertRaisesRegex(tools.PackageError, "Managed skill"):
+            self.promote(replace=True)
+        self.assertEqual(before, tools.records(self.temp, selected=False))
+
+    def test_manifest_catalog_case_collision_refused(self):
+        path = self.package / "skills-manifest.json"
+        manifest = tools.read_json(path)
+        managed = next(item for item in manifest["skills"] if not item["installable"])
+        managed["catalog_name"] = "STEPS"
+        tools.write_json(path, manifest)
+        with self.assertRaisesRegex(tools.PackageError, "Duplicate/empty catalog"):
+            tools.read_manifest(self.package)
+
+    def test_windows_liveness_query_never_sends_a_signal(self):
+        for result, expected in [(0, False), (258, True), (0xFFFFFFFF, True)]:
+            kernel = mock.MagicMock()
+            kernel.OpenProcess.return_value = 123
+            kernel.WaitForSingleObject.return_value = result
+            with self.subTest(result=result), mock.patch("ctypes.WinDLL", return_value=kernel, create=True), \
+                    mock.patch.object(tools.os, "name", "nt"), mock.patch.object(tools.os, "kill") as kill:
+                self.assertEqual(tools.process_alive(1234), expected)
+                kernel.OpenProcess.assert_called_once_with(0x00100000, False, 1234)
+                kernel.WaitForSingleObject.assert_called_once_with(123, 0)
+                kernel.CloseHandle.assert_called_once_with(123)
+                kill.assert_not_called()
+
+    def test_windows_liveness_unknown_access_fails_closed(self):
+        for error, expected in [(87, False), (5, True), (123, True)]:
+            kernel = mock.MagicMock()
+            kernel.OpenProcess.return_value = None
+            with self.subTest(error=error), mock.patch("ctypes.WinDLL", return_value=kernel, create=True), \
+                    mock.patch("ctypes.get_last_error", return_value=error, create=True):
+                self.assertEqual(tools.windows_process_alive(1234), expected)
+                kernel.WaitForSingleObject.assert_not_called()
+                kernel.CloseHandle.assert_not_called()
+
+    def test_liveness_probe_preserves_live_child_and_detects_exit(self):
+        child = subprocess.Popen([sys.executable, "-B", "-c", "import sys; sys.stdin.buffer.read(1)"],
+                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            self.assertTrue(tools.process_alive(child.pid))
+            self.assertIsNone(child.poll(), "A liveness probe must not terminate its target")
+            child.communicate(b"x", timeout=10)
+            self.assertEqual(child.returncode, 0)
+            self.assertFalse(tools.process_alive(child.pid))
+        finally:
+            if child.poll() is None:
+                child.communicate(b"x", timeout=10)
+
+    @unittest.skipUnless(shutil.which("git"), "Git is required for the checkout byte-integrity fixture")
+    def test_git_autocrlf_checkouts_preserve_bom_newlines_binary_and_unicode(self):
+        source = self.temp / "git-source"
+        source.mkdir()
+        attributes = TOOL_PATH.parents[1] / ".gitattributes"
+        (source / ".gitattributes").write_bytes(attributes.read_bytes())
+        payloads = {"LF.txt": b"line 1\nline 2\n", "CRLF.txt": b"line 1\r\nline 2\r\n",
+                    "BOM.txt": b"\xef\xbb\xbfline\n", "داده.bin": bytes(range(256))}
+        for name, content in payloads.items():
+            (source / name).write_bytes(content)
+        environment = {**os.environ, "GIT_CONFIG_GLOBAL": os.devnull, "GIT_CONFIG_NOSYSTEM": "1"}
+        hooks = self.temp / "empty-hooks"
+        hooks.mkdir()
+        def git(*args):
+            process = subprocess.run(["git", "-c", "core.hooksPath=" + str(hooks), *args],
+                                     capture_output=True, text=True, env=environment, timeout=30)
+            self.assertEqual(process.returncode, 0, process.stderr)
+        git("-C", str(source), "init", "--quiet")
+        git("-C", str(source), "-c", "core.autocrlf=false", "add", ".")
+        git("-C", str(source), "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
+            "-c", "commit.gpgsign=false", "commit", "--quiet", "-m", "byte fixture")
+        expected = tools.tree_hash(source)
+        for setting in ["true", "false", "input"]:
+            with self.subTest(autocrlf=setting):
+                checkout = self.temp / ("checkout-" + setting)
+                git("clone", "--quiet", "--no-local", "-c", "core.autocrlf=" + setting, str(source), str(checkout))
+                self.assertEqual(tools.tree_hash(checkout), expected)
+                for name, content in payloads.items():
+                    self.assertEqual((checkout / name).read_bytes(), content)
 
     def test_malicious_manifest_mapping_refused(self):
         path = self.package / "skills-manifest.json"
@@ -307,6 +473,47 @@ class PackageToolTests(unittest.TestCase):
         self.assertEqual({p.name for p in self.destination.iterdir()}, {"steps", "unrelated", ".system"})
         self.assertTrue(Path(old["backup"]).exists())
         self.assertTrue(tools.rollback(result["journal"], [self.destination])["already_restored"])
+
+    def test_readonly_original_is_backed_up_replaced_and_restored(self):
+        folder = self.existing()
+        file = folder / "custom.txt"
+        file.chmod(stat.S_IREAD)
+        before = tools.tree_hash(folder, selected=False)
+        mode = file.stat().st_mode
+        try:
+            result = self.promote(replace=True)
+            journal = tools.read_json(result["journal"])
+            row = next(item for item in journal["rows"] if item["skill"] == "steps")
+            backup_file = Path(row["backup"]) / "custom.txt"
+            self.assertEqual(backup_file.stat().st_mode, mode)
+            self.assertEqual(tools.tree_hash(row["backup"], selected=False), before)
+            self.assertFalse(list(self.destination.parent.glob(".skill-package-stage-*")))
+            tools.rollback(result["journal"], [self.destination])
+            self.assertEqual(tools.tree_hash(folder, selected=False), before)
+            self.assertEqual(file.stat().st_mode, mode)
+            self.assertEqual(backup_file.stat().st_mode, mode, "The retained backup must remain read-only")
+        finally:
+            # Fixture teardown also runs on Windows, where read-only files cannot
+            # be unlinked. This cleanup is confined to this synthetic temp tree.
+            for owned in self.temp.rglob("*"):
+                if owned.is_file():
+                    owned.chmod(owned.stat().st_mode | stat.S_IWRITE)
+
+    def test_backup_permission_failure_preserves_destination_and_releases_lock(self):
+        self.existing()
+        before = tools.records(self.destination, selected=False)
+        real_copy = tools.shutil.copytree
+        def fail_backup(source, target, *args, **kwargs):
+            if Path(target).parent.name == "backups":
+                raise PermissionError("Injected isolated backup permission failure")
+            return real_copy(source, target, *args, **kwargs)
+        with mock.patch.object(tools.shutil, "copytree", side_effect=fail_backup), \
+                self.assertRaisesRegex(PermissionError, "backup permission"):
+            self.promote(replace=True)
+        self.assertEqual(before, tools.records(self.destination, selected=False))
+        self.assertFalse((self.destination.parent / ".skill-package-install.lock").exists())
+        self.assertFalse(list(self.destination.parent.glob(".skill-package-stage-*")))
+        self.assertFalse(list(self.backups.glob("*/transaction.json")))
 
     def test_rollback_does_not_recursively_delete_live_skill(self):
         self.existing("ui-ux-pro-max")

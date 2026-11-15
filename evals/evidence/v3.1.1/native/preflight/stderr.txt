@@ -1,0 +1,2 @@
+2026-11-15T15:45:05.326012Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-15T15:45:08.661981Z ERROR codex_models_manager::manager: failed to write models cache: Operation not permitted (os error 1)

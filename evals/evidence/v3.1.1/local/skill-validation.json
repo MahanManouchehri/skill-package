@@ -1,0 +1,142 @@
+{
+  "observed_utc": "2026-11-15T20:55:39.490388+00:00",
+  "command": [
+    "/Users/mahan/Documents/Codex/2026-11-13/https-github-com-mahanmanouchehri-skill-package/work/v3-evaluation/venv/bin/python",
+    "-B",
+    "/Users/mahan/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+    "SKILL_PATH"
+  ],
+  "passed": 26,
+  "rows": [
+    {
+      "skill": "apple-design",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "architecture-review",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "backup-recovery",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "compatible-response",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "db-impact",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "devil",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "docs-maintenance",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "final-check",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "full-plan",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "hand-off",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "integration-reliability",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "load-testing",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "maintenance-evolution",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "multiple-pov",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "natural-persian-writing",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "performance-review",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "practical-test",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "regression-check",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "release-management",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "root-cause",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "security-assurance",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "skill-evals",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "steps",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "technical-proposal-discovery",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "test-engineering",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    },
+    {
+      "skill": "ui-ux-pro-max",
+      "exit_code": 0,
+      "output": "Skill is valid!\n"
+    }
+  ]
+}

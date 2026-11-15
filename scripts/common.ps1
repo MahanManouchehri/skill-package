@@ -9,13 +9,25 @@ function Get-CodexRoot {
 function Get-SafePath([string]$Root, [string]$Relative) {
     if ([string]::IsNullOrWhiteSpace($Relative) -or [IO.Path]::IsPathRooted($Relative) -or $Relative.Contains(':')) { throw "Invalid relative path: $Relative" }
     $parts = $Relative -split '[/\\]'
-    if (@($parts | Where-Object { $_ -in @('..', '.', '', '.system', '.git') }).Count) { throw "Unsafe relative path: $Relative" }
-    $base = [IO.Path]::GetFullPath($Root).TrimEnd('\','/')
+    foreach ($part in $parts) {
+        if ($part -in @('..', '.', '', '.system', '.git') -or $part -match '[\x00-\x1f<>"|?*]' -or $part.EndsWith(' ') -or $part.EndsWith('.')) { throw "Unsafe relative path: $Relative" }
+        # U+00B9/U+00B2/U+00B3 are reserved device digits on Windows too.
+        if (($part -split '\.')[0] -match ('^(CON|PRN|AUX|NUL|(?:COM|LPT)[1-9'+[char]0xB9+[char]0xB2+[char]0xB3+'])$')) { throw "Reserved Windows path: $Relative" }
+    }
+    $base = [IO.Path]::GetFullPath($Root)
+    $prefix = $base.TrimEnd('\','/') + [IO.Path]::DirectorySeparatorChar
     $path = [IO.Path]::GetFullPath((Join-Path $base $Relative))
-    if (-not $path.StartsWith($base + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw "Path escapes root: $Relative" }
+    if (-not $path.StartsWith($prefix, [StringComparison]::OrdinalIgnoreCase)) { throw "Path escapes root: $Relative" }
     return $path
 }
 function Assert-NoReparse([string]$Path) {
+    $spelling = $Path.Replace('/','\')
+    if ($spelling.StartsWith('\\?\') -or $spelling.StartsWith('\\.\')) { throw "Windows device/extended namespace paths are unsupported: $Path" }
+    foreach ($part in $spelling -split '\\') {
+        if ($part -in @('', '.', '..')) { continue }
+        if ($part.EndsWith(' ') -or $part.EndsWith('.')) { throw "Use Windows path components without trailing dots/spaces: $Path" }
+    }
+    if ($spelling -match '(^|\\)[^\\]*~[0-9]') { throw "Use long path names instead of ambiguous Windows short aliases: $Path" }
     $p = [IO.Path]::GetFullPath($Path)
     while ($p) {
         if (Test-Path -LiteralPath $p) {
@@ -25,6 +37,46 @@ function Assert-NoReparse([string]$Path) {
         $parent = Split-Path -Parent $p
         if ($parent -eq $p) { break }; $p = $parent
     }
+}
+function Get-LocalInstallPathIdentity([string]$Path) {
+    # Standalone installation fails closed where drive identity cannot be proven.
+    # QueryDosDevice is read-only; filesystem/reparse checks remain separate.
+    if ($env:OS -ne 'Windows_NT') { throw 'The standalone installer requires Windows local fixed-drive paths.' }
+    $full = [IO.Path]::GetFullPath($Path)
+    $root = [IO.Path]::GetPathRoot($full)
+    if ($root -notmatch '^[A-Za-z]:\\$' -or $full.Substring($root.Length).Contains(':')) { throw 'The standalone installer requires local fixed-drive paths; UNC, network and device paths are unsupported.' }
+    if (-not ('CodexSkillPackage.NativeDrive' -as [type])) {
+        Add-Type -TypeDefinition @'
+using System;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
+using System.Text;
+namespace CodexSkillPackage {
+    public static class NativeDrive {
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
+        public static extern uint GetDriveTypeW(string root);
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
+        private static extern uint QueryDosDeviceW(string drive, StringBuilder target, uint length);
+        public static string CurrentTarget(string drive) {
+            StringBuilder target = new StringBuilder(32768);
+            if (QueryDosDeviceW(drive, target, (uint)target.Capacity) == 0) {
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+            }
+            return target.ToString().Split('\0')[0];
+        }
+    }
+}
+'@
+    }
+    $target = [CodexSkillPackage.NativeDrive]::CurrentTarget($root.Substring(0,2))
+    if ([CodexSkillPackage.NativeDrive]::GetDriveTypeW($root) -ne 3 -or $target -notmatch '^\\Device\\HarddiskVolume[0-9]+$') { throw 'Unsupported standalone install drive mapping: use a local fixed drive without SUBST or network aliases.' }
+    Assert-NoReparse $Path
+    # Different drive letters for one native volume receive the same identity.
+    return ($target + '\' + $full.Substring($root.Length)).TrimEnd('\','/')
+}
+function Assert-InstallPathsDisjoint([string]$Target, [string]$PackageIdentity) {
+    $identity = Get-LocalInstallPathIdentity $Target
+    if ($identity -eq $PackageIdentity -or $identity.StartsWith($PackageIdentity+'\',[StringComparison]::OrdinalIgnoreCase) -or $PackageIdentity.StartsWith($identity+'\',[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe destination: installation, backup and staging paths must be disjoint from the package.' }
 }
 function Assert-TreeNoReparse([string]$Root) {
     Assert-NoReparse $Root
@@ -38,8 +90,8 @@ function Get-TreeFiles([string]$Root, [switch]$IncludeGenerated) {
     if (-not (Test-Path -LiteralPath $Root -PathType Container)) { return }
     Assert-NoReparse $Root
     foreach ($item in Get-ChildItem -LiteralPath $Root -Force) {
-        if ($item.Name -eq '.git') { continue }
         if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw "Reparse point is not allowed: $($item.FullName)" }
+        if ($item.Name -eq '.git') { continue }
         if ($item.PSIsContainer) {
             if (-not $IncludeGenerated -and $item.Name -in @('__pycache__','.pytest_cache','node_modules','.venv','logs','temp','tmp')) { continue }
             Get-TreeFiles $item.FullName -IncludeGenerated:$IncludeGenerated
