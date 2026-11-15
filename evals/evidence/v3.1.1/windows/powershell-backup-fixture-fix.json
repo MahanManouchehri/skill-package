@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-11-15T21:24:00.777650+00:00",
+  "upstream_failure": {
+    "run_url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43762283383",
+    "assertion": "Idempotent install churned backups",
+    "cause": "Fixture required backup parent absence although fresh installation retained an audit report there."
+  },
+  "changes": [
+    "Compare complete before/after backup directory/file listing and all-file SHA256 during unchanged install.",
+    "Identify exactly one new replacement report using pre/post path set difference before verifying old skill backup bytes.",
+    "Use fixtureProfile variable; report fresh, replacement and unchanged installation outcomes accurately without changing report schema or filesystem behavior."
+  ],
+  "sha256": {
+    "scripts/install.ps1": "8d93582b22871e347b1a264cb174ac6b75858d7a79832988db60ee94ee516352",
+    "tests/windows_powershell_checks.ps1": "4ebe8bfcda9ef68c6b1e8adf8d8377a3a7719358e1aa5816f29101fdc37d9314"
+  },
+  "diff_check": {
+    "returncode": 0,
+    "output": ""
+  },
+  "post_change_windows_parser_runtime": "UNVERIFIED locally; run existing hosted Windows PS5.1 and PS7 fixtures.",
+  "commit_push_profile_mutations": "none"
+}

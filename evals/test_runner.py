@@ -255,7 +255,7 @@ class IsolationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw).resolve()
             script = root / "descendant_server.py"
-            script.write_text('import sys,json,subprocess\nfor line in sys.stdin:\n e=json.loads(line)\n if "id" in e:\n  if e["id"]==2: subprocess.Popen([sys.executable,"-c","import time; time.sleep(4)"],stdin=subprocess.DEVNULL,stderr=subprocess.DEVNULL)\n  print(json.dumps({"id":e["id"],"result":{"data":[]}}),flush=True)\n', encoding="utf-8")
+            script.write_text('import sys,json,subprocess,tempfile\nfor line in sys.stdin:\n e=json.loads(line)\n if "id" in e:\n  if e["id"]==2: subprocess.Popen([sys.executable,"-c","import time; time.sleep(4)"],stdin=subprocess.DEVNULL,stderr=subprocess.DEVNULL,cwd=tempfile.gettempdir())\n  print(json.dumps({"id":e["id"],"result":{"data":[]}}),flush=True)\n', encoding="utf-8")
             real_popen = runner.subprocess.Popen
             started = time.monotonic()
             with patch.object(runner.subprocess, "Popen", side_effect=lambda command, **kw: real_popen([sys.executable, "-u", str(script)], **kw)):

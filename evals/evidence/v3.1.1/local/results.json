@@ -37,9 +37,9 @@
     "cwd": "/Users/mahan/Desktop/Web/skill-package",
     "exit_code": 0,
     "executed": 27,
-    "summary": "ces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok\ntest_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.246s\n\nOK\n",
-    "note": "Final source-isolation path guard and post-runtime fixture-mutation checks added after independent raw review; live rerun unavailable after quota.",
-    "observed_utc": "2026-11-15T20:54:27.577646+00:00"
+    "summary": "ces_shell_wrapper_and_sequential_reads (test_runner.TraceTests.test_paths_with_spaces_shell_wrapper_and_sequential_reads) ... ok\ntest_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.240s\n\nOK\n",
+    "note": "Final27 macOS tests after preserving legacy catalog path spelling and correcting descendant fixture cwd, plus source-isolation/post-turn hash guards. Original14 assertions intact.",
+    "observed_utc": "2026-11-15T21:22:52.043926+00:00"
   },
   {
     "name": "ui",

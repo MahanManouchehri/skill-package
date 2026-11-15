@@ -243,7 +243,9 @@ def disabled_overlays(catalog, fixture, names):
         for skill in row.get("skills", []):
             path = Path(skill["path"]).absolute()
             if skill.get("name") in names and skill.get("scope") == "user" and not path.is_relative_to(fixture):
-                result.append({"path": str(path), "enabled": False})
+                # Preserve the catalog's spelling for native config identity;
+                # use normalization only for the containment comparison.
+                result.append({"path": skill["path"], "enabled": False})
     return sorted(result, key=lambda row: row["path"])
 
 

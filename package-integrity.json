@@ -5,7 +5,7 @@
     ".git/",
     "package-integrity.json"
   ],
-  "package_tree_hash_sha256": "bdacefc89ad016116f5f53952e216f36f1964cc0297cf4b60d338b3fb93008df",
+  "package_tree_hash_sha256": "8600e3de96d4eef8aad0c61937ea13c914edd446811bc8532ab04d2f4ba582a2",
   "files": [
     {
       "path": ".gitattributes",
@@ -379,12 +379,17 @@
     },
     {
       "path": "evals/evidence/v3.1.1/local/results.json",
-      "sha256": "63e96e89f00dde1eda6e458186946442289a8f769ce9ff1975d3ae5baacefdb9",
-      "bytes": 3338
+      "sha256": "711cb231987fb5e56d01ad02ec5304f180552329462bb296697fd2d9e0e0fb2a",
+      "bytes": 3371
+    },
+    {
+      "path": "evals/evidence/v3.1.1/local/runner-before-windows-fixture-correction.txt",
+      "sha256": "051e7a6d5856e3803a5260eda1cef87302addad83910c7857e7fd7d811f9b127",
+      "bytes": 4325
     },
     {
       "path": "evals/evidence/v3.1.1/local/runner.txt",
-      "sha256": "051e7a6d5856e3803a5260eda1cef87302addad83910c7857e7fd7d811f9b127",
+      "sha256": "123dc46a1614a22dfeac672a55841e75085f5246f21d25ea0325b71fe89d6cd8",
       "bytes": 4325
     },
     {
@@ -1278,6 +1283,21 @@
       "bytes": 515
     },
     {
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-attempt.json",
+      "sha256": "bb1859f6b03551173f20b8e045629dcc60fe32a5e7bef71c0510b432a36b9b47",
+      "bytes": 4814
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-attempt.log.json",
+      "sha256": "35c12ebc0f3c1ce51f45afbb2826ae593e581daff2c5a5d6ae58a41b008a57f3",
+      "bytes": 196576
+    },
+    {
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-diagnosis.json",
+      "sha256": "1292329d3aa170ffeddb8e5f0a91aee6f36a8b7a3d806d3aad188eed622f6b52",
+      "bytes": 933
+    },
+    {
       "path": "evals/evidence/v3.1.1/windows/ci-second-attempt.json",
       "sha256": "5fb57cf1ff0520363ed7d39ba65c9885185a72a4793a7271292aa11c87b90b60",
       "bytes": 3269
@@ -1328,14 +1348,19 @@
       "bytes": 8571
     },
     {
+      "path": "evals/evidence/v3.1.1/windows/powershell-backup-fixture-fix.json",
+      "sha256": "3ba38cd02e1de0980f126484e7f4045f518710c6740b1cf4939c002e756a9f8b",
+      "bytes": 1214
+    },
+    {
       "path": "evals/run.py",
-      "sha256": "a6efee5c75c1b28cc7fc5fc90c566703f5667cb5f595f43ab8faae0215ee5194",
-      "bytes": 33665
+      "sha256": "8ad56eca24ace04d67b3c35f925cea21d3291a8d33e9f0d073050055985ebd1e",
+      "bytes": 33820
     },
     {
       "path": "evals/test_runner.py",
-      "sha256": "bf193797944750802be10a3da066d756faf1863965893349ef08da12aad4a6d4",
-      "bytes": 17716
+      "sha256": "ae490980881dddf8bfe89366466de86417ceaa2894729f4dcfdc22000261266e",
+      "bytes": 17751
     },
     {
       "path": "managed/plugin-skills/openai-bundled/computer-use/26.928.21956/.codex-plugin/plugin.json",
@@ -3489,8 +3514,8 @@
     },
     {
       "path": "scripts/install.ps1",
-      "sha256": "643056e6df7bd1a91fbcf50f12df8117b5e20a34febac3bef303f3e9d50bbc5c",
-      "bytes": 8466
+      "sha256": "8d93582b22871e347b1a264cb174ac6b75858d7a79832988db60ee94ee516352",
+      "bytes": 8765
     },
     {
       "path": "scripts/inventory.ps1",
@@ -3534,7 +3559,7 @@
     },
     {
       "path": "skills-manifest.json",
-      "sha256": "1d45aec65bd942c211177aa2f46838c55d6c18741833c3a793aa548d0617edcf",
+      "sha256": "044a3bea8fd8f7060aa6346d594f2efe7ad5225e40ff3efeac5e4d670263d73b",
       "bytes": 469060
     },
     {
@@ -4289,13 +4314,13 @@
     },
     {
       "path": "tests/windows_powershell_checks.ps1",
-      "sha256": "a1a6b8f6d7fc25b665a8d52a74926f7ab522d32117cfd6352ceb83f08228acad",
-      "bytes": 11954
+      "sha256": "4ebe8bfcda9ef68c6b1e8adf8d8377a3a7719358e1aa5816f29101fdc37d9314",
+      "bytes": 13647
     },
     {
       "path": "validation-results.json",
-      "sha256": "8b3fb24b5d5e9ebd9364b175f4a9f1de1e06d7dd1ced626a58f404f193f77e8b",
-      "bytes": 6259
+      "sha256": "823952073dcb6e9131dd39fca1f6f48a67a60012fac517698861409d3e3f0f82",
+      "bytes": 6292
     }
   ]
 }

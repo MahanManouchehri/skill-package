@@ -1,0 +1,147 @@
+{
+  "conclusion": "failure",
+  "headSha": "0254ab0776dc73294586d07573477f0a8ba83f39",
+  "jobs": [
+    {
+      "completedAt": "2026-11-15T21:16:32Z",
+      "conclusion": "failure",
+      "databaseId": 132959515247,
+      "name": "windows",
+      "startedAt": "2026-11-15T21:11:24Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-15T21:11:25Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-15T21:11:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:11:27Z",
+          "conclusion": "success",
+          "name": "Confine test state to runner temporary directories",
+          "number": 2,
+          "startedAt": "2026-11-15T21:11:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:11:36Z",
+          "conclusion": "success",
+          "name": "Checkout immutable source bytes",
+          "number": 3,
+          "startedAt": "2026-11-15T21:11:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:11:36Z",
+          "conclusion": "success",
+          "name": "Set up Python",
+          "number": 4,
+          "startedAt": "2026-11-15T21:11:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:11:42Z",
+          "conclusion": "success",
+          "name": "Install Python validation dependency",
+          "number": 5,
+          "startedAt": "2026-11-15T21:11:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:11:48Z",
+          "conclusion": "success",
+          "name": "Verify package and immutable snapshots",
+          "number": 6,
+          "startedAt": "2026-11-15T21:11:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:12:37Z",
+          "conclusion": "success",
+          "name": "Package transactions and cross-platform regression tests",
+          "number": 7,
+          "startedAt": "2026-11-15T21:11:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:12:38Z",
+          "conclusion": "failure",
+          "name": "Evaluation runner regression tests",
+          "number": 8,
+          "startedAt": "2026-11-15T21:12:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:12:49Z",
+          "conclusion": "success",
+          "name": "Full UI authoring and runtime discovery",
+          "number": 9,
+          "startedAt": "2026-11-15T21:12:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:13:23Z",
+          "conclusion": "success",
+          "name": "Portable UI authoring launchers",
+          "number": 10,
+          "startedAt": "2026-11-15T21:12:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:13:36Z",
+          "conclusion": "success",
+          "name": "Actual Windows junctions, locked files, and long paths",
+          "number": 11,
+          "startedAt": "2026-11-15T21:13:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:15:07Z",
+          "conclusion": "failure",
+          "name": "Windows PowerShell 5.1 parser and temporary profile transactions",
+          "number": 12,
+          "startedAt": "2026-11-15T21:13:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:16:28Z",
+          "conclusion": "failure",
+          "name": "PowerShell 7 parser and temporary profile transactions",
+          "number": 13,
+          "startedAt": "2026-11-15T21:15:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:16:28Z",
+          "conclusion": "skipped",
+          "name": "Post Set up Python",
+          "number": 25,
+          "startedAt": "2026-11-15T21:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:16:31Z",
+          "conclusion": "success",
+          "name": "Post Checkout immutable source bytes",
+          "number": 26,
+          "startedAt": "2026-11-15T21:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-15T21:16:31Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 27,
+          "startedAt": "2026-11-15T21:16:31Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43762283383/job/132959515247"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43762283383"
+}

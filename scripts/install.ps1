@@ -95,7 +95,13 @@ try{
     & (Join-Path $PSScriptRoot 'verify.ps1') -DestinationRoot $DestinationRoot -PluginCacheRoot $PluginCacheRoot -RuntimeCatalogPath $RuntimeCatalogPath
     $report=[pscustomobject]@{installed_utc=[DateTime]::UtcNow.ToString('o');destination=$DestinationRoot;backup_root=$backupRoot;changes=@($changes.ToArray());managed_snapshots_installed=0}
     if($changes.Count){[void](New-Item -ItemType Directory -Path $backupRoot -Force);$report|ConvertTo-Json -Depth 12|Set-Content -LiteralPath (Join-Path $backupRoot 'install-report.json') -Encoding UTF8}
-    Write-Host "PASS: installation complete. Replacements backed up at: $backupRoot"
+    if(@($changes.ToArray() | Where-Object { $_.backup }).Count){
+        Write-Host "PASS: installation complete. Replacements backed up at: $backupRoot"
+    }elseif($changes.Count){
+        Write-Host "PASS: installation complete. Audit report retained at: $backupRoot"
+    }else{
+        Write-Host 'PASS: installation complete. No skill changes; no new backups or reports.'
+    }
 }catch{
     $failure=$_
     for($i=$changes.Count-1;$i -ge 0;$i--){

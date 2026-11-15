@@ -1,0 +1,20 @@
+{
+  "result": "FAIL_RUNNER_AND_PS_FIXTURE_ASSUMPTIONS",
+  "run_id": 43762283383,
+  "passed": [
+    "package integrity",
+    "57 package tests",
+    "153 full UI tests",
+    "5 launcher tests",
+    "4 actualWindows filesystem tests"
+  ],
+  "failed": {
+    "runner": "27 tests, one original cross-platform path spelling mismatch plus descendant fixture cwd sharing violation",
+    "PowerShell5.1_and7": "Parsed and installed/verified26, then incorrectly asserted no backup-parent despite first-install audit report."
+  },
+  "correction": {
+    "runner": "Legacy overlay helper retains catalog path spelling; retained-stdout child uses shared OS temp cwd so it does not lock the test directory. Original14 test assertions unchanged.",
+    "PowerShell": "Compare complete pre/post backup contents and path inventory, select the actual new replacement report; all assertions remain strict."
+  },
+  "overall_windows_ci": "FAIL_NOT_PASS"
+}

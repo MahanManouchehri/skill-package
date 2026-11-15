@@ -27,6 +27,6 @@ test_paths_with_spaces_shell_wrapper_and_sequential_reads (test_runner.TraceTest
 test_real_read_of_forbidden_skill_is_flagged (test_runner.TraceTests.test_real_read_of_forbidden_skill_is_flagged) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 0.246s
+Ran 27 tests in 0.240s
 
 OK
