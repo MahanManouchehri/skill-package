@@ -2,6 +2,10 @@
 
 For exact-SHA download/staging and active-root inspection, follow [INSTALL_FOR_CODEX.md](INSTALL_FOR_CODEX.md). The install set is exactly26 personal skills. Managed/system/plugin snapshots never enter personal roots; do not replace the whole .codex or .agents directory.
 
+## Released snapshot and unchanged installations
+
+Use immutable `v3.1.1` / `80ca761864da9134141df432224015390afe8ea6` when reproducing the release. The tag remains fixed while main can receive documentation-only updates. [Published receipt](evals/evidence/v3.1.1/publication/receipt.json) records the exact source and observed installation state. Matching v3.1.0 payloads require no reinstall or rollback for this patch; first verify the actual 26 active trees and avoid unnecessary backup churn.
+
 ## Python promotion and recovery
 
 Use Python3 with scripts/requirements.txt installed in an external environment. Verify package/staging, inspect plan and use --replace only for authorized recognized upgrades. A clean install refuses unknown or differing collisions by default. Every replaced directory and explicitly removed same-name duplicate is backed up and hash-verified before the first destination rename. Unchanged/unrelated directories remain outside ownership.
@@ -24,16 +28,16 @@ After installation or rollback, verify complete hashes and inspect a fresh Codex
 
 ## Windows PowerShell fallback
 
-The original PowerShell5.1 scripts remain unchanged and retain their existing contract. They are a Windows fallback; current macOS execution does not establish a new Windows pass. Use a trusted exact-ref checkout or authorized archive with independent checksum when available.
+The PowerShell fallback was hardened in v3.1.1 and executed on Windows Server 2025 with Windows PowerShell 5.1.26100.33648 and PowerShell 7.6.9. Both parsers and complete temporary-profile fixtures passed in the [final tag run](https://github.com/MahanManouchehri/skill-package/actions/runs/43765443386). Use a trusted exact-ref checkout and respect host execution policy. These commands describe authorized recovery/install operations; reading this guide does not request an operation.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1 -PackageOnly
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Install
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
+powershell.exe -NoLogo -NoProfile -NonInteractive -File .\scripts\verify.ps1 -PackageOnly
+powershell.exe -NoLogo -NoProfile -NonInteractive -File .\scripts\install.ps1 -DryRun
+powershell.exe -NoLogo -NoProfile -NonInteractive -File .\scripts\install.ps1 -Install
+powershell.exe -NoLogo -NoProfile -NonInteractive -File .\scripts\verify.ps1
 ```
 
-Destination is CODEX_HOME/skills or USERPROFILE/.codex/skills, never manifest provenance paths. -DestinationRoot supports an isolated test root. The manifest supplies26 personal entries; managed snapshots are never installed. Existing recognized differences receive timestamped verified backups; unrelated/system/AGENTS/account content is preserved. Review install-report.json before manual recovery of only named directories. The Python overlay mapper is recommended for multiple active roots; PowerShell's single-root interface does not automatically consolidate overlays.
+The standalone PowerShell installer accepts supported local fixed-drive paths only and compares native volume identity before writes; SUBST/network/UNC/device paths are refused. Destination is CODEX_HOME/skills or USERPROFILE/.codex/skills, never manifest provenance paths. -DestinationRoot supports an isolated test root. The manifest supplies26 personal entries; managed snapshots are never installed. Existing recognized differences receive timestamped verified backups; unrelated/system/AGENTS/account content is preserved. Fresh installation retains an audit report even when no original skill needed a backup. An unchanged install creates no new backup/report. For replacements, identify the relevant new install-report.json and verify its named backup hashes before manual recovery; an old report or a first-install report is not interchangeable with it. The Python overlay mapper is recommended for multiple active roots; PowerShell's single-root interface does not automatically consolidate overlays.
 
 ## Managed capabilities — separate restoration
 
@@ -41,4 +45,4 @@ The sixteen managed entries are historical audit snapshots. Enable the correspon
 
 The PowerShell -RequireManaged option needs fresh caller-attested live catalog/capability evidence, not a fabricated success file. Provider versions may differ from historical snapshots. No package installer activates plugins, modifies provider caches or transfers account entitlements. Missing managed capabilities do not change the personal26 installation count, and must not be mislabeled a complete environment restore.
 
-Recovery uses a nonblocking kernel lock (fcntl on POSIX, msvcrt on Windows) in addition to the installer marker; two recoveries cannot write the journal concurrently. Live trees are displaced atomically into owned scratch before restoration. A process crash releases kernel ownership and the next validated recovery can resume. Windows execution remains unverified on the current macOS build host.
+Recovery uses a nonblocking kernel lock (fcntl on POSIX, msvcrt on Windows) in addition to the installer marker; two recoveries cannot write the journal concurrently. Live trees are displaced atomically into owned scratch before restoration. A process crash releases kernel ownership and the next validated recovery can resume. The Windows msvcrt branch and crash/concurrent-recovery fixtures passed in hosted Windows CI; this does not verify arbitrary ACLs, real SMB, every filesystem or abrupt power-loss recovery. See [Windows restrictions](WINDOWS_COMPATIBILITY.md).

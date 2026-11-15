@@ -1,0 +1,1653 @@
+{
+  "source_sha": "80ca761864da9134141df432224015390afe8ea6",
+  "baseline_sha": "11d61b3e05afaf2749d7314d1a72d0c1d9ed3523",
+  "changed_file_count": 235,
+  "files": [
+    {
+      "change": "A",
+      "path": ".github/workflows/windows-validation.yml",
+      "reason": "Pinned read-only Windows CI; runner-temp state, verified package prerequisite and non-masking independent test groups.",
+      "bytes": 3010,
+      "sha256": "bcc2a525bda3e47d84380c92f12287b2cde0d9e3d0a85267c2e010bfe4f1122d"
+    },
+    {
+      "change": "M",
+      "path": "CHANGELOG.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 2687,
+      "sha256": "6e9656404682796590a337c5b6d13ed7d6af955392d1b7c05cb65630d625a669"
+    },
+    {
+      "change": "A",
+      "path": "LICENSES/ui-ux-pro-max-MIT.txt",
+      "reason": "Retained upstream MIT license.",
+      "bytes": 1075,
+      "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014"
+    },
+    {
+      "change": "M",
+      "path": "PORTABILITY.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 14205,
+      "sha256": "df99a60701a0e6962d2b8a570ef4828c9621e4a04a02a7fa6210a677427feb45"
+    },
+    {
+      "change": "M",
+      "path": "README.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 13380,
+      "sha256": "923de76f10d6092b8be16265f16d6c22f31b10a6908100958af0d52a1ee1ccaf"
+    },
+    {
+      "change": "A",
+      "path": "UI_AUTHORING_PROVENANCE.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 7295,
+      "sha256": "4e0416af86fe10de2bd3567a43eed9d300dd3cc32186b5a2369151220ef5dd3d"
+    },
+    {
+      "change": "M",
+      "path": "VALIDATION.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 6611,
+      "sha256": "7ed97dc74bce8f9c2ea7b67d4947f378dfc1588c298fc9762a22067815fa7363"
+    },
+    {
+      "change": "M",
+      "path": "VERSION",
+      "reason": "Compatible patch version3.1.1.",
+      "bytes": 6,
+      "sha256": "6dc3b2dc3139b7d421b6fc26a7f853389a9b035ea4f2e9047b9516050dd6ac73"
+    },
+    {
+      "change": "A",
+      "path": "WINDOWS_COMPATIBILITY.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 11697,
+      "sha256": "8f7b212a691572cd16f949d0c3827623eb62b957af6683ca5ba00c1349f321f4"
+    },
+    {
+      "change": "M",
+      "path": "evals/README.md",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 8795,
+      "sha256": "d243ede50b3bf74bc6ac1be2473557b00936eb43721f2120bf8db971606039ae"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/README.md",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 1329,
+      "sha256": "a9e37658cd355e28594b340ad58cded0839141486e5a62efb2f579db50398e77"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/baseline-validation-v3.1.0.json",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 5236,
+      "sha256": "7e01ff2b45fefc527a817e0e8c4f498e1010a74e14df2e65443ac9d85793441f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/installed-check.json",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 6262,
+      "sha256": "4a9dd764d76e8bfe51d4349a180401d2c8f0c81a2495801e387823da8afd570f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/installed-discovery.json",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 4316,
+      "sha256": "9a1ccf4ac5a5882b22b5799d9cb10c52c1b3dd2d4222dd48fc12c60505947302"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/package-before-git-cleanup-correction.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 98,
+      "sha256": "9b31a166dd212c54bf511d7e94a5f18593cd7fb52b9340f747633fdd968acf44"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/package-before-windows-link-correction.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 8571,
+      "sha256": "8995e17bfa6dc198316fab00aba62f3492b51e0d3286dee18a72cff92a6465cd"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/package.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 98,
+      "sha256": "d5bfbdc90b49845a2408fe4be7ab8ae6a4e2a8773f954c59c86f36999158a950"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/results.json",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 3370,
+      "sha256": "4abdf1051ac1006bbbc214e6f38f7cba8ef422d272d78e795dc500b295250be0"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/runner-before-windows-fixture-correction.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 4325,
+      "sha256": "051e7a6d5856e3803a5260eda1cef87302addad83910c7857e7fd7d811f9b127"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/runner.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 4325,
+      "sha256": "0c6c7717a26bafe350907201c10b381c100e6da4442ab25cbb811a2b9e1250ca"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/skill-validation.json",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 3069,
+      "sha256": "69d02f5bbfdcc86278f15978d79b6c29d7db7e5d27aedafba407e6b971e1f12f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/ui-launcher.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 1034,
+      "sha256": "a2b16c911f1f787f4a0e3eec47a731970118e66e019122a444330badbac9b4d7"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/local/ui.txt",
+      "reason": "Actual local test/validator execution record; intermediate logs retained separately.",
+      "bytes": 23482,
+      "sha256": "93dec824a4f674e488a446a603abbe158a5c26a30d14a188d4ff371d48b3e3c9"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/EVIDENCE_INDEX.md",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1525,
+      "sha256": "bfa3a4d33fa02a3b0d45cee6447e81e9db6b0295c25474adcc0a063e9d212367"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/auth-status.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 362,
+      "sha256": "a2c07bb1820f67a983755c3366820736b94239ce9169c34a42d7c5a6bd976cf1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/batch-catalog-first30.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 47437,
+      "sha256": "7397469eed9f50420e259994bce1a05137449d244930bd9cb5b3ac4f81c0e9a0"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/batch-catalog-remaining30.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 15681,
+      "sha256": "7c99b5bd65353b02344b364883978aa646456d8788a88bc9bfec974af8f1422c"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/batch-first30.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 9389,
+      "sha256": "f44f21b1526587c53a2373bd5731f5c7258d7cb789e995b0cca7990f7340a41c"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8566,
+      "sha256": "227b933cb58cce15ac6152d94ace8a82673abba4e33eec097b57cd2555227af4"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "140ac773c05d3f030cf49c022613d73ede033b19d4738a2d16d354516dcd989d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4455,
+      "sha256": "bd3fdff530cf814abb24ef6f1853cb6b88b16ad7e7d15cf6bb8926d4a0079e92"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 134,
+      "sha256": "645912d03ee8aac05c0e58b424be0481d40dc9af6307efb3b846d0b92c34f2b7"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433506196Z/S01/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 64533,
+      "sha256": "3f6b5a21dfd6320416abbf182b811ad7980e11c06a2e94ddd4b394877b9d07e0"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "fcce5828f9474fc3f25f65ff39f43fb1438e66be5ed1cb14bc51cbdb0d069105"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8619,
+      "sha256": "94048d7e33404f926dedaf101f06143b8d9de273d118bef1a6ee2bd25d942f36"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "5ada16231acc73fb91700649aa010585cdd1e9425a99809763ace122209a95b5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4623,
+      "sha256": "3e5dd7704cd6382ab9141d611f87ca69e3d7b77e62272b053b5bdd28820c8917"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "dc7aaa144b7b8ec769b1536a95091db9fe2dd5f7fb9ffb57953646882a8fc2cf"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155433511015Z/S05/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 95442,
+      "sha256": "0a2cd02911c4ed8dca555039a793bd119d6ac0786e71f1749e451f1f0806856f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "b1c1a20f4d09b5966937dce5ca4607dd87d1d079668b8b4245a1ef232145e7fa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8631,
+      "sha256": "98c63744e5fd6fe34051f5293391ace7952dc244051abab38b6468bdbc0ce528"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "7d3b1c27b7613daa7e6956770080dbb9dcadacdfc6f17d6a51283cd5f5160740"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5743,
+      "sha256": "a9f96076b2360cc3b097b4063249bebdc16c028faab658c2159d990bd8ad9df3"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "73962e86e5f11177c7f3e4ad8abfccf8db2dadedde6099776efd80c9bd1af8e8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155519634233Z/S06/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 156177,
+      "sha256": "84fa94d213dbc3274aead387d0e0327b7c67c8a9cdbd5c6aabb8967835b5a82e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "03f91d9e6855222134beed5ffc898f74dcf3c1c9ad8d4bdffa943702094bc5aa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8590,
+      "sha256": "7884c9a0558d1f3e70ff083604b84604e2a18ae6ed9f1d1998bc4814dc3a2bc5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "dadf09026234dffa783dac305440fbd1cd866168bf38031f0ec9179b4ad164a1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5531,
+      "sha256": "21fe263c2255fa785afee427af26c5d556becf6041d347f39658eb57f061c9b1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "c27d03d36a070b5c35ab29275aa1e5afb1db2e13b22350ca058cdb2d1dcf3b5a"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155541868312Z/S07/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 104011,
+      "sha256": "776e6027598e31b3ab61e5faca0d6cc718035214e09057c80f3fce05eed4f6f1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "d411ea55162c7edae98c116d8f55177f0e0bbfb5de269f62a4691fd7920724b9"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8590,
+      "sha256": "febb647e5ab5d9541cfbad2357ddc794fb8834ad0bb04499ee1bc6f36a950120"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "eaed642b5b60559810adb83ae470c57953dda275aadbca8752cac24f54daa9c5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4986,
+      "sha256": "6d722f9d35ca8e845da58401d2a7314e4454a06ddadf635a9f06de5d40508310"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "3f5286c7bd2dc9050620b06c7a51167510dc8698429ab02fbca159c281572f40"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155640280299Z/S09/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 90827,
+      "sha256": "eea9a6f80ed013bf29515844528963f424b1ba1f9284077fe31515188007819b"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "75fadf9db73f763bbc743773e92cad509c95baef90f462a14f773a65741361cd"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8593,
+      "sha256": "9dd25592fda4f555e35f19a5493cc953ff7cf7a6e75c4da466bf3295996f8db2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "3c804868b031ee9392f7f6fe020d2f8a5aa1c955b97932f5ee7c90990ebc9832"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5171,
+      "sha256": "9523409896215bc342fafedb047a97ce7acfe7579c2d3f7c83d176417a578cdc"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "24501ac18738d7c9ba8c276c9e0623080eef2013ae96b4c8576b6dbfc7eb73f0"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155649953483Z/S12/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 105063,
+      "sha256": "54beb2c4cfc3564573b3c26b9c586bc88c4ec0e7f479a9f1db87c333eed639e2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "46ee77496e8a71c0544e18f34dd158e8e73699e6b2518a0bbe0630d01fc6b733"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8583,
+      "sha256": "46750d792d02b98e8d2ff5eb682ce5fd311c376efbe0cc3a4c10192183e4848d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "f97475f346ca3c75fd2e8925ad2c8c535d72c5dd5106b44d9ffed377e7c8c6c1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4663,
+      "sha256": "8be558071d295f58acc1b5ffa8c6ca0d7fad77d4edc8a16d06f3d976c1d392a6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 681,
+      "sha256": "e9b1aed1aac8191f4a6fe6dc74f44442adcee4228b888cbd00d338f2cfac85ce"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747540737Z/S02/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 54845,
+      "sha256": "5399fd2d2bbb6a6298b292e872ac297dc77006f25ff18a20b7a823b08fca7a1d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "9f98cddace8830427214b4d246265e550af8509bdf75c70001e12dd42d414d8e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8590,
+      "sha256": "07aaae010817f1d5eb117959f663911b15bacb86517c865283e0ef2a425c8ab4"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "0861db33178d760e2b22fc360275f284a82dc36797bcd3aecb1894673fffcbaa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5320,
+      "sha256": "c278670f25f5f1b2de08992f7e900543307168bba996ff5fa9d1e2f834010e62"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "f7893fd9dfc2a545662908388b48ec8d456977f07f2762ad9f13856e2bdbd6c8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155747542674Z/S03/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 77251,
+      "sha256": "4c766117a11f2025726f6e0835d57a0786de228b04a92f99010506ade370de6b"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "b94548cbe3483d35e56fcf0df4cb21473b58e9296155ef8ca4fc5caa2a684df8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8579,
+      "sha256": "4ef32fce26f2c8b98418d0550b484f2bc397559d81c7d8b09bf968a78ec049f7"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "9a513c36fc71ac19b697aa478710b767dba24e13d965153b86d53b165ae9d169"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4790,
+      "sha256": "07fba48f77020e344f9a7d3b3bd7dbdacf774c32b194f66ec2dbda2a7be6dbf2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "4084ca67551134946ea5cb2746ffc9004565affc2af1fedb2f11e649bd639cb6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155753689266Z/S16/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 68050,
+      "sha256": "efd6a2056b817f9e4237d86f98267afe9531652ba4f93a26fba5e3abbece7311"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "6c79800679da99f0522a21b25736b8d74811031c7ea77a176729d576c5b89f9f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8565,
+      "sha256": "e61d565ab330e34285d7cf6fea4fa9439299e9871cecc7b3809dec658e98acfd"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "36de14d86ae804002bd0098a6733fa4a5ab07ba8e87e8f24a334351a9d2de471"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4680,
+      "sha256": "0cd5ed9750050239423b08a99a34c4934449bd5074aa12e4bde9b8cfad8b9e30"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "dedff9d58583ac61af1e9a4d76b194e5babd09e910109cff18603f1379ee18e3"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155755108227Z/S17/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 38844,
+      "sha256": "6fdb7ad44627163f18e9ecf05dd3c055c6d057d36830285d64e008f6f559c087"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "6294a2daf7cdb7f08a70c13ac5257fd48dd7cb33a0d74c0d0443b440b426f4e5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8596,
+      "sha256": "d1748bd980dbadeced7e70ef0adf313f09958336dc9df644f3d5fdb04591a7b2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "98afb59783402a8531b2c2434877d062e4a1283d6ff7d1c190fb73e68cc1cc8b"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3869,
+      "sha256": "0d71344fb79facd2ef706bf6e302bd262142698e6fc1a66d994882775d2c29b5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 416,
+      "sha256": "e7f1bbbcf47547eb04e35e6aafdcc92f7255eb9853d845b4a022302cae188f66"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155831763032Z/S04/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 52928,
+      "sha256": "835fa6636f799cdfc1f663f700025349421776252da15e33f106aff9d03f9c2e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "8806e3efb39ccd0ac82b5e8dc71e9ba14ede41e6d81845b0294f39cae0d2c90d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8559,
+      "sha256": "9c7a26f357eb05883474752968f7cdec3485ad3e2991dbb6828ca4a32086359e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "b7e7c7acb301e72be04fc760f62d6ffab17ff865cc746a4fc01ad21daac1141a"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3059,
+      "sha256": "a8a1e23e66bf022a2a703742b8325503a6da4d23519f3313c94489a11499edb7"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 419,
+      "sha256": "496713af577a12e6483d6f6878c82204a0e5a9d08bf77cb31ddb09e29f8bc546"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/cases/20261115T155847049966Z/S21/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 521,
+      "sha256": "223b044aee87f81faf9ae371d36ba221f1d13cc61146dec6a6b9b025b4e03a31"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-app-server-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3924,
+      "sha256": "d8bab74f89d85117a2d63f210ddf238f21a022daf80856154156f8bc60bc98e6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-exec-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4577,
+      "sha256": "23879da13d0ee8ecbb1c8445e284f3dc257922b4a971a98cdbc2b5bd746c0352"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-models-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1086,
+      "sha256": "dae49785ea4b7debdabceb68426aca44dc1c8a43c6400cf42f558c361355bed8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-smoke-invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 994,
+      "sha256": "249cd092d79f4397ed5adcf3ea5abca8bb6ba34bcb41d3953b1fcd9aab1096a8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-smoke.stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 266,
+      "sha256": "33b3f02947050e58684aa8a496251c8e5a3709e4389af1f615433eddcfb395d7"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-smoke.stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 358,
+      "sha256": "36e6580052e0c58ffb8315b4b9ba48bed6b7cfd66121546bb20c257aa075e9fa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/app-version.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 28,
+      "sha256": "421f9a5c8e763b9a7e08c27e868e8b05a6d2d5b4b151df3784cc1156a8e51d47"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/auth-status.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 362,
+      "sha256": "a2c07bb1820f67a983755c3366820736b94239ce9169c34a42d7c5a6bd976cf1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/brew-version.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 18,
+      "sha256": "42a8599802ad6039277e232cba7eadecc3cec1c19d8600bf5dddff85ff30fca9"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/catalog-pinned-codex.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 266,
+      "sha256": "5f4fb0ef0c87cb805b86e22bf61cb37b2d3b5ee06c426bd19b0102d16a3655a2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/protect-user-state.sb.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 432,
+      "sha256": "874da603c09f52178b738feff269203022bdb08df1b0907e83e497b0988e2b94"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/protected-after-tool-smoke.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 772,
+      "sha256": "391400aa8f54188086187bcc47248986f39a366fe9b7425a9f1169fed1a57b76"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/protected-before-v2.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 772,
+      "sha256": "cc637f9df0d02a3bd2efb4618cf829dc4c9db48b07b4d35f3d0dadbae1ca87ed"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/protected-codex.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 263,
+      "sha256": "ddddc773f5ce9099b885ded4a835cd9e374473716306bb103f55b3aeafeaa28f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/tool-smoke-invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3657,
+      "sha256": "c7c3b5955ce93c94eb3ff58166dff2817a126ba7ef214c7dcc4975c924f475dc"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/tool-smoke.stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 134,
+      "sha256": "6e3307cf16710b5aba2ee672660179a90f8e8c5d432a712d04e6821aeda4e961"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/tool-smoke.stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3020,
+      "sha256": "0ccf8de51adebad792402f29f3e78c3b7edaa9c1e14b8148d905e00d2fb4047b"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/diagnosis/wrapper-provenance.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1030,
+      "sha256": "e823f79d2f206b74d094bd607ab26d9be207900e2bba39ebfd084101e41aaea8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8561,
+      "sha256": "899a85ab27976cca818a51a03b595bad8bf7cab1ea561511fc7cbe2dca53c9d6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "140ac773c05d3f030cf49c022613d73ede033b19d4738a2d16d354516dcd989d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3761,
+      "sha256": "139d3948e723c22b266d6d61b5eb86ec3b6a485a3153bdf14d6b4bbe7df93f63"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 782,
+      "sha256": "a9e4c02d14abbd12044f0556e49cbc54c0959eb632bbe2814e31a408b894c362"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630991320Z/S01/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 2563,
+      "sha256": "346c77019ed43bcc00eab7a10518c90443a7c54b29835ed78fffd3c8cdc43090"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "fcce5828f9474fc3f25f65ff39f43fb1438e66be5ed1cb14bc51cbdb0d069105"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8614,
+      "sha256": "6d277abd5e43eb38c0c71071be045c2a61a8c7d23d244842ed73b59b37c34293"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "5ada16231acc73fb91700649aa010585cdd1e9425a99809763ace122209a95b5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4499,
+      "sha256": "fb0fd6ad8f93371f894eaf044440a5688cc47d02df781860a8770674a22712e5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1064,
+      "sha256": "ca936d47b7805e92bf5d6e85247a63454503f8a366f1e425caa818a0e12438eb"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154630995133Z/S05/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5648,
+      "sha256": "bbaefacc989958b581fa38882d27112b2d657170c5a37fa28369f345456ef626"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "b1c1a20f4d09b5966937dce5ca4607dd87d1d079668b8b4245a1ef232145e7fa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8626,
+      "sha256": "510609cf91677cc9865d8ccf7bbdb6fa4464bda9852ff8295838991603d1b146"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "7d3b1c27b7613daa7e6956770080dbb9dcadacdfc6f17d6a51283cd5f5160740"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3969,
+      "sha256": "7f00c623bb06a552cd746f0c86ab2cb9b682b0834a2bb21b8305d7b34a742fed"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1193,
+      "sha256": "65df21849c156a7a457b2a425bfe43558d2e8828cf2143801ba790cec2011e1f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154710375024Z/S06/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 5505,
+      "sha256": "51ffc8f329f5b3e1401554a0aa245ef7d1d4fabfc6b181695e68f5d75f66fb6e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "03f91d9e6855222134beed5ffc898f74dcf3c1c9ad8d4bdffa943702094bc5aa"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8585,
+      "sha256": "6645f2d40cb91864c9fd7cf6f37e0e1da7f2aed325e952457f03b8e0b2286703"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "dadf09026234dffa783dac305440fbd1cd866168bf38031f0ec9179b4ad164a1"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/output-schema.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 804,
+      "sha256": "1b107aceaa30f28618d750c2d2cd1d4c93021f3f259a84e4beecc8d7cbb16e64"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3887,
+      "sha256": "12e742b053627d0f0491f8a71160d9099badc0f58cb867f2d32b4b2a788e2889"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 769,
+      "sha256": "3b917350f75da995c21297ab202d849ae2da6cacb1bd787b91d064f5563659ae"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/initial-harness-attempts/20261115T154725940122Z/S07/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 3929,
+      "sha256": "fbb750b451205ad65cad7fdadeb2489a0d869b1e70ad9e4a5567f58218bff619"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/models-catalog-summary.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1828,
+      "sha256": "6e0f44d8b18c39f042ecede30fee43385e1f95724fed2a317f536c8b6f17054e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/exec-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4577,
+      "sha256": "23879da13d0ee8ecbb1c8445e284f3dc257922b4a971a98cdbc2b5bd746c0352"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 7345,
+      "sha256": "e61fc283381dc24fbd8deda59da3c78dc693eaf62db463f2f94db5f521ac84c6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/models-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1086,
+      "sha256": "dae49785ea4b7debdabceb68426aca44dc1c8a43c6400cf42f558c361355bed8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/models.stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "140ac773c05d3f030cf49c022613d73ede033b19d4738a2d16d354516dcd989d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1427,
+      "sha256": "843dee9b021ec799c01f6950000f6310a90801ad28a4c8a40bcbb1508c797b75"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 134,
+      "sha256": "e7b52c482a553c2555b408fa11c5081212ea475ed13350d9b6798079b9f95f8c"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 679,
+      "sha256": "053c1abfa0ea0c6f6965cab857f92ad0c5c6d40427535a2cceec3dae31456e7a"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-catalog-pinned/version.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 28,
+      "sha256": "421f9a5c8e763b9a7e08c27e868e8b05a6d2d5b4b151df3784cc1156a8e51d47"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/exec-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4577,
+      "sha256": "23879da13d0ee8ecbb1c8445e284f3dc257922b4a971a98cdbc2b5bd746c0352"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 7345,
+      "sha256": "e61fc283381dc24fbd8deda59da3c78dc693eaf62db463f2f94db5f521ac84c6"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/models-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1086,
+      "sha256": "dae49785ea4b7debdabceb68426aca44dc1c8a43c6400cf42f558c361355bed8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/models.stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "140ac773c05d3f030cf49c022613d73ede033b19d4738a2d16d354516dcd989d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1247,
+      "sha256": "a9aa952b395efc9d7ddfc5aa571d76978f432c8f318bc59d59aef118edcfb50d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 134,
+      "sha256": "7cf7a74dd5e2e99636246c733d02ff3d309bff125781fa3ba7c587f9c6081be3"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 358,
+      "sha256": "37f82cf52eed20c9cf9df1995348ebdee9e7d8464e70132834ba16e5c1082721"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight-final/version.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 28,
+      "sha256": "421f9a5c8e763b9a7e08c27e868e8b05a6d2d5b4b151df3784cc1156a8e51d47"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/effective-native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58242,
+      "sha256": "57cc9bdf24e25d3d253c69b96705e0a8583e798ebec4f871fe18f8b9668b99da"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/exec-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 4577,
+      "sha256": "23879da13d0ee8ecbb1c8445e284f3dc257922b4a971a98cdbc2b5bd746c0352"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/invocation.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 7340,
+      "sha256": "0ecec0d8482a2db92522723f6225180ad295251bba3353d754f65e92b70bd54d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/models-help.txt.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1086,
+      "sha256": "dae49785ea4b7debdabceb68426aca44dc1c8a43c6400cf42f558c361355bed8"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/models.stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/native-catalog.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 58206,
+      "sha256": "140ac773c05d3f030cf49c022613d73ede033b19d4738a2d16d354516dcd989d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/result.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 1222,
+      "sha256": "96e88c45b252b7bd7666e40637bd5935407d10f893a3f15051eb165022122c8f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/stderr.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 266,
+      "sha256": "960e2349d62c58c8eb056b5429e0f2f48053273504882cf5bfcada99252a0e58"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/stdout.jsonl",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 358,
+      "sha256": "a4439ed2283472cd65e982940ed4eb7f13667dff1a5f5affcda9b71fbb91be0e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/preflight/version.txt",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 28,
+      "sha256": "421f9a5c8e763b9a7e08c27e868e8b05a6d2d5b4b151df3784cc1156a8e51d47"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/reviewer/independent-native-review.json",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 176879,
+      "sha256": "3812f2eccaeae3643975ca71f5ca9afb6673b641d75a1b941373fb60ce421bfe"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/native/reviewer/independent-native-review.md",
+      "reason": "Snapshot-bound native diagnosis, invocation/catalog/raw trace or independent per-case review; failures retained.",
+      "bytes": 8660,
+      "sha256": "4edc1c3fa895ef0e7f9618bbe31a5ba2edc42a964f8a2897889a36b4f50eb84a"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/pre-release-review.md",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 8627,
+      "sha256": "b7898d22f81188486966881f1acfbd32d8ca8b31e2e9e7e6a1c8b4f4380f919f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/preservation.json",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 492,
+      "sha256": "e622d505e6e011c4d1206d221749e323f6b786888c083d85dcb9d9f152d5f67d"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/routing-adjudication.json",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 150399,
+      "sha256": "8c3cfa7f9be828a60a632ba0b5dceb36e1f184ab668a0bd3c5f62b6708c8742c"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/routing-adjudication.md",
+      "reason": "Versioned preservation, historical adjudication, installed hashes/discovery or baseline audit evidence.",
+      "bytes": 34196,
+      "sha256": "00184136dd532d3fe79bb31f2c8208bdd8fef6bdd85f7c447b218748ac297cb2"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/final-licensed-relevance-report.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 89436,
+      "sha256": "38398452985116e74e31bd6bccca0f4decd1bbfe4eebc1ac99f7a1836baaf77f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/final-licensed-strict-summary.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 1240,
+      "sha256": "40f3376ccc13b2c3ff51130193d5cea97baeb2a11054c8050fe989190754e88b"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/final-ui-source-hashes.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 1425,
+      "sha256": "74c815ded051074b5b71a36e4e2fc5a33bd3308687a50e30edea6329b4734c0e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/search-and-cwd-smoke.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 7217,
+      "sha256": "2a77d89261f2bb1431bfbe512e871fb481a7e211844b1bdd23b2ed86acd0f2af"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/ui-repair-summary.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 5713,
+      "sha256": "c8d8cccaa8febdec5281bc0075919ff8a64dcafe7710d4e4c0f9ffea314c79e3"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/ui/upstream-selected.json",
+      "reason": "Pinned upstream provenance, strict frozen relevance or independent UI smoke evidence.",
+      "bytes": 1265,
+      "sha256": "bcdb8626b704ba4c723171bb63bacc6b94b356fb465497f18f208784fbc439c5"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-fifth-success.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 4814,
+      "sha256": "bcafe89fc2816e342afabb728037e72f6eaed395d9c4966574b6e5a8bdbee20c"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-fifth-success.log.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 218378,
+      "sha256": "b41f706a67ffda21e34b966509a5278a92e8a25eb3999bb15ec8a45e3df9e4d0"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-first-attempt.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 515,
+      "sha256": "6eb6f77bdf410519936b5766179e683e9d86320b66e167c6f2433e18cba81bac"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-attempt.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 4814,
+      "sha256": "bb1859f6b03551173f20b8e045629dcc60fe32a5e7bef71c0510b432a36b9b47"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-attempt.log.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 196576,
+      "sha256": "35c12ebc0f3c1ce51f45afbb2826ae593e581daff2c5a5d6ae58a41b008a57f3"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-fourth-diagnosis.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 933,
+      "sha256": "1292329d3aa170ffeddb8e5f0a91aee6f36a8b7a3d806d3aad188eed622f6b52"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-second-attempt.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 3269,
+      "sha256": "5fb57cf1ff0520363ed7d39ba65c9885185a72a4793a7271292aa11c87b90b60"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-second-attempt.log.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 32314,
+      "sha256": "48d8f9832733e774444a944b096f8c2ce4ac2d09c5a6c26f6757ec46a9462726"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-second-diagnosis.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 609,
+      "sha256": "82bccd8ab494563b8095cec7da3998218caa29b0346e66e5fc991297dc53ff02"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-status.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 2350,
+      "sha256": "1efb4fbfff6c4aaad2c5b4cb7905fde5078463fc7a0bc079482d5eb51d129cad"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-third-attempt.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 3269,
+      "sha256": "54a25977463e900e02c0f2c68b9dbba3a97547aa32adcefdcfe0556ed22afbac"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-third-attempt.log.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 52864,
+      "sha256": "f49b4e152ee02a318da78b08fddbcc32a7dcb1548c9537edd91997839f57be91"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/ci-third-diagnosis.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 566,
+      "sha256": "3a580f3f35d587c2a1dfc9f7ee5f18bb66c67422831331c3a5df0cfe1f0fec9f"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/final-powershell-static.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 1315,
+      "sha256": "aee1b488ff0321271865b8f081665077faa3a959cd2c6468a66a7188076e3178"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/local-before-final-review.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 1841,
+      "sha256": "cbf33f9905b014777c46619fd9e6f56eff938b9ebcb3b701bdcfbde3aa3ff0df"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/package-tests-before-final-review.txt",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 8571,
+      "sha256": "cc4db9739725304dc280a51193dc4d8827ea25d25f103e22514ecf46b30a232e"
+    },
+    {
+      "change": "A",
+      "path": "evals/evidence/v3.1.1/windows/powershell-backup-fixture-fix.json",
+      "reason": "Actual/static Windows evidence, successful CI and preserved earlier failed runs/corrections.",
+      "bytes": 1214,
+      "sha256": "3ba38cd02e1de0980f126484e7f4045f518710c6740b1cf4939c002e756a9f8b"
+    },
+    {
+      "change": "M",
+      "path": "evals/run.py",
+      "reason": "Native explicit preflight, portable discovery, exact catalog isolation, external-read/fixture-mutation detection and accurate runtime provenance.",
+      "bytes": 33870,
+      "sha256": "ce01cd151d442577ee53f0a4352e7170d30c71abcfb1d015f6f9ae4f4056ae93"
+    },
+    {
+      "change": "M",
+      "path": "evals/test_runner.py",
+      "reason": "Preserved14 original helper tests plus13 routing-harness regression methods.",
+      "bytes": 17751,
+      "sha256": "ae490980881dddf8bfe89366466de86417ceaa2894729f4dcfdc22000261266e"
+    },
+    {
+      "change": "M",
+      "path": "package-integrity.json",
+      "reason": "Schema1 metadata/distribution hashes refreshed while preserving all26 payloads,16 managed records and5 exclusions.",
+      "bytes": 190401,
+      "sha256": "72bf804636babff55d20026e870ab8928cb8b0cabfd34ae46cf21ee3be8750ba"
+    },
+    {
+      "change": "M",
+      "path": "scripts/common.ps1",
+      "reason": "Windows spelling/reparse safeguards and native fixed-drive identity.",
+      "bytes": 18490,
+      "sha256": "090c12dbe123942217700eb2bd7c56a6732a57ed916bbe6bc72b04f0fc022004"
+    },
+    {
+      "change": "A",
+      "path": "scripts/evaluate-relevance.py",
+      "reason": "Byte-verified temporary canonical projection and authentic grader launcher.",
+      "bytes": 4004,
+      "sha256": "665dd38264164312847b67a2d75ecfdba997687159fae35367c608c0d5bbd5c5"
+    },
+    {
+      "change": "M",
+      "path": "scripts/install.ps1",
+      "reason": "Pre-write source/destination/backup/stage identity guards and precise audit/backup status messages.",
+      "bytes": 8765,
+      "sha256": "8d93582b22871e347b1a264cb174ac6b75858d7a79832988db60ee94ee516352"
+    },
+    {
+      "change": "M",
+      "path": "scripts/package_tools.py",
+      "reason": "Read-only Windows process liveness, canonical/path safeguards, UTF-8 and owned read-only scratch recovery.",
+      "bytes": 58620,
+      "sha256": "d3bb0dc0be1c1ad1915cab6ebb5feb7144e4166af2741bafa54cd187adf21aa7"
+    },
+    {
+      "change": "A",
+      "path": "scripts/refresh-google-fonts.py",
+      "reason": "Authentic pinned upstream font authoring utility; default offline fixtures.",
+      "bytes": 26900,
+      "sha256": "e29e9b19ec69e73214ebe22b2488e1da42e7e30ba75e882e7a7aca336f006a77"
+    },
+    {
+      "change": "A",
+      "path": "scripts/refresh-icon-catalog.py",
+      "reason": "Authentic pinned upstream offline icon authoring utility.",
+      "bytes": 10378,
+      "sha256": "18b51278d8c2236692aa117325f83d2d1c4b82d513e48a2d9e614d376e033235"
+    },
+    {
+      "change": "A",
+      "path": "scripts/relevance_metrics.py",
+      "reason": "Authentic pinned upstream metric helper.",
+      "bytes": 8536,
+      "sha256": "a5126f734365380b3f3390453f25d2f504a6488c6af0fc88256a9529c02e1547"
+    },
+    {
+      "change": "A",
+      "path": "scripts/vendor/ui-ux-pro-max/evaluate-relevance.py",
+      "reason": "Unmodified pinned upstream relevance oracle.",
+      "bytes": 12374,
+      "sha256": "1294b92d3242af84092b37aea7a5a93f7df5cb07721fee36c534de2cdda7703e"
+    },
+    {
+      "change": "M",
+      "path": "skills-manifest.json",
+      "reason": "Schema1 metadata/distribution hashes refreshed while preserving all26 payloads,16 managed records and5 exclusions.",
+      "bytes": 469060,
+      "sha256": "68a965cdeaa8c93abf363e0e017d840ec65e3229ba467036408d13e00df9c64b"
+    },
+    {
+      "change": "M",
+      "path": "tests/test_package_tools.py",
+      "reason": "Preserved transaction assertions plus13 cross-platform cases and safe cleanup of disposable Git fixtures.",
+      "bytes": 48035,
+      "sha256": "e35749d58ab65e95dae27b4c18cd04cdbedbfd7d5b844fe297c4f58db3907755"
+    },
+    {
+      "change": "A",
+      "path": "tests/test_ui_authoring.py",
+      "reason": "Five canonical projection/oracle/runtime tamper regressions.",
+      "bytes": 6220,
+      "sha256": "939f0ee198e99ebfbb89ed7081ea521e25a66341aecb17303c3b3e502f6d0dec"
+    },
+    {
+      "change": "A",
+      "path": "tests/windows_native_checks.py",
+      "reason": "Actual Windows junction, locked-file and long-path tests.",
+      "bytes": 6514,
+      "sha256": "05de8853b05f9f27dc69213642586c52251c31de126ad855bb1349dbbe6abfdd"
+    },
+    {
+      "change": "A",
+      "path": "tests/windows_powershell_checks.ps1",
+      "reason": "Actual PS5.1/7 disposable-profile parser/install/backup/rollback/idempotence/SUBST fixtures.",
+      "bytes": 13647,
+      "sha256": "4ebe8bfcda9ef68c6b1e8adf8d8377a3a7719358e1aa5816f29101fdc37d9314"
+    },
+    {
+      "change": "M",
+      "path": "validation-results.json",
+      "reason": "Current release documentation, exact tested commands/provenance, scope and honest limitations.",
+      "bytes": 6675,
+      "sha256": "599c1576700cf67898bc3cba1776dee1a1780f3f2f06b6f56f496ea3b4627dde"
+    }
+  ],
+  "path_basis": "Paths and hashes identify the released80ca761 snapshot, not subsequent main documentation edits."
+}

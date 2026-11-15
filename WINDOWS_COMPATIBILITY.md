@@ -8,9 +8,9 @@ support for every Windows filesystem.
 | Evidence | Current scope |
 |---|---|
 | STATIC_REVIEWED | Python transaction/recovery code; PowerShell installer, verifier, inventory and shared helpers; path, encoding, reparse and exclusion boundaries |
-| CROSS_PLATFORM_TESTED | 57 package-tool tests executed on macOS, including 13 added tests; Windows lexical decisions use the same production guard through PureWindowsPath |
+| CROSS_PLATFORM_TESTED | 57 package-tool tests executed on macOS and Windows Server 2025, including 13 added tests; Windows lexical decisions use the same production guard through PureWindowsPath |
 | POWERSHELL_PARSED | Hosted Windows PowerShell 5.1.26100.33648 and PowerShell 7.6.9 each parsed all six scripts and passed the full disposable-profile driver; neither is locally installed on macOS |
-| WINDOWS_CI_PASS | [Completed Windows Server 2025 run](https://github.com/MahanManouchehri/skill-package/actions/runs/43763532217): all five Python groups and both real PowerShell fixture drivers pass; scope bound to the recorded SHA/environment |
+| WINDOWS_CI_PASS | [Completed Windows Server 2025 run](https://github.com/MahanManouchehri/skill-package/actions/runs/43764630393): all five Python groups and both real PowerShell fixture drivers pass; scope bound to the recorded SHA/environment |
 
 The [Windows validation workflow](.github/workflows/windows-validation.yml)
 runs on windows-latest with contents:read permission and pinned official
@@ -19,6 +19,8 @@ runs on windows-latest with contents:read permission and pinned official
 It does not change repository permissions or branch protection, persist checkout
 credentials, require account secrets, invoke a model, or write actual Codex
 profiles. TEMP, TMP, TMPDIR and CODEX_HOME point into runner.temp.
+
+The immutable released source is `80ca761864da9134141df432224015390afe8ea6`. Both the [final commit CI](https://github.com/MahanManouchehri/skill-package/actions/runs/43764630393) and [tag CI](https://github.com/MahanManouchehri/skill-package/actions/runs/43765443386) pass on that source; [closure metadata](evals/evidence/v3.1.1/publication/README.md) preserves exact logs/results. The older `windows/ci-status.json` is a retained candidate snapshot, not the latest release binding. Documentation-only changes on main do not refresh these observations.
 
 ## Prerequisites and installer choice
 
@@ -90,6 +92,9 @@ machine/user policy.
 To execute the full safe Windows verification after dependencies are available:
 
 ```powershell
+$env:PYTHONDONTWRITEBYTECODE = '1'
+$env:PYTHONUTF8 = '1'
+$env:PYTHONIOENCODING = 'utf-8'
 & $python -B -m unittest discover -s tests -p test_package_tools.py -v
 & $python -B -m unittest discover -s evals -p test_runner.py -v
 & $python -B -m unittest discover -s skills/ui-ux-pro-max/scripts/tests -p 'test_*.py' -v

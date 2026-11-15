@@ -2,6 +2,14 @@
 
 This release has exactly **26** installable personal directories and **16** managed audit snapshots. Read the current locally installed system `skill-installer` instructions/options before use. A repository URL does not independently authorize installation.
 
+## Released source and no-reinstall decision
+
+The published `v3.1.1` commit is `80ca761864da9134141df432224015390afe8ea6`. Resolve and compare the actual remote tag before installing; [publication evidence](evals/evidence/v3.1.1/publication/receipt.json) records the verified tag/manifest binding. `main` may contain later documentation changes, so it is not the release pin.
+
+Version 3.1.1 has the same 26 installable skill trees as v3.1.0. If those exact trees are already installed once at the active paths, verify all hashes and fresh unique/enabled metadata, then report **NO_REINSTALL_NEEDED**. Do not download, rewrite live folders, churn backups or duplicate entries solely because documentation/tooling changed. The owner's recorded result was 26 matching trees, split 23/3 across Codex/agents roots; other environments must be checked independently.
+
+A new install, changed payload or differing local content still follows the reviewed staging/promotion process below. Preserve local edits and ambiguous duplicates rather than treating the recorded owner result as permission to overwrite them.
+
 ## Source and destination
 
 1. Verify canonical remote `https://github.com/MahanManouchehri/skill-package.git`, publication and version/tag. Resolve the requested tag to its full immutable SHA and compare actual GitHub/remote state. A local commit is insufficient.
@@ -15,7 +23,7 @@ Replace the placeholders below with inspected absolute paths and the published S
 
 ```sh
 python3 <system-skill-installer>/scripts/install-skill-from-github.py \
-  --repo MahanManouchehri/skill-package --ref <published-sha> \
+  --repo MahanManouchehri/skill-package --ref 80ca761864da9134141df432224015390afe8ea6 \
   --dest <new-stage-root> --path skills/apple-design skills/architecture-review skills/backup-recovery skills/compatible-response skills/db-impact skills/devil skills/docs-maintenance skills/final-check skills/full-plan skills/hand-off skills/integration-reliability skills/load-testing skills/maintenance-evolution skills/multiple-pov skills/natural-persian-writing skills/performance-review skills/practical-test skills/regression-check skills/release-management skills/root-cause skills/security-assurance skills/skill-evals skills/steps skills/technical-proposal-discovery skills/test-engineering skills/ui-ux-pro-max
 python3 -B scripts/package_tools.py verify --package-root <published-checkout> --stage-root <new-stage-root>
 ```
@@ -55,6 +63,10 @@ For active overlays, place an explicit mapping JSON outside the package and pass
 Duplicate removal is explicitly named, backed up and reversible. Preserve unrelated `.agents` entries; never delete an entire root or disable unrelated skills to hide collisions.
 
 Promotion uses owned exclusive locks, verified incoming copies/backups, intent journals and atomic renames. It verifies all 26 live hashes and fingerprints unrelated/system content. Retain transaction reports/backups locally; never commit them. See RESTORE.md for recovery.
+
+## Windows choice
+
+For Windows, see [tested hosts and safe temporary commands](WINDOWS_COMPATIBILITY.md). The Python transaction is the recommended upgrade/recovery path. The standalone PowerShell 5.1/7 installer is a single-root fallback with default DryRun, verified backups and caught-error rollback; it has no durable crash journal. It accepts only supported local fixed-drive paths, rejecting SUBST/network/UNC/device namespaces. Python supports ordinary UNC spellings subject to native guards, but real SMB/network locking is unverified. Do not bypass execution policy or infer universal Windows compatibility from hosted CI.
 
 ## Discovery
 

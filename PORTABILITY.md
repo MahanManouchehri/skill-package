@@ -1,6 +1,6 @@
 # Portability and managed capability restoration
 
-Copying files preserves instructions; it does not transfer account eligibility, authentication, tools, browser sessions or runtime software. This v3.1 release intentionally upgrades personal instructions; managed rows describe preserved historical snapshots, not current host activation. Current executed host checks are recorded in VALIDATION.md.
+Copying files preserves instructions; it does not transfer account eligibility, authentication, tools, browser sessions or runtime software. Version 3.1.0 intentionally upgraded personal instructions; v3.1.1 preserves those payload bytes and upgrades development/verification tooling. Managed rows describe preserved historical snapshots, not current host activation. Current executed host checks are recorded in VALIDATION.md.
 
 | Catalog entry | Kind/status | Dependencies and limitations | Restore / verify |
 |---|---|---|---|
@@ -71,6 +71,10 @@ Current native Codex supports both legacy CODEX_HOME/skills and user .agents/ski
 
 The installable 26-skill payload is byte-identical to v3.1.0. Root UI authoring scripts are development-only and are not copied to live skill roots; see [source pins and MIT license](UI_AUTHORING_PROVENANCE.md). Default authoring tests and relevance grading are offline. Unsupported Django stack selection remains an explicit error; UX-domain search is a documented framework-neutral alternative.
 
-Windows restrictions, Python/PowerShell requirements, safe runner-temp dry runs and observed evidence classes are in [WINDOWS_COMPATIBILITY.md](WINDOWS_COMPATIBILITY.md). Normal absolute and UNC paths are supported subject to permissions; extended/device namespace and ambiguous short aliases are refused. Actual hosted Windows results are linked from current validation, separately from macOS simulations.
+Windows restrictions, Python/PowerShell requirements, safe runner-temp dry runs and observed evidence classes are in [WINDOWS_COMPATIBILITY.md](WINDOWS_COMPATIBILITY.md). The Python tool accepts ordinary absolute drive/UNC spellings subject to native guards; actual SMB/network semantics are unverified. The standalone PowerShell installer accepts only the documented local fixed-drive subset and rejects SUBST/network/UNC mappings. Both refuse extended/device namespaces and ambiguous short aliases. Actual hosted Windows results are linked from current validation, separately from macOS simulations.
 
 Native evaluation requires an explicitly selected model confirmed by an actual turn. An installed model catalog alone is not an entitlement check. The app-bundled CLI can differ from the default shell binary; select it with `--codex` without upgrading or replacing the user's default CLI. Invocation-only overlays leave installed skill/config files intact; the native client may refresh its own runtime cache. No credential files are copied or inspected by the harness.
+
+## Published verification boundary
+
+The [final commit CI](https://github.com/MahanManouchehri/skill-package/actions/runs/43764630393) and [tag CI](https://github.com/MahanManouchehri/skill-package/actions/runs/43765443386) verify release `80ca761864da9134141df432224015390afe8ea6` on Windows Server 2025 with Python 3.12.10 and PowerShell 5.1/7; [closure records](evals/evidence/v3.1.1/publication/README.md) include exact source/tag binding and the owner's NO_REINSTALL_NEEDED observation. Later documentation changes on main do not imply fresh account access, model turns, installed-state refresh or managed capability activation. Native routing remains eight scoped plan PASS, two source-isolation FAIL, two quota-blocked and48 unexecuted cases.

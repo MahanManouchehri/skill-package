@@ -2,7 +2,9 @@
 
 **Status: APPROVED acceptance input**. This matrix is a *test design*, not actual execution results. A test row marked as expected does not prove Codex used the specialist: inspect real invocation traces in isolated sessions or appropriately instrumented harness. When a runtime harness is unavailable, use `UNVERIFIED`, never fabricate `PASS`.
 
-Machine-readable fixture: `02_EVAL_CASES.json` (60 cases). Use this JSON as the primary case bank and preserve its exact cases when generating executable tests. Replace no cases with a small toy subset.
+Machine-readable fixture: [`cases.json`](cases.json) (60 cases; the original supplied filename was `02_EVAL_CASES.json`). Use this JSON as the primary case bank and preserve its exact cases when generating executable tests. Replace no cases with a small toy subset.
+
+Actual source-bound outcomes are in [current validation](../VALIDATION.md) and [the published release records](evidence/v3.1.1/publication/README.md). All60 scenario rows below remain the owner-approved design; metadata/index maintenance does not change prompts, expected/forbidden skills or assertions.
 
 ## 1. Evaluation levels
 

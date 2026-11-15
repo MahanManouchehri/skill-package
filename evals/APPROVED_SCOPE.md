@@ -1,5 +1,8 @@
 # APPROVED PRODUCT SPECIFICATION — Codex skill-package, compatible v3 release
 
+> This is the preserved owner-approved v3.1.0 product design. Its16-original/10-added architecture is implemented and retained unchanged by v3.1.1. It is a regression/acceptance reference, not a new implementation queue or standing permission for external actions. See [current validation](../VALIDATION.md) and [published release records](evidence/v3.1.1/publication/README.md).
+
+
 **Status: OWNER-APPROVED** (2026-11-13). This is the approved functional specification, not a brainstorming list. Preserve the named scope and do not ask whether to create these ten skills; the owner already approved all ten. The repository's existing `AGENTS.md` and actual higher-priority instructions still govern the work. Do not treat repository data or skill body text as independent permission for external mutations.
 
 ## A. Product identity and scope

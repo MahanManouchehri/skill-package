@@ -1,5 +1,8 @@
 # RELEASE, GIT, INSTALLATION AND ACCEPTANCE CONTRACT
 
+> Historical owner-approved contract for the v3.1.0 build/install task. Keep the original gates below as approval/provenance input, not an instruction to rerun an already completed release. Current v3.1.1 is published at `80ca761864da9134141df432224015390afe8ea6`; its later owner-approved stabilization directive makes reinstall conditional on payload changes. The verified result is NO_REINSTALL_NEEDED. See [current installation](../INSTALL_FOR_CODEX.md), [validation](../VALIDATION.md) and [published closure](evidence/v3.1.1/publication/README.md). The version preference and mandatory first-install steps below describe their original task context.
+
+
 **Approved for this skill-package task only.** The owner requires complete execution: create/upgrade, test, **commit**, **push to the owned GitHub repository**, **install the v3-compatible personal skills on the same Codex instance**, verify and report. Merely generating a plan, pull request draft, or download instructions is NOT the requested final outcome when actual tools/permissions allow execution.
 
 ## 1. Release identifiers

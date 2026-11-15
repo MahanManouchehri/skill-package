@@ -1,0 +1,9 @@
+windows	Package transactions and cross-platform regression tests	2026-11-15T21:37:48.3953233Z Ran 57 tests in 47.661s
+windows	Evaluation runner regression tests	2026-11-15T21:37:49.6715506Z Ran 27 tests in 0.561s
+windows	Full UI authoring and runtime discovery	2026-11-15T21:38:01.0593023Z Ran 153 tests in 10.567s
+windows	Portable UI authoring launchers	2026-11-15T21:38:35.8491718Z Ran 5 tests in 34.190s
+windows	Actual Windows junctions, locked files, and long paths	2026-11-15T21:38:48.4912044Z Ran 4 tests in 11.945s
+windows	Windows PowerShell 5.1 parser and temporary profile transactions	2026-11-15T21:38:49.4768965Z POWERSHELL_PARSED: 6 scripts on 5.1.26100.33648
+windows	Windows PowerShell 5.1 parser and temporary profile transactions	2026-11-15T21:41:18.4525621Z WINDOWS_POWERSHELL_FIXTURES_PASS: host=5.1.26100.33648; parsed=6; temporary profile only
+windows	PowerShell 7 parser and temporary profile transactions	2026-11-15T21:41:19.1693942Z POWERSHELL_PARSED: 6 scripts on 7.6.9
+windows	PowerShell 7 parser and temporary profile transactions	2026-11-15T21:43:23.5798227Z WINDOWS_POWERSHELL_FIXTURES_PASS: host=7.6.9; parsed=6; temporary profile only

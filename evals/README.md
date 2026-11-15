@@ -2,6 +2,12 @@
 
 `cases.json` contains the owner's exact 60 scenarios. The bank and `MATRIX.md` describe expected behavior; neither is an execution result. This runner uses Python 3.10+ and Git for fixture preparation; it installs no frameworks, dependencies, services or models.
 
+## Released results and source pin
+
+The immutable v3.1.1 source is `80ca761864da9134141df432224015390afe8ea6`; [published records](evidence/v3.1.1/publication/README.md) contain final commit/tag Windows CI, the source-bound install receipt and independent native review. This guide describes runnable tools; it does not claim a new run happened when documentation changes.
+
+Current native ledger:60 designed,12 unique attempts,10 completed,8 scoped plan PASS,2 source-isolation FAIL,2 usage-cap BLOCKED and48 unexecuted. All full-application acceptance remains UNVERIFIED. Historical delegated18-complete/12-partial records and separate12-case adjudication remain unchanged. Use fresh corrected fixtures for any future explicitly authorized model evaluation; the final harness has no post-cap native rerun.
+
 ## Prepare without a model call
 
 Choose a **new dedicated directory outside this package**:
@@ -34,7 +40,7 @@ python3 evals/run.py preflight --cwd /absolute/path/to/new-eval-fixtures/S01 --o
 After a successful `NATIVE_MODEL_CONFIRMED` preflight and a real read-only tool check, run a case:
 
 ```sh
-python3 evals/run.py run --prepared /absolute/path/to/new-eval-fixtures --case S01 --model SUPPORTED_MODEL
+python3 evals/run.py run --prepared /absolute/path/to/new-eval-fixtures --case S01 --model SUPPORTED_MODEL --codex /absolute/path/to/codex --reasoning medium --timeout 240
 ```
 
 The runner makes **one attempt**, without model fallback, account/config repair or automatic retry. It validates the prepared payload/prompt, queries native discovery, disables **all external user/system/plugin skill entries** through invocation-only `skills.config` overrides, then queries native discovery again and refuses a model call unless exactly the fixture's 26 copies are enabled. Plugins/apps/remote-plugin services are disabled for this invocation. It never edits installed skills or user configuration. The old `disabled_overlays` helper remains available for compatibility; actual runs use the strict `isolated_overlays` path. The exact command uses `codex -a never exec --ignore-user-config --ephemeral --json --sandbox read-only --model ...`; authorization, the real runtime's instruction hierarchy and its existing authentication remain in force. The test model receives the original request within a read-only evaluation wrapper, without expected/forbidden skill names. `--reasoning` defaults explicitly to `medium`; the selected model is always explicit. Inspect `invocation.json` for the exact input and effective overlay list.

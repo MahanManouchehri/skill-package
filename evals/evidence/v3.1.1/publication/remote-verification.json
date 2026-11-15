@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-11-15T22:11:49.158800+00:00",
+  "release_tag": "v3.1.1",
+  "release_sha": "80ca761864da9134141df432224015390afe8ea6",
+  "remote_tag_refs": [
+    "cd2a33f7c977e752d3afec6a1ac1e31c36f170cf\trefs/tags/v3.1.1",
+    "80ca761864da9134141df432224015390afe8ea6\trefs/tags/v3.1.1^{}"
+  ],
+  "completed_runs": [
+    {
+      "conclusion": "success",
+      "headSha": "80ca761864da9134141df432224015390afe8ea6",
+      "status": "completed",
+      "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43764630393"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "80ca761864da9134141df432224015390afe8ea6",
+      "status": "completed",
+      "url": "https://github.com/MahanManouchehri/skill-package/actions/runs/43765443386"
+    }
+  ],
+  "scope": "Fresh read-only confirmation of the existing release; no new model/test/install run."
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## Post-release documentation — 2026-11-16
+
+- Record the immutable v3.1.1 commit/annotated tag, successful final commit/tag Windows runs and conditional no-reinstall result inside the repository.
+- Synchronize audit, installation, recovery, portability and evaluation guides with the implemented Windows/Python behavior and honest native coverage.
+- Identify historical owner contracts and immutable evidence separately from current operational instructions; correct the matrix's canonical bank filename without changing its 60 scenario rows.
+- Preserve VERSION3.1.1, the existing tag, all personal/managed payloads, original case bank and earlier evidence. Main contains this documentation follow-up; the release pin remains80ca761864da9134141df432224015390afe8ea6.
+
 ## 3.1.1 — 2026-11-16
 
 - Restore authentic, pinned MIT UI authoring tools as development utilities. Run the pristine relevance grader in a byte-verified temporary canonical layout, preserving original tests, fixtures, thresholds and runtime payloads.
@@ -18,7 +25,7 @@
 - Preserve manifest schema 1, aggregate hash algorithms, all sixteen managed snapshots and Windows scripts. Add Python strict validation, staged multi-root promotion, verified backups, locks, journals and crash rollback tests.
 - Include the unchanged sixty-case owner bank, reproducible CLI harness and separately labeled real delegated planning observations. Do not treat those as full application acceptance.
 
-Personal source equality is intentionally no longer claimed after this behavior upgrade. Historical provenance remains intact. Distribution paths and original names remain v3-compatible.
+The v3.1.0 behavior upgrade intentionally changed original personal source bytes; v3.1.1 preserves the resulting v3.1.0 payloads exactly. Historical provenance remains intact. Distribution paths and original names remain v3-compatible.
 
 ## 3.0.0 and earlier
 
