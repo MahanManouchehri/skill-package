@@ -2,7 +2,7 @@
 
 New evidence only; all pre-existing records remain unchanged.
 
-- `local/`: actual local unit logs/results; 56 package + 27 runner + 153 full UI + 5 launcher tests.
+- `local/`: actual local unit logs/results; 57 package + 27 runner + 153 full UI + 5 launcher tests.
 - `ui/`: authentic upstream pin, restored authoring provenance, frozen 90-case grading, 13 search/cwd smokes.
 - `native/`: binary/catalog/auth diagnosis, successful smoke/tool turns, all raw case attempts and quota failures. `cases/` contains 12 unique attempts; `initial-harness-attempts/` preserves four earlier nested-seatbelt failures separately. Reviewer verdicts are independent from raw automatic results.
 - `routing-adjudication.*`: separate review of all12 historical PARTIAL cases, not changed owner expectations.

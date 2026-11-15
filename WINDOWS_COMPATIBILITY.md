@@ -8,7 +8,7 @@ support for every Windows filesystem.
 | Evidence | Current scope |
 |---|---|
 | STATIC_REVIEWED | Python transaction/recovery code; PowerShell installer, verifier, inventory and shared helpers; path, encoding, reparse and exclusion boundaries |
-| CROSS_PLATFORM_TESTED | 56 package-tool tests executed on macOS, including 12 added tests; Windows lexical decisions use the same production guard through PureWindowsPath |
+| CROSS_PLATFORM_TESTED | 57 package-tool tests executed on macOS, including 13 added tests; Windows lexical decisions use the same production guard through PureWindowsPath |
 | POWERSHELL_PARSED | Not executed locally: pwsh and Windows PowerShell are absent on the macOS host; the workflow runs each actual parser separately |
 | WINDOWS_RUNTIME_UNVERIFIED | Until a completed hosted Windows run is recorded in the version-specific validation evidence; a workflow file is not execution evidence |
 
@@ -108,7 +108,7 @@ an aliased source destination is refused without changing package bytes, and
 removes the mapping in finally. UNC installation is refused without accessing
 the share. The four additional Python Windows tests use actual
 junctions, a file handle denying FILE_SHARE_DELETE, and a long
-Unicode destination. The normal 56-test suite also runs real concurrent
+Unicode destination. The normal 57-test suite also runs real concurrent
 recovery and crash/resume tests against the Windows msvcrt backend.
 
 ## Recovery and restrictions

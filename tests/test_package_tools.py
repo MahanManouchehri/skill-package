@@ -69,6 +69,14 @@ def make_package(path):
 
 
 class PackageToolTests(unittest.TestCase):
+    def test_windows_spelling_guard_allows_dot_navigation_for_bounded_references(self):
+        from pathlib import PureWindowsPath
+        link = PureWindowsPath('D:/repo/skills/full-plan/platforms/../docs/PLATFORM-COMPATIBILITY.md')
+        self.assertEqual(tools.ordinary_windows_path(link), link)
+        for component in ('platforms.', 'platforms ', 'SHORT~1'):
+            with self.assertRaises(tools.PackageError):
+                tools.ordinary_windows_path(PureWindowsPath('D:/repo') / component / 'docs/file.md')
+
     @classmethod
     def setUpClass(cls):
         cls.shared = Path(tempfile.mkdtemp(prefix="skill-tools-fixture-")).resolve()

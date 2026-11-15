@@ -6,7 +6,7 @@ Baseline: `v3.1.0` / `11d61b3e05afaf2749d7314d1a72d0c1d9ed3523`. Release date: 2
 
 | Check | Actual result | Evidence |
 |---|---|---|
-| Package transaction/portability tests | 56 executed/passed, no failures/skips | [log](evals/evidence/v3.1.1/local/package.txt) |
+| Package transaction/portability tests | 57 executed/passed, no failures/skips | [log](evals/evidence/v3.1.1/local/package.txt) |
 | Native runner helpers | 27 executed/passed; original 14 methods retained | [log](evals/evidence/v3.1.1/local/runner.txt) |
 | Unchanged full UI discovery | 153 executed/passed; zero failures, errors or skips | [log](evals/evidence/v3.1.1/local/ui.txt) |
 | Additional UI launcher regressions | 5 executed/passed | [log](evals/evidence/v3.1.1/local/ui-launcher.txt) |
@@ -31,7 +31,7 @@ Primary auth/config/skill/plugin files were not manually edited or copied. An ea
 
 ## Windows evidence
 
-Source review and 56 cross-platform package tests are green on macOS. Local PowerShell 5.1/7 are unavailable. The authorized `windows-latest` workflow exercises actual Windows locking/liveness, junctions/locked files, UTF-8/raw hashes, package/runner/UI suites and both PowerShell parsers/temp-only transactions. [Current hosted status](evals/evidence/v3.1.1/windows/ci-status.json) is authoritative; a workflow file is not WINDOWS_CI_PASS. [Restrictions and safe commands](WINDOWS_COMPATIBILITY.md) distinguish the Python installer from the standalone PowerShell fixed-drive-only fallback.
+Source review and 57 cross-platform package tests are green on macOS. Local PowerShell 5.1/7 are unavailable. The authorized `windows-latest` workflow exercises actual Windows locking/liveness, junctions/locked files, UTF-8/raw hashes, package/runner/UI suites and both PowerShell parsers/temp-only transactions. [Current hosted status](evals/evidence/v3.1.1/windows/ci-status.json) is authoritative; a workflow file is not WINDOWS_CI_PASS. [Restrictions and safe commands](WINDOWS_COMPATIBILITY.md) distinguish the Python installer from the standalone PowerShell fixed-drive-only fallback.
 
 ## Historical routing and publication
 

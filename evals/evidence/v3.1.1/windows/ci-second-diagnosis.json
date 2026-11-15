@@ -1,0 +1,10 @@
+{
+  "run_id": 43761194096,
+  "runner": "windows-latest; actual Windows setup completed",
+  "result": "FAIL_PACKAGE_REFERENCE_GUARD",
+  "cause": "Windows raw spelling guard treated a literal parent navigation component as a trailing-dot filename.",
+  "correction": "Allow only exact dot/parent navigation in the lexical spelling stage; normalize and bound target afterwards. Manifest safe_relative traversal refusal unchanged.",
+  "regression_test": "test_windows_spelling_guard_allows_dot_navigation_for_bounded_references",
+  "macos_package_tests": 57,
+  "observed_utc": "2026-11-15T21:04:01.128435+00:00"
+}

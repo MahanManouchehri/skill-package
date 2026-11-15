@@ -69,7 +69,10 @@ def ordinary_windows_path(path):
             f"Windows device/extended namespace paths are unsupported: {path}")
     if isinstance(path, PureWindowsPath):
         for part in path.parts:
-            if part == path.anchor:
+            # Navigation is normalized by absolute()/realpath and then bounded
+            # by the caller. It is not a literal trailing-dot filename. Valid
+            # packaged Markdown links include platforms/../docs/... .
+            if part in {path.anchor, ".", ".."}:
                 continue
             require(not part.endswith((" ", ".")) and not re.search(r"~[0-9]", part),
                     f"Use ordinary long Windows path components without trailing dots/spaces or short aliases: {path}")
